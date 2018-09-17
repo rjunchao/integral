@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.losetype.removeLoseType(com.vbm.grc.basic.vo.LoseTypeVo[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;removeLoseType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;removeLoseType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.losetype.losetype.removeLoseType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.LoseTypeVo[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>losetype</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;losetype.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;losetype&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.losetype.losetype&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.losetype.queryLoseType(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryLoseType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryLoseType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.losetype.losetype.queryLoseType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.LoseTypeVo[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.losetype.updateLoseType(com.vbm.grc.basic.vo.LoseTypeVo)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateLoseType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateLoseType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.losetype.losetype.updateLoseType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.LoseTypeVo):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.losetype.addLoseType(com.vbm.grc.basic.vo.LoseTypeVo)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addLoseType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addLoseType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.losetype.losetype.addLoseType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.LoseTypeVo):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1,0 +1,38 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.getEntityCapRules(String, Int, String, com.primeton.cap.party.Party)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getEntityCapRules&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryCapRules&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.getEntityCapRules&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;namespace(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;searchType(Int):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;ruleName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;party(com.primeton.cap.party.Party):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.entityauth.pojo.RuleAndAuth[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.getConValues(String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getConValues&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getConValues&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.getConValues&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;namespace(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;entityName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;propertyName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;conValues(org.gocom.components.coframe.entityauth.pojo.ConValue[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.updateRule(String, String, org.gocom.components.coframe.entityauth.pojo.Condition[], com.primeton.cap.party.Party)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateRule&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveRule&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.updateRule&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ruleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;ruleName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;ruleExpression(org.gocom.components.coframe.entityauth.pojo.Condition[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;party(com.primeton.cap.party.Party):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;flag(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.storePartyAuth(com.primeton.cap.party.Party, String[], String[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;storePartyAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;保存Party授权信息&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.storePartyAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;party(com.primeton.cap.party.Party):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyWithAuth(String[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyNoAuth(String[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;saveResult(Boolean):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;保存Party授权信息&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>entityRule</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;rule.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;entityRule&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.saveRule(String, String, org.gocom.components.coframe.entityauth.pojo.Condition[], com.primeton.cap.party.Party)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveRule&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveRule&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.saveRule&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ruleName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;namespace(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;ruleExpression(org.gocom.components.coframe.entityauth.pojo.Condition[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;party(com.primeton.cap.party.Party):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;flag(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.delRules(com.primeton.cap.spi.auth.rule.Rule[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;delRules&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;delRules&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.delRules&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;rules(com.primeton.cap.spi.auth.rule.Rule[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;flag(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.getRuleCondition(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getRuleCondition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getRuleCondition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.getRuleCondition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ruleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;conditions(org.gocom.components.coframe.entityauth.pojo.Condition[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.rule.getRightValues(String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getRightValues&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getRightValues&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.rule.getRightValues&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;namespace(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;entityName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;propertyName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;rightValues(org.gocom.components.coframe.entityauth.pojo.RightValue[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

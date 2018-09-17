@@ -1,0 +1,28 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.system.RefRelationService.updateRefRelation(com.vbm.grc.system.vo.RefRelationVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.system.RefRelationService.updateRefRelation(RefRelationVO[] refs)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.system.RefRelationService.queryRefRelation(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;RefRelationVO[] com.vbm.grc.system.RefRelationService.queryRefRelation(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询的操作：&#x0D;
+  查询用的是工具类：VOPageQuery这个类&#x0D;
+	&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>RefRelationService [表引用操作的类]</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.vbm.grc.system.RefRelationService&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;heFei&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.system.RefRelationService.saveRefRelation(com.vbm.grc.system.vo.RefRelationVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.system.RefRelationService.saveRefRelation(RefRelationVO[] refs)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 1.在添加数据的时候，如果数据是空调用MsgResponse这个类，给去提示&#x0D;
+ 2.在添加的时候自动添加ts和dr&#x0D;
+ &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;refs&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.system.RefRelationService.deleteRefRelation(com.vbm.grc.system.vo.RefRelationVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.system.RefRelationService.deleteRefRelation(RefRelationVO[] refs)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 在删除的时候调用VODelete这个类的delete方法对数据进行删除&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;refs&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

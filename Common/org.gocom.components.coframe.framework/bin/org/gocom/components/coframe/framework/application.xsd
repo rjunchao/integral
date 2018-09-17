@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="org.gocom.components.coframe.framework.application" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="org.gocom.components.coframe.framework.application">
+    <xs:complexType name="AppFuncgroup" sdoJava:instanceClass="org.gocom.components.coframe.framework.application.impl.AppFuncgroupImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="funcgroupid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="funcgroupname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="grouplevel" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="funcgroupseq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="isleaf" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="subcount" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="app_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenant_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appFuncgroup" nillable="true" type="AppFuncgroup"/>
+            <xs:element minOccurs="0" name="appApplication" nillable="true" type="AppApplication"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AppMenu" sdoJava:instanceClass="org.gocom.components.coframe.framework.application.impl.AppMenuImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="menuid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="menuname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="menulabel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="menucode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="isleaf" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="menuaction" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="parameter" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="uientry" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="menulevel" nillable="true" type="xs:short"/>
+            <xs:element minOccurs="0" name="rootid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="displayorder" nillable="true" type="xs:short"/>
+            <xs:element minOccurs="0" name="imagepath" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="expandpath" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="menuseq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="openmode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="subcount" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="funccode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="app_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenant_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appMenu" nillable="true" type="AppMenu"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AppFunction" sdoJava:instanceClass="org.gocom.components.coframe.framework.application.impl.AppFunctionImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="funccode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="funcname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="funcdesc" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="funcaction" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="parainfo" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ischeck" nillable="true" type="xs:string"/>
+            <xs:element default="1" minOccurs="0" name="functype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ismenu" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="app_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenant_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appFuncgroup" nillable="true" type="AppFuncgroup"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AppFuncresource" sdoJava:instanceClass="org.gocom.components.coframe.framework.application.impl.AppFuncresourceImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="resid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="restype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="respath" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="compackname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="resname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="app_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenant_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appFunction" nillable="true" type="AppFunction"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AppApplication" sdoJava:instanceClass="org.gocom.components.coframe.framework.application.impl.AppApplicationImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="appcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="apptype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="isopen" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="opendate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="url" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appdesc" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="maintenance" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="manarole" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="demo" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="iniwp" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="intaskcenter" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ipaddr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ipport" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="app_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenant_id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="protocoltype" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

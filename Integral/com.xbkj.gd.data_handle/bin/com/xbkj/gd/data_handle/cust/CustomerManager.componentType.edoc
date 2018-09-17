@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.CustomerManager.updateCustInfo(com.xbkj.gd.integral.vos.CustomerVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateCustInfo&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateCustInfo&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.CustomerManager.updateCustInfo&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.CustomerVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.CustomerManager.queryCustomer(com.eos.foundation.PageCond, java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryCustomer&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryCustomer&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.CustomerManager.queryCustomer&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.CustomerVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>CustomerManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;CustomerManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;CustomerManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.CustomerManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.CustomerManager.delCustomer(com.xbkj.gd.integral.vos.CustomerVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;delCustomer&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;delCustomer&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.CustomerManager.delCustomer&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.CustomerVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.CustomerManager.addCustomer(com.xbkj.gd.integral.vos.CustomerVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addCustomer&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addCustomer&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.CustomerManager.addCustomer&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.CustomerVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

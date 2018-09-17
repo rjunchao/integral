@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.checktype.checktype.validateCode(com.vbm.grc.basic.vo.CheckTypeVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;validateCode&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;validateCode&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.checktype.checktype.validateCode&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.CheckTypeVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;count(Int):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;校验编码&lt;br&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.checktype.checktype.updateCheckType(com.vbm.grc.basic.vo.CheckTypeVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateCheckType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateCheckType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.checktype.checktype.updateCheckType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.CheckTypeVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.checktype.checktype.queryCheckTypeList(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryCheckTypeList&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryCheckTypeList&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.checktype.checktype.queryCheckTypeList&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;paramMap(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.CheckTypeVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.checktype.checktype.deleteCheckType(com.vbm.grc.basic.vo.CheckTypeVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteCheckType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteCheckType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.checktype.checktype.deleteCheckType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.CheckTypeVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.checktype.checktype.addCheckType(com.vbm.grc.basic.vo.CheckTypeVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addCheckType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addCheckType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.checktype.checktype.addCheckType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.CheckTypeVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>checktype</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;checktype.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;checktype&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.checktype.checktype&lt;/html&gt;</string>
+  </entry>
+</map>

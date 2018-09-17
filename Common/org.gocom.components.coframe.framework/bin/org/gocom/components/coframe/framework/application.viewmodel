@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<viewModelSet author="Administrator" displayName="application" id="org.gocom.components.coframe.framework.application">
+    <viewModel author="蔡述尧" displayName="AppFuncgroup" entityName="org.gocom.components.coframe.framework.application.AppFuncgroup" id="AppFuncgroup">
+        <field dataType="Decimal" dict="false" entityField="funcgroupid" id="funcgroupid" label="功能组编号">
+            <view type="write"/>
+            <edit name="funcgroupid" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appid" id="appid" label="应用程序编号">
+            <view type="write"/>
+            <edit name="appid" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="funcgroupname" id="funcgroupname" label="功能组名称">
+            <view type="write"/>
+            <edit name="funcgroupname" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="parentgroup" id="parentgroup" label="父功能组">
+            <view type="write"/>
+            <edit name="parentgroup" type="text"/>
+        </field>
+        <field dataType="Int" dict="false" entityField="grouplevel" id="grouplevel" label="功能组层次">
+            <view type="write"/>
+            <edit name="grouplevel" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="funcgroupseq" id="funcgroupseq" label="功能组序号">
+            <view type="write"/>
+            <edit name="funcgroupseq" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="isleaf" id="isleaf" label="是否为叶子">
+            <view type="write"/>
+            <edit name="isleaf" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="subcount" id="subcount" label="subcount">
+            <view type="write"/>
+            <edit name="subcount" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="app_id" id="app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="appId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenant_id" id="tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.subcount" id="appFuncgroup.subcount" label="subcount">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Int" dict="false" entityField="appFuncgroup.grouplevel" id="appFuncgroup.grouplevel" label="grouplevel">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.tenant_id" id="appFuncgroup.tenant_id" label="tenantId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.app_id" id="appFuncgroup.app_id" label="appId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.funcgroupseq" id="appFuncgroup.funcgroupseq" label="funcgroupseq">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.isleaf" id="appFuncgroup.isleaf" label="isleaf">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.funcgroupid" id="appFuncgroup.funcgroupid" label="funcgroupid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.appid" id="appFuncgroup.appid" label="appid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.funcgroupname" id="appFuncgroup.funcgroupname" label="funcgroupname">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.parentgroup" id="appFuncgroup.parentgroup" label="parentgroup">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.appdesc" id="appApplication.appdesc" label="应用程序描述">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.manarole" id="appApplication.manarole" label="manarole">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.app_id" id="appApplication.app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.ipport" id="appApplication.ipport" label="应用程序端口">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.isopen" id="appApplication.isopen" label="是否开通">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="appApplication.opendate" id="appApplication.opendate" label="开通日期">
+            <view type="write"/>
+            <edit name="" type="date"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.apptype" id="appApplication.apptype" label="应用程序类型">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appApplication.appid" id="appApplication.appid" label="应用程序编号">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.appcode" id="appApplication.appcode" label="应用程序代码">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.appname" id="appApplication.appname" label="应用程序名称">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.ipaddr" id="appApplication.ipaddr" label="应用程序IP">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.iniwp" id="appApplication.iniwp" label="iniwp">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appApplication.maintenance" id="appApplication.maintenance" label="maintenance">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.intaskcenter" id="appApplication.intaskcenter" label="intaskcenter">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.url" id="appApplication.url" label="应用上下文">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.tenant_id" id="appApplication.tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appApplication.demo" id="appApplication.demo" label="demo">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+    </viewModel>
+    <viewModel author="蔡述尧" displayName="AppMenu" entityName="org.gocom.components.coframe.framework.application.AppMenu" id="AppMenu">
+        <field dataType="String" dict="false" entityField="menuid" id="menuid" label="菜单编号">
+            <view type="write"/>
+            <edit name="menuid" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="menuname" id="menuname" label="菜单名称">
+            <view type="write"/>
+            <edit name="menuname" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="menulabel" id="menulabel" label="菜单显示名称">
+            <view type="write"/>
+            <edit name="menulabel" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="menucode" id="menucode" label="菜单代码">
+            <view type="write"/>
+            <edit name="menucode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="isleaf" id="isleaf" label="是否叶子菜单">
+            <view type="write"/>
+            <edit name="isleaf" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="menuaction" id="menuaction" label="菜单url">
+            <view type="write"/>
+            <edit name="menuaction" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="parameter" id="parameter" label="菜单参数">
+            <view type="write"/>
+            <edit name="parameter" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="uientry" id="uientry" label="uientry">
+            <view type="write"/>
+            <edit name="uientry" type="text"/>
+        </field>
+        <field dataType="Short" dict="false" entityField="menulevel" id="menulevel" label="菜单层次">
+            <view type="write"/>
+            <edit name="menulevel" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="rootid" id="rootid" label="rootid">
+            <view type="write"/>
+            <edit name="rootid" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="parentsid" id="parentsid" label="父菜单id">
+            <view type="write"/>
+            <edit name="parentsid" type="text"/>
+        </field>
+        <field dataType="Short" dict="false" entityField="displayorder" id="displayorder" label="显示顺序">
+            <view type="write"/>
+            <edit name="displayorder" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="imagepath" id="imagepath" label="菜单闭合图片路径">
+            <view type="write"/>
+            <edit name="imagepath" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="expandpath" id="expandpath" label="菜单展开图片路径">
+            <view type="write"/>
+            <edit name="expandpath" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="menuseq" id="menuseq" label="菜单序号">
+            <view type="write"/>
+            <edit name="menuseq" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="openmode" id="openmode" label="打开方式">
+            <view type="write"/>
+            <edit name="openmode" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="subcount" id="subcount" label="子菜单数">
+            <view type="write"/>
+            <edit name="subcount" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appid" id="appid" label="应用程序编号">
+            <view type="write"/>
+            <edit name="appid" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="funccode" id="funccode" label="功能代码">
+            <view type="write"/>
+            <edit name="funccode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="app_id" id="app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="appId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenant_id" id="tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appMenu.subcount" id="appMenu.subcount" label="subcount">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.menucode" id="appMenu.menucode" label="menucode">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.menulabel" id="appMenu.menulabel" label="menulabel">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Short" dict="false" entityField="appMenu.displayorder" id="appMenu.displayorder" label="displayorder">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.app_id" id="appMenu.app_id" label="appId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.funccode" id="appMenu.funccode" label="funccode">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.openmode" id="appMenu.openmode" label="openmode">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.uientry" id="appMenu.uientry" label="uientry">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.imagepath" id="appMenu.imagepath" label="imagepath">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.parentsid" id="appMenu.parentsid" label="parentsid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appMenu.appid" id="appMenu.appid" label="appid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="" dict="false" entityField="appMenu.protocoltype" id="appMenu.protocoltype" label="协议类型">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.menuaction" id="appMenu.menuaction" label="menuaction">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.rootid" id="appMenu.rootid" label="rootid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.menuid" id="appMenu.menuid" label="menuid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.menuname" id="appMenu.menuname" label="menuname">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Short" dict="false" entityField="appMenu.menulevel" id="appMenu.menulevel" label="menulevel">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.menuseq" id="appMenu.menuseq" label="menuseq">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.isleaf" id="appMenu.isleaf" label="isleaf">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.expandpath" id="appMenu.expandpath" label="expandpath">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.tenant_id" id="appMenu.tenant_id" label="tenantId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appMenu.parameter" id="appMenu.parameter" label="parameter">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+    </viewModel>
+    <viewModel author="蔡述尧" displayName="AppFunction" entityName="org.gocom.components.coframe.framework.application.AppFunction" id="AppFunction">
+        <field dataType="String" dict="false" entityField="funccode" id="funccode" label="功能编码">
+            <view type="write"/>
+            <edit name="funccode" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="funcgroupid" id="funcgroupid" label="功能组编号">
+            <view type="write"/>
+            <edit name="funcgroupid" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="funcname" id="funcname" label="功能名称">
+            <view type="write"/>
+            <edit name="funcname" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="funcdesc" id="funcdesc" label="功能描述">
+            <view type="write"/>
+            <edit name="funcdesc" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="funcaction" id="funcaction" label="功能URL">
+            <view type="write"/>
+            <edit name="funcaction" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="parainfo" id="parainfo" label="功能参数信息">
+            <view type="write"/>
+            <edit name="parainfo" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="ischeck" id="ischeck" label="ischeck">
+            <view type="write"/>
+            <edit name="ischeck" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="functype" id="functype" label="功能类型">
+            <view type="write"/>
+            <edit name="functype" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="ismenu" id="ismenu" label="是否菜单">
+            <view type="write"/>
+            <edit name="ismenu" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="app_id" id="app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="appId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenant_id" id="tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.subcount" id="appFuncgroup.subcount" label="subcount">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Int" dict="false" entityField="appFuncgroup.grouplevel" id="appFuncgroup.grouplevel" label="grouplevel">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.app_id" id="appFuncgroup.app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.funcgroupseq" id="appFuncgroup.funcgroupseq" label="funcgroupseq">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.isleaf" id="appFuncgroup.isleaf" label="isleaf">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.funcgroupid" id="appFuncgroup.funcgroupid" label="funcgroupid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.tenant_id" id="appFuncgroup.tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.appid" id="appFuncgroup.appid" label="appid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFuncgroup.funcgroupname" id="appFuncgroup.funcgroupname" label="funcgroupname">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFuncgroup.parentgroup" id="appFuncgroup.parentgroup" label="parentgroup">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+    </viewModel>
+    <viewModel author="蔡述尧" displayName="AppFuncresource" entityName="org.gocom.components.coframe.framework.application.AppFuncresource" id="AppFuncresource">
+        <field dataType="Decimal" dict="false" entityField="resid" id="resid" label="资源编号">
+            <view type="write"/>
+            <edit name="resid" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="funccode" id="funccode" label="功能编号">
+            <view type="write"/>
+            <edit name="funccode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="restype" id="restype" label="资源类型">
+            <view type="write"/>
+            <edit name="restype" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="respath" id="respath" label="资源路径">
+            <view type="write"/>
+            <edit name="respath" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="compackname" id="compackname" label="所属构件包">
+            <view type="write"/>
+            <edit name="compackname" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="resname" id="resname" label="资源名称">
+            <view type="write"/>
+            <edit name="resname" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="app_id" id="app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="appId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenant_id" id="tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.ismenu" id="appFunction.ismenu" label="ismenu">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.functype" id="appFunction.functype" label="functype">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.parainfo" id="appFunction.parainfo" label="parainfo">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.ischeck" id="appFunction.ischeck" label="ischeck">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.app_id" id="appFunction.app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.funccode" id="appFunction.funccode" label="funccode">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="appFunction.funcgroupid" id="appFunction.funcgroupid" label="funcgroupid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.funcdesc" id="appFunction.funcdesc" label="funcdesc">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.funcname" id="appFunction.funcname" label="funcname">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.tenant_id" id="appFunction.tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appFunction.funcaction" id="appFunction.funcaction" label="funcaction">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+    </viewModel>
+    <viewModel author="蔡述尧" displayName="AppApplication" entityName="org.gocom.components.coframe.framework.application.AppApplication" id="AppApplication">
+        <field dataType="Decimal" dict="false" entityField="appid" id="appid" label="应用程序编号">
+            <view type="write"/>
+            <edit name="appid" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appcode" id="appcode" label="应用程序代码">
+            <view type="write"/>
+            <edit name="appcode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appname" id="appname" label="应用程序名称">
+            <view type="write"/>
+            <edit name="appname" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="apptype" id="apptype" label="应用程序类型">
+            <view type="write"/>
+            <edit name="apptype" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="isopen" id="isopen" label="是否开通">
+            <view type="write"/>
+            <edit name="isopen" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="opendate" id="opendate" label="开通日期">
+            <view type="write"/>
+            <edit name="opendate" type="date"/>
+        </field>
+        <field dataType="String" dict="false" entityField="url" id="url" label="应用上下文">
+            <view type="write"/>
+            <edit name="url" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="appdesc" id="appdesc" label="应用程序描述">
+            <view type="write"/>
+            <edit name="appdesc" type="text"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="maintenance" id="maintenance" label="maintenance">
+            <view type="write"/>
+            <edit name="maintenance" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="manarole" id="manarole" label="manarole">
+            <view type="write"/>
+            <edit name="manarole" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="demo" id="demo" label="demo">
+            <view type="write"/>
+            <edit name="demo" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="iniwp" id="iniwp" label="iniwp">
+            <view type="write"/>
+            <edit name="iniwp" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="intaskcenter" id="intaskcenter" label="intaskcenter">
+            <view type="write"/>
+            <edit name="intaskcenter" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="ipaddr" id="ipaddr" label="应用程序IP">
+            <view type="write"/>
+            <edit name="ipaddr" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="ipport" id="ipport" label="应用程序端口">
+            <view type="write"/>
+            <edit name="ipport" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="app_id" id="app_id" label="应用信息">
+            <view type="write"/>
+            <edit name="appId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenant_id" id="tenant_id" label="租户信息">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="protocoltype" id="protocoltype" label="协议类型">
+            <view type="write"/>
+            <edit name="property0" type="text"/>
+        </field>
+    </viewModel>
+</viewModelSet>

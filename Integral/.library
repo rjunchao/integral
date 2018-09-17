@@ -1,0 +1,47 @@
+<list>
+  <library>
+    <path>RichWebLibrary#com.primeton.studio.workbench</path>
+    <kind>file</kind>
+    <type>4</type>
+    <isDefault>true</isDefault>
+    <loaded>true</loaded>
+    <displayName>富页面框架</displayName>
+    <name>RichWebLibrary</name>
+  </library>
+  <library>
+    <path>FoundationLibrary#com.primeton.studio.workbench</path>
+    <kind>file</kind>
+    <type>4</type>
+    <isDefault>true</isDefault>
+    <loaded>true</loaded>
+    <displayName>基础构件库</displayName>
+    <name>FoundationLibrary</name>
+  </library>
+  <library>
+    <path>WorkflowLibrary#com.primeton.studio.workflow.ui4eos</path>
+    <kind>file</kind>
+    <type>4</type>
+    <isDefault>true</isDefault>
+    <loaded>true</loaded>
+    <displayName>BPS 基础构件库</displayName>
+    <name>WorkflowLibrary</name>
+  </library>
+  <library>
+    <path>E:/work/Ronhe/doc/三合一/部署包/VBMCommon.ecd</path>
+    <kind>file</kind>
+    <type>1</type>
+    <isDefault>false</isDefault>
+    <loaded>false</loaded>
+    <displayName>E:/work/Ronhe/doc/三合一/部署包/VBMCommon.ecd</displayName>
+    <name>VBMCommon</name>
+  </library>
+  <library>
+    <path>E:/work/Ronhe/doc/三合一/部署包/部署包基础文件/nui-doc and demo-3.0.1/nui-3.0.1/examples/nui-demo4eos.ecd</path>
+    <kind>file</kind>
+    <type>1</type>
+    <isDefault>false</isDefault>
+    <loaded>false</loaded>
+    <displayName>E:/work/Ronhe/doc/三合一/部署包/部署包基础文件/nui-doc and demo-3.0.1/nui-3.0.1/examples/nui-demo4eos.ecd</displayName>
+    <name>nui-demo4eos</name>
+  </library>
+</list>

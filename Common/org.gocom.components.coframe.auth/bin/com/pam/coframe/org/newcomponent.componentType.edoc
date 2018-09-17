@@ -1,0 +1,18 @@
+<map>
+  <entry>
+    <string>com.pam.coframe.org.newcomponent.queryEmployee(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryEmployee&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryEmployee&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.pam.coframe.org.newcomponent.queryEmployee&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;empType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;emps(org.gocom.components.coframe.auth.queryentity.QueryEmployee[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>newcomponent</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;newcomponent.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;newcomponent&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.pam.coframe.org.newcomponent&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.pam.coframe.org.newcomponent.organizationname(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;organizationname&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;organizationname&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.pam.coframe.org.newcomponent.organizationname&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;pType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgs(org.gocom.components.coframe.auth.queryentity.OrgOrganization[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.pam.coframe.org.newcomponent.organization(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;organization&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;organization&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.pam.coframe.org.newcomponent.organization&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;pType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgs(org.gocom.components.coframe.auth.queryentity.OrgOrganization[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

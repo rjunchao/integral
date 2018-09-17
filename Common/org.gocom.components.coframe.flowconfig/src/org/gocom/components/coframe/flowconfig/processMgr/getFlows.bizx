@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="getFlows.bizx" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="6.3">
+  <nodes xsi:type="model:Note" id="node0" name="注释" displayName="注释" nodeType="note" type="note" content="查询所有流程配置信息" title="wanghl&#x9;13-3-13 下午6:53">
+    <location x="137" y="270"/>
+    <size height="100" width="149"/>
+  </nodes>
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" nodeType="common" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>invokeSpring1</targetNode>
+    </sourceConnections>
+    <location x="135" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end0" name="结束" displayName="结束" nodeType="common" type="end">
+    <targetConnections>link3</targetConnections>
+    <location x="525" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end0label</nodeLabel>
+    <process:returns>
+      <process:return id="0" language="java.util.List" name="data" type="query" valueType="Java">data</process:return>
+      <process:return id="1" language="Int" name="total" type="query" valueType="Primitive">total</process:return>
+    </process:returns>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="137" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" displayName="label" nodeType="label">
+    <location x="527" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokeSpring0" name="查询流程配置信息" displayName="getProcInfos" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link3" name="link3" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokeSpring0</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link5</targetConnections>
+    <location x="389" y="149"/>
+    <size height="28" width="28"/>
+    <nodeLabel>invokeSpring0label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.flowconfig.FlowConfigService.getProcInfos</process:partner>
+      <process:instance instanceName="FlowConfigServiceBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="criteriaType" type="query" value="com.eos.das.entity.criteria.CriteriaType" valueType="Java" pattern="reference">criteria</process:inputVariable>
+      <process:inputVariable id="1" name="pageCond" type="query" value="com.primeton.workflow.api.PageCond" valueType="Java" pattern="reference">page</process:inputVariable>
+      <process:inputVariable id="2" name="sortField" type="query" value="java.lang.String" valueType="Java" pattern="reference">sortField</process:inputVariable>
+      <process:inputVariable id="3" name="sortOrder" type="query" value="java.lang.String" valueType="Java" pattern="reference">sortOrder</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="java.util.List" valueType="Java">data</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring0label" name="label" nodeType="label">
+    <location x="355" y="185"/>
+    <figSize height="17" width="97"/>
+    <node>invokeSpring0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokeSpring1" name="获取流程信息数目" displayName="countWfprocessdefines" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link5" name="link5" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokeSpring1</sourceNode>
+      <targetNode>invokeSpring0</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="250" y="149"/>
+    <size height="28" width="28"/>
+    <nodeLabel>invokeSpring1label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.flowconfig.FlowConfigService.countWfprocessdefines</process:partner>
+      <process:instance instanceName="FlowConfigServiceBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="criteria" type="query" value="com.eos.das.entity.criteria.CriteriaType" valueType="Java" pattern="reference">criteria</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="int" valueType="Java">total</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring1label" name="label" nodeType="label">
+    <location x="216" y="185"/>
+    <figSize height="17" width="97"/>
+    <node>invokeSpring1</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="wanghl" createTime="2013-03-01 13:35:23" date="2013-03-01Z" description="" name="getFlows" version="6.3"/>
+  <process:variables/>
+  <process:inputs varArgs="false">
+    <process:input description="" isArray="false" modelType="com.primeton.das.criteria.criteriaType" name="criteria"/>
+    <process:input description="" isArray="false" name="sortField" primitiveType="String"/>
+    <process:input description="" isArray="false" name="sortOrder" primitiveType="String"/>
+    <process:input anyType="com.primeton.workflow.api.PageCond" description="" isArray="false" name="page"/>
+  </process:inputs>
+  <process:outputs>
+    <process:output anyType="java.util.List" description="" isArray="false" name="data"/>
+    <process:output description="" isArray="false" name="total" primitiveType="Int"/>
+  </process:outputs>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

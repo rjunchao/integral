@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>position</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;position.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;position&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.position.position&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.position.position.addposition(com.vbm.grc.basic.vo.PositionVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addposition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addposition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.position.position.addposition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.PositionVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.position.position.delposition(com.vbm.grc.basic.vo.PositionVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;delposition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;delposition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.position.position.delposition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.PositionVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.position.position.updateposition(com.vbm.grc.basic.vo.PositionVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateposition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateposition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.position.position.updateposition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.PositionVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.position.position.positionlist(com.eos.foundation.PageCond, java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;positionlist&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;positionlist&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.position.position.positionlist&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.PositionVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.position.position.validateCode(com.vbm.grc.basic.vo.PositionVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;validateCode&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;validateCode&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.position.position.validateCode&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.PositionVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;count(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

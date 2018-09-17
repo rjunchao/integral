@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<viewModelSet author="wangwx" displayName="entity" id="org.gocom.components.coframe.flowconfig.flowconfigEntity">
+    <viewModel author="wanghl" displayName="CapRule" entityName="org.gocom.components.coframe.flowconfig.flowconfigEntity.CapRule" id="CapRule">
+        <field dataType="String" dict="false" id="ruleId" label="ruleId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="ruleName" label="ruleName">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="tenantId" label="tenantId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="ruleType" label="ruleType">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="namespace" label="namespace">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Bytes" dict="false" id="ruleExpression" label="ruleExpression">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="createuser" label="createuser">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" id="createtime" label="createtime">
+            <view type="write"/>
+            <edit name="" type="date"/>
+        </field>
+    </viewModel>
+</viewModelSet>

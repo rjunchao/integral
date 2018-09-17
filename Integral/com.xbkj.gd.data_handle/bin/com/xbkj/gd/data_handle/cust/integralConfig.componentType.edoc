@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralConfig.deleteConfig(com.xbkj.gd.integral.vos.IntegralConfigVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteConfig&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteConfig&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralConfig.deleteConfig&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.IntegralConfigVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralConfig.updateConfig(com.xbkj.gd.integral.vos.IntegralConfigVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateConfig&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateConfig&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralConfig.updateConfig&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.IntegralConfigVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralConfig.addConfig(com.xbkj.gd.integral.vos.IntegralConfigVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addConfig&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addConfig&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralConfig.addConfig&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.IntegralConfigVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralConfig.queryAddIntegralConfig(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryAddIntegralConfig&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryAddIntegralConfig&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralConfig.queryAddIntegralConfig&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.IntegralConfigVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralConfig.configQuery(Int)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;configQuery&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;configQuery&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralConfig.configQuery&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;integral_type(Int):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.ComboboxVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>in</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;integralConfig.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;in&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralConfig&lt;/html&gt;</string>
+  </entry>
+</map>

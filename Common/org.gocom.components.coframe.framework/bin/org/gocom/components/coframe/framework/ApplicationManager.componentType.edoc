@@ -1,0 +1,42 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.queryApplicationTree()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryApplicationTree&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryApplicationTree&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.queryApplicationTree&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.getApplication(org.gocom.components.coframe.framework.application.AppApplication)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getApplication&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getApplication&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.getApplication&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.framework.application.AppApplication):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appapplication(org.gocom.components.coframe.framework.application.AppApplication):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.deleteApplication(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteApplication&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteApplicaiton&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.deleteApplication&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;nodeType(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.deleteApplicationNodes(java.util.List)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteApplicationNodes&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteApplication&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.deleteApplicationNodes&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodes(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.updateApplication(org.gocom.components.coframe.framework.application.AppApplication)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateApplication&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateApplication&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.updateApplication&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appapplication(org.gocom.components.coframe.framework.application.AppApplication):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.saveApplication(org.gocom.components.coframe.framework.application.AppApplication)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveApplication&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveApplication&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.saveApplication&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appapplication(org.gocom.components.coframe.framework.application.AppApplication):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>ApplicationManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;ApplicationManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;ApplicationManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.queryApplicationTreeNode(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryApplicationTreeNode&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryApplicationTreeNode&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.queryApplicationTreeNode&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.deleteApplications(commonj.sdo.DataObject[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteApplications&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteApplication&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.deleteApplications&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodes(commonj.sdo.DataObject[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.ApplicationManager.queryApplication(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryApplication&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryApplication&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.ApplicationManager.queryApplication&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.framework.application.AppApplication[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

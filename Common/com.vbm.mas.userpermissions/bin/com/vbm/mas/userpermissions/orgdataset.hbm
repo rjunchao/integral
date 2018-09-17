@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="com.vbm.mas.userpermissions.orgdataset.FcUserPermissions" table="MAS_USER_PERMISSIONS">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="pk" type="string">
+            <column length="32" name="PK"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="orgid" type="int">
+            <column length="10" name="ORGID"/>
+        </property>
+        <property name="empid" type="int">
+            <column length="10" name="EMPID"/>
+        </property>
+        <property name="userid" type="string">
+            <column length="30" name="USERID"/>
+        </property>
+        <property name="porgid" type="int">
+            <column length="10" name="PORGID"/>
+        </property>
+    </class>
+</hibernate-mapping>

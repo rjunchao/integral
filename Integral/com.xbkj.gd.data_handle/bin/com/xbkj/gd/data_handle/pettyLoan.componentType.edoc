@@ -1,0 +1,18 @@
+<map>
+  <entry>
+    <string>pettyLoan</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;pettyLoan.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;pettyLoan&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.pettyLoan&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.pettyLoan.get(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;get&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;get&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.pettyLoan.get&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.vos.PettyLoanVO):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.pettyLoan.add(com.xbkj.gd.vos.PettyLoanVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;add&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;query&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.pettyLoan.add&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.vos.PettyLoanVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.pettyLoan.del(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;del&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;del&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.pettyLoan.del&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

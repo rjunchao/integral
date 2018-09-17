@@ -1,0 +1,77 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sca="http://www.springframework.org/schema/sca"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/sca http://www.osoa.org/xmlns/sca/1.0/spring-sca.xsd">
+	<bean id="PartyAuthGraphService"
+		class="org.gocom.components.coframe.auth.party.graph.PartyGraphServiceBean">
+	</bean>
+	<bean id="MenuPreviewService"
+		class="org.gocom.components.coframe.auth.menu.graph.FunctionMenuPreviewBean">
+	</bean>
+	<bean id="PartyAuthService"
+		class="org.gocom.components.coframe.auth.partyauth.PartyAuthService">
+	</bean>
+	
+	<bean id="PartyAuthServiceBean"
+		parent="DefaultBaseTransactionProxy">
+		<property name="proxyInterfaces">
+			<list>
+				<value>
+					org.gocom.components.coframe.auth.partyauth.IPartyAuthService
+				</value>
+			</list>
+		</property>
+		<property name="target" ref="PartyAuthService" />
+	</bean>
+	
+	<bean id="LDAPAuthenticatorBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.auth.ldap.ILDAPAuthenticator</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.auth.ldap.LDAPAuthenticator">
+            </bean>
+        </property>
+    </bean>
+    <bean class="org.gocom.components.coframe.auth.login.LoginService" id="LoginServiceBean"/>
+    
+    	<bean id="DefaultOrgRoleManangerBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list/>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.auth.party.manager.DefaultOrgRoleMananger">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="DefaultRoleManagerBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list/>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.auth.party.manager.DefaultRoleManager">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="DefaultUserManagerBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list/>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.auth.party.manager.DefaultUserManager">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    
+</beans>

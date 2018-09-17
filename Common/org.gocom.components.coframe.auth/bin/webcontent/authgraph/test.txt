@@ -1,0 +1,16 @@
+{
+	graph:{
+		partyNodes:[
+			{partyId:"zhangsan",partyType:"user",partyName:"张三",nodeId:"zhangsan_user",partyNodeIds:["shanghai_org","jingli_position","ui_group_group"],roleNodeIds:["sysadmin_role"]},
+			{partyId:"shanghai",partyType:"org",partyName:"上海分公司",nodeId:"shanghai_org",partyNodeIds:[],roleNodeIds:["org_mgr_role"]},
+			{partyId:"jingli",partyType:"position",partyName:"部门经理",nodeId:"jingli_position",partyNodeIds:[],roleNodeIds:["org_mgr_role","flow_mgr_role","org_jingli_duty"]},
+			{partyId:"org_jingli",partyType:"duty",partyName:"部门经理",nodeId:"org_jingli_duty",partyNodeIds:[],roleNodeIds:[]},
+			{partyId:"ui_group",partyType:"group",partyName:"UI项目组",nodeId:"ui_group_group",partyNodeIds:[],roleNodeIds:[]}
+		],
+		roleNodes:[
+			{partyId:"sysadmin",partyType:"role",partyName:"系统管理员",nodeId:"sysadmin_role"},
+			{partyId:"org_mgr",partyType:"role",partyName:"机构管理员",nodeId:"org_mgr_role"},
+			{partyId:"flow_mgr",partyType:"role",partyName:"流程管理员",nodeId:"flow_mgr_role"}
+		]
+	}
+}

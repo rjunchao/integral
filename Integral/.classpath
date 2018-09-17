@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.primeton.studio.workflow.bpsPath"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/unoil-3.0.1.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/tlbimp.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/slf4j-jdk14-1.5.6.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jodconverter-2.2.2.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/fw.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Common"/>
+	<classpathentry kind="con" path="com.primeton.studio.workbench.libraries"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jxls-core-1.0.6.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/commons-jexl-2.1.1.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/basic.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jurt-3.0.1.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/xstream-1.3.1.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jxls-reader-1.0.6.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jodconverter-cli-2.2.2.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/args4j-2.0.1.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/ridl-3.0.1.jar"/>
+	<classpathentry kind="con" path="com.primeton.cap.studio.workbench.serverPath"/>
+	<classpathentry kind="con" path="com.primeton.studio.workbench.serverPath"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/slf4j-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/com4j.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/juh-3.0.1.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="con" path="com.primeton.studio.workbench.classPath"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="com.xbkj.basic/bin" path="com.xbkj.basic/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="com.xbkj.common/bin" path="com.xbkj.common/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="com.xbkj.gd.data_handle/bin" path="com.xbkj.gd.data_handle/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="com.xbkj.system/bin" path="com.xbkj.system/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

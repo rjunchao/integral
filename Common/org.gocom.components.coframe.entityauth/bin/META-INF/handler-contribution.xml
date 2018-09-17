@@ -1,0 +1,4 @@
+<handlers>
+	<handler handle-class="org.gocom.components.coframe.entityauth.handler.EntityContributionListener"/>
+	<handler handle-class="org.gocom.components.coframe.entityauth.handler.EntityAuthContributionHandler"/>
+</handlers>

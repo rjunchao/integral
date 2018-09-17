@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralNew.vipIntegralQuery(com.xbkj.gd.integral.vos.CustomerVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;vipIntegralQuery&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew.vipIntegralQuery&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.CustomerVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;count(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>integralNew</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;integralNew.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;integralNew&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralNew.exchangeIntegral(com.xbkj.gd.integral.vos.IntegralDetailVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;exchangeIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;exchangeIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew.exchangeIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.IntegralDetailVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;积分兑换&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralNew.addIntegral(com.xbkj.gd.integral.vos.IntegralDetailVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew.addIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.IntegralDetailVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;积分添加&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralNew.vipIntegral(com.xbkj.gd.integral.vos.IntegralDetailVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew.vipIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.IntegralDetailVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;vip积分赠送&lt;/html&gt;</string>
+  </entry>
+</map>

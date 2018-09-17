@@ -1,0 +1,1486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="GRC" default="compiler" basedir=".">
+	<property file="eosbuild.properties"/>
+	<property file="BuildLog.properties"/>
+	<mkdir dir=""/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.rcsa"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.regulation"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.flow"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.common"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.basic"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.system"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.excel"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.ldc"/>
+	
+	<mkdir dir="${project.root}\temp.folder\@dot.bin\com.vbm.grc.run"/>
+	
+	<!-- Compiler settings. -->
+	<property name="javacFailOnError" value="true"/>
+	<property name="javacDebugInfo" value="on"/>
+	<property name="javacVerbose" value="false"/>
+	<property name="logExtension" value=".log"/>
+	<property name="compilerArg" value=""/>
+	<property name="javacSource" value="1.5"/>
+	<property name="javacTarget" value="1.5"/>
+	<path id="path_bootclasspath">
+		<fileset dir="${java.home}/lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<property name="bootclasspath" refid="path_bootclasspath"/>
+	<property name="bundleJavacSource" value="${javacSource}"/>
+	<property name="bundleJavacTarget" value="${javacTarget}"/>
+	<property name="bundleBootClasspath" value="${bootclasspath}"/>
+
+	<target name="init">
+		<property name="build.result.folder" value="${basedir}"/>
+		<property name="temp.folder" value="${basedir}\temp.folder"/>
+	</target>
+
+	<taskdef name="eoscompiler"  classname="com.primeton.studio.assembly.core.task.ModelFactoryRegistryTask" >
+		<classpath>
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0\server\3rd\wsdl">
+					<include name="*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+			        <include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.rcsa" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.regulation" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.flow" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.common" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.basic" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.system" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.excel" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.ldc" />
+		
+			<pathelement location="${project.root}\temp.folder\@dot.bin\com.vbm.grc.run" />
+		
+
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.sca_5.0.0.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.assembly.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.component.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.sca.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.wsdl.core_5.0.0.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.component.java.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.entity.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.xsd.core_5.0.0.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.pageflow.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.sql.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.emf.core_5.0.0.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.core_5.0.0.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.biz.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.jsp.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.workflow.core_6.7.1.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.spring.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.spring.component.core_7.0.2.0.jar" />
+			<pathelement location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.ear.core_7.0.2.0" />
+			
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.equinox.common_3.6.100.v20120522-1841.jar" />
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.equinox.preferences_3.5.1.v20121031-182809.jar" />
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar" />
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.core.runtime_3.8.0.v20120912-155025.jar" />
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.osgi_3.8.2.v20130124-134944.jar" />
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.core.resources_3.8.1.v20121114-124432.jar" />
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.core.jobs_3.5.300.v20120912-155018.jar" />
+			<pathelement location="${eclipse.home}\plugins\org.eclipse.jdt.core_3.8.3.v20130121-145325.jar" />
+			
+
+			<pathelement location="${eclipse.home}\..\WTP-1.5.1\eclipse\plugins\org.eclipse.wst.wsdl_1.2.300.v201109010430.jar" />
+			
+
+			
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+
+		</classpath>
+	</taskdef>
+
+	<target name="compiler" depends="init">
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.rcsa"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.regulation"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.flow"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.common"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.basic"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.system"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.excel"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.ldc"/>
+	
+		<ant antfile="build.xml" target="build.com.vbm.grc.run"/>
+	
+		<eoscompiler targetDir="${temp.folder}\@dot.bin" logFile="${temp.folder}\log.txt" level="ignore">
+			<factory className="com.primeton.studio.entity.core.DatasetModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.xsd.core.XSDModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.sql.core.NamingSqlModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.pageflow.core.PfModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.biz.core.BizModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.component.java.core.bizlet.BizletModelFactoryForAssemble" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.sca.core.CompositeModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.workflow.core.WorkFlowModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.wsdl.core.WSDLModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.component.core.ComponentTypeModelFactory" priority="80">
+			</factory>
+			<factory className="com.primeton.studio.component.core.EOSComponentTypeModelFactory" priority="100">
+			</factory>
+			<factory className="com.primeton.studio.spring.core.SpringModelFactory" priority="100">
+			</factory>
+			<creator className="com.primeton.emf.component.core.index.ServiceIndexKeyCreator" id="service">
+			</creator>
+			<creator className="com.primeton.studio.biz.core.index.BizIndexKeyCreator" id="biz">
+			</creator>
+			<creator className="com.primeton.emf.component.core.index.EOSComponentIndexKeyCreator" id="eos_component">
+			</creator>
+			<creator className="com.primeton.emf.component.core.index.CompositeIndexKeyCreator" id="composite">
+			</creator>
+			<creator className="com.primeton.emf.component.core.index.WSDLIndexKeyCreator" id="wsdl">
+			</creator>
+			<creator className="com.primeton.studio.component.java.core.index.BizletClassIndexKeyCreator" id="bizlet_class">
+			</creator>
+			<creator className="com.primeton.studio.component.java.core.index.BizletMethodIndexKeyCreator" id="bizlet_method">
+			</creator>
+			<creator className="com.primeton.studio.component.java.core.index.JavaClassIndexKeyCreator" id="java_class">
+			</creator>
+			<creator className="com.primeton.studio.component.java.core.index.JavaMethodIndexKeyCreator" id="java_method">
+			</creator>
+			<creator className="com.primeton.studio.entity.core.index.DatasetIndexKeyCreator" id="dataset">
+			</creator>
+			<creator className="com.primeton.studio.entity.core.index.EntityIndexKeyCreator" id="entity">
+			</creator>
+			<creator className="com.primeton.studio.xsd.core.index.XSDIndexKeyCreator" id="xsd">
+			</creator>
+			<creator className="com.primeton.studio.jsp.core.index.PageResourceIndexKeyCreator" id="page_resource">
+			</creator>
+			<creator className="com.primeton.studio.pageflow.core.index.PageflowIndexKeyCreator" id="page_flow">
+			</creator>
+			<creator className="com.primeton.studio.spring.component.core.SpringBeanIndexKeyCreator" id="page_flow">
+			</creator>
+			<creator className="com.primeton.studio.spring.component.core.SpringFileIndexKeyCreator" id="page_flow">
+			</creator>
+
+			
+			<library path="FoundationLibrary#com.primeton.studio.workbench" location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.workbench.config_7.0.2.0/lib/server-eos-foundation.ecd"/>
+				
+			<library path="WorkflowLibrary#com.primeton.studio.workflow.ui4eos" location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.workflow.ui4eos_6.7.1.0/lib/bps-user-component.ecd"/>
+				
+			<library path="RichWebLibrary#com.primeton.studio.workbench" location="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.workbench.config_7.0.2.0/lib/server-eos-richweb.ecd"/>
+				
+			<project path="${project.root}" >
+			</project>
+		</eoscompiler>
+
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.rcsa"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.regulation"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.flow"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.common"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.basic"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.system"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.excel"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.ldc"/>
+		</ant>
+	
+		<ant antfile="build.xml" target="build.contribution.jar">
+			<property name="contribution" value="com.vbm.grc.run"/>
+		</ant>
+	
+
+		<ant antfile="build.xml" target="build.contribution.ecd"/>
+	</target>
+
+	<target name="build.contribution.ecd" >
+		<jar destfile="${temp.folder}\${project.name}.ecd">
+			<fileset dir="${temp.folder}\@dot.ecd"/>
+			<fileset dir="${project.root}" includes="**/eos-web/**"/>
+		</jar>
+	</target>
+
+	<target name="build.contribution.jar" >
+		<manifest file="${temp.folder}/@dot.bin/${contribution}/META-INF/MANIFEST.MF" mode="update">
+		</manifest>
+
+		<jar destfile="${temp.folder}/@dot.ecd/${contribution}.jar" manifestencoding="UTF-8" manifest="${temp.folder}/@dot.bin/${contribution}/META-INF/MANIFEST.MF">
+			<fileset dir="${temp.folder}/@dot.bin/${contribution}"/>
+		</jar>
+	</target>
+	<target name="build.com.vbm.grc.rcsa" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.rcsa"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.rcsa"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.rcsa" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.rcsa/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.rcsa${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.rcsa" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.rcsa/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.regulation" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.regulation"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.regulation"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.regulation" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.regulation/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.regulation${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.regulation" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.regulation/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.flow" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.flow"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.flow"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.flow" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.flow/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.flow${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.flow" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.flow/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.common" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.common"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.common"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.common" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.common/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.common${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.common" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.common/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.basic" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.basic"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.basic"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.basic" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.basic/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.basic${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.basic" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.basic/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.system" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.system"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.system"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.system" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.system/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.system${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.system" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.system/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.excel" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.excel"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.excel"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.excel" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.excel/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.excel${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.excel" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.excel/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.ldc" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.ldc"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.ldc"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.ldc" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.ldc/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.ldc${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.ldc" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.ldc/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="build.com.vbm.grc.run" depends="init">
+		<delete dir="${temp.folder}/@dot.bin/com.vbm.grc.run"/>
+		<mkdir dir="${temp.folder}/@dot.bin/com.vbm.grc.run"/>
+		<mkdir dir="${temp.folder}/@dot.ecd/"/>
+		<path id="@dot.classpath">
+			<pathelement path="./lib/bizlet_annotation.jar"/>
+			<pathelement location="${eclipse.home}\plugins\org.junit4_4.1.0.1\junit-4.1.jar" />
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.server.library_7.0.2.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.runtime_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\eostools\eclipse\plugins\com.primeton.studio.library_5.0.0.0">
+					<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${eclipse.home}\..\bpstools\eclipse\plugins\">
+				<include name="**/*.jar" />
+			</fileset>
+
+			<pathelement path="temp.folder\@dot.bin\com.primeton.eos.richweb"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.foundation"/>
+			<pathelement path="temp.folder\@dot.bin\com.eos.workflow"/>
+			<fileset dir="../VBMCommon/temp.folder/@dot.ecd/">
+					<include name="**/*.jar"/>
+			</fileset>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jcommon-1.0.23.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\xstream-1.3.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\fw.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-jdk14-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\pubuapcache.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-cli-1.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-logging-1.1.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jurt-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\com4j.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jxl.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\unoil-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jfreechart-1.0.19.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\xmlbeans-2.3.0.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\commons-dbutils-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\commons-io-1.4.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\log.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-schemas-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\coframe-resource-loader.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\poi-ooxml-3.8-20120326.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\args4j-2.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\tlbimp.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\jodconverter-cli-2.2.2.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\ridl-3.0.1.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\log4j-1.2.15.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\VBMCommon\eos-web\WEB-INF\lib\basic.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\slf4j-api-1.5.6.jar"/>
+	
+			<pathelement path="E:\ronhe\work\workspace\grc\GRC\eos-web\WEB-INF\lib\juh-3.0.1.jar"/>
+	
+		</path>
+
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/@dot.bin/com.vbm.grc.run" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="com.vbm.grc.run/src/" />
+			
+			<compilerarg line="-log '${temp.folder}/@dot.bin/com.vbm.grc.run${logExtension}'" compiler="${build.compiler}"/>
+		</javac>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/@dot.bin/com.vbm.grc.run" failonerror="true" overwrite="false">
+			
+			<fileset dir="com.vbm.grc.run/src">
+				<exclude name="**/*.java, **/package.htm*,**/MATA-INF/sca-contribution.xml"/>
+				<exclude name="**/*.SpringXml"/>
+				<exclude name="**/*.bizlet"/>
+				<exclude name="**/*.bizx"/>
+				<exclude name="**/*.bpsdirx"/>
+				<exclude name="**/*.bpsrelyx"/>
+				<exclude name="**/*.bpsresx"/>
+				<exclude name="**/*.componentType"/>
+				<exclude name="**/*.compositex"/>
+				<exclude name="**/*.datasetx"/>
+				<exclude name="**/*.eosComponentType"/>
+				<exclude name="**/*.flowx"/>
+				<exclude name="**/*.java"/>
+				<exclude name="**/*.namingsqlx"/>
+				<exclude name="**/*.workflowx"/>
+				<exclude name="**/*.wsdl"/>
+				<exclude name="**/*.xsd"/>
+				
+			</fileset>
+
+			
+		</copy>
+
+	</target>
+	<target name="clean" depends="init" description="Clean the EOS Project: ${project.name} of all the zips, jars and logs created.">
+		<delete dir="${temp.folder}"/>
+	</target>
+
+</project>

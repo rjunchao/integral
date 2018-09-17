@@ -1,0 +1,34 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FuncGroupManager.getFuncGroup(org.gocom.components.coframe.framework.application.AppFuncgroup)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFuncGroup&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager.getFuncGroup&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.framework.application.AppFuncgroup):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appfuncgroup(org.gocom.components.coframe.framework.application.AppFuncgroup):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FuncGroupManager.saveFuncGroup(org.gocom.components.coframe.framework.application.AppFuncgroup)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveFuncGroup&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager.saveFuncGroup&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appfuncgroup(org.gocom.components.coframe.framework.application.AppFuncgroup):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FuncGroupManager.updateFuncGroup(org.gocom.components.coframe.framework.application.AppFuncgroup)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateFuncGroup&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager.updateFuncGroup&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appfuncgroup(org.gocom.components.coframe.framework.application.AppFuncgroup):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>FuncGroupManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;FuncGroupManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;FuncGroupManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FuncGroupManager.saveSubFuncGroup(org.gocom.components.coframe.framework.application.AppFuncgroup)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveSubFuncGroup&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager.saveSubFuncGroup&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appfuncgroup(org.gocom.components.coframe.framework.application.AppFuncgroup):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FuncGroupManager.updateFuncGroupRelation(String, String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateFuncGroupRelation&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateFuncGroupRelation&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager.updateFuncGroupRelation&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;nodeType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;targetNodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;targetNodeType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(Boolean):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FuncGroupManager.querySubFuncGroup(com.eos.foundation.PageCond, com.primeton.das.criteria.criteriaType, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;querySubFuncGroup&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;querySubFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager.querySubFuncGroup&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;parentgroupid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.framework.application.AppFuncgroup[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FuncGroupManager.queryFuncGroup(com.eos.foundation.PageCond, com.primeton.das.criteria.criteriaType, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryFuncGroup&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryFunctionGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FuncGroupManager.queryFuncGroup&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;appid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.framework.application.AppFuncgroup[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

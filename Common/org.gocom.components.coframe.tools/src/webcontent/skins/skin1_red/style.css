@@ -1,0 +1,20 @@
+@import '../../../../common/nui3.0/themes/gray/skin.css';
+body{
+	height:100%;
+	padding:0px;
+	margin:0px;
+}
+
+.nui-form-table {
+    background: none repeat scroll 0 0 #feecec;
+    border: 1px solid #9f9f9f;
+    border-collapse: collapse;
+}
+
+.nui-form-table td {
+    border: 1px solid #9f9f9f;
+}
+.nui-form-label {
+    background: none repeat scroll 0 0 #f3eded;
+    width:120px;
+}

@@ -1,0 +1,14 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.resource.module.moduleAuth.getModuleList(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getModuleList&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getModuleList&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.module.moduleAuth.getModuleList&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;moduleList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>模块权限</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;moduleAuth.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;模块权限&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.module.moduleAuth&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.resource.module.moduleAuth.saveModuleAuth(String, com.primeton.cap.auth.AuthResource[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveModuleAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;保存模块授权信息&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.module.moduleAuth.saveModuleAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;authRes(com.primeton.cap.auth.AuthResource[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;result(String):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;保存模块授权信息&lt;/html&gt;</string>
+  </entry>
+</map>

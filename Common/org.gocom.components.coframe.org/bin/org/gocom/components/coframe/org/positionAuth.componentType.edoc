@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>positionAuthnew</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;positionAuth.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;positionAuthnew&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.positionAuth&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.positionAuth.getPositionAuth(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getPositionAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获取岗位授权信息&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.positionAuth.getPositionAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;获取岗位授权信息&lt;/html&gt;</string>
+  </entry>
+</map>

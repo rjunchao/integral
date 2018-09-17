@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><use>
+    
+    <user id="003">
+        <id>003</id>
+        <userName>李四</userName>
+        <passWord>29</passWord>
+        <address>192.168.0.1.2</address>
+    </user>
+
+<user id="005">
+  <id>005</id>
+<userName>小明</userName>
+<passWord>23</passWord>
+<address>192.168.0.11</address>
+</user>
+<user id="-642509856"><id>-642509856</id><userName>王五</userName><passWord>27</passWord><address>192.168.0.1.6</address></user></use>

@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>partyauth</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;partyauth.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;partyauth&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.partyauth.partyauth&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.partyauth.partyauth.getAuthorizedRoleList(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getAuthorizedRoleList&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getAuthorizedRoleList&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.partyauth.partyauth.getAuthorizedRoleList&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;partyId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;authorizedRoleList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.partyauth.partyauth.deletePartyAuth(com.primeton.cap.party.Party[], com.primeton.cap.party.Party)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deletePartyAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addPartyAuth&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.partyauth.partyauth.deletePartyAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleList(com.primeton.cap.party.Party[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;party(com.primeton.cap.party.Party):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;result(Boolean):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.partyauth.partyauth.getUnauthorizedRoleList(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getUnauthorizedRoleList&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getAuthorizedRoleList&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.partyauth.partyauth.getUnauthorizedRoleList&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;partyId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;unauthorizedRoleList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.partyauth.partyauth.addPartyAuth(com.primeton.cap.party.Party[], com.primeton.cap.party.Party)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addPartyAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addPartyAuth&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.partyauth.partyauth.addPartyAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleList(com.primeton.cap.party.Party[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;party(com.primeton.cap.party.Party):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;result(Boolean):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

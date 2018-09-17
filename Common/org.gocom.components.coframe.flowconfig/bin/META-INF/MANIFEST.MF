@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Description: 流程配置框架，默认提供流程的业务�
+ �则配置
+Bundle-Name: 流程配置
+eos-webCtxPath: coframe/flowconfig
+Bundle-Vendor: 曹宗伟
+Bundle-SymbolicName: org.gocom.components.coframe.flowconfig
+Require-Bundle: com.eos.workflow,com.primeton.workflow.core,com.eos.fo
+ undation,com.primeton.eos.richweb,org.gocom.components.coframe.resour
+ ce
+Bundle-Version: 1.0.0
+

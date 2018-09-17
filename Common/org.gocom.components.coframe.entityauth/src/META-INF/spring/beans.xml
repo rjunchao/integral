@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:sca="http://www.springframework.org/schema/sca" xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/sca http://www.osoa.org/xmlns/sca/1.0/spring-sca.xsd">
+	
+	<bean id="entityServiceBean" parent="DefaultBaseTransactionProxy">
+		<property name="proxyInterfaces">
+			<list>
+				<value>org.gocom.components.coframe.entityauth.IEntityService</value>
+			</list>
+		</property>
+		<property name="target">
+			<bean id="entityService" class="org.gocom.components.coframe.entityauth.EntityService">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="entityCapRuleServiceBean" parent="DefaultBaseTransactionProxy">
+		<property name="proxyInterfaces">
+			<list>
+				<value>org.gocom.components.coframe.entityauth.IEntityCapRuleService</value>
+			</list>
+		</property>
+		<property name="target">
+			<bean id="entityCapRuleService" class="org.gocom.components.coframe.entityauth.EntityCapRuleService">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="entityAuthServiceBean" parent="DefaultBaseTransactionProxy">
+		<property name="proxyInterfaces">
+			<list>
+				<value>org.gocom.components.coframe.entityauth.IEntityAuthService</value>
+			</list>
+		</property>
+		<property name="target">
+			<bean id="entityAuthService" class="org.gocom.components.coframe.entityauth.EntityAuthService">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="valuePoolService"
+		class="org.gocom.components.coframe.entityauth.ValuePoolService">
+	</bean>
+</beans>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Description: 提供应用基础框架的权限认证和授权
+Bundle-Name: 认证授权
+eos-webCtxPath: coframe/auth
+Bundle-Vendor: 曹宗伟
+Bundle-SymbolicName: org.gocom.components.coframe.auth
+Require-Bundle: org.gocom.components.coframe.tools,com.eos.workflow,or
+ g.gocom.components.coframe.framework,com.primeton.workflow.core,com.e
+ os.foundation,org.gocom.components.coframe.rights,com.primeton.eos.ri
+ chweb
+Bundle-Version: 1.0
+

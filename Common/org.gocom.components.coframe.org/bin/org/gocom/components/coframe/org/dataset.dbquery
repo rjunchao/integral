@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QueryEntityList>
+    <QueryEntity name="org.gocom.components.coframe.org.dataset.QueryPositionEmp">
+        <config db="default" type="sql"><![CDATA[select emp.*, emppos.positionid
+from org_empposition emppos inner join org_employee emp
+on emppos.empid = emp.empid]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.org.dataset.QueryEmpUser">
+        <config db="default" type="sql"><![CDATA[select emp.*, cap_user.status
+from org_employee emp left join cap_user
+on emp.operatorid=cap_user.operator_id 
+inner join org_emporg emporg on emporg.empid=emp.empid]]></config>
+    </QueryEntity>
+</QueryEntityList>

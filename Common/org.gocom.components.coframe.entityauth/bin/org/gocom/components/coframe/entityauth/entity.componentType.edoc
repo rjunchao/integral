@@ -1,0 +1,18 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.entity.getEntityInfoProperties(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getEntityInfoProperties&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getEntityProperties&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.entity.getEntityInfoProperties&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;namespace(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;entityName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;propertyInfos(com.primeton.cap.spi.dataset.service.PropertyInfo[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.entity.getEntityInfos()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getEntityInfos&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getEntities&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.entity.getEntityInfos&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;entityInfos(com.primeton.cap.spi.dataset.service.EntityInfo[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.entityauth.entity.getEntityInfoPropertie(String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getEntityInfoPropertie&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getEntityProperties&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.entity.getEntityInfoPropertie&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;namespace(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;entityName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;propertyName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;propertyInfo(com.primeton.cap.spi.dataset.service.PropertyInfo):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>entity</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;entity.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;entity&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.entityauth.entity&lt;/html&gt;</string>
+  </entry>
+</map>

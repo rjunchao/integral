@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+/*reset*/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd, p, span, em, b, i, input, select, textarea{margin:0; padding:0;}
+body{font-size:12px; line-height:180%; font-family:Verdana, Simsun;}
+ul, li{list-style:none;}
+em, i{font-style:normal;}
+img{border:0;}
+a{text-decoration:none; color:#333;}
+a:hover{text-decoration:underline; color:#3DA2E1;}
+
+/*default*/
+.left{text-align:left;}
+.right{text-align:right;}
+.center{text-align:center;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{clear:both;}
+.clearfix:after{display:block; height:0; font-size:0; content:"."; clear:both;}
+.clearfix{*zoom:1;}
+
+html, body{height:100%;}
+body.login{background:#dcf8fb url(../images/body-bg.gif) center top repeat-x;}
+body.login .wrap{position:relative; width:100%; height:100%; min-width:1200px; min-height:580px;}
+.login .main{margin:0 auto; width:1200px; height:519px; background:url(../images/login-main-bg.jpg) no-repeat;}
+.login .foot{position:absolute; left:0; bottom:0; width:100%; height:58px; background:url(../images/login-foot-bg.gif) repeat-x;}
+.login .foot p{line-height:58px; text-align:center; color:#4b4b4b;}
+
+.login-box{padding:280px 0 0 450px; width:390px; height:215px;}
+.login-box h3{padding-left:60px; margin-bottom:15px; height:30px; letter-spacing:3px; font:18px/30px Simhei; color:#2aabd6;}
+.login-item{margin-bottom:10px; height:35px;}
+.login-item em{margin-right:2px; font:bold 14px/35px Simsun; color:#6c6c6c;}
+.login-item .mini-textbox-border{height:24px; vertical-align:middle; font:14px/25px Simsun; border:1px solid #7ea2a6; background:url(../images/login-input-bg.gif) no-repeat;}
+.login-error{margin-bottom:15px; padding-left:62px; color:#ff4107;}
+.login-btn input{margin-right:30px; width:80px; height:30px; line-height:999px; font-size:0; border:0; background-repeat:no-repeat; background-position:center center; cursor:pointer;}
+.login-btn input.log{background-image:url(../images/login-btn1.gif);}
+.login-btn input.can{background-image:url(../images/login-btn2.gif);}

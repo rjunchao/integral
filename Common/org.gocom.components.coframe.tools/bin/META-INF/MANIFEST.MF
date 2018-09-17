@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-Name: 基础工具
+Bundle-Description: 核心应用框架所需要的基础工具类
+eos-webCtxPath: coframe/tools
+Bundle-Vendor: 曹宗伟
+Bundle-SymbolicName: org.gocom.components.coframe.tools
+Require-Bundle: com.eos.foundation,com.primeton.eos.richweb,com.primet
+ on.workflow.core,com.eos.workflow
+Bundle-Version: 1.0
+

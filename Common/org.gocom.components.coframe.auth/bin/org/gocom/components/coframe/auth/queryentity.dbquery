@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QueryEntityList>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryUserByEmp">
+        <config db="default" type="sql"><![CDATA[select b.empid, b.tenant_id, a.user_id, a.user_name, a.email, a.operator_id 
+from cap_user a left join org_employee b 
+on a.user_id=b.userid
+where a.tenant_id=b.tenant_id]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryUserByRole">
+        <config db="default" type="sql"><![CDATA[select b.role_id, b.party_type, a.user_id, a.user_name, a.tenant_id, a.email as email, a.operator_id from cap_user a, cap_partyauth b where a.user_id=b.party_id and a.tenant_id=b.tenant_id]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryEmpByRole">
+        <config db="default" type="sql"><![CDATA[select b.role_id, b.party_type, a.empid, a.empcode, a.empname, a.tenant_id 
+from org_employee a left join cap_partyauth b 
+on b.party_id=cast(a.empid as char)
+where a.tenant_id=b.tenant_id]]></config>
+        <config db="DB2 UDB" type="sql"><![CDATA[select b.role_id as role_id, b.party_type as party_type, a.empid as empid, a.empcode as empcode, a.empname as empname, a.tenant_id as tenant_id
+from org_employee a left join cap_partyauth b 
+on b.party_id = char(cast(a.empid as integer))
+where a.tenant_id = b.tenant_id]]></config>
+        <config db="Oracle" type="sql"><![CDATA[select b.role_id, b.party_type, a.empid, a.empcode, a.empname, a.tenant_id 
+from org_employee a left join cap_partyauth b 
+on b.party_id=TO_CHAR(a.empid)
+where a.tenant_id=b.tenant_id]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryEmpByOrgRole">
+        <config db="default" type="sql"><![CDATA[select d.role_id, d.party_type, c.orgid, a.empid, a.empcode, a.empname, a.tenant_id 
+from org_employee a left join org_emporg b
+on a.empid = b.empid
+left join org_organization c 
+on b.orgid=c.orgid 
+left join cap_partyauth d
+on cast(a.empid as char) = d.party_id
+where a.tenant_id=b.tenant_id 
+        and a.tenant_id=c.tenant_id
+        and a.tenant_id=d.tenant_id]]></config>
+        <config db="DB2 UDB" type="sql"><![CDATA[select d.role_id, d.party_type, c.orgid, a.empid, a.empcode, a.empname, a.tenant_id 
+from org_employee a left join org_emporg b
+on a.empid = b.empid
+left join org_organization c 
+on b.orgid=c.orgid 
+left join cap_partyauth d
+on char(cast(a.empid as integer)) = d.party_id
+where a.tenant_id=b.tenant_id 
+        and a.tenant_id=c.tenant_id
+        and a.tenant_id=d.tenant_id]]></config>
+        <config db="Oracle" type="sql"><![CDATA[select d.role_id, d.party_type, c.orgid, a.empid, a.empcode, a.empname, a.tenant_id 
+from org_employee a left join org_emporg b
+on a.empid = b.empid
+left join org_organization c 
+on b.orgid=c.orgid 
+left join cap_partyauth d
+on TO_CHAR(a.empid) = d.party_id
+where a.tenant_id=b.tenant_id 
+        and a.tenant_id=c.tenant_id
+        and a.tenant_id=d.tenant_id]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryEmpAndUserByUser">
+        <config db="default" type="sql"><![CDATA[select a.user_id userId, a.tenant_id, a.user_name, b.empid, b.empcode, b.empname
+from cap_user a left join org_employee b 
+on a.user_id = b.userid
+where a.tenant_id = b.tenant_id]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryOrgByRole">
+        <config db="default" type="sql"><![CDATA[select b.role_id, b.party_type, a.orgid, a.orgcode, a.orgname, a.tenant_id 
+from org_organization a left join cap_partyauth b
+on b.party_id=cast(a.orgid as char)
+where a.tenant_id=b.tenant_id]]></config>
+        <config db="DB2 UDB" type="sql"><![CDATA[
+select b.role_id, b.party_type, a.orgid, a.orgcode, a.orgname, a.tenant_id 
+from org_organization a left join cap_partyauth b
+on b.party_id=char(cast(a.orgid as integer))
+where a.tenant_id=b.tenant_id]]></config>
+        <config db="Oracle" type="sql"><![CDATA[select b.role_id, b.party_type, a.orgid, a.orgcode, a.orgname, a.tenant_id 
+from org_organization a left join cap_partyauth b
+on b.party_id=TO_CHAR(a.orgid)
+where a.tenant_id=b.tenant_id]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryPositionByRole">
+        <config db="default" type="sql"><![CDATA[select b.role_id, b.party_type, a.positionid, a.posicode, a.posiname, a.tenant_id 
+from org_position a left join cap_partyauth b
+on b.party_id=cast(a.positionid as char)
+where a.tenant_id=b.tenant_id]]></config>
+        <config db="DB2 UDB" type="sql"><![CDATA[select b.role_id, b.party_type, a.positionid, a.posicode, a.posiname, a.tenant_id 
+from org_position a left join cap_partyauth b
+on b.party_id=char(cast(a.positionid as integer))
+where a.tenant_id=b.tenant_id]]></config>
+        <config db="Oracle" type="sql"><![CDATA[select b.role_id, b.party_type, a.positionid, a.posicode, a.posiname, a.tenant_id 
+from org_position a left join cap_partyauth b
+on b.party_id=TO_CHAR(a.positionid)
+where a.tenant_id=b.tenant_id]]></config>
+    </QueryEntity>
+    <QueryEntity name="org.gocom.components.coframe.auth.queryentity.QueryEmployee">
+        <config db="default" type="sql"><![CDATA[select t.*,tt.ORGCODE,tt.ORGNAME from ORG_EMPLOYEE t left join ORG_ORGANIZATION tt on t.ORGID=tt.ORGID]]></config>
+    </QueryEntity>
+</QueryEntityList>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:yangyong -->
+<sqlMap>    
+	 <resultMap class="org.gocom.components.coframe.org.dataset.OrgEmployee" id="resultMap">
+        <result column="empid" property="empid"/>
+        <result column="userid" property="userid"/>
+        <result column="empcode" property="empcode"/>
+        <result column="empname" property="empname"/>
+    </resultMap>
+    <!-- 查询可加入岗位的人员列表 
+        参数为：positionid，userid，empname用于过滤用户
+      -->
+    <select id="selectEmpAllowAdd"  resultMap="resultMap" parameterClass="java.util.HashMap">
+            SELECT E.EMPID,E.USERID,E.EMPCODE,E.EMPNAME FROM ORG_EMPLOYEE E,ORG_EMPORG O,ORG_POSITION P 
+            WHERE  E.EMPID = O.EMPID AND O.ORGID=P.ORGID  AND P.POSITIONID =#positionid#
+            AND E.EMPID NOT IN (SELECT EMPID FROM ORG_EMPPOSITION  WHERE POSITIONID =#positionid#)            
+           <isNotNull prepend="AND" property="userid">
+                USERID LIKE #userid# 
+           </isNotNull>
+           <isNotNull prepend="AND" property="empname">
+                EMPNAME LIKE #empname#
+           </isNotNull>
+    </select>
+    <select id="countEmpAllowAdd"  resultClass="java.lang.Integer" parameterClass="java.util.HashMap">
+            SELECT COUNT(E.EMPID) FROM ORG_EMPLOYEE E,ORG_EMPORG O,ORG_POSITION P 
+            WHERE  E.EMPID = O.EMPID AND O.ORGID=P.ORGID  AND P.POSITIONID =#positionid#
+            AND E.EMPID NOT IN (SELECT EMPID FROM ORG_EMPPOSITION  WHERE POSITIONID =#positionid#)            
+           <isNotNull prepend="AND" property="userid">
+                USERID LIKE #userid# 
+           </isNotNull>
+           <isNotNull prepend="AND" property="empname">
+                EMPNAME LIKE #empname# 
+           </isNotNull>
+    </select>
+    <!-- 查询已在岗位的人员列表
+        参数为：positionid，userid，empname用于过滤用户
+      -->
+    <select id="selectEmpInPosition"  resultMap="resultMap" parameterClass="java.util.HashMap">
+            SELECT E.EMPID,E.USERID,E.EMPCODE,E.EMPNAME FROM ORG_EMPLOYEE E ,ORG_EMPPOSITION P
+            WHERE E.EMPID=P.EMPID AND P.POSITIONID =#positionid#
+           <isNotNull prepend="AND" property="userid">
+                USERID LIKE #userid# 
+           </isNotNull>
+           <isNotNull prepend="AND" property="empname">
+                EMPNAME LIKE #empname# 
+           </isNotNull>
+    </select>
+    <select id="countEmpInPosition"  resultClass="java.lang.Integer" parameterClass="java.util.HashMap">
+            SELECT COUNT(E.EMPID) FROM ORG_EMPLOYEE E ,ORG_EMPPOSITION P
+            WHERE E.EMPID=P.EMPID AND P.POSITIONID =#positionid#
+           <isNotNull prepend="AND" property="userid">
+                USERID LIKE #userid# 
+           </isNotNull>
+           <isNotNull prepend="AND" property="empname">
+                EMPNAME LIKE #empname# 
+           </isNotNull>
+    </select>
+</sqlMap>

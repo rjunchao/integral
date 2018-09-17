@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.primeton.eos.richweb,com.eos.foundation,com.eos.wo
+ rkflow
+Bundle-Vendor: rjc
+eos-webCtxPath: gd/data_handle
+Bundle-Version: 1.0.0
+Bundle-Name: com.xbkj.gd.data_handle
+Bundle-Description: 
+Bundle-SymbolicName: com.xbkj.gd.data_handle
+

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-Name: 权限管理
+Bundle-Description: 基于角色的权限管理
+eos-webCtxPath: coframe/rights
+Bundle-Vendor: 曹宗伟
+Bundle-SymbolicName: org.gocom.components.coframe.rights
+Require-Bundle: org.gocom.components.coframe.tools,com.eos.workflow,co
+ m.primeton.workflow.core,com.eos.foundation,com.primeton.eos.richweb
+Bundle-Version: 1.0
+

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="org.gocom.components.coframe.org.dataset" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="org.gocom.components.coframe.org.dataset">
+    <xs:complexType name="OrgEmployee" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgEmployeeImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="operatorid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="realname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="birthdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="position" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empstatus" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardtype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="indate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="outdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="otel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oaddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ozipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="faxno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobileno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="qq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="htel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="haddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="hzipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="pemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="party" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="degree" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="major" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="specialty" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="workexp" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="regdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastmodytime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="orgidlist" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="weibo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgEmporg" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgEmporgImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="ismain" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgEmployee" nillable="true" type="OrgEmployee"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgEmpposition" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgEmppositionImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="ismain" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgEmployee" nillable="true" type="OrgEmployee"/>
+            <xs:element minOccurs="0" name="orgPosition" nillable="true" type="OrgPosition"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgOrganization" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgOrganizationImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="orgcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgname" nillable="true" type="xs:string"/>
+            <xs:element default="1" minOccurs="0" name="orglevel" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="orgdegree" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgseq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgtype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgaddr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="manaposition" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="managerid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="orgmanager" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="linkman" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="linktel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="weburl" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="startdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="enddate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="area" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastupdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="updator" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="sortno" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="isleaf" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="subcount" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgOrganization" nillable="true" type="OrgOrganization"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgPosition" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgPositionImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="positionid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="posicode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="posiname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="posilevel" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="positionseq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="positype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastupdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="updator" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="startdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="enddate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="isleaf" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="subcount" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tenantid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgDuty" nillable="true" type="OrgDuty"/>
+            <xs:element minOccurs="0" name="orgOrganization" nillable="true" type="OrgOrganization"/>
+            <xs:element minOccurs="0" name="orgPosition" nillable="true" type="OrgPosition"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgDuty" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgDutyImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="dutyid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="dutycode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="dutyname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="parentduty" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="dutylevel" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="dutyseq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="dutytype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="isleaf" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="subcount" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appid" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryPositionEmp" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.QueryPositionEmpImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="operatorid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="realname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="birthdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="position" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empstatus" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardtype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="indate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="outdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="otel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oaddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ozipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="faxno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobileno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="htel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="haddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="hzipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="pemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="party" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="degree" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="major" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="specialty" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="workexp" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="regdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastmodytime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="orgidlist" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="positionid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="qq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="weibo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgTreeNode" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgTreeNodeImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryEmpUser" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.QueryEmpUserImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="operatorid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="realname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="birthdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="position" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empstatus" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardtype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="indate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="outdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="otel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oaddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ozipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="faxno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobileno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="htel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="haddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="hzipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="pemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="party" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="degree" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="major" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="specialty" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="workexp" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="regdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastmodytime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="orgidlist" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="qq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="weibo" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgPartyDataObject" sdoJava:instanceClass="org.gocom.components.coframe.org.dataset.impl.OrgPartyDataObjectImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyTypeID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantID" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

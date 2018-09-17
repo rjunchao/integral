@@ -1,0 +1,49 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.LoseEventTypeService.updateLoseEveType(com.vbm.grc.basic.vo.LoseEventTypeVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.loseevent.LoseEventTypeService.updateLoseEveType(LoseEventTypeVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 更新的实体类&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.LoseEventTypeService.loseEventTypeTree(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;List&lt;Map&lt;String,String&gt;&gt; com.vbm.grc.basic.loseevent.LoseEventTypeService.loseEventTypeTree(Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 构造损失事件类型树&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt; 查询参数&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>LoseEventTypeService</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.vbm.grc.basic.loseevent.LoseEventTypeService&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2016-7-1&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;损失事件类型分类服务类&#x0D;
+	主要功能：&#x0D;
+		查询损失事件类型列表&#x0D;
+		查询损失事件类型树&#x0D;
+		更新损失事件类型信息&#x0D;
+		添加损失事件类型&#x0D;
+		删除损失事件类型&#x0D;
+		校验损失事件编码&#x0D;
+		根据id查询损失事件&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.LoseEventTypeService.validateCode(com.vbm.grc.basic.vo.LoseEventTypeVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;int com.vbm.grc.basic.loseevent.LoseEventTypeService.validateCode(LoseEventTypeVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 需要校验的编码实体类&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.LoseEventTypeService.loseEventTypeList(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;LoseEventTypeVO[] com.vbm.grc.basic.loseevent.LoseEventTypeService.loseEventTypeList(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt; 查询参数，根据pid进行查询显示&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.LoseEventTypeService.addLoseEveType(com.vbm.grc.basic.vo.LoseEventTypeVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.loseevent.LoseEventTypeService.addLoseEveType(LoseEventTypeVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 需要添加的试题类&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.LoseEventTypeService.findLoseEventTypeById(java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;LoseEventTypeVO com.vbm.grc.basic.loseevent.LoseEventTypeService.findLoseEventTypeById(String pk)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt; 查询参数，根据pid进行查询显示&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.LoseEventTypeService.delLoseEveType(com.vbm.grc.basic.vo.LoseEventTypeVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.loseevent.LoseEventTypeService.delLoseEveType(LoseEventTypeVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 删除损失事件&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

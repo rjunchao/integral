@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-Description: 表单、视图、流程等资源加载相关的
+Bundle-Name: 资源加载
+eos-webCtxPath: coframe/resource
+Bundle-Vendor: 曹宗伟
+Bundle-SymbolicName: org.gocom.components.coframe.resource
+Require-Bundle: org.gocom.components.coframe.tools,com.eos.foundation,
+ com.primeton.eos.richweb,com.eos.workflow,com.primeton.workflow.core
+Bundle-Version: 1.0.0
+

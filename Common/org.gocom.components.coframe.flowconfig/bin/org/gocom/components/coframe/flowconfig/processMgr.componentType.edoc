@@ -1,0 +1,46 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.getCapRules(com.primeton.das.criteria.criteriaType, String, String, com.eos.foundation.PageCond, commonj.sdo.DataObject)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getCapRules&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryCapRules&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.getCapRules&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;sortField(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;sortOrder(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;proc(commonj.sdo.DataObject):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.flowconfig.flowconfigEntity.CapRule[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.getAuthTabPages()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getAuthTabPages&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getAuthTabPages&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.getAuthTabPages&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;tabPages(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.getRuleCondition(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getRuleCondition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getRuleCondition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.getRuleCondition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ruleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;conditions(org.gocom.components.coframe.flowconfig.model.AuthFlowCondition[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.getFlows(com.primeton.das.criteria.criteriaType, String, String, com.primeton.workflow.api.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFlows&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getFlows&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.getFlows&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;sortField(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;sortOrder(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.primeton.workflow.api.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.getFlowCondtions(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFlowCondtions&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getFlowCondtions&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.getFlowCondtions&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;testId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;flowContions(org.gocom.components.coframe.flowconfig.model.FlowConditionModel[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.saveRule(String, String, String, com.primeton.cap.auth.AuthResource[], org.gocom.components.coframe.flowconfig.model.AuthFlowCondition[], String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveRule&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateRule&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.saveRule&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ruleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;ruleName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;namespace(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;authRes(com.primeton.cap.auth.AuthResource[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;fc(org.gocom.components.coframe.flowconfig.model.AuthFlowCondition[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;createFlag(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ret(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.getFormAuthStatus(commonj.sdo.DataObject, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFormAuthStatus&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addRule&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.getFormAuthStatus&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;proc(commonj.sdo.DataObject):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;ruleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;formStatus(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;fields(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;actions(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;retProc(commonj.sdo.DataObject):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;retRuleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>processMgr</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;processMgr.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;processMgr&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.checkIsSubForm(commonj.sdo.DataObject)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;checkIsSubForm&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;CheckIsSubForm&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.checkIsSubForm&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;proc(commonj.sdo.DataObject):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;retProc(commonj.sdo.DataObject):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.deleteRule(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteRule&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteRule&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.deleteRule&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ruleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;ret(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.flowconfig.processMgr.checkHasForm(commonj.sdo.DataObject)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;checkHasForm&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;checkHasForm&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.flowconfig.processMgr.checkHasForm&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;proc(commonj.sdo.DataObject):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;retProc(commonj.sdo.DataObject):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

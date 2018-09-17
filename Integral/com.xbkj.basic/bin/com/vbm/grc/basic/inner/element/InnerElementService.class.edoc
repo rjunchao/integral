@@ -1,0 +1,51 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.inner.element.InnerElementService.findInnerCntrElemById(java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;InnerControlElementVO com.vbm.grc.basic.inner.element.InnerElementService.findInnerCntrElemById(String pk)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 根据主键查询对应的内控啊要素&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;pk&lt;/b&gt; 主键&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.inner.element.InnerElementService.saveInnerElement(com.vbm.grc.basic.vo.InnerControlElementVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.inner.element.InnerElementService.saveInnerElement(InnerControlElementVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 添加内控要素&#x0D;
+ 编码判断&#x0D;
+ 添加的要素判断&#x0D;
+ 设置属性&#x0D;
+ 插入&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 要添加的内控要素&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;返回结果&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.inner.element.InnerElementService.delInnerElement(com.vbm.grc.basic.vo.InnerControlElementVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.inner.element.InnerElementService.delInnerElement(InnerControlElementVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 删除内控要素&#x0D;
+ 要一起删除该要素下的子要素&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 要删除的内控要素信息&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.inner.element.InnerElementService.queryInterElementTree(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;List&lt;Map&lt;String,String&gt;&gt; com.vbm.grc.basic.inner.element.InnerElementService.queryInterElementTree(Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询并显示内控要素树&#x0D;
+ &lt;dl&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;返回构造树&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.inner.element.InnerElementService.updateInnerElement(com.vbm.grc.basic.vo.InnerControlElementVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.inner.element.InnerElementService.updateInnerElement(InnerControlElementVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 修改内控要素&#x0D;
+ 判断编码是否重复，但是要排除当前记录&#x0D;
+ 设置修改信息&#x0D;
+ 修改&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 要修改的内控要素信息&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>InnerElementService [内控要素]</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.vbm.grc.basic.inner.element.InnerElementService&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2016-06-23 15:44:40&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.inner.element.InnerElementService.validateInnerElementCode(com.vbm.grc.basic.vo.InnerControlElementVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;int com.vbm.grc.basic.inner.element.InnerElementService.validateInnerElementCode(InnerControlElementVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 校验内控要素编码是否重复&#x0D;
+ 根据传入的对象进行判断编码是否重复&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;code&lt;/b&gt; 校验的编码&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;返回结果，1、0&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.inner.element.InnerElementService.queryInterElementList(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;InnerControlElementVO[] com.vbm.grc.basic.inner.element.InnerElementService.queryInterElementList(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 分页查询要素列表&#x0D;
+ &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt; 参数：pid&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page&lt;/b&gt; 分页对象&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

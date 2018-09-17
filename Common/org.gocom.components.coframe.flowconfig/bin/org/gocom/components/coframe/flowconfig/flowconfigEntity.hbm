@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.flowconfig.flowconfigEntity.CapRule" table="cap_rule">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="ruleId" type="string">
+            <column default="''" length="64" name="RULE_ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="ruleName" type="string">
+            <column default="''" length="64" name="RULE_NAME" not-null="true"/>
+        </property>
+        <property name="tenantId" type="string">
+            <column default="''" length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="ruleType" type="string">
+            <column default="''" length="64" name="RULE_TYPE" not-null="true"/>
+        </property>
+        <property name="namespace" type="string">
+            <column default="''" length="512" name="NAMESPACE" not-null="true"/>
+        </property>
+        <property lazy="true" name="ruleExpression" type="com.primeton.das.entity.impl.lob.type.BlobByteArrayType">
+            <column length="65535" name="RULE_EXPRESSION"/>
+        </property>
+        <property name="createuser" type="string">
+            <column length="64" name="CREATEUSER"/>
+        </property>
+        <property name="createtime" type="date">
+            <column name="CREATETIME"/>
+        </property>
+    </class>
+</hibernate-mapping>

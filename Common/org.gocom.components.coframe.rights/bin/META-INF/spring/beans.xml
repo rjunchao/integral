@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:sca="http://www.springframework.org/schema/sca" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd   http://www.springframework.org/schema/sca http://www.osoa.org/xmlns/sca/1.0/spring-sca.xsd">
+    <bean id="CapUserBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.rights.user.ICapUserService</value>
+            </list>
+        </property>
+        <property name="target" ref="CapUserService">
+		</property>
+    </bean>
+
+    <bean id="gradeAuthServiceBean" class="org.gocom.components.coframe.rights.gradeauth.GradeAuthService">
+    </bean>
+
+    <bean id="CapRoleBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.rights.role.ICapRoleService</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.rights.role.CapRoleService">
+                <property name="dataSource" ref="DefaultDataSource"/>
+                <property name="gradeAuthService" ref="gradeAuthServiceBean"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="CapPartyauthBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.rights.party.ICapPartyauthService</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.rights.party.CapPartyauthService">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+     <bean id="DefaultResAuthManagerBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list/>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.rights.resauth.DefaultResAuthManager">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="DefaultPartyAuthManagerBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list/>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.rights.partyauth.DefaultPartyAuthManager">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="GradeAuthBean" class="org.gocom.components.coframe.rights.gradeauth.GradeAuthService"> 
+    </bean>
+    <bean id="CapUserService"
+		class="org.gocom.components.coframe.rights.user.CapUserService">
+		<property name="dataSource" ref="DefaultDataSource" />
+		<property name="partyauthService" ref="CapPartyauthBean" />
+	</bean>
+</beans>

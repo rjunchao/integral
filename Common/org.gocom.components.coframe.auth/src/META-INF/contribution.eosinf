@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contribution xmlns="http://www.primeton.com/xmlns/eos/1.0">
+	<!-- MBean config -->
+	<module name="Mbean">
+		<!-- DataSourceMBean config -->
+		<group name="DatasourceMBean">
+			<configValue key="Type">config</configValue>
+			<configValue key="Class">com.eos.system.management.config.mbean.Config</configValue>
+			<configValue key="Handler">com.eos.common.connection.mbean.ContributionDataSourceConfigHandler</configValue>
+			<configValue key="ConfigFileType">config</configValue>
+		</group>
+		<group name="ContributionLoggerMBean">
+			<configValue key="Type">config</configValue>
+			<configValue key="Class">com.eos.system.management.config.mbean.Config</configValue>
+			<configValue key="Handler">com.eos.common.logging.mbean.LogConfigHandler</configValue>
+			<configValue key="ConfigFileType">log</configValue>
+		</group>
+	</module>
+
+	<!-- datasource config -->	
+	<module name="DataSource">
+		<group name="Reference">
+			<!--
+				the configuration below describes 
+				the corresponding relationship between contribution datasource and application datasource, 
+				multiple datasources can be defined. 
+				the value 'default' of attibute 'key' denotes a contribution datasource 
+				and the field value 'default' of 'configValue' node stands for an application datasource. 
+			-->
+			<configValue key="default">default</configValue>
+		</group>
+	</module>
+	
+	<!-- WebInterceptor配置 -->
+    <module name="WebInterceptor">
+		<group name="UserLoginWebInterceptor">		
+			<configValue key="id">LoginFilter</configValue>	
+			<configValue key="sortIdx">10</configValue>	
+			<configValue key="pattern">/*</configValue>	
+			<configValue key="class">org.gocom.components.coframe.auth.intercepter.UserLoginWebInterceptor</configValue>
+		</group>
+		<group name="FunctionWebInterceptor">		
+			<configValue key="id">FunctionAuthFilter</configValue>	
+			<configValue key="sortIdx">20</configValue>	
+			<configValue key="pattern">*.jsp,*.flow</configValue>
+			<configValue key="isRegister">true</configValue>	
+			<configValue key="class">org.gocom.components.coframe.auth.intercepter.FunctionWebInterceptor</configValue>
+		</group>
+	</module>
+	
+	<!-- 授权管理服务配置 -->
+    <module name="Auth">
+        <group name="Service">
+            <configValue key="AuthManagerService">org.gocom.components.coframe.auth.DefaultAuthManagerService</configValue>
+        </group>
+    </module>
+    
+    <!-- party管理服务配置 -->
+    <module name="Party">
+		<group name="Service">
+			<configValue key="PartyManagerService">org.gocom.components.coframe.auth.party.DefaultPartyManagerService</configValue>
+		</group>
+	</module>
+	
+	 <!-- party管理服务配置 -->
+    <module name="PartyRoleAuthService">
+		<group name="user">
+			<configValue key="service">org.gocom.components.coframe.auth.service.impl.UserAuthPartyService</configValue>
+		</group>
+		<group name="emp">
+			<configValue key="service">org.gocom.components.coframe.auth.service.impl.EmpAuthPartyService</configValue>
+		</group>
+		<group name="position">
+			<configValue key="service">org.gocom.components.coframe.auth.service.impl.PositionAuthPartyService</configValue>
+		</group>
+	</module>
+	
+	
+	<!-- 菜单资源类型配置 	-->
+	<module name="MenuResourceType">
+		<group name="FunctionResource">			
+			<configValue key="TypeID">function</configValue>		
+			<configValue key="TypeName">功能</configValue>				
+			<configValue key="MenuResourceManager">org.gocom.components.coframe.auth.menu.FunctionMenuResourceManager</configValue>
+		</group>
+	</module>
+	
+	
+</contribution>

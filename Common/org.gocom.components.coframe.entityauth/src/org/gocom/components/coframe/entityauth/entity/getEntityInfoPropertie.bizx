@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="getEntityInfoPropertie" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="6.3">
+  <nodes xsi:type="model:Note" id="node0" name="注释" displayName="注释" collapsed="false" nodeType="note" type="note" content="获取一个实体属性对象" title="lijuntao 13-4-28 上午9:39">
+    <location x="115" y="208"/>
+    <size height="100" width="171"/>
+  </nodes>
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" collapsed="false" nodeType="common" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="link0" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>invokeSpring0</targetNode>
+    </sourceConnections>
+    <location x="115" y="123"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" nodeType="label">
+    <location x="117" y="159"/>
+    <figSize height="12" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end1" name="结束" displayName="结束" collapsed="false" nodeType="common" type="end">
+    <targetConnections>link0</targetConnections>
+    <location x="415" y="123"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end1label</nodeLabel>
+    <process:returns>
+      <process:return id="0" language="com.primeton.cap.spi.dataset.service.PropertyInfo" name="propertyInfo" type="query" valueType="Java">propertyInfo</process:return>
+    </process:returns>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end1label" name="label" nodeType="label">
+    <location x="417" y="159"/>
+    <figSize height="12" width="25"/>
+    <node>end1</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokeSpring0" name="获得某个实体属性值" displayName="queryPropertyInfo" collapsed="false" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link0" name="link0" displayName="link1" isDefault="true" type="transition">
+      <sourceNode>invokeSpring0</sourceNode>
+      <targetNode>end1</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="255" y="120"/>
+    <size height="28" width="28"/>
+    <nodeLabel>invokeSpring0label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.entityauth.EntityService.queryPropertyInfo</process:partner>
+      <process:instance instanceName="entityServiceBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="namespace" type="query" value="java.lang.String" valueType="Java" pattern="reference">namespace</process:inputVariable>
+      <process:inputVariable id="1" name="entityName" type="query" value="java.lang.String" valueType="Java" pattern="reference">entityName</process:inputVariable>
+      <process:inputVariable id="2" name="propertyName" type="query" value="java.lang.String" valueType="Java" pattern="reference">propertyName</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="com.primeton.cap.spi.dataset.service.PropertyInfo" valueType="Java">propertyInfo</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring0label" name="label" nodeType="label">
+    <location x="215" y="156"/>
+    <figSize height="12" width="109"/>
+    <node>invokeSpring0</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="lijuntao" createTime="2013-04-17 13:39:08" date="2013-04-17Z" description="" name="getEntityProperties" version="6.3"/>
+  <process:variables/>
+  <process:inputs varArgs="false">
+    <process:input description="" isArray="false" name="namespace" primitiveType="String"/>
+    <process:input description="" isArray="false" name="entityName" primitiveType="String"/>
+    <process:input description="" isArray="false" name="propertyName" primitiveType="String"/>
+  </process:inputs>
+  <process:outputs>
+    <process:output anyType="com.primeton.cap.spi.dataset.service.PropertyInfo" description="" isArray="false" name="propertyInfo"/>
+  </process:outputs>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FunctionManager.getFunction(org.gocom.components.coframe.framework.application.AppFunction)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFunction&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FunctionManager.getFunction&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.framework.application.AppFunction):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appfunction(org.gocom.components.coframe.framework.application.AppFunction):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FunctionManager.queryFunction(com.eos.foundation.PageCond, com.primeton.das.criteria.criteriaType, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryFunction&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryFunctionGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FunctionManager.queryFunction&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;funcgroupid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.framework.application.AppFunction[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FunctionManager.validateFunction(org.gocom.components.coframe.framework.application.AppFunction)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;validateFunction&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;validateFunction&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FunctionManager.validateFunction&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.framework.application.AppFunction):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>FunctionManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;FunctionManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;FunctionManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FunctionManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FunctionManager.saveFunction(org.gocom.components.coframe.framework.application.AppFunction)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveFunction&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FunctionManager.saveFunction&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appfunction(org.gocom.components.coframe.framework.application.AppFunction):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.FunctionManager.updateFunction(org.gocom.components.coframe.framework.application.AppFunction)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateFunction&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.FunctionManager.updateFunction&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appfunction(org.gocom.components.coframe.framework.application.AppFunction):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:sca="http://www.springframework.org/schema/sca" xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/sca http://www.osoa.org/xmlns/sca/1.0/spring-sca.xsd">
+
+	<bean id="treeListResolver" class="org.gocom.components.coframe.resource.util.TreeListResolver">
+	</bean>
+
+	<bean id="formService" class="org.gocom.components.coframe.resource.form.FormService">
+		<property name="resolver">
+			<ref bean="treeListResolver"></ref>
+		</property>
+	</bean>
+
+	<bean id="viewService" class="org.gocom.components.coframe.resource.view.ViewService">
+		<property name="resolver">
+			<ref bean="treeListResolver"></ref>
+		</property>
+	</bean>
+
+	<bean id="formAuthResListBean" parent="DefaultBaseTransactionProxy">
+		<property name="proxyInterfaces">
+			<list>
+				<value>org.gocom.components.coframe.resource.form.IFormService</value>
+			</list>
+		</property>
+		<property name="target">
+			<ref bean="formService"></ref>
+		</property>
+	</bean>
+
+	<bean id="viewAuthResListBean" parent="DefaultBaseTransactionProxy">
+		<property name="proxyInterfaces">
+			<list>
+				<value>org.gocom.components.coframe.resource.view.IViewService</value>
+			</list>
+		</property>
+		<property name="target">
+			<ref bean="viewService"></ref>
+		</property>
+	</bean>
+
+	<bean id="moduleService" class="org.gocom.components.coframe.resource.module.ModuleService">
+	</bean>
+
+	<bean id="moduleServiceBean" parent="DefaultBaseTransactionProxy">
+		<property name="proxyInterfaces">
+			<list>
+				<value>org.gocom.components.coframe.resource.module.IModuleService</value>
+			</list>
+		</property>
+		<property name="target">
+			<ref bean="moduleService"></ref>
+		</property>
+	</bean>
+
+	<bean id="formManagerServiceBean" class="org.gocom.components.coframe.resource.FormManagerServiceBean">
+	</bean>
+
+	<bean id="viewManagerServiceBean" class="org.gocom.components.coframe.resource.ViewManagerServiceBean">
+	</bean>
+
+</beans>

@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>机构授权</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;organizationAuth.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;机构授权&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.organizationAuth&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;机构授权&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.organizationAuth.getOrganizationAuth(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getOrganizationAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获得机构授权状态&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.organizationAuth.getOrganizationAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;获得机构授权状态&lt;/html&gt;</string>
+  </entry>
+</map>

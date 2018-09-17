@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="com.vbm.mas.userpermissions.orgdataset" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="com.vbm.mas.userpermissions.orgdataset">
+    <xs:complexType name="OrgEntity">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="porgid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgname" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FcUserPermissions" sdoJava:instanceClass="com.vbm.mas.userpermissions.orgdataset.impl.FcUserPermissionsImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="pk" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="porgid" nillable="true" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

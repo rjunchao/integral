@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="org.gocom.components.coframe.flowconfig.flowconfigEntity" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="org.gocom.components.coframe.flowconfig.flowconfigEntity">
+    <xs:complexType name="CapRule" sdoJava:instanceClass="org.gocom.components.coframe.flowconfig.flowconfigEntity.impl.CapRuleImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="ruleId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ruleName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ruleType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="namespace" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ruleExpression" nillable="true" type="xs:hexBinary"/>
+            <xs:element minOccurs="0" name="createuser" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

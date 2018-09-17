@@ -1,0 +1,14 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.resource.formAuth.saveFormAuths(String, com.primeton.cap.auth.AuthResource[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveFormAuths&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;保存表单授权&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.formAuth.saveFormAuths&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;authRes(com.primeton.cap.auth.AuthResource[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;saveResult(Boolean):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>表单授权</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;formAuth.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;表单授权&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.formAuth&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.resource.formAuth.getFormAuthStatus(String, String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFormAuthStatus&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getFormStatus&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.formAuth.getFormAuthStatus&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;moduleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;formId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;formStatusId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;fields(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;actions(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

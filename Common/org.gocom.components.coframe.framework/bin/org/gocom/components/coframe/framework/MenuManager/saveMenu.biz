@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="saveMenu" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="6.3">
+  <nodes xsi:type="process:tStart" id="start0" name="开始" nodeType="common" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link9" name="link9" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>invokeSpring4</targetNode>
+    </sourceConnections>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end0" name="结束" nodeType="common" type="end">
+    <targetConnections>link15</targetConnections>
+    <targetConnections>link17</targetConnections>
+    <nodeLabel>end0label</nodeLabel>
+    <process:returns/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" nodeType="label">
+    <figSize height="12" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" nodeType="label">
+    <figSize height="12" width="25"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" id="invokeSpring0" name="插入菜单" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link2" name="link2" isDefault="true" type="transition">
+      <sourceNode>invokeSpring0</sourceNode>
+      <targetNode>assign2</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <nodeLabel>invokeSpring0label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.framework.AppMenuService.addAppMenu</process:partner>
+      <process:instance instanceName="AppMenuBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="appMenu" type="query" value="org.gocom.components.coframe.framework.application.AppMenu" valueType="Java" pattern="reference">appmenu</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring0label" name="label" nodeType="label">
+    <figSize height="12" width="49"/>
+    <node>invokeSpring0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign0" name="菜单属性赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>invokeSpring0</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link16</targetConnections>
+    <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="expression" pattern="reference">context.getInt(&quot;parentmenu/menulevel&quot;)+1</process:from>
+      <process:to type="query">appmenu/menulevel</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="expression" pattern="reference">context.getString(&quot;parentmenu/menuseq&quot;)+appmenu.getString(&quot;menuid&quot;)+&quot;.&quot;</process:from>
+      <process:to type="query">appmenu/menuseq</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">0</process:from>
+      <process:to type="query">appmenu/subcount</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <figSize height="12" width="73"/>
+    <node>assign0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" id="invokeSpring1" name="查询父节点信息" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link4" name="link4" isDefault="true" type="transition">
+      <sourceNode>invokeSpring1</sourceNode>
+      <targetNode>assign3</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link3</targetConnections>
+    <nodeLabel>invokeSpring1label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.framework.AppMenuService.queryAppMenus</process:partner>
+      <process:instance instanceName="AppMenuBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="criteriaType" type="query" value="com.eos.das.entity.criteria.CriteriaType" valueType="Java" pattern="reference">menucriteria</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="org.gocom.components.coframe.framework.application.AppMenu[]" valueType="Java">parentmenus</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring1label" name="label" nodeType="label">
+    <figSize height="12" width="85"/>
+    <node>invokeSpring1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign1" name="设置父节点的查询条件" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link3" name="link3" isDefault="true" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>invokeSpring1</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link10</targetConnections>
+    <nodeLabel>assign1label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">appmenu/appMenu/menuid</process:from>
+      <process:to type="query">menucriteria/_expr[1]/menuid</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
+    <figSize height="12" width="121"/>
+    <node>assign1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign3" name="父节点赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link16" name="link16" isDefault="true" type="transition">
+      <sourceNode>assign3</sourceNode>
+      <targetNode>assign0</targetNode>
+    </sourceConnections>
+    <targetConnections>link4</targetConnections>
+    <nodeLabel>assign3label</nodeLabel>
+    <process:copy>
+      <process:from type="expression" pattern="reference">parentmenus[0]</process:from>
+      <process:to type="query">parentmenu</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign3label" name="label" nodeType="label">
+    <figSize height="12" width="61"/>
+    <node>assign3</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign5" name="父节点id赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link10" name="" isDefault="true" type="transition">
+      <sourceNode>assign5</sourceNode>
+      <targetNode>assign1</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand/>
+          <process:rightOperand/>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" id="link20" name="父节点为根" isDefault="false" type="transition">
+      <sourceNode>assign5</sourceNode>
+      <targetNode>assign9</targetNode>
+      <process:transitionCondition>
+        <process:complexCondition>
+          <process:code>&quot;root&quot;.equals(parentmenuid) || &quot;null&quot;.equals(parentmenuid) || parentmenuid==null</process:code>
+        </process:complexCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <targetConnections>link0</targetConnections>
+    <nodeLabel>assign5label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">appmenu/appMenu/menuid</process:from>
+      <process:to type="query">parentmenuid</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign5label" name="label" nodeType="label">
+    <figSize height="12" width="73"/>
+    <node>assign5</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign9" name="菜单赋值" collapsed="false" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link13" name="link13" isDefault="true" type="transition">
+      <sourceNode>assign9</sourceNode>
+      <targetNode>invokeSpring3</targetNode>
+    </sourceConnections>
+    <targetConnections>link20</targetConnections>
+    <nodeLabel>assign9label</nodeLabel>
+    <process:copy>
+      <process:from type="expression" pattern="reference">1</process:from>
+      <process:to type="query">appmenu/menulevel</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="expression" pattern="reference">&quot;.&quot;+appmenu.getString(&quot;menuid&quot;)+&quot;.&quot;</process:from>
+      <process:to type="query">appmenu/menuseq</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">null</process:from>
+      <process:to type="query">appmenu/appMenu</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">0</process:from>
+      <process:to type="query">appmenu/subcount</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign9label" name="label" nodeType="label">
+    <figSize height="12" width="49"/>
+    <node>assign9</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" id="invokeSpring3" name="插入顶级菜单" collapsed="false" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link15" name="link15" isDefault="true" type="transition">
+      <sourceNode>invokeSpring3</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link13</targetConnections>
+    <nodeLabel>invokeSpring3label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.framework.AppMenuService.addAppMenu</process:partner>
+      <process:instance instanceName="AppMenuBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="appMenu" type="query" value="org.gocom.components.coframe.framework.application.AppMenu" valueType="Java" pattern="reference">appmenu</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring3label" name="label" nodeType="label">
+    <figSize height="12" width="73"/>
+    <node>invokeSpring3</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" id="invokeSpring2" name="更新父菜单" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link17" name="link17" isDefault="true" type="transition">
+      <sourceNode>invokeSpring2</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link19</targetConnections>
+    <nodeLabel>invokeSpring2label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.framework.AppMenuService.updateAppMenu</process:partner>
+      <process:instance instanceName="AppMenuBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="appMenu" type="query" value="org.gocom.components.coframe.framework.application.AppMenu" valueType="Java" pattern="reference">parentmenu</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring2label" name="label" nodeType="label">
+    <figSize height="12" width="61"/>
+    <node>invokeSpring2</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign2" name="父菜单subcount字段赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link19" name="link19" isDefault="true" type="transition">
+      <sourceNode>assign2</sourceNode>
+      <targetNode>invokeSpring2</targetNode>
+    </sourceConnections>
+    <targetConnections>link2</targetConnections>
+    <nodeLabel>assign2label</nodeLabel>
+    <process:copy>
+      <process:from type="expression" pattern="reference">context.getInt(&quot;parentmenu/subcount&quot;)+1</process:from>
+      <process:to type="query">parentmenu/subcount</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign2label" name="label" nodeType="label">
+    <figSize height="12" width="133"/>
+    <node>assign2</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" id="invokeSpring4" name="获取主键" nodeType="common" type="invoke" index="0" invokeType="invoke_spring" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link0" name="link0" isDefault="true" type="transition">
+      <sourceNode>invokeSpring4</sourceNode>
+      <targetNode>assign5</targetNode>
+    </sourceConnections>
+    <targetConnections>link9</targetConnections>
+    <nodeLabel>invokeSpring4label</nodeLabel>
+    <process:spring methodType="beanID" synchronization="true" transactionType="join">
+      <process:partner type="literal">org.gocom.components.coframe.framework.AppMenuService.getPrimaryKey</process:partner>
+      <process:instance instanceName="AppMenuBean"/>
+    </process:spring>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="appMenu" type="query" value="org.gocom.components.coframe.framework.application.AppMenu" valueType="Java" pattern="reference">appmenu</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeSpring4label" name="label" nodeType="label">
+    <figSize height="12" width="49"/>
+    <node>invokeSpring4</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info version="6.3"/>
+  <process:variables>
+    <process:variable historyStateLocation="client" isArray="false" modelType="com.primeton.das.criteria.criteriaType" name="menucriteria"/>
+    <process:variable anyType="org.gocom.components.coframe.framework.application.AppMenu" historyStateLocation="client" isArray="false" name="parentmenu"/>
+    <process:variable historyStateLocation="client" isArray="false" name="parentmenuid" primitiveType="String"/>
+    <process:variable anyType="org.gocom.components.coframe.framework.application.AppMenu" historyStateLocation="client" isArray="true" name="parentmenus"/>
+  </process:variables>
+  <process:inputs varArgs="false">
+    <process:input anyType="org.gocom.components.coframe.framework.application.AppMenu" isArray="false" name="appmenu"/>
+  </process:inputs>
+  <process:outputs/>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.primeton.studio.workflow.bpsPath"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/fw.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/log.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/com.ibm.mq.fta.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/com.ibm.mqjms.jar"/>
+	<classpathentry kind="con" path="com.primeton.studio.workbench.libraries"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/pubuapcache.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/coframe-resource-loader.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/com.ibm.mq.jms.Nojndi.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/com.ibm.mq.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/basic.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/poi-3.8-20120326.jar"/>
+	<classpathentry kind="con" path="com.primeton.cap.studio.workbench.serverPath"/>
+	<classpathentry kind="con" path="com.primeton.studio.workbench.serverPath"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/com.ibm.mqetclient.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/commons-dbutils-1.4.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/poi-ooxml-3.8-20120326.jar"/>
+	<classpathentry kind="con" path="com.primeton.studio.workbench.classPath"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/poi-ooxml-schemas-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="eos-web/WEB-INF/lib/com.ibm.mq.soap.jar"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="com.vbm.mas.userpermissions/bin" path="com.vbm.mas.userpermissions/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.auth/bin" path="org.gocom.components.coframe.auth/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.bps.om/bin" path="org.gocom.components.coframe.bps.om/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.entityauth/bin" path="org.gocom.components.coframe.entityauth/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.flowconfig/bin" path="org.gocom.components.coframe.flowconfig/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.framework/bin" path="org.gocom.components.coframe.framework/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.org/bin" path="org.gocom.components.coframe.org/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.resource/bin" path="org.gocom.components.coframe.resource/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.rights/bin" path="org.gocom.components.coframe.rights/src"/>
+	<classpathentry excluding="**/**.SpringXml|**/**.bizlet|**/**.bizx|**/**.bpsdirx|**/**.bpsrelyx|**/**.bpsresx|**/**.componentType|**/**.compositex|**/**.datasetx|**/**.eosComponentType|**/**.flowx|**/**.namingsqlx|**/**.workflowx|**/**.wsdl|**/**.xsd|**/.copyarea.db" kind="src" output="org.gocom.components.coframe.tools/bin" path="org.gocom.components.coframe.tools/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

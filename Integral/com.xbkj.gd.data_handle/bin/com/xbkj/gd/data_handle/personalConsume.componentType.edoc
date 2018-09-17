@@ -1,0 +1,18 @@
+<map>
+  <entry>
+    <string>personalConsume</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;personalConsume.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;personalConsume&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalConsume&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.personalConsume.get(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;get&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;get&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalConsume.get&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.vos.PersonalConsumeVO):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.personalConsume.del(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;del&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;del&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalConsume.del&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.personalConsume.save(com.xbkj.gd.vos.PersonalConsumeVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;save&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;save&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalConsume.save&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.vos.PersonalConsumeVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

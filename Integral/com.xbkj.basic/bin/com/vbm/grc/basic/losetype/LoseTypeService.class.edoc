@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.LoseTypeService.addLoseType(com.vbm.grc.basic.vo.LoseTypeVo)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.losetype.LoseTypeService.addLoseType(LoseTypeVo vo)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.LoseTypeService.removeLoseType(com.vbm.grc.basic.vo.LoseTypeVo[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.losetype.LoseTypeService.removeLoseType(LoseTypeVo[] vos)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>LoseTypeService [损失形态类型]</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.vbm.grc.basic.losetype.LoseTypeService&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;lqy&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2016-8-2&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.LoseTypeService.updateLoseType(com.vbm.grc.basic.vo.LoseTypeVo)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.losetype.LoseTypeService.updateLoseType(LoseTypeVo vo)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.LoseTypeService.validateCode(com.vbm.grc.basic.vo.LoseTypeVo)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;int com.vbm.grc.basic.losetype.LoseTypeService.validateCode(LoseTypeVo vo)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.losetype.LoseTypeService.queryLosetype(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;LoseTypeVo[] com.vbm.grc.basic.losetype.LoseTypeService.queryLosetype(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

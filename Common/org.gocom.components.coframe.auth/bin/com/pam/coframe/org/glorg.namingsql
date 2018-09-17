@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="com.pam.coframe.org.glorg">
+    <parameterMap class="commonj.sdo.DataObject" id="parameterMap">
+        <parameter javaType="date" jdbcType="DATE" property="dateType"/>
+    </parameterMap>
+    <resultMap class="commonj.sdo.DataObject" id="resultMap">
+        <result column="TYPEID" javaType="string" property="typeId"/>
+    </resultMap>
+    <select id="queryglOrg" parameterClass="string" resultClass="org.gocom.components.coframe.auth.queryentity.OrgOrganization"><![CDATA[ select o.orgid orgid, o.orgcode orgcode,o.orgcode||' '||o.orgname orgname,o.parentorgid pid from org_organization o where o.orgid in (
+	select v.porgid orgid from MAS_USER_PERMISSIONS v where v.userid='$userid$') ]]></select>
+    <!-- oracle select o.orgid orgid, o.orgcode orgcode,o.orgcode||' '||o.orgname orgname,nvl(o.parentorgid,'-1') pid from org_organization o order by o.orgcode asc -->
+    <select id="queryAllOrg" parameterClass="string" resultClass="org.gocom.components.coframe.auth.queryentity.OrgOrganization"><![CDATA[ select o.orgid orgid, o.orgcode orgcode,o.orgcode,o.orgname orgname,ifnull(o.parentorgid,'-1') pid from org_organization o order by o.orgcode asc]]></select>
+</sqlMap>

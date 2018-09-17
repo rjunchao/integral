@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:WES -->
+<sqlMap>
+    <parameterMap class="commonj.sdo.DataObject" id="parameterMap">
+        <parameter javaType="string" jdbcType="DATE" property="orgid"/>
+        <parameter javaType="string" jdbcType="DATE" property="dateType"/>
+    </parameterMap>
+    <resultMap class="commonj.sdo.DataObject" id="resultMap">
+        <result column="TYPEID" javaType="string" property="typeId"/>
+    </resultMap>
+     <select id="queryAllOrg" resultClass="org.gocom.components.coframe.auth.queryentity.OrgOrganization">
+    <![CDATA[ select o.orgid orgid,o.orgcode||' '|| o.orgname orgname,o.parentorgid pid from org_organization o order by orgid asc ]]>
+    </select>
+    <select id="queryOrgUser" parameterClass="string"  resultClass="org.gocom.components.coframe.org.dataset.QueryEmpUser">
+    <![CDATA[ select emp.*, cap_user.status
+from org_employee emp 
+left join cap_user
+on emp.operatorid=cap_user.operator_id 
+inner join org_emporg emporg 
+on emporg.empid=emp.empid where emp.orgid='$orgid$' order by emp.empcode asc ]]>
+    </select>
+    
+    
+    <select id="queryUserOrg" parameterClass="java.util.HashMap" resultClass="com.vbm.mas.userpermissions.orgdataset.OrgEntity">
+    <![CDATA[ select o.porgid porgid,p.orgcode||' '||p.orgname orgname from MAS_USER_PERMISSIONS o left join org_organization p on o.porgid=p.orgid where o.orgid='$orgid$' and o.empid='$empid$' ]]>
+    <dynamic prepend="and">
+		<isNotNull property="org" prepend="AND">
+			<![CDATA[  
+				 p.orgcode like '%$org$%' or p.orgname like '%$org$%'
+			  ]]>
+		</isNotNull>
+	</dynamic>
+	<dynamic prepend="order by">
+	   p.orgcode asc
+	</dynamic>
+    </select>
+    <select id="queryuserOrgUn" parameterClass="string" resultClass="com.vbm.mas.userpermissions.orgdataset.OrgEntity">
+    <![CDATA[ select orgid porgid,orgcode||' '||orgname orgname from org_organization $wheres$ ]]>
+    
+    <dynamic prepend="order by">
+	   orgcode asc
+	</dynamic>
+    </select>
+    <delete id="deleteuserOrg" parameterClass="string">
+    <![CDATA[ $sql$ ]]>
+    </delete>
+    
+</sqlMap>

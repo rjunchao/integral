@@ -1,0 +1,14 @@
+外部导入POI3.8jar包:
+poi-3.8-20120326.jar
+poi-ooxml-3.8-20120326.jar
+poi-ooxml-schemas-3.8-20120326.jar
+xmlbeans-2.3.0.jar
+
+加上原有的：
+dom4j-1.6.1.jar
+stax-api-1.01.jar
+
+
+替换本地eos安装目录：
+ide\eclipse\dropins\PLATFORM_7.0.2.0\plugins
+	\com.primeton.studio.server.library_7.0.2.0\server\3rd\apache 下 poi 包

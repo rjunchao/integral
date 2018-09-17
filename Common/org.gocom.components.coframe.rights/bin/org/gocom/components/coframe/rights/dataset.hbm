@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.rights.dataset.CapRole" table="CAP_ROLE">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="roleId" type="string">
+            <column length="64" name="ROLE_ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="tenantId" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="roleCode" type="string">
+            <column length="64" name="ROLE_CODE" not-null="true"/>
+        </property>
+        <property name="roleName" type="string">
+            <column length="64" name="ROLE_NAME"/>
+        </property>
+        <property name="roleDesc" type="string">
+            <column length="255" name="ROLE_DESC"/>
+        </property>
+        <property name="createuser" type="string">
+            <column length="64" name="CREATEUSER"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME"/>
+        </property>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.rights.dataset.CapResauth" table="CAP_RESAUTH">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <composite-id>
+            <key-property name="partyId" type="string">
+                <column length="64" name="PARTY_ID"/>
+            </key-property>
+            <key-property name="partyType" type="string">
+                <column length="64" name="PARTY_TYPE"/>
+            </key-property>
+            <key-property name="resId" type="string">
+                <column length="255" name="RES_ID"/>
+            </key-property>
+            <key-property name="resType" type="string">
+                <column length="64" name="RES_TYPE"/>
+            </key-property>
+        </composite-id>
+        <property name="tenantId" type="string">
+            <column length="64" name="TENANT_ID"/>
+        </property>
+        <property name="resState" type="string">
+            <column length="512" name="RES_STATE" not-null="true"/>
+        </property>
+        <property name="partyScope" type="string">
+            <column default="'0'" length="1" name="PARTY_SCOPE"/>
+        </property>
+        <property name="createuser" type="string">
+            <column length="64" name="CREATEUSER"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME"/>
+        </property>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.rights.dataset.CapSsouser" table="cap_ssouser">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="operatorId" type="string">
+            <column length="64" name="OPERATOR_ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="tenantId" type="string">
+            <column length="64" name="TENANT_ID"/>
+        </property>
+        <property name="userId" type="string">
+            <column length="64" name="USER_ID" not-null="true"/>
+        </property>
+        <property name="password" type="string">
+            <column length="100" name="PASSWORD"/>
+        </property>
+        <property name="userName" type="string">
+            <column length="64" name="USER_NAME"/>
+        </property>
+        <property name="email" type="string">
+            <column length="128" name="EMAIL"/>
+        </property>
+        <property name="status" type="string">
+            <column length="16" name="STATUS"/>
+        </property>
+        <property name="unlocktime" type="timestamp">
+            <column name="UNLOCKTIME"/>
+        </property>
+        <property name="lastlogin" type="timestamp">
+            <column name="LASTLOGIN" not-null="true"/>
+        </property>
+        <property name="errcount" type="big_decimal">
+            <column length="10" name="ERRCOUNT" precision="10" scale="0"/>
+        </property>
+        <property name="maccode" type="string">
+            <column length="255" name="MACCODE"/>
+        </property>
+        <property name="ipaddress" type="string">
+            <column length="255" name="IPADDRESS"/>
+        </property>
+        <property name="createuser" type="string">
+            <column length="64" name="CREATEUSER"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME" not-null="true"/>
+        </property>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.rights.dataset.CapUser" table="cap_user">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="operatorId" type="big_decimal">
+            <column length="18" name="OPERATOR_ID" precision="18" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="tenantId" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="userId" type="string">
+            <column length="64" name="USER_ID" not-null="true"/>
+        </property>
+        <property name="password" type="string">
+            <column length="100" name="PASSWORD"/>
+        </property>
+        <property name="invaldate" type="date">
+            <column name="INVALDATE"/>
+        </property>
+        <property name="userName" type="string">
+            <column length="64" name="USER_NAME"/>
+        </property>
+        <property name="authmode" type="string">
+            <column length="255" name="AUTHMODE"/>
+        </property>
+        <property name="status" type="string">
+            <column length="16" name="STATUS"/>
+        </property>
+        <property name="unlocktime" type="timestamp">
+            <column name="UNLOCKTIME" not-null="true"/>
+        </property>
+        <property name="menutype" type="string">
+            <column length="255" name="MENUTYPE"/>
+        </property>
+        <property name="lastlogin" type="timestamp">
+            <column name="LASTLOGIN" not-null="true"/>
+        </property>
+        <property name="errcount" type="big_decimal">
+            <column length="10" name="ERRCOUNT" precision="10" scale="0"/>
+        </property>
+        <property name="startdate" type="date">
+            <column name="STARTDATE"/>
+        </property>
+        <property name="enddate" type="date">
+            <column name="ENDDATE"/>
+        </property>
+        <property name="validtime" type="string">
+            <column length="255" name="VALIDTIME"/>
+        </property>
+        <property name="maccode" type="string">
+            <column length="128" name="MACCODE"/>
+        </property>
+        <property name="ipaddress" type="string">
+            <column length="128" name="IPADDRESS"/>
+        </property>
+        <property name="email" type="string">
+            <column length="255" name="EMAIL"/>
+        </property>
+        <property name="createuser" type="string">
+            <column length="64" name="CREATEUSER"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME" not-null="true"/>
+        </property>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.rights.dataset.CapPartyauth" table="cap_partyauth">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <composite-id>
+            <key-property name="roleType" type="string">
+                <column length="64" name="ROLE_TYPE"/>
+            </key-property>
+            <key-property name="partyId" type="string">
+                <column length="64" name="PARTY_ID"/>
+            </key-property>
+            <key-property name="partyType" type="string">
+                <column length="64" name="PARTY_TYPE"/>
+            </key-property>
+            <key-many-to-one entity-name="org.gocom.components.coframe.rights.dataset.CapRole" foreign-key="CapPartyauth_CapRole" lazy="false" name="capRole">
+                <column length="64" name="ROLE_ID"/>
+            </key-many-to-one>
+        </composite-id>
+        <property name="tenantId" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="createuser" type="string">
+            <column length="64" name="CREATEUSER"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

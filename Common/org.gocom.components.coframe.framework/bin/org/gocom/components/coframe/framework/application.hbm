@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.framework.application.AppFuncgroup" table="app_funcgroup">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="funcgroupid" type="big_decimal">
+            <column length="10" name="FUNCGROUPID" precision="10" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="funcgroupname" type="string">
+            <column length="40" name="FUNCGROUPNAME"/>
+        </property>
+        <property name="grouplevel" type="int">
+            <column length="11" name="GROUPLEVEL"/>
+        </property>
+        <property name="funcgroupseq" type="string">
+            <column length="256" name="FUNCGROUPSEQ"/>
+        </property>
+        <property name="isleaf" type="string">
+            <column length="1" name="ISLEAF"/>
+        </property>
+        <property name="subcount" type="big_decimal">
+            <column length="10" name="SUBCOUNT" precision="10" scale="0"/>
+        </property>
+        <property name="app_id" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <property name="tenant_id" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.framework.application.AppFuncgroup" fetch="join" foreign-key="FK_F_FUNG_FUNG" lazy="false" name="appFuncgroup">
+            <column length="10" name="PARENTGROUP" precision="10" scale="0"/>
+        </many-to-one>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.framework.application.AppApplication" fetch="join" foreign-key="FK_F_APP_FUNCTION" lazy="false" name="appApplication">
+            <column length="10" name="APPID" not-null="true" precision="10" scale="0"/>
+        </many-to-one>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.framework.application.AppMenu" table="app_menu">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="menuid" type="string">
+            <column length="40" name="MENUID"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="menuname" type="string">
+            <column length="40" name="MENUNAME" not-null="true"/>
+        </property>
+        <property name="menulabel" type="string">
+            <column length="40" name="MENULABEL" not-null="true"/>
+        </property>
+        <property name="menucode" type="string">
+            <column length="40" name="MENUCODE"/>
+        </property>
+        <property name="isleaf" type="string">
+            <column length="1" name="ISLEAF"/>
+        </property>
+        <property name="parameter" type="string">
+            <column length="256" name="PARAMETER"/>
+        </property>
+        <property name="uientry" type="string">
+            <column length="256" name="UIENTRY"/>
+        </property>
+        <property name="menulevel" type="short">
+            <column length="6" name="MENULEVEL"/>
+        </property>
+        <property name="rootid" type="string">
+            <column length="40" name="ROOTID"/>
+        </property>
+        <property name="displayorder" type="short">
+            <column length="6" name="DISPLAYORDER"/>
+        </property>
+        <property name="imagepath" type="string">
+            <column length="100" name="IMAGEPATH"/>
+        </property>
+        <property name="expandpath" type="string">
+            <column length="100" name="EXPANDPATH"/>
+        </property>
+        <property name="menuseq" type="string">
+            <column length="256" name="MENUSEQ"/>
+        </property>
+        <property name="openmode" type="string">
+            <column length="255" name="OPENMODE"/>
+        </property>
+        <property name="subcount" type="big_decimal">
+            <column length="10" name="SUBCOUNT" precision="10" scale="0"/>
+        </property>
+        <property name="appid" type="big_decimal">
+            <column length="10" name="APPID" precision="10" scale="0"/>
+        </property>
+        <property name="funccode" type="string">
+            <column length="255" name="FUNCCODE"/>
+        </property>
+        <property name="app_id" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <property name="tenant_id" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.framework.application.AppMenu" fetch="join" foreign-key="FK_F_MENU_MENU" lazy="false" name="appMenu">
+            <column length="40" name="PARENTSID"/>
+        </many-to-one>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.framework.application.AppFunction" table="app_function">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="funccode" type="string">
+            <column length="255" name="FUNCCODE"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="funcname" type="string">
+            <column length="128" name="FUNCNAME" not-null="true"/>
+        </property>
+        <property name="funcdesc" type="string">
+            <column length="512" name="FUNCDESC"/>
+        </property>
+        <property name="funcaction" type="string">
+            <column length="256" name="FUNCACTION"/>
+        </property>
+        <property name="parainfo" type="string">
+            <column length="256" name="PARAINFO"/>
+        </property>
+        <property name="ischeck" type="string">
+            <column length="1" name="ISCHECK"/>
+        </property>
+        <property name="functype" type="string">
+            <column default="'1'" length="255" name="FUNCTYPE"/>
+        </property>
+        <property name="ismenu" type="string">
+            <column length="1" name="ISMENU"/>
+        </property>
+        <property name="app_id" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <property name="tenant_id" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.framework.application.AppFuncgroup" fetch="join" foreign-key="FK_F_FUNGROUP_FUN" lazy="false" name="appFuncgroup">
+            <column length="10" name="FUNCGROUPID" precision="10" scale="0"/>
+        </many-to-one>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.framework.application.AppFuncresource" table="app_funcresource">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="resid" type="big_decimal">
+            <column length="10" name="RESID" precision="10" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="restype" type="string">
+            <column length="255" name="RESTYPE"/>
+        </property>
+        <property name="respath" type="string">
+            <column length="256" name="RESPATH"/>
+        </property>
+        <property name="compackname" type="string">
+            <column length="40" name="COMPACKNAME"/>
+        </property>
+        <property name="resname" type="string">
+            <column length="40" name="RESNAME"/>
+        </property>
+        <property name="app_id" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <property name="tenant_id" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.framework.application.AppFunction" fetch="join" foreign-key="FK_F_FUN_RES" lazy="false" name="appFunction">
+            <column length="255" name="FUNCCODE"/>
+        </many-to-one>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.framework.application.AppApplication" table="app_application">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="appid" type="big_decimal">
+            <column length="10" name="APPID" precision="10" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appcode" type="string">
+            <column length="32" name="APPCODE"/>
+        </property>
+        <property name="appname" type="string">
+            <column length="50" name="APPNAME"/>
+        </property>
+        <property name="apptype" type="string">
+            <column length="255" name="APPTYPE"/>
+        </property>
+        <property name="isopen" type="string">
+            <column length="1" name="ISOPEN"/>
+        </property>
+        <property name="opendate" type="date">
+            <column name="OPENDATE"/>
+        </property>
+        <property name="url" type="string">
+            <column length="256" name="URL"/>
+        </property>
+        <property name="appdesc" type="string">
+            <column length="512" name="APPDESC"/>
+        </property>
+        <property name="maintenance" type="big_decimal">
+            <column length="10" name="MAINTENANCE" precision="10" scale="0"/>
+        </property>
+        <property name="manarole" type="string">
+            <column length="64" name="MANAROLE"/>
+        </property>
+        <property name="demo" type="string">
+            <column length="512" name="DEMO"/>
+        </property>
+        <property name="iniwp" type="string">
+            <column length="1" name="INIWP"/>
+        </property>
+        <property name="intaskcenter" type="string">
+            <column length="1" name="INTASKCENTER"/>
+        </property>
+        <property name="ipaddr" type="string">
+            <column length="50" name="IPADDR"/>
+        </property>
+        <property name="ipport" type="string">
+            <column length="10" name="IPPORT"/>
+        </property>
+        <property name="app_id" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <property name="tenant_id" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="protocoltype" type="string">
+            <column length="64" name="protocol_type"/>
+        </property>
+    </class>
+</hibernate-mapping>

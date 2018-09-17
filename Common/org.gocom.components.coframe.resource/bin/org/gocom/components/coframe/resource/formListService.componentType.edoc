@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>表单树</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;formListService.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;表单树&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.formListService&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.resource.formListService.getFormTree()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFormTree&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获得表单树&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.formListService.getFormTree&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;formTreeList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

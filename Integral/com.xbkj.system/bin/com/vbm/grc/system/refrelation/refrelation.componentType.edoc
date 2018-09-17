@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>Relation</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;refrelation.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;Relation&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.system.refrelation.refrelation&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.system.refrelation.refrelation.updateRefRelation(com.vbm.grc.system.vo.RefRelationVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateRefRelation&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateRefRelation&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.system.refrelation.refrelation.updateRefRelation&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;rows(com.vbm.grc.system.vo.RefRelationVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.system.refrelation.refrelation.deleteRefRelation(com.vbm.grc.system.vo.RefRelationVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteRefRelation&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteRefRelation&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.system.refrelation.refrelation.deleteRefRelation&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;rows(com.vbm.grc.system.vo.RefRelationVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.system.refrelation.refrelation.saveRefRelation(com.vbm.grc.system.vo.RefRelationVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveRefRelation&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveRefRelation&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.system.refrelation.refrelation.saveRefRelation&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;rows(com.vbm.grc.system.vo.RefRelationVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.system.refrelation.refrelation.queryRefRelation(com.eos.foundation.PageCond, java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryRefRelation&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryRefRelation&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.system.refrelation.refrelation.queryRefRelation&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;datas(com.vbm.grc.system.vo.RefRelationVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

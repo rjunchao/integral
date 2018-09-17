@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.org.dataset.OrgEmployee" table="org_employee">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="empid" type="big_decimal">
+            <column length="10" name="EMPID" precision="10" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="empcode" type="string">
+            <column length="30" name="EMPCODE"/>
+        </property>
+        <property name="operatorid" type="big_decimal">
+            <column length="18" name="OPERATORID" precision="18" scale="0"/>
+        </property>
+        <property name="userid" type="string">
+            <column length="30" name="USERID"/>
+        </property>
+        <property name="empname" type="string">
+            <column length="50" name="EMPNAME"/>
+        </property>
+        <property name="realname" type="string">
+            <column length="50" name="REALNAME"/>
+        </property>
+        <property name="gender" type="string">
+            <column length="255" name="GENDER"/>
+        </property>
+        <property name="birthdate" type="date">
+            <column name="BIRTHDATE"/>
+        </property>
+        <property name="position" type="big_decimal">
+            <column length="10" name="POSITION" precision="10" scale="0"/>
+        </property>
+        <property name="empstatus" type="string">
+            <column length="255" name="EMPSTATUS"/>
+        </property>
+        <property name="cardtype" type="string">
+            <column length="255" name="CARDTYPE"/>
+        </property>
+        <property name="cardno" type="string">
+            <column length="20" name="CARDNO"/>
+        </property>
+        <property name="indate" type="date">
+            <column name="INDATE"/>
+        </property>
+        <property name="outdate" type="date">
+            <column name="OUTDATE"/>
+        </property>
+        <property name="otel" type="string">
+            <column length="12" name="OTEL"/>
+        </property>
+        <property name="oaddress" type="string">
+            <column length="255" name="OADDRESS"/>
+        </property>
+        <property name="ozipcode" type="string">
+            <column length="10" name="OZIPCODE"/>
+        </property>
+        <property name="oemail" type="string">
+            <column length="128" name="OEMAIL"/>
+        </property>
+        <property name="faxno" type="string">
+            <column length="14" name="FAXNO"/>
+        </property>
+        <property name="mobileno" type="string">
+            <column length="14" name="MOBILENO"/>
+        </property>
+        <property name="qq" type="string">
+            <column length="16" name="QQ"/>
+        </property>
+        <property name="htel" type="string">
+            <column length="12" name="HTEL"/>
+        </property>
+        <property name="haddress" type="string">
+            <column length="128" name="HADDRESS"/>
+        </property>
+        <property name="hzipcode" type="string">
+            <column length="10" name="HZIPCODE"/>
+        </property>
+        <property name="pemail" type="string">
+            <column length="128" name="PEMAIL"/>
+        </property>
+        <property name="party" type="string">
+            <column length="255" name="PARTY"/>
+        </property>
+        <property name="degree" type="string">
+            <column length="255" name="DEGREE"/>
+        </property>
+        <property name="major" type="big_decimal">
+            <column length="10" name="MAJOR" precision="10" scale="0"/>
+        </property>
+        <property name="specialty" type="string">
+            <column length="1024" name="SPECIALTY"/>
+        </property>
+        <property name="workexp" type="string">
+            <column length="512" name="WORKEXP"/>
+        </property>
+        <property name="regdate" type="date">
+            <column name="REGDATE"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME" not-null="true"/>
+        </property>
+        <property name="lastmodytime" type="timestamp">
+            <column name="LASTMODYTIME" not-null="true"/>
+        </property>
+        <property name="orgidlist" type="string">
+            <column length="128" name="ORGIDLIST"/>
+        </property>
+        <property name="orgid" type="big_decimal">
+            <column length="10" name="ORGID" precision="10" scale="0"/>
+        </property>
+        <property name="remark" type="string">
+            <column length="512" name="REMARK"/>
+        </property>
+        <property name="tenantid" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="appid" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <property name="weibo" type="string">
+            <column length="255" name="WEIBO"/>
+        </property>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.org.dataset.OrgEmporg" table="org_emporg">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <composite-id>
+            <key-property name="orgid" type="big_decimal">
+                <column length="10" name="ORGID" precision="10" scale="0"/>
+            </key-property>
+            <key-many-to-one entity-name="org.gocom.components.coframe.org.dataset.OrgEmployee" foreign-key="OrgEmporg_OrgEmployee" name="orgEmployee">
+                <column length="10" name="EMPID" precision="10" scale="0"/>
+            </key-many-to-one>
+        </composite-id>
+        <property name="ismain" type="string">
+            <column length="1" name="ISMAIN"/>
+        </property>
+        <property name="tenantid" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="appid" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.org.dataset.OrgEmpposition" table="org_empposition">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <composite-id>
+            <key-many-to-one entity-name="org.gocom.components.coframe.org.dataset.OrgEmployee" foreign-key="OrgEmpposition_OrgEmployee" name="orgEmployee">
+                <column length="10" name="EMPID" precision="10" scale="0"/>
+            </key-many-to-one>
+            <key-many-to-one entity-name="org.gocom.components.coframe.org.dataset.OrgPosition" foreign-key="OrgEmpposition_OrgPosition" name="orgPosition">
+                <column length="10" name="POSITIONID" precision="10" scale="0"/>
+            </key-many-to-one>
+        </composite-id>
+        <property name="ismain" type="string">
+            <column length="1" name="ISMAIN"/>
+        </property>
+        <property name="tenantid" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="appid" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.org.dataset.OrgOrganization" table="org_organization">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="orgid" type="big_decimal">
+            <column length="10" name="ORGID" precision="10" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="orgcode" type="string">
+            <column length="32" name="ORGCODE" not-null="true"/>
+        </property>
+        <property name="orgname" type="string">
+            <column length="64" name="ORGNAME"/>
+        </property>
+        <property name="orglevel" type="big_decimal">
+            <column default="1" length="2" name="ORGLEVEL" precision="2" scale="0"/>
+        </property>
+        <property name="orgdegree" type="string">
+            <column length="255" name="ORGDEGREE"/>
+        </property>
+        <property name="orgseq" type="string">
+            <column length="512" name="ORGSEQ"/>
+        </property>
+        <property name="orgtype" type="string">
+            <column length="12" name="ORGTYPE"/>
+        </property>
+        <property name="orgaddr" type="string">
+            <column length="256" name="ORGADDR"/>
+        </property>
+        <property name="zipcode" type="string">
+            <column length="10" name="ZIPCODE"/>
+        </property>
+        <property name="manaposition" type="big_decimal">
+            <column length="10" name="MANAPOSITION" precision="10" scale="0"/>
+        </property>
+        <property name="managerid" type="big_decimal">
+            <column length="10" name="MANAGERID" precision="10" scale="0"/>
+        </property>
+        <property name="orgmanager" type="string">
+            <column length="128" name="ORGMANAGER"/>
+        </property>
+        <property name="linkman" type="string">
+            <column length="30" name="LINKMAN"/>
+        </property>
+        <property name="linktel" type="string">
+            <column length="20" name="LINKTEL"/>
+        </property>
+        <property name="email" type="string">
+            <column length="128" name="EMAIL"/>
+        </property>
+        <property name="weburl" type="string">
+            <column length="512" name="WEBURL"/>
+        </property>
+        <property name="startdate" type="date">
+            <column name="STARTDATE"/>
+        </property>
+        <property name="enddate" type="date">
+            <column name="ENDDATE"/>
+        </property>
+        <property name="status" type="string">
+            <column length="255" name="STATUS"/>
+        </property>
+        <property name="area" type="string">
+            <column length="30" name="AREA"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME" not-null="true"/>
+        </property>
+        <property name="lastupdate" type="timestamp">
+            <column name="LASTUPDATE" not-null="true"/>
+        </property>
+        <property name="updator" type="big_decimal">
+            <column length="10" name="UPDATOR" precision="10" scale="0"/>
+        </property>
+        <property name="sortno" type="int">
+            <column length="11" name="SORTNO"/>
+        </property>
+        <property name="isleaf" type="string">
+            <column length="1" name="ISLEAF"/>
+        </property>
+        <property name="subcount" type="big_decimal">
+            <column length="10" name="SUBCOUNT" precision="10" scale="0"/>
+        </property>
+        <property name="remark" type="string">
+            <column length="512" name="REMARK"/>
+        </property>
+        <property name="tenantid" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="appid" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.org.dataset.OrgOrganization" foreign-key="OrgOrganization_OrgOrganization" name="orgOrganization">
+            <column length="10" name="PARENTORGID" precision="10" scale="0"/>
+        </many-to-one>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.org.dataset.OrgPosition" table="org_position">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="positionid" type="big_decimal">
+            <column length="10" name="POSITIONID" precision="10" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="posicode" type="string">
+            <column length="20" name="POSICODE"/>
+        </property>
+        <property name="posiname" type="string">
+            <column length="128" name="POSINAME" not-null="true"/>
+        </property>
+        <property name="posilevel" type="big_decimal">
+            <column length="2" name="POSILEVEL" precision="2" scale="0"/>
+        </property>
+        <property name="positionseq" type="string">
+            <column length="512" name="POSITIONSEQ" not-null="true"/>
+        </property>
+        <property name="positype" type="string">
+            <column length="255" name="POSITYPE"/>
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="CREATETIME" not-null="true"/>
+        </property>
+        <property name="lastupdate" type="timestamp">
+            <column name="LASTUPDATE" not-null="true"/>
+        </property>
+        <property name="updator" type="big_decimal">
+            <column length="10" name="UPDATOR" precision="10" scale="0"/>
+        </property>
+        <property name="startdate" type="date">
+            <column name="STARTDATE"/>
+        </property>
+        <property name="enddate" type="date">
+            <column name="ENDDATE"/>
+        </property>
+        <property name="status" type="string">
+            <column length="255" name="STATUS"/>
+        </property>
+        <property name="isleaf" type="string">
+            <column length="1" name="ISLEAF"/>
+        </property>
+        <property name="subcount" type="big_decimal">
+            <column length="10" name="SUBCOUNT" precision="10" scale="0"/>
+        </property>
+        <property name="tenantid" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="appid" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.org.dataset.OrgDuty" foreign-key="OrgPosition_OrgDuty" name="orgDuty">
+            <column length="10" name="DUTYID" precision="10" scale="0"/>
+        </many-to-one>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.org.dataset.OrgOrganization" foreign-key="OrgPosition_OrgOrganization" name="orgOrganization">
+            <column length="10" name="ORGID" precision="10" scale="0"/>
+        </many-to-one>
+        <many-to-one cascade="none" entity-name="org.gocom.components.coframe.org.dataset.OrgPosition" foreign-key="OrgPosition_OrgPosition" name="orgPosition">
+            <column length="10" name="MANAPOSI" precision="10" scale="0"/>
+        </many-to-one>
+    </class>
+    <class dynamic-insert="true" dynamic-update="true" entity-name="org.gocom.components.coframe.org.dataset.OrgDuty" table="org_duty">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id name="dutyid" type="big_decimal">
+            <column length="10" name="DUTYID" precision="10" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="dutycode" type="string">
+            <column length="20" name="DUTYCODE"/>
+        </property>
+        <property name="dutyname" type="string">
+            <column length="30" name="DUTYNAME"/>
+        </property>
+        <property name="parentduty" type="big_decimal">
+            <column length="10" name="PARENTDUTY" precision="10" scale="0"/>
+        </property>
+        <property name="dutylevel" type="int">
+            <column length="11" name="DUTYLEVEL"/>
+        </property>
+        <property name="dutyseq" type="string">
+            <column length="256" name="DUTYSEQ"/>
+        </property>
+        <property name="dutytype" type="string">
+            <column length="255" name="DUTYTYPE"/>
+        </property>
+        <property name="isleaf" type="string">
+            <column length="10" name="ISLEAF"/>
+        </property>
+        <property name="subcount" type="big_decimal">
+            <column length="10" name="SUBCOUNT" precision="10" scale="0"/>
+        </property>
+        <property name="remark" type="string">
+            <column length="256" name="REMARK"/>
+        </property>
+        <property name="tenantid" type="string">
+            <column length="64" name="TENANT_ID" not-null="true"/>
+        </property>
+        <property name="appid" type="string">
+            <column length="64" name="APP_ID"/>
+        </property>
+    </class>
+    <class entity-name="org.gocom.components.coframe.org.dataset.QueryPositionEmp" table="$QueryEntity[org.gocom.components.coframe.org.dataset.QueryPositionEmp]$">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id column="$queryEntityId$" name="queryEntityId" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property column="EMPID" insert="false" name="empid" type="big_decimal" update="false"/>
+        <property column="EMPCODE" insert="false" name="empcode" type="string" update="false"/>
+        <property column="OPERATORID" insert="false" name="operatorid" type="big_decimal" update="false"/>
+        <property column="USERID" insert="false" name="userid" type="string" update="false"/>
+        <property column="EMPNAME" insert="false" name="empname" type="string" update="false"/>
+        <property column="REALNAME" insert="false" name="realname" type="string" update="false"/>
+        <property column="GENDER" insert="false" name="gender" type="string" update="false"/>
+        <property column="BIRTHDATE" insert="false" name="birthdate" type="date" update="false"/>
+        <property column="POSITION" insert="false" name="position" type="big_decimal" update="false"/>
+        <property column="EMPSTATUS" insert="false" name="empstatus" type="string" update="false"/>
+        <property column="CARDTYPE" insert="false" name="cardtype" type="string" update="false"/>
+        <property column="CARDNO" insert="false" name="cardno" type="string" update="false"/>
+        <property column="INDATE" insert="false" name="indate" type="date" update="false"/>
+        <property column="OUTDATE" insert="false" name="outdate" type="date" update="false"/>
+        <property column="OTEL" insert="false" name="otel" type="string" update="false"/>
+        <property column="OADDRESS" insert="false" name="oaddress" type="string" update="false"/>
+        <property column="OZIPCODE" insert="false" name="ozipcode" type="string" update="false"/>
+        <property column="OEMAIL" insert="false" name="oemail" type="string" update="false"/>
+        <property column="FAXNO" insert="false" name="faxno" type="string" update="false"/>
+        <property column="MOBILENO" insert="false" name="mobileno" type="string" update="false"/>
+        <property column="HTEL" insert="false" name="htel" type="string" update="false"/>
+        <property column="HADDRESS" insert="false" name="haddress" type="string" update="false"/>
+        <property column="HZIPCODE" insert="false" name="hzipcode" type="string" update="false"/>
+        <property column="PEMAIL" insert="false" name="pemail" type="string" update="false"/>
+        <property column="PARTY" insert="false" name="party" type="string" update="false"/>
+        <property column="DEGREE" insert="false" name="degree" type="string" update="false"/>
+        <property column="MAJOR" insert="false" name="major" type="big_decimal" update="false"/>
+        <property column="SPECIALTY" insert="false" name="specialty" type="string" update="false"/>
+        <property column="WORKEXP" insert="false" name="workexp" type="string" update="false"/>
+        <property column="REGDATE" insert="false" name="regdate" type="date" update="false"/>
+        <property column="CREATETIME" insert="false" name="createtime" type="date" update="false"/>
+        <property column="LASTMODYTIME" insert="false" name="lastmodytime" type="date" update="false"/>
+        <property column="ORGIDLIST" insert="false" name="orgidlist" type="string" update="false"/>
+        <property column="ORGID" insert="false" name="orgid" type="big_decimal" update="false"/>
+        <property column="REMARK" insert="false" name="remark" type="string" update="false"/>
+        <property column="TENANT_ID" insert="false" name="tenantId" type="string" update="false"/>
+        <property column="APP_ID" insert="false" name="appId" type="string" update="false"/>
+        <property column="positionid" insert="false" name="positionid" type="big_decimal" update="false"/>
+        <property column="QQ" insert="false" name="qq" type="string" update="false"/>
+        <property column="WEIBO" insert="false" name="weibo" type="string" update="false"/>
+    </class>
+    <class entity-name="org.gocom.components.coframe.org.dataset.QueryEmpUser" table="$QueryEntity[org.gocom.components.coframe.org.dataset.QueryEmpUser]$">
+        <tuplizer class="com.primeton.server.das.tuplizer.SDOEntityTuplizer" entity-mode="sdo"/>
+        <id column="$queryEntityId$" name="queryEntityId" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property column="EMPID" insert="false" name="empid" type="big_decimal" update="false"/>
+        <property column="EMPCODE" insert="false" name="empcode" type="string" update="false"/>
+        <property column="OPERATORID" insert="false" name="operatorid" type="big_decimal" update="false"/>
+        <property column="USERID" insert="false" name="userid" type="string" update="false"/>
+        <property column="EMPNAME" insert="false" name="empname" type="string" update="false"/>
+        <property column="REALNAME" insert="false" name="realname" type="string" update="false"/>
+        <property column="GENDER" insert="false" name="gender" type="string" update="false"/>
+        <property column="BIRTHDATE" insert="false" name="birthdate" type="date" update="false"/>
+        <property column="POSITION" insert="false" name="position" type="big_decimal" update="false"/>
+        <property column="EMPSTATUS" insert="false" name="empstatus" type="string" update="false"/>
+        <property column="CARDTYPE" insert="false" name="cardtype" type="string" update="false"/>
+        <property column="CARDNO" insert="false" name="cardno" type="string" update="false"/>
+        <property column="INDATE" insert="false" name="indate" type="date" update="false"/>
+        <property column="OUTDATE" insert="false" name="outdate" type="date" update="false"/>
+        <property column="OTEL" insert="false" name="otel" type="string" update="false"/>
+        <property column="OADDRESS" insert="false" name="oaddress" type="string" update="false"/>
+        <property column="OZIPCODE" insert="false" name="ozipcode" type="string" update="false"/>
+        <property column="OEMAIL" insert="false" name="oemail" type="string" update="false"/>
+        <property column="FAXNO" insert="false" name="faxno" type="string" update="false"/>
+        <property column="MOBILENO" insert="false" name="mobileno" type="string" update="false"/>
+        <property column="HTEL" insert="false" name="htel" type="string" update="false"/>
+        <property column="HADDRESS" insert="false" name="haddress" type="string" update="false"/>
+        <property column="HZIPCODE" insert="false" name="hzipcode" type="string" update="false"/>
+        <property column="PEMAIL" insert="false" name="pemail" type="string" update="false"/>
+        <property column="PARTY" insert="false" name="party" type="string" update="false"/>
+        <property column="DEGREE" insert="false" name="degree" type="string" update="false"/>
+        <property column="MAJOR" insert="false" name="major" type="big_decimal" update="false"/>
+        <property column="SPECIALTY" insert="false" name="specialty" type="string" update="false"/>
+        <property column="WORKEXP" insert="false" name="workexp" type="string" update="false"/>
+        <property column="REGDATE" insert="false" name="regdate" type="date" update="false"/>
+        <property column="CREATETIME" insert="false" name="createtime" type="date" update="false"/>
+        <property column="LASTMODYTIME" insert="false" name="lastmodytime" type="date" update="false"/>
+        <property column="ORGIDLIST" insert="false" name="orgidlist" type="string" update="false"/>
+        <property column="ORGID" insert="false" name="orgid" type="big_decimal" update="false"/>
+        <property column="REMARK" insert="false" name="remark" type="string" update="false"/>
+        <property column="TENANT_ID" insert="false" name="tenantId" type="string" update="false"/>
+        <property column="APP_ID" insert="false" name="appId" type="string" update="false"/>
+        <property column="status" insert="false" name="status" type="string" update="false"/>
+        <property column="QQ" insert="false" name="qq" type="string" update="false"/>
+        <property column="WEIBO" insert="false" name="weibo" type="string" update="false"/>
+    </class>
+</hibernate-mapping>

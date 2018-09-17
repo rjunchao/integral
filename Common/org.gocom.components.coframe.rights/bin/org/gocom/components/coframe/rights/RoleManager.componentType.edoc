@@ -1,0 +1,30 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.rights.RoleManager.removeRoles(org.gocom.components.coframe.rights.dataset.CapRole[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;removeRoles&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;删除角色&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.RoleManager.removeRoles&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roles(org.gocom.components.coframe.rights.dataset.CapRole[]):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;删除角色，可批量删除&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.RoleManager.addRole(org.gocom.components.coframe.rights.dataset.CapRole)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addRole&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;增加角色&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.RoleManager.addRole&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;capRole(org.gocom.components.coframe.rights.dataset.CapRole):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;增加角色&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>RoleManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;RoleManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;RoleManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.RoleManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.RoleManager.queryAuthorizedRole()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryAuthorizedRole&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获取可授权的角色&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.RoleManager.queryAuthorizedRole&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;获取可授权的角色&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.RoleManager.updateRole(org.gocom.components.coframe.rights.dataset.CapRole)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateRole&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;修改角色&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.RoleManager.updateRole&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;capRole(org.gocom.components.coframe.rights.dataset.CapRole):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.RoleManager.queryRole(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryRole&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryRole&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.RoleManager.queryRole&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.rights.dataset.CapRole[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.RoleManager.checkRoleExist(com.primeton.das.criteria.criteriaType)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;checkRoleExist&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;checkRoleExist&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.RoleManager.checkRoleExist&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;isRoleExist(String):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;检测输入的角色是否存在&lt;/html&gt;</string>
+  </entry>
+</map>

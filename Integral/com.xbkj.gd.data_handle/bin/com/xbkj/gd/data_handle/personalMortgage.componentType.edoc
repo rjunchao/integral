@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.personalMortgage.get(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;get&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;get&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalMortgage.get&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.vos.PersonalMortgageVO):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.personalMortgage.del(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;del&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;del&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalMortgage.del&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>personalMortgage</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;personalMortgage.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;personalMortgage&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalMortgage&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.personalMortgage.getNumber()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getNumber&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getNumber&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalMortgage.getNumber&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.personalMortgage.add(com.xbkj.gd.vos.PersonalMortgageVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;add&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;add&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.personalMortgage.add&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.vos.PersonalMortgageVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

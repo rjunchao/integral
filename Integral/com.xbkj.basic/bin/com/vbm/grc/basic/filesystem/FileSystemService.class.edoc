@@ -1,0 +1,56 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.FileSystemService.deleteFileById(java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.filesystem.FileSystemService.deleteFileById(String fileId)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 根据附件主键删除附件&#x0D;
+ 1.对输入的参数进行必要的判断&#x0D;
+ 2.删除数据&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;fileId&lt;/b&gt;  附件主键&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;结果信息&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.FileSystemService.addFile(com.vbm.grc.basic.vo.FileSystemVO, java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.filesystem.FileSystemService.addFile(FileSystemVO vo, String filePk)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.FileSystemService.updateFolder(com.vbm.grc.basic.vo.FileSystemVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.filesystem.FileSystemService.updateFolder(FileSystemVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 修改文件夹信息&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 附件实体对象&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;操作结果信息&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.FileSystemService.queryFilesByBelongToId(java.lang.String, java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;List&lt;Map&lt;String,Object&gt;&gt; com.vbm.grc.basic.filesystem.FileSystemService.queryFilesByBelongToId(String nodeId, String belongTo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 获取附件树信息&#x0D;
+ 1.先对输入的参数进行必要的判断&#x0D;
+ 2.根据参数进行数据查询&#x0D;
+ 3.将查询到数据转成树形结构必要的格式&#x0D;
+ 4.返回封装到的List&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeId&lt;/b&gt; 上级结点主键  可为空&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;belongTo&lt;/b&gt; 所属主键&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;附件list&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.FileSystemService.saveFolder(com.vbm.grc.basic.vo.FileSystemVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.filesystem.FileSystemService.saveFolder(FileSystemVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 添加文件夹&#x0D;
+ 1.判断输入的参数&#x0D;
+ 2.验证文件夹名称是否有重复&#x0D;
+ 3.设置附件其他必要的数据&#x0D;
+ 4.持久化文件夹信息&#x0D;
+ &#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 附件实体对象&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;操作结果信息&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>FileSystemService [附件管理相关操作]</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.vbm.grc.basic.filesystem.FileSystemService&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &lt;pre&gt;&#x0D;
+ Title: 附件管理业务类&#x0D;
+ Description: 附件增删改查&#x0D;
+ &lt;/pre&gt;&#x0D;
+ &lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;XJM&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.00.00&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.FileSystemService.editFile(com.vbm.grc.basic.vo.FileSystemVO, java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.filesystem.FileSystemService.editFile(FileSystemVO vo, String filePk)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 编辑文件信息 &#x0D;
+ 输入文件实体信息和存在临时表里的文件内容pk&#x0D;
+ 1.先作一些判断 filepk vo 是否为空&#x0D;
+ 2.将vo信息做处理后更新数据库中的信息  主要是文件名信息&#x0D;
+ 3.将临时表中的文件内容更新到附件表中&#x0D;
+ 输出一系列操作的完成情况 MsgResponse&#x0D;
+ 先将该&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;filePk&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

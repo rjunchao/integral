@@ -1,0 +1,46 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.updateMenu(org.gocom.components.coframe.framework.application.AppMenu)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateMenu&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateMenu&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.updateMenu&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appmenu(org.gocom.components.coframe.framework.application.AppMenu):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.deleteMenus(commonj.sdo.DataObject[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteMenus&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteMenus&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.deleteMenus&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodes(commonj.sdo.DataObject[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.getMenu(org.gocom.components.coframe.framework.application.AppMenu)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getMenu&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.getMenu&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.framework.application.AppMenu):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appmenu(org.gocom.components.coframe.framework.application.AppMenu):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.updateMenuRelation(String, String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateMenuRelation&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;modifyMenuRelation&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.updateMenuRelation&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;nodeType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;targetNodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;targetNodeType(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.queryMenu(String, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryMenu&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryMenu&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.queryMenu&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;parentmenuid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.framework.application.AppMenu[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.saveMenu(org.gocom.components.coframe.framework.application.AppMenu)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveMenu&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.saveMenu&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;appmenu(org.gocom.components.coframe.framework.application.AppMenu):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.deleteMenu(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteMenu&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteFuncGroup&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.deleteMenu&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;menuid(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.validateMenu(org.gocom.components.coframe.framework.application.AppMenu)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;validateMenu&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;validateMenu&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.validateMenu&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.framework.application.AppMenu):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>MenuManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;MenuManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;MenuManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.deleteMenuNodes(java.util.List)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteMenuNodes&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteNodes&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.deleteMenuNodes&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.framework.MenuManager.queryMenuTreeNode(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryMenuTreeNode&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryMenuTreeNode&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.framework.MenuManager.queryMenuTreeNode&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

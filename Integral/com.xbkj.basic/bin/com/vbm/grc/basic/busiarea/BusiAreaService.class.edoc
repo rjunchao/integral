@@ -1,0 +1,36 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.BusiAreaService.findBusiAreaId(java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;BusiAreaVO com.vbm.grc.basic.busiarea.BusiAreaService.findBusiAreaId(String pk)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.BusiAreaService.validateBusiCode(com.vbm.grc.basic.vo.BusiAreaVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;int com.vbm.grc.basic.busiarea.BusiAreaService.validateBusiCode(BusiAreaVO vo)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.BusiAreaService.saveBusiArea(com.vbm.grc.basic.vo.BusiAreaVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.busiarea.BusiAreaService.saveBusiArea(BusiAreaVO vo)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.BusiAreaService.updateBusiArea(com.vbm.grc.basic.vo.BusiAreaVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.busiarea.BusiAreaService.updateBusiArea(BusiAreaVO vo)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.BusiAreaService.queryBusiAreaTree(java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;List&lt;Map&lt;String,Object&gt;&gt; com.vbm.grc.basic.busiarea.BusiAreaService.queryBusiAreaTree(String nodeId)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询并显示业务领域树&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;返回构造树&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>BusiAreaService [对业务领域进行操作]</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.vbm.grc.basic.busiarea.BusiAreaService&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;lwl&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&#x0D;
+业务领域服务类&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.BusiAreaService.deleteBusiArea(com.vbm.grc.basic.vo.BusiAreaVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.vbm.grc.basic.busiarea.BusiAreaService.deleteBusiArea(BusiAreaVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.BusiAreaService.queryBusiAreaList(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;BusiAreaVO[] com.vbm.grc.basic.busiarea.BusiAreaService.queryBusiAreaList(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

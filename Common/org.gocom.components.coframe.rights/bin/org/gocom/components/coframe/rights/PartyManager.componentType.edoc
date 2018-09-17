@@ -1,0 +1,14 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.rights.PartyManager.saveParty(org.gocom.components.coframe.rights.dataset.CapRole[], String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveParty&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveParty&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.PartyManager.saveParty&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roles(org.gocom.components.coframe.rights.dataset.CapRole[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyId(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>PartyManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;PartyManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;PartyManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.PartyManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.PartyManager.queryPartyWithPartyId(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryPartyWithPartyId&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryPartyWithPartyId&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.PartyManager.queryPartyWithPartyId&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roles(org.gocom.components.coframe.rights.dataset.CapRole[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>LoginManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;LoginManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;LoginManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.LoginManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.LoginManager.authentication(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;authentication&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;authentication&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.LoginManager.authentication&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;password(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;returnValue(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.LoginManager.login(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;login&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;login&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.LoginManager.login&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;password(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;retCode(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.LoginManager.ssologin(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;ssologin&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;ssologin&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.LoginManager.ssologin&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;retCode(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.LoginManager.logout(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;logout&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;logout&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.LoginManager.logout&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;uniqueId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userObject(com.eos.data.datacontext.UserObject):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.LoginManager.getMenuData()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getMenuData&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getMenuData&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.LoginManager.getMenuData&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;treeNodes(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

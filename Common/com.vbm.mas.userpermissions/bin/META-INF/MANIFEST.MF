@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Require-Bundle: org.gocom.components.coframe.auth,org.gocom.components
+ .coframe.framework,org.gocom.components.coframe.org,org.gocom.compone
+ nts.coframe.rights,org.gocom.components.coframe.tools,com.primeton.eo
+ s.richweb,com.eos.foundation,com.eos.workflow
+Bundle-Vendor: WES
+eos-webCtxPath: mas/userpermissions
+Bundle-Version: 1.0.0
+Bundle-Name: com.vbm.mas.userpermissions
+Bundle-Description: 人员分配操作机构
+Bundle-SymbolicName: com.vbm.mas.userpermissions
+

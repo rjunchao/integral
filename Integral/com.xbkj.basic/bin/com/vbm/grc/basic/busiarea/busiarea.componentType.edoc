@@ -1,0 +1,34 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.busiarea.removeBusiArea(com.vbm.grc.basic.vo.BusiAreaVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;removeBusiArea&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;removeBusiArea&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea.removeBusiArea&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.BusiAreaVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.busiarea.findBusiAreaById(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;findBusiAreaById&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;findBusiAreaById&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea.findBusiAreaById&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;pk(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.BusiAreaVO):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.busiarea.busiAreaTree(java.util.Map, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;busiAreaTree&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;BasiAreaTree&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea.busiAreaTree&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;lists(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.busiarea.addBusiArea(com.vbm.grc.basic.vo.BusiAreaVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addBusiArea&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveBasiArea&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea.addBusiArea&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.BusiAreaVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.busiarea.updateBusiArea(com.vbm.grc.basic.vo.BusiAreaVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateBusiArea&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateBusiArea&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea.updateBusiArea&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.BusiAreaVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.busiarea.busiAreaList(com.eos.foundation.PageCond, java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;busiAreaList&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;basiAreaList&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea.busiAreaList&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;datas(com.vbm.grc.basic.vo.BusiAreaVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>busiarea</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;busiarea.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;busiarea&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.busiarea.busiarea.validateBusiAreaCode(com.vbm.grc.basic.vo.BusiAreaVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;validateBusiAreaCode&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;validateBusiAreaCode&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.busiarea.busiarea.validateBusiAreaCode&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.BusiAreaVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;result(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

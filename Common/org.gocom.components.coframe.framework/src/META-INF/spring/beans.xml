@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:sca="http://www.springframework.org/schema/sca" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd   http://www.springframework.org/schema/sca http://www.osoa.org/xmlns/sca/1.0/spring-sca.xsd">
+    <bean id="AppApplicationBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.framework.IAppApplicationService</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.framework.AppApplicationService">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="AppFuncgroupBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.framework.IAppFuncgroupService</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.framework.AppFuncgroupService">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="AppFuncresourceBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.framework.IAppFuncresourceService</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.framework.AppFuncresourceService">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="AppFunctionBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.framework.IAppFunctionService</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.framework.AppFunctionService">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="AppMenuBean" parent="DefaultBaseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.gocom.components.coframe.framework.IAppMenuService</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="org.gocom.components.coframe.framework.AppMenuService">
+                <property name="dataSource" ref="DefaultDataSource"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="FunctionAuthServiceBean" class="org.gocom.components.coframe.framework.auth.FunctionAuthServiceBean">
+	</bean>
+</beans>

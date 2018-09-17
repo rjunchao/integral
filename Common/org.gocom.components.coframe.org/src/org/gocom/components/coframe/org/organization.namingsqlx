@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:YANGZHOU -->
+<sqlMap>
+   <select id="select_orgemp" parameterClass="String" resultClass="org.gocom.components.coframe.org.dataset.OrgEmployee"><![CDATA[
+	SELECT E.* FROM ORG_EMPLOYEE E,ORG_EMPORG O  WHERE E.EMPID = O.EMPID AND O.ORGID =#id#
+	AND E.EMPID NOT IN
+    (SELECT EMPID FROM ORG_EMPPOSITION EP,ORG_POSITION P
+	       WHERE EP.POSITIONID=P.POSITIONID AND P.ORGID=#id#)    
+    ]]></select>  
+</sqlMap>

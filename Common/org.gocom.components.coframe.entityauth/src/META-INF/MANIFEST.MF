@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-Description: 
+Bundle-Name: org.gocom.components.coframe.entityauth
+eos-webCtxPath: entityauth
+Bundle-Vendor: lijuntao
+Bundle-SymbolicName: org.gocom.components.coframe.entityauth
+Require-Bundle: com.eos.foundation,com.primeton.eos.richweb,com.primet
+ on.workflow.core,com.eos.workflow
+Bundle-Version: 1.0.0
+

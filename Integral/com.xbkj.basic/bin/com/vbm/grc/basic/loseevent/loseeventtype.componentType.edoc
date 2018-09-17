@@ -1,0 +1,34 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.loseeventtype.addloseevent(com.vbm.grc.basic.vo.LoseEventTypeVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addloseevent&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addloseevent&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype.addloseevent&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.LoseEventTypeVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.loseeventtype.delloseevents(com.vbm.grc.basic.vo.LoseEventTypeVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;delloseevents&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;delloseevents&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype.delloseevents&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.LoseEventTypeVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>loseeventtype</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;loseeventtype.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;loseeventtype&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.loseeventtype.loseeventlist(com.eos.foundation.PageCond, java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;loseeventlist&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;loseeventlist&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype.loseeventlist&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.vbm.grc.basic.vo.LoseEventTypeVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.loseeventtype.validatecode(com.vbm.grc.basic.vo.LoseEventTypeVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;validatecode&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;validatecode&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype.validatecode&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.LoseEventTypeVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;count(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.loseeventtype.updateloseevent(com.vbm.grc.basic.vo.LoseEventTypeVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateloseevent&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateloseevent&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype.updateloseevent&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.LoseEventTypeVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.loseeventtype.loseeventtree(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;loseeventtree&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;loseeventtree&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype.loseeventtree&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;lists(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.loseevent.loseeventtype.findlostenentbyid(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;findlostenentbyid&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;findlostenentbyid&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.loseevent.loseeventtype.findlostenentbyid&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;pk(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.LoseEventTypeVO):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

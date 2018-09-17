@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.primeton.eos.richweb,com.eos.foundation,com.eos.wo
+ rkflow
+Bundle-Vendor: ljb
+eos-webCtxPath: grc/common
+Bundle-Version: 1.0.0
+Bundle-Name: com.vbm.grc.common
+Bundle-Description: 
+Bundle-SymbolicName: com.xbkj.common
+

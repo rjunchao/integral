@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<viewModelSet author="xinjian" displayName="tools" id="org.gocom.components.coframe.tools.tools">
+    <viewModel author="xinjian" displayName="EosDictEntryI18n" entityName="org.gocom.components.coframe.tools.tools.EosDictEntryI18n" id="EosDictEntryI18n">
+        <field dataType="String" dict="false" id="dicttypeid" label="dicttypeid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="dictid" label="dictid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="dictname" label="dictname">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" id="locale" label="locale">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+    </viewModel>
+</viewModelSet>

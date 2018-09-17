@@ -1,0 +1,34 @@
+<map>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.filemanage.onFolderValidation(com.vbm.grc.basic.vo.FileSystemVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;onFolderValidation&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;校验文件夹是否重名&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage.onFolderValidation&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.FileSystemVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;count(Int):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;校验文件夹是否重名&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.filemanage.addFile(com.vbm.grc.basic.vo.FileSystemVO, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addFile&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;上传文件&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage.addFile&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.FileSystemVO):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;filePk(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.filemanage.updateFolder(com.vbm.grc.basic.vo.FileSystemVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateFolder&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;修改文件夹信息&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage.updateFolder&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.FileSystemVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;修改文件夹信息&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>附件管理</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;filemanage.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;附件管理&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.filemanage.deleteFileByID(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteFileByID&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;删除附件&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage.deleteFileByID&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;fileId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;根据附件主键删除附件&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.filemanage.addFolder(com.vbm.grc.basic.vo.FileSystemVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addFolder&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;添加文件夹&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage.addFolder&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.FileSystemVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;添加文件夹&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.filemanage.queryFileByBelongToId(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryFileByBelongToId&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获取某某的所有附件&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage.queryFileByBelongToId&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;belongTo(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;fileList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;获取某某的所有附件&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.grc.basic.filesystem.filemanage.editFile(com.vbm.grc.basic.vo.FileSystemVO, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;editFile&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;编辑文件&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.grc.basic.filesystem.filemanage.editFile&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.vbm.grc.basic.vo.FileSystemVO):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;filePk(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.vbm.grc.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PartyModel>
+	<PartyTypeList>
+		<PartyType typeID="role" name="角色" partyTypeDataService="org.gocom.components.coframe.auth.party.impl.RolePartyTypeDataService" description="" isRole="true" priority="2" icon16path="" icon32path="" showInTree="true" showAtRoot="true" isLeaf="false"/>
+		<PartyType typeID="org" name="机构" partyTypeDataService="org.gocom.components.coframe.org.party.impl.OrgPartyTypeDataService" description="" isRole="false" priority="1" icon16path="" icon32path="" showInTree="true" showAtRoot="true" isLeaf="false"/>
+		<PartyType typeID="position" name="岗位" partyTypeDataService="org.gocom.components.coframe.org.party.impl.PositionPartyTypeDataService" description="" isRole="false" priority="3" icon16path="" icon32path="" showInTree="true" showAtRoot="false" isLeaf="false"/>
+		<PartyType typeID="emp" name="员工" partyTypeDataService="org.gocom.components.coframe.org.party.impl.EmpPartyTypeDataService" description="" isRole="false" priority="5" icon16path="" icon32path="" showInTree="true" showAtRoot="false" isLeaf="true"/>
+		<PartyType typeID="user" name="用户" partyTypeDataService="org.gocom.components.coframe.auth.party.impl.UserPartyTypeDataService" description="" isRole="false" priority="6" icon16path="" icon32path="" showInTree="false" showAtRoot="false" isLeaf="true"/>
+		<PartyType typeID="orgRole" name="机构角色" partyTypeDataService="org.gocom.components.coframe.auth.party.impl.OrgRolePartyTypeDataService" description="" isRole="false" priority="4" icon16path="" icon32path="" showInTree="true" showAtRoot="false" isLeaf="false"/>
+ 	</PartyTypeList>
+ 	
+  	<PartyTypeRefList>
+  		<PartyTypeRef refID="emp_user_ref" refName="员工用户" refType="p_c" parentPartyTypeID="emp" childPartyTypeID="user" partyTypeRefDataService="org.gocom.components.coframe.auth.party.ref.impl.EmpUserRefDataService"/>
+  		
+  		<!-- 组织机构内部关系 -->
+		<PartyTypeRef refID="org_org_ref" refName="机构机构" refType="p_c" parentPartyTypeID="org" childPartyTypeID="org" partyTypeRefDataService="org.gocom.components.coframe.org.party.ref.impl.OrgOrgRefDataService"/>
+		<PartyTypeRef refID="org_pos_ref" refName="机构岗位" refType="p_c" parentPartyTypeID="org" childPartyTypeID="position" partyTypeRefDataService="org.gocom.components.coframe.org.party.ref.impl.OrgPosRefDataService"/>
+		<PartyTypeRef refID="org_emp_ref" refName="机构员工" refType="p_c" parentPartyTypeID="org" childPartyTypeID="emp" partyTypeRefDataService="org.gocom.components.coframe.org.party.ref.impl.OrgEmpRefDataService"/>
+		<PartyTypeRef refID="pos_pos_ref" refName="岗位岗位" refType="p_c" parentPartyTypeID="position" childPartyTypeID="position" partyTypeRefDataService="org.gocom.components.coframe.org.party.ref.impl.PosPosRefDataService"/>
+		<PartyTypeRef refID="pos_emp_ref" refName="岗位员工" refType="p_c" parentPartyTypeID="position" childPartyTypeID="emp" partyTypeRefDataService="org.gocom.components.coframe.org.party.ref.impl.PosEmpRefDataService"/>
+  		
+  		<!-- 与角色相关的关系 -->
+		<PartyTypeRef refID="role_user_ref" refName="角色用户" refType="r_p" parentPartyTypeID="role" childPartyTypeID="user" partyTypeRefDataService="org.gocom.components.coframe.auth.party.ref.impl.RoleUserRefDataService"/>
+  		<PartyTypeRef refID="role_emp_ref" refName="角色员工" refType="r_p" parentPartyTypeID="role" childPartyTypeID="emp" partyTypeRefDataService="org.gocom.components.coframe.auth.party.ref.impl.RoleEmpRefDataService"/>
+		<PartyTypeRef refID="role_position_ref" refName="角色岗位" refType="r_p" parentPartyTypeID="role" childPartyTypeID="position" partyTypeRefDataService="org.gocom.components.coframe.auth.party.ref.impl.RolePositionRefDataService"/>
+		<PartyTypeRef refID="role_org_ref" refName="角色机构" refType="r_p" parentPartyTypeID="role" childPartyTypeID="org" partyTypeRefDataService="org.gocom.components.coframe.auth.party.ref.impl.RoleOrgRefDataService"/>
+  	</PartyTypeRefList>
+</PartyModel>

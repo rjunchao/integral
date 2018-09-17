@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="org.gocom.components.coframe.rights.dataset" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="org.gocom.components.coframe.rights.dataset">
+    <xs:complexType name="CapRole" sdoJava:instanceClass="org.gocom.components.coframe.rights.dataset.impl.CapRoleImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="roleCode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="roleDesc" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createuser" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CapResauth" sdoJava:instanceClass="org.gocom.components.coframe.rights.dataset.impl.CapResauthImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="partyId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="resId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="resType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="resState" nillable="true" type="xs:string"/>
+            <xs:element default="0" minOccurs="0" name="partyScope" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createuser" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CapSsouser" sdoJava:instanceClass="org.gocom.components.coframe.rights.dataset.impl.CapSsouserImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="operatorId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="unlocktime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastlogin" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="errcount" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="maccode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ipaddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createuser" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CapUser" sdoJava:instanceClass="org.gocom.components.coframe.rights.dataset.impl.CapUserImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="operatorId" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="invaldate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="authmode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="unlocktime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="menutype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="lastlogin" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="errcount" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="startdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="enddate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="validtime" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="maccode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ipaddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createuser" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CapPartyauth" sdoJava:instanceClass="org.gocom.components.coframe.rights.dataset.impl.CapPartyauthImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="roleType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createuser" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="capRole" nillable="true" type="CapRole"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,42 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.queryUser(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;query&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.queryUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.rights.dataset.CapUser[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.updateUser(org.gocom.components.coframe.rights.dataset.CapUser)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;update&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.updateUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.deleteUser(org.gocom.components.coframe.rights.dataset.CapUser[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;delete&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.deleteUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;users(org.gocom.components.coframe.rights.dataset.CapUser[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.addUser(org.gocom.components.coframe.rights.dataset.CapUser)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;add&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.addUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.updatePasswords(org.gocom.components.coframe.rights.dataset.CapUser[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updatePasswords&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateUserByTemplate&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.updatePasswords&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;users(org.gocom.components.coframe.rights.dataset.CapUser[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.getCapUser(org.gocom.components.coframe.rights.dataset.CapUser)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getCapUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getCapUser&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.getCapUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>capuser</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;UserManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;capuser&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.checkUser(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;checkUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;checkUser&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.checkUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;bool(Boolean):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.getUser(org.gocom.components.coframe.rights.dataset.CapUser)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;get&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.getUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.rights.UserManager.checkPassword(org.gocom.components.coframe.rights.dataset.CapUser, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;checkPassword&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;checkPassword&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.rights.UserManager.checkPassword&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;password(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;retValue(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

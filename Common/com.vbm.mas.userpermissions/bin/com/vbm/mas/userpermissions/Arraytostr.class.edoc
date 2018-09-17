@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>Arraytostr</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.vbm.mas.userpermissions.Arraytostr&lt;/b&gt;&lt;br/&gt;&lt;p&gt; &lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;WES&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2015-04-16 17:35:19&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.Arraytostr.AuthUserOrg(java.lang.String, java.lang.String, java.lang.String, java.lang.String[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;String com.vbm.mas.userpermissions.Arraytostr.AuthUserOrg(String orgid, String empid, String userid, String[] orgIds)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.Arraytostr.arraytostring(commonj.sdo.DataObject[], java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;String com.vbm.mas.userpermissions.Arraytostr.arraytostring(DataObject[] a, String orgUn)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.Arraytostr.updateAuth(commonj.sdo.DataObject[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;void com.vbm.mas.userpermissions.Arraytostr.updateAuth(DataObject[] auths)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.Arraytostr.deleteUserOrg(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], java.lang.String[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;String com.vbm.mas.userpermissions.Arraytostr.deleteUserOrg(String orgid, String empid, String userid, String[] left, String[] right)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

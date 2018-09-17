@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Description: 实现BPS的组织机构接口
+Bundle-Name: 流程接口实现
+eos-webCtxPath: coframe/bpsom
+Bundle-Vendor: caozw
+Bundle-SymbolicName: org.gocom.components.coframe.bps.om
+Require-Bundle: org.gocom.components.coframe.tools,org.gocom.component
+ s.coframe.framework,org.gocom.components.coframe.rights,org.gocom.com
+ ponents.coframe.auth,com.eos.foundation,com.primeton.eos.richweb,com.
+ primeton.workflow.core,com.eos.workflow
+Bundle-Version: 1.0.0
+

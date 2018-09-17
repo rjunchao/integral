@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>utils</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;utils.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;utils&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.utils&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.utils.getNumber()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getNumber&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getNumber&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.utils.getNumber&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;number(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

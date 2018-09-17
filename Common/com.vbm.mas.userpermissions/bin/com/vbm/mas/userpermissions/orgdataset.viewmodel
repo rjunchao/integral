@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<viewModelSet author="WES" displayName="orgdataset" id="com.vbm.mas.userpermissions.orgdataset">
+    <viewModel author="WES" displayName="OrgEntity" entityName="com.vbm.mas.userpermissions.orgdataset.OrgEntity" id="OrgEntity">
+        <field dataType="String" dict="false" entityField="porgid" id="porgid" label="porgid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="orgname" id="orgname" label="orgname">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+    </viewModel>
+    <viewModel author="WES" displayName="FcUserPermissions" entityName="com.vbm.mas.userpermissions.orgdataset.FcUserPermissions" id="FcUserPermissions">
+        <field dataType="String" dict="false" entityField="pk" id="pk" label="pk">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Int" dict="false" entityField="orgid" id="orgid" label="orgid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Int" dict="false" entityField="empid" id="empid" label="empid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="userid" id="userid" label="userid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Int" dict="false" entityField="porgid" id="porgid" label="porgid">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+    </viewModel>
+</viewModelSet>

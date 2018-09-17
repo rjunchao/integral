@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.tools.tools.getDict(org.gocom.components.coframe.tools.tools.EosDictEntryI18n, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getDict&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getDict&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.tools.tools.getDict&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;dict(org.gocom.components.coframe.tools.tools.EosDictEntryI18n):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;dicttypeid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;dicts(org.gocom.components.coframe.tools.tools.EosDictEntryI18n[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>tools</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;tools.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;tools&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.tools.tools&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scripts>	
+	<component name="coframe" index="2000" test-table="CAP_FORM">
+		<group type="oracle">
+			<script uri="META-INF/scripts/coframe/Oracle/coframe.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/Oracle/coframe_init_data.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/Oracle/platform_init_data.sql" encoding="GBK" />
+		</group>
+		<group type="db2">
+			<script uri="META-INF/scripts/coframe/DB2/coframe.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/DB2/coframe_init_data.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/DB2/platform_init_data.sql" encoding="GBK" />
+		</group>
+		<group type="informix">
+		</group>
+		<group type="sybase">
+		</group>
+		<group type="sqlserver">
+			<script uri="META-INF/scripts/coframe/SQLServer/coframe.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/SQLServer/coframe_init_data.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/SQLServer/platform_init_data.sql" encoding="GBK" />
+		</group>
+		<group type="mysql">
+			<script uri="META-INF/scripts/coframe/Mysql/coframe.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/Mysql/coframe_init_data.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/Mysql/platform_init_data.sql" encoding="GBK" />
+		</group>
+		<group type="kingbasees">
+			<script uri="META-INF/scripts/coframe/KingbaseES/coframe.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/KingbaseES/coframe_init_data.sql" encoding="GBK" />
+			<script uri="META-INF/scripts/coframe/KingbaseES/platform_init_data.sql" encoding="GBK" />
+		</group>
+	</component>
+</scripts>

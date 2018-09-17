@@ -1,0 +1,30 @@
+<map>
+  <entry>
+    <string>com.vbm.mas.userpermissions.allorg.updateAuth(org.gocom.components.coframe.org.dataset.OrgEmployee[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateAuth&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.mas.userpermissions.allorg.updateAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;auths(org.gocom.components.coframe.org.dataset.OrgEmployee[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.allorg.queryUserOrg(String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryUserOrg&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryUserOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.mas.userpermissions.allorg.queryUserOrg&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;empid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;org(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgs(com.vbm.mas.userpermissions.orgdataset.OrgEntity[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>allorg</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;allorg.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;allorg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.mas.userpermissions.allorg&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.allorg.insetUserOrg(String, String, String[], String, String, String[], String[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;insetUserOrg&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;insetUserOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.mas.userpermissions.allorg.insetUserOrg&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;empid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;orgIds(String[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;userid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;authType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;left(String[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;right(String[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;re(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.allorg.queryUserOrgUn(String, String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryUserOrgUn&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryUserOrgUn&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.mas.userpermissions.allorg.queryUserOrgUn&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;empid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;orgUn(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;orgTemp(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgs(com.vbm.mas.userpermissions.orgdataset.OrgEntity[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.allorg.queryallorg()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryallorg&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryallorg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.mas.userpermissions.allorg.queryallorg&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgs(org.gocom.components.coframe.auth.queryentity.OrgOrganization[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.vbm.mas.userpermissions.allorg.insertUserOrgNew(String, String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;insertUserOrgNew&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;insertUserOrgNew&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.vbm.mas.userpermissions.allorg.insertUserOrgNew&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;empid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;userid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;allotedOrg(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;re(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

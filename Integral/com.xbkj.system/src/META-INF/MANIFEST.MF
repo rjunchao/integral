@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.primeton.eos.richweb,com.eos.foundation,com.eos.wo
+ rkflow
+Bundle-Vendor: heFei
+eos-webCtxPath: xbkj/system
+Bundle-Version: 1.0.0
+Bundle-Name: com.vbm.grc.system
+Bundle-Description: 
+Bundle-SymbolicName: com.xbkj.system
+

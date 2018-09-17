@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+/*change skin*/
+.head-in{background-image:url(../images/blue/head.gif);}
+.head-in .name{background-image:url(../images/blue/name.png); _background-image:url(../images/blue/name.gif);}
+.sidebar .menu dl dt{background-image:url(../images/blue/menu-item.gif);}
+.position li a{background-image:url(../images/blue/position-item-bg.gif);}
+.position li span{background-image:url(../images/blue/position-item-left.gif);}
+.position li .arrow{background-image:url(../images/blue/position-item-bg-arrow.png); _background-image:url(../images/blue/position-item-bg-arrow.gif);}
+
+#footer{border-top-color:#9dc2e1; background-image:url(../images/blue/foot-bg.gif); color:#0b4170;}

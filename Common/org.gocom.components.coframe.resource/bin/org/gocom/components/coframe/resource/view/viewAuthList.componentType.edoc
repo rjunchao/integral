@@ -1,0 +1,18 @@
+<map>
+  <entry>
+    <string>viewAuthList</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;viewAuthList.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;viewAuthList&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.view.viewAuthList&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.resource.view.viewAuthList.getViewAuthStatus(String, String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getViewAuthStatus&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获取视图权限设置&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.view.viewAuthList.getViewAuthStatus&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;moduleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;viewId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;fields(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;filters(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;actions(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;viewExceptChildList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.resource.view.viewAuthList.saveViewAuths(String, com.primeton.cap.auth.AuthResource[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveViewAuths&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;设置视图权限&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.view.viewAuthList.saveViewAuths&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;authRes(com.primeton.cap.auth.AuthResource[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;saveResult(String):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.resource.view.viewAuthList.getViewTreeList()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getViewTreeList&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getViewList&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.resource.view.viewAuthList.getViewTreeList&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;viewTreeList(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1,0 +1,46 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.addEmployee(org.gocom.components.coframe.org.dataset.OrgEmployee, org.gocom.components.coframe.rights.dataset.CapUser, org.gocom.components.coframe.org.dataset.OrgOrganization)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addEmployee&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.addEmployee&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;employee(org.gocom.components.coframe.org.dataset.OrgEmployee):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;org(org.gocom.components.coframe.org.dataset.OrgOrganization):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;response(org.gocom.components.coframe.org.util.OrgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.updateEmployee(org.gocom.components.coframe.org.dataset.OrgEmployee, org.gocom.components.coframe.rights.dataset.CapUser)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateEmployee&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.updateEmployee&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;employee(org.gocom.components.coframe.org.dataset.OrgEmployee):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;user(org.gocom.components.coframe.rights.dataset.CapUser):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;response(org.gocom.components.coframe.org.util.OrgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.queryEmpType(String, String, com.primeton.das.criteria.criteriaType)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryEmpType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryEmpType&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.queryEmpType&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;tableName(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;orgid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;empTypes(commonj.sdo.DataObject[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.queryEmpInPosition(String, String, String, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryEmpInPosition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryEmpByPosition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.queryEmpInPosition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;empname(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;positionid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;emps(org.gocom.components.coframe.org.dataset.OrgEmployee[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.getEmployee(org.gocom.components.coframe.org.dataset.OrgEmployee)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getEmployee&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.getEmployee&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.org.dataset.OrgEmployee):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;employee(org.gocom.components.coframe.org.dataset.OrgEmployee):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.queryEmployee(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryEmployee&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.queryEmployee&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;treeNodes(org.gocom.components.coframe.org.dataset.OrgTreeNode[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.queryEmpUsers(com.eos.foundation.PageCond, com.primeton.das.criteria.criteriaType)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryEmpUsers&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryEmpUsers&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.queryEmpUsers&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;treeNodes(org.gocom.components.coframe.org.dataset.OrgTreeNode[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>employee</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;employee.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;employee&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.deleteEmployee(org.gocom.components.coframe.org.dataset.OrgEmployee[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteEmployee&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.deleteEmployee&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;employees(org.gocom.components.coframe.org.dataset.OrgEmployee[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.updateEmpDetaiInfo(org.gocom.components.coframe.org.dataset.OrgEmployee)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updateEmpDetaiInfo&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateEmpDetaiInfo&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.updateEmpDetaiInfo&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;employee(org.gocom.components.coframe.org.dataset.OrgEmployee):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;response(org.gocom.components.coframe.org.util.OrgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.employee.queryEmpAllowAddInPosition(String, String, String, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryEmpAllowAddInPosition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryEmpByPosition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.employee.queryEmpAllowAddInPosition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;empname(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;positionid(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;data(org.gocom.components.coframe.org.dataset.OrgEmployee[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

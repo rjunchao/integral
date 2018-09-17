@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralManager.countCustInegral(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;countCustInegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;countCustInegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralManager.countCustInegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;idcard(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;count(Double):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralManager.vipIntegral(com.xbkj.gd.integral.vos.IntegralDetailVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralManager.vipIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.IntegralDetailVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;vip积分赠送&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralManager.queryCustIntegal(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryCustIntegal&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryCustIntegal&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralManager.queryCustIntegal&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.IntegralDetailVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>integralManager</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;integralManager.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;integralManager&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralManager&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralManager.vipIntegralQuery(com.xbkj.gd.integral.vos.CustomerVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;vipIntegralQuery&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralManager.vipIntegralQuery&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.CustomerVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;count(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralManager.modifyIntegral(String, com.xbkj.gd.integral.vos.IntegralDetailVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;modifyIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;modifiIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralManager.modifyIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;flag(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.IntegralDetailVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

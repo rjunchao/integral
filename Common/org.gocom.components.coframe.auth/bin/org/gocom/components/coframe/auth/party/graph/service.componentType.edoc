@@ -1,0 +1,14 @@
+<map>
+  <entry>
+    <string>图形化展示参与者服务</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;service.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;图形化展示参与者服务&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.party.graph.service&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.party.graph.service.getFunctionMenuGraph(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getFunctionMenuGraph&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获取功能菜单图形&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.party.graph.service.getFunctionMenuGraph&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;partyId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodes(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.auth.party.graph.service.getPartyAuthGraph(String, String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getPartyAuthGraph&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;获取参与者授权计算情况&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.auth.party.graph.service.getPartyAuthGraph&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;partyId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyType(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodes(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

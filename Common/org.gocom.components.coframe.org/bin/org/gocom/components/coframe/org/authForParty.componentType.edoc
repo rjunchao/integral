@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.org.authForParty.storePartyAuth(String, com.primeton.cap.party.Party[], com.primeton.cap.party.Party[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;storePartyAuth&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;保存Party授权信息&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.authForParty.storePartyAuth&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;roleId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyWithAuth(com.primeton.cap.party.Party[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;partyNoAuth(com.primeton.cap.party.Party[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;saveResult(Boolean):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;保存Party授权信息&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>Party授权</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;authForParty.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;Party授权&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.authForParty&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;Party授权&lt;/html&gt;</string>
+  </entry>
+</map>

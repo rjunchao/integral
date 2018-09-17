@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="org.gocom.components.coframe.auth.queryentity" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="org.gocom.components.coframe.auth.queryentity">
+    <xs:complexType name="QueryUserByEmp" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.QueryUserByEmpImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="operatorId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryUserByRole" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.QueryUserByRoleImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="operatorId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryEmpByRole" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.QueryEmpByRoleImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryEmpByOrgRole" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.QueryEmpByOrgRoleImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryEmpAndUserByUser" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.QueryEmpAndUserByUserImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="empcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryOrgByRole" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.QueryOrgByRoleImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="orgcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryPositionByRole" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.QueryPositionByRoleImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="positionid" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="posicode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="posiname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PartyDataObject" sdoJava:instanceClass="org.gocom.components.coframe.auth.queryentity.impl.PartyDataObjectImpl">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="partyTypeID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantID" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrgOrganization">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="orgcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgname" nillable="true" type="xs:string"/>
+            <xs:element default="1" minOccurs="0" name="orglevel" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="orgdegree" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgseq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgtype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgaddr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="manaposition" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="managerid" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="orgmanager" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="linkman" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="linktel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="weburl" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="startdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="enddate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="area" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastupdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="updator" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="sortno" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="isleaf" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="subcount" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="pid" nillable="true" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryEmployee">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            <xs:element minOccurs="0" name="empid" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="empcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="operatorid" nillable="true" type="xs:long"/>
+            <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="realname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="birthdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="position" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="empstatus" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardtype" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cardno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="indate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="outdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="otel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oaddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ozipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="oemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="faxno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobileno" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="qq" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="htel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="haddress" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="hzipcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="pemail" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="party" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="degree" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="major" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="specialty" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="workexp" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="regdate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="lastmodytime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="orgidlist" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgid" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="tenantId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="appId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="weibo" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgcode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="orgname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="empType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="taskAmount" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="pkPosition" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

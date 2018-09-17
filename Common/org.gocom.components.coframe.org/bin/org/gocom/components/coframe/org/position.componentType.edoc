@@ -1,0 +1,38 @@
+<map>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.getPositionWithParent(org.gocom.components.coframe.org.dataset.OrgPosition)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getPositionWithParent&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getOrgWithParent&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.getPositionWithParent&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;template(org.gocom.components.coframe.org.dataset.OrgPosition):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgPosition(org.gocom.components.coframe.org.dataset.OrgPosition):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>position</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;position.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;position&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.queryPosition(com.primeton.das.criteria.criteriaType, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryPosition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.queryPosition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;criteria(com.primeton.das.criteria.criteriaType):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;treeNodes(org.gocom.components.coframe.org.dataset.OrgTreeNode[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.addPosition(org.gocom.components.coframe.org.dataset.OrgPosition)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addPosition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.addPosition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgPosition(org.gocom.components.coframe.org.dataset.OrgPosition):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;response(org.gocom.components.coframe.org.util.OrgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.deletePosition(org.gocom.components.coframe.org.dataset.OrgPosition[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deletePosition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;deleteOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.deletePosition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgPositions(org.gocom.components.coframe.org.dataset.OrgPosition[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.queryOrgNodes(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryOrgNodes&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryOrgNodes&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.queryOrgNodes&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;nodeId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;treeNodes(org.gocom.components.coframe.org.dataset.OrgTreeNode[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.addEmpposition(org.gocom.components.coframe.org.dataset.OrgEmpposition[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addEmpposition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addEmpposition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.addEmpposition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;empPositions(org.gocom.components.coframe.org.dataset.OrgEmpposition[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.deleteEmpposition(org.gocom.components.coframe.org.dataset.OrgEmpposition[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;deleteEmpposition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addEmpposition&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.deleteEmpposition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;empPositions(org.gocom.components.coframe.org.dataset.OrgEmpposition[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>org.gocom.components.coframe.org.position.updatePosition(org.gocom.components.coframe.org.dataset.OrgPosition)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;updatePosition&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;updateOrg&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;org.gocom.components.coframe.org.position.updatePosition&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;orgPosition(org.gocom.components.coframe.org.dataset.OrgPosition):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;response(org.gocom.components.coframe.org.util.OrgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

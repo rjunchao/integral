@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<viewModelSet author="guwei" displayName="授权模型" id="org.gocom.components.coframe.rights.dataset">
+    <viewModel author="guwei" displayName="角色表" entityName="org.gocom.components.coframe.rights.dataset.CapRole" id="CapRole">
+        <field dataType="String" dict="false" entityField="roleId" id="roleId" label="角色ID">
+            <view type="write"/>
+            <edit name="roleId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenantId" id="tenantId" label="租户ID">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="roleCode" id="roleCode" label="角色代码">
+            <view type="write"/>
+            <edit name="roleCode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="roleName" id="roleName" label="角色名">
+            <view type="write"/>
+            <edit name="roleName" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="roleDesc" id="roleDesc" label="角色描述">
+            <view type="write"/>
+            <edit name="roleDesc" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="createuser" id="createuser" label="创建者">
+            <view type="write"/>
+            <edit name="createuser" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="createtime" id="createtime" label="创建时间">
+            <view type="write"/>
+            <edit name="createtime" type="date"/>
+        </field>
+    </viewModel>
+    <viewModel author="guwei" displayName="资源授权" entityName="org.gocom.components.coframe.rights.dataset.CapResauth" id="CapResauth">
+        <field dataType="String" dict="false" entityField="partyId" id="partyId" label="参与者ID">
+            <view type="write"/>
+            <edit name="partyId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="partyType" id="partyType" label="参与者类型">
+            <view type="write"/>
+            <edit name="partyType" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="resId" id="resId" label="资源ID">
+            <view type="write"/>
+            <edit name="resId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="resType" id="resType" label="资源类型">
+            <view type="write"/>
+            <edit name="resType" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenantId" id="tenantId" label="租户ID">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="resState" id="resState" label="资源状态">
+            <view type="write"/>
+            <edit name="resState" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="partyScope" id="partyScope" label="参与者范围">
+            <view type="write"/>
+            <edit name="partyScope" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="createuser" id="createuser" label="创建用户">
+            <view type="write"/>
+            <edit name="createuser" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="createtime" id="createtime" label="创建时间">
+            <view type="write"/>
+            <edit name="createtime" type="date"/>
+        </field>
+    </viewModel>
+    <viewModel author="Administrator" displayName="SSO用户" entityName="org.gocom.components.coframe.rights.dataset.CapSsouser" id="CapSsouser">
+        <field dataType="String" dict="false" entityField="operatorId" id="operatorId" label="操作员编号">
+            <view type="write"/>
+            <edit name="operatorId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenantId" id="tenantId" label="租户ID">
+            <view type="write"/>
+            <edit name="property0" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="userId" id="userId" label="用户编号">
+            <view type="write"/>
+            <edit name="userId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="password" id="password" label="密码">
+            <view type="write"/>
+            <edit name="password" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="userName" id="userName" label="用户名">
+            <view type="write"/>
+            <edit name="userName" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="email" id="email" label="邮箱">
+            <view type="write"/>
+            <edit name="email" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="status" id="status" label="状态">
+            <view type="write"/>
+            <edit name="status" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="unlocktime" id="unlocktime" label="解锁时间">
+            <view type="write"/>
+            <edit name="unlocktime" type="date"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="lastlogin" id="lastlogin" label="最后登录时间">
+            <view type="write"/>
+            <edit name="lastlogin" type="date"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="errcount" id="errcount" label="登录错误次数">
+            <view type="write"/>
+            <edit name="errcount" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="maccode" id="maccode" label="maccode">
+            <view type="write"/>
+            <edit name="maccode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="ipaddress" id="ipaddress" label="登录IP">
+            <view type="write"/>
+            <edit name="ipaddress" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="createuser" id="createuser" label="创建用户">
+            <view type="write"/>
+            <edit name="createuser" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="createtime" id="createtime" label="创建时间">
+            <view type="write"/>
+            <edit name="createtime" type="date"/>
+        </field>
+    </viewModel>
+    <viewModel author="shitf" displayName="用户表" entityName="org.gocom.components.coframe.rights.dataset.CapUser" id="CapUser">
+        <field dataType="Decimal" dict="false" entityField="operatorId" id="operatorId" label="操作员ID">
+            <view type="write"/>
+            <edit name="operatorId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="tenantId" id="tenantId" label="租户ID">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="userId" id="userId" label="登录用户名">
+            <view type="write"/>
+            <edit name="userId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="password" id="password" label="密码">
+            <view type="write"/>
+            <edit name="password" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="invaldate" id="invaldate" label="密码失效日期">
+            <view type="write"/>
+            <edit name="invaldate" type="date"/>
+        </field>
+        <field dataType="String" dict="false" entityField="userName" id="userName" label="用户名称">
+            <view type="write"/>
+            <edit name="userName" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="authmode" id="authmode" label="本地密码认证、LDAP认证、等">
+            <view type="write"/>
+            <edit name="authmode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="status" id="status" label="正常，挂起，注销，锁定...">
+            <view type="write"/>
+            <edit name="status" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="unlocktime" id="unlocktime" label="当状态为锁定时，解锁的时间">
+            <view type="write"/>
+            <edit name="unlocktime" type="date"/>
+        </field>
+        <field dataType="String" dict="false" entityField="menutype" id="menutype" label="用户登录后菜单的风格">
+            <view type="write"/>
+            <edit name="menutype" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="lastlogin" id="lastlogin" label="最后登录时间">
+            <view type="write"/>
+            <edit name="lastlogin" type="date"/>
+        </field>
+        <field dataType="Decimal" dict="false" entityField="errcount" id="errcount" label="密码错误次数">
+            <view type="write"/>
+            <edit name="errcount" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="startdate" id="startdate" label="有效开始时间">
+            <view type="write"/>
+            <edit name="startdate" type="date"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="enddate" id="enddate" label="有效截止时间">
+            <view type="write"/>
+            <edit name="enddate" type="date"/>
+        </field>
+        <field dataType="String" dict="false" entityField="validtime" id="validtime" label="定义一个规则表达式，表示允许操作的有效时间范围">
+            <view type="write"/>
+            <edit name="validtime" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="maccode" id="maccode" label="允许设置多个MAC">
+            <view type="write"/>
+            <edit name="maccode" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="ipaddress" id="ipaddress" label="允许设置多个IP地址">
+            <view type="write"/>
+            <edit name="ipaddress" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="email" id="email" label="邮箱地址">
+            <view type="write"/>
+            <edit name="email" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="createuser" id="createuser" label="创建人">
+            <view type="write"/>
+            <edit name="createuser" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="createtime" id="createtime" label="创建时间">
+            <view type="write"/>
+            <edit name="createtime" type="date"/>
+        </field>
+    </viewModel>
+    <viewModel author="guwei" displayName="参与者授权" entityName="org.gocom.components.coframe.rights.dataset.CapPartyauth" id="CapPartyauth">
+        <field dataType="String" dict="false" entityField="tenantId" id="tenantId" label="租户ID">
+            <view type="write"/>
+            <edit name="tenantId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="roleId" id="roleId" label="角色ID">
+            <view type="write"/>
+            <edit name="roleId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="roleType" id="roleType" label="角色类型">
+            <view type="write"/>
+            <edit name="roleType" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="partyId" id="partyId" label="参与者ID">
+            <view type="write"/>
+            <edit name="partyId" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="partyType" id="partyType" label="参与者类型">
+            <view type="write"/>
+            <edit name="partyType" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="createuser" id="createuser" label="创建用户">
+            <view type="write"/>
+            <edit name="createuser" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="createtime" id="createtime" label="创建时间">
+            <view type="write"/>
+            <edit name="createtime" type="date"/>
+        </field>
+        <field dataType="String" dict="false" entityField="capRole.roleDesc" id="capRole.roleDesc" label="roleDesc">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="capRole.roleName" id="capRole.roleName" label="roleName">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="capRole.tenantId" id="capRole.tenantId" label="tenantId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="capRole.roleCode" id="capRole.roleCode" label="roleCode">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="capRole.roleId" id="capRole.roleId" label="roleId">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="String" dict="false" entityField="capRole.createuser" id="capRole.createuser" label="createuser">
+            <view type="write"/>
+            <edit name="" type="text"/>
+        </field>
+        <field dataType="Date" dict="false" entityField="capRole.createtime" id="capRole.createtime" label="createtime">
+            <view type="write"/>
+            <edit name="" type="date"/>
+        </field>
+    </viewModel>
+</viewModelSet>
