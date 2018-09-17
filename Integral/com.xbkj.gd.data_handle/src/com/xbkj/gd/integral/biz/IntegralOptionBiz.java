@@ -16,12 +16,10 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.util.CellRangeAddress;
-import org.gocom.components.coframe.tools.LoggerFactory;
 
 import com.eos.foundation.PageCond;
 import com.eos.foundation.impl.PageCondImpl;
 import com.eos.system.annotation.Bizlet;
-import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.pagequery.VOPageQuery;
 import com.xbkj.common.bs.dao.DAOException;
@@ -53,7 +51,6 @@ import com.xbkj.gd.utils.UserUtils;
 @Bizlet
 public class IntegralOptionBiz {
 	
-	private static final Logger logger = LoggerFactory.getLogger(IntegralOpertionService.class);
 
 
 	/**
@@ -89,7 +86,7 @@ public class IntegralOptionBiz {
 	@Bizlet
 	public MsgResponse addIntegral(IntegralDetailVO vo){
 		MsgResponse vipIntegral = service.addIntegral(vo);
-		logger.info("积分添加完成");
+		System.out.println("积分添加完成");
 		return vipIntegral;
 	}
 	
@@ -101,7 +98,6 @@ public class IntegralOptionBiz {
 	@Bizlet
 	public MsgResponse exchangeIntegral(IntegralDetailVO[] vos) throws RuntimeException{
 		MsgResponse vipIntegral = service.exchangeIntegral(vos);
-		logger.info("积分兑换完成");
 		return vipIntegral;
 	}
 	
@@ -113,7 +109,6 @@ public class IntegralOptionBiz {
 	@Bizlet
 	public MsgResponse vipIntegral(IntegralDetailVO vo) throws RuntimeException{
 		MsgResponse vipIntegral = service.vipIntegral(vo);
-		logger.info("vip积分赠送完成");
 		return vipIntegral;
 	}
 

@@ -3,18 +3,15 @@ package com.xbkj.gd.integral.biz;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
-import org.gocom.components.coframe.tools.LoggerFactory;
 
 import com.eos.foundation.PageCond;
 import com.eos.system.annotation.Bizlet;
-import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.pagequery.VOPageQuery;
 import com.pub.xbkj.pubapp.query.VOQuery;
 import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.util.MapUtil;
 import com.xbkj.common.util.PrimaryKeyUtil;
-import com.xbkj.gd.integral.biz.service.IntegralOpertionService;
 import com.xbkj.gd.integral.vos.ComboboxVO;
 import com.xbkj.gd.integral.vos.CustomerVO;
 import com.xbkj.gd.integral.vos.IntegralConfigVO;
@@ -33,7 +30,6 @@ import com.xbkj.gd.utils.UserUtils;
 @Bizlet
 public class GdIntegralConfigBiz {
 	
-	private static final Logger logger = LoggerFactory.getLogger(IntegralOpertionService.class);
 	
 	private GdDataHandlerUtils<IntegralConfigVO> voUtils = new GdDataHandlerUtils<IntegralConfigVO>(new IntegralConfigVO());
 	
@@ -107,7 +103,7 @@ public class GdIntegralConfigBiz {
 							"	FROM gd_integral_config T " +
 							"	WHERE T.`DR` = 0 " + where;
 
-		logger.info("query 积分配置 sql :" + querySql);
+		System.out.println("query 积分配置 sql :" + querySql);
 		IntegralConfigVO[] vos = query.query(querySql, queryCountSql, page);
 		return vos;
 	}

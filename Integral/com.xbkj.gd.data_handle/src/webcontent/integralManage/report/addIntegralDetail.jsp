@@ -75,6 +75,7 @@
 		        <div field="ts" width="130px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
 		        <div field="empname" width="120px" headerAlign="center" allowSort="false">录入人</div>
 		        <div field="orgname" width="120px" headerAlign="center" allowSort="false">录入机构</div>
+		        <div field="def8" width="150px" headerAlign="center" allowSort="false">备注</div>
 		    </div>
 		</div>
 	</div>

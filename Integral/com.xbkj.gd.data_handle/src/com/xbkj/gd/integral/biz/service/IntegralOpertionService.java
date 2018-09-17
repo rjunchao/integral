@@ -17,9 +17,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.util.CellRangeAddress;
-import org.gocom.components.coframe.tools.LoggerFactory;
 
-import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.query.VOQuery;
 import com.sun.star.uno.RuntimeException;
@@ -45,7 +43,6 @@ import com.xbkj.gd.utils.UserUtils;
  *@desc 积分新规则业务类
  */
 public class IntegralOpertionService {
-	private static final Logger logger = LoggerFactory.getLogger(IntegralOpertionService.class);
 	
 	private CustomerOptionBiz cust = new CustomerOptionBiz();
 	
@@ -251,9 +248,11 @@ public class IntegralOpertionService {
 		
 		cell.setCellValue(integralTitle);
 		if("1".equals(type)){
-			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 12));
+			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 13));
+			setCellWidth(sheet, 1);
 		}else{
 			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 8));
+			setCellWidth(sheet, 2);
 		}
 		cell.setCellStyle(style);
 		String[] titles = getTitleArr(type);
@@ -282,6 +281,7 @@ public class IntegralOpertionService {
 				String def5 = vo.getDef5();//积分兑换的数量
 				String def6 = vo.getDef6();//资金来源
 				String def7 = vo.getDef7();//销售人
+				String def8 = vo.getDef8();//备注
 				
 				
 				String empname = vo.getEmpname();
@@ -290,7 +290,7 @@ public class IntegralOpertionService {
 				if("1".equals(type)){
 					contents = new String[]{customer_name, idcard, integral+"", 
 							account, num, amt + "", def7, def6, def1, def2,
-							ts, empname, orgname};
+							ts, empname, orgname, def8};
 				}else if("2".equals(type)){
 					contents = new String[]{customer_name, idcard, integral+"", 
 							def2, def5, def1,
@@ -320,12 +320,31 @@ public class IntegralOpertionService {
 		
 	}
 	
+	private void setCellWidth(HSSFSheet sheet, int type) {
+		sheet.setColumnWidth(1, 50*100);
+		if(1 == type){
+			for(int i = 2; i < 11; i++){
+				sheet.setColumnWidth(i, 30*100);
+			}
+			sheet.setColumnWidth(3, 40*130);
+			sheet.setColumnWidth(10, 50*100);
+			sheet.setColumnWidth(12, 50*100);
+		}else{
+			for(int i = 2; i < 7; i++){
+				sheet.setColumnWidth(i, 30*100);
+			}
+			sheet.setColumnWidth(6, 50*100);
+			sheet.setColumnWidth(8, 50*100);
+		}
+		
+	}
+
 	public static String[] getTitleArr(String type){
 //		String[] titles = {"客户名称", "客户身份证号", "积分", "账号", 
 //				"存单金额", "存单号", "兑换明细", "备注", "录入人", "录入机构", "录入时间"};
 		if("1".equals(type)){
 			return new String[]{"客户名称", "客户身份证号", "积分", "账号", 
-					"存单号","存单金额","销售人", "资金来源", "添加积分类型", "积分计算系数", "录入时间", "录入人", "录入机构"};
+					"存单号","存单金额","销售人", "资金来源", "添加积分类型", "积分计算系数", "录入时间", "录入人", "录入机构", "备注"};
 		}else if("2".equals(type)){
 			return new String[]{"客户名称", "客户身份证号", "积分", "兑换类型积分", 
 				"兑换数量", "兑换商品", "录入时间", "录入人", "录入机构"};
@@ -384,7 +403,7 @@ public class IntegralOpertionService {
 			return msg;
 		} catch (DAOException e) {
 			e.printStackTrace();
-			logger.info("积分添加失败" + e.getMessage());
+			System.out.println("积分添加失败" + e.getMessage());
 			throw new RuntimeException("积分添加失败" + e.getMessage());
 		}
 //		return new MsgResponse();
@@ -396,7 +415,6 @@ public class IntegralOpertionService {
 	 * @return
 	 */
 	public MsgResponse exchangeIntegral(IntegralDetailVO[] vos){
-		logger.info("积分兑换");
 		if(vos == null || vos.length <= 0){
 			return new MsgResponse("请添加兑换项");
 		}
@@ -443,7 +461,6 @@ public class IntegralOpertionService {
 			return msg;
 		} catch (DAOException e) {
 			e.printStackTrace();
-			logger.info("vip积分赠送失败" + e.getMessage());
 			throw new RuntimeException("vip积分赠送失败" + e.getMessage());
 		}
 	}
@@ -489,7 +506,6 @@ public class IntegralOpertionService {
 			return msg;
 		} catch (DAOException e) {
 			e.printStackTrace();
-			logger.error("vip积分赠送失败, " + e.getMessage());
 			throw new RuntimeException("vip积分赠送失败, " + e.getMessage());
 		}
 	}
@@ -502,7 +518,6 @@ public class IntegralOpertionService {
 								"	LEFT JOIN ORG_EMPLOYEE E ON E.`USERID`=T.`CREATE_USER`" +
 								" 	LEFT JOIN ORG_ORGANIZATION O ON O.`ORGID` = T.`CREATE_USER_ORG`" +
 								" WHERE 1=1" + where;
-		logger.info("count sql " + queryCountSql);
 		try {
 			return new DBUtils().getCountNumber(queryCountSql);
 		} catch (DAOException e) {
@@ -526,7 +541,7 @@ public class IntegralOpertionService {
 						" 	LEFT JOIN GD_CUSTOMER_INFO C ON T.`CUSTOMER_IDCARD` = C.`CUSTOMER_IDCARD` " +
 						" WHERE 1=1" + where +
 						" ORDER BY T.`CUSTOMER_IDCARD`, T.CREATETIME" ;
-		logger.info("query sql " + querySql);
+		System.out.println("query sql " + querySql);
 		 IntegralDetailVO[] vos = voQuery.query(querySql);
 		 
 		 if(vos != null && vos.length > 0){

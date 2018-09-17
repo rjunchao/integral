@@ -73,7 +73,7 @@
 				</td>
 				<td style="text-align:right;">备注：</td>
 				<td style="text-align:left;">
-					 <input id="def4" name="def4" class="nui-textarea" style="width:150px;"/>
+					 <input id="def8" name="def8" class="nui-textarea" style="width:150px;"/>
 				</td>
 			</tr>
 		</table>

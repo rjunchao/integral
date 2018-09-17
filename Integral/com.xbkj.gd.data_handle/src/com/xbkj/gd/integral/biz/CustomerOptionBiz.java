@@ -17,12 +17,10 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.util.CellRangeAddress;
-import org.gocom.components.coframe.tools.LoggerFactory;
 
 import com.eos.foundation.PageCond;
 import com.eos.foundation.impl.PageCondImpl;
 import com.eos.system.annotation.Bizlet;
-import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.pagequery.VOPageQuery;
 import com.pub.xbkj.pubapp.query.VOQuery;
@@ -30,7 +28,6 @@ import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.util.MapUtil;
 import com.xbkj.common.util.PrimaryKeyUtil;
-import com.xbkj.gd.integral.biz.service.IntegralOpertionService;
 import com.xbkj.gd.integral.vos.CustomerVO;
 import com.xbkj.gd.utils.DBUtils;
 import com.xbkj.gd.utils.DateUtils;
@@ -50,7 +47,6 @@ import com.xbkj.gd.utils.UserUtils;
  */
 @Bizlet
 public class CustomerOptionBiz {
-	private static final Logger logger = LoggerFactory.getLogger(IntegralOpertionService.class);
 	
 	public String importCustomer(HttpServletRequest request){
 		//解析请求得到文件输入流
@@ -107,7 +103,7 @@ public class CustomerOptionBiz {
 					cell = row.getCell(2);
 					vo.setCustomer_phone(cell.getStringCellValue());//电话号码
 					cell = row.getCell(3);
-					vo.setNow_usable_integral(cell.getNumericCellValue());//积分
+					vo.setNow_usable_integral(Double.parseDouble(cell.getStringCellValue()));//积分
 					cell = row.getCell(4);
 					vo.setDef1(cell.getStringCellValue());//vip 标识
 					cell = row.getCell(5);
@@ -115,7 +111,10 @@ public class CustomerOptionBiz {
 					cell = row.getCell(6);
 					vo.setInput_org((int)cell.getNumericCellValue()+"");//录入机构
 					//备注
-					vo.setRecommend_phone(row.getCell(8).getStringCellValue());
+					cell = row.getCell(8);
+					if(cell != null){
+						vo.setRecommend_phone(cell.getStringCellValue());
+					}
 					vo.setPk_customer_info(PrimaryKeyUtil.getPrimaryKey());
 					vo.setCreatetime(DateUtils.getFormatDate(DateUtils.PATTERN_19));
 					vo.setDr("0");
@@ -269,7 +268,8 @@ public class CustomerOptionBiz {
 				"	LEFT JOIN ORG_EMPLOYEE E ON E.`EMPCODE`= T.`CREATE_USER` " +
 				"	WHERE T.`DR` = 0 " + where + " ORDER BY T.`PK_CUSTOMER_INFO`, T.`CREATETIME`";
 */		
-		logger.info("query sql :" + querySql);
+		System.out.println("客户信息查询：query sql :" + querySql);
+	
 		CustomerVO[] vos = query.query(querySql, queryCountSql, page);
 	//	List<CustomerVO> vos = new GdDataHandlerUtils<CustomerVO>(new CustomerVO()).query(querySql, queryCountSql, page);
 		if(vos != null && vos.length > 0){
