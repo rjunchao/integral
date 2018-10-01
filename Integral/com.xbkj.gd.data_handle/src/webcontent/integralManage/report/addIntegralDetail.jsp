@@ -31,12 +31,12 @@
 		            	<a class="nui-button" iconCls="icon-search" onclick="search('1')" plain="true">查询</a>
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-download" onclick="downIntegral()" plain="true">导出客户积分明细</a>
-		            	<input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
+		            	<%-- <input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
 						    flashUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/swfupload/swfupload.swf"
 						 	uploadUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/importHandller/importAddIntegralDetail.jsp"
 							onuploadsuccess="onUploadSuccess"
 							onuploaderror="onUploadError" /> 
-				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入添加积分明细</a>
+				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入添加积分明细</a> --%>
 		            </td>
 	            </tr>
 	        </table>
@@ -66,10 +66,22 @@
 		        <div field="customer_idcard" width="150px" headerAlign="center" allowSort="false">客户身份证号</div>
 		        <div field="customer_integral" width="60px" headerAlign="center" allowSort="false">积分</div>
 		        <div field="customer_account" width="120px" headerAlign="center" allowSort="false">账号</div>
+		        <div field="def7" width="120px" headerAlign="center" allowSort="false">账号序号</div>
 		        <div field="deposit_receipt_num" width="80px" headerAlign="center" allowSort="false">存单号</div> 
+		        <div field="duration" width="80px" headerAlign="center" allowSort="false">是否在存续期</div> 
 		        <div field="deposit_receipt_amt" width="90px" align="center" headerAlign="center" allowSort="false">存单金额</div> 
-		        <div field="def7" width="80px" headerAlign="center" allowSort="false">销售人</div>
-		        <div field="def6" width="80px" headerAlign="center" allowSort="false">资金来源</div>
+		        <div field="marketing_people1" width="80px" headerAlign="center" allowSort="false">营销人1</div>
+		        <div field="marketing_people_amt1" width="80px" headerAlign="center" allowSort="false">营销人1金额</div>
+		        <div field="marketing_people2" width="80px" headerAlign="center" allowSort="false">营销人2</div>
+		        <div field="marketing_people_amt2" width="80px" headerAlign="center" allowSort="false">营销人2金额</div>
+		        <div field="marketing_people3" width="80px" headerAlign="center" allowSort="false">营销人3</div>
+		        <div field="marketing_people_amt3" width="80px" headerAlign="center" allowSort="false">营销人3金额</div>
+		        <div field="capital_source1" width="80px" headerAlign="center" allowSort="false">资金来源1</div>
+		        <div field="capital_source_amt1" width="80px" headerAlign="center" allowSort="false">资金来源金额1</div>
+		        <div field="capital_source2" width="80px" headerAlign="center" allowSort="false">资金来源2</div>
+		        <div field="capital_source_amt2" width="80px" headerAlign="center" allowSort="false">资金来源金额2</div>
+		        <div field="capital_source3" width="80px" headerAlign="center" allowSort="false">资金来源3</div>
+		        <div field="capital_source_amt3" width="80px" headerAlign="center" allowSort="false">资金来源金额3</div>
 		        <div field="def1" width="100px" headerAlign="center" allowSort="false">添加积分类型</div>
 		        <div field="def2" width="100px" headerAlign="center" allowSort="false">积分计算系数</div>
 		        <div field="ts" width="130px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>

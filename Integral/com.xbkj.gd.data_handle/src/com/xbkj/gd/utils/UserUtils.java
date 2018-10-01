@@ -12,6 +12,11 @@ import com.xbkj.common.bs.dao.DAOException;
  */
 public class UserUtils {
 
+//	public static String getRole(){
+//		IUserObject user = DataContextManager.current().getMUODataContext().getUserObject();
+//		
+//	}
+	
 	/**
 	 * 获取当前用户
 	 * @return

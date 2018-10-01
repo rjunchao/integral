@@ -1,6 +1,7 @@
 package com.xbkj.gd.integral.vos;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 import com.xbkj.gd.base.GdSuperVO;
 
@@ -32,6 +33,22 @@ public class IntegralDetailVO extends GdSuperVO{
 	
 	
 	private String customer_name;
+	
+	private String marketing_people1;//营销人1
+	private String marketing_people2;//营销人2
+	private String marketing_people3;//营销人3
+	private double marketing_people_amt1;//营销人1营销金额
+	private double marketing_people_amt2;//营销人2营销金额
+	private double marketing_people_amt3;//营销人3营销金额
+	
+
+	private String capital_source1;//资金来源1
+	private String capital_source2;//资金来源2
+	private String capital_source3;//资金来源3
+	private double capital_source_amt1;//资金来源1
+	private double capital_source_amt2;//资金来源2
+	private double capital_source_amt3;//资金来源3
+	private String duration;//存续期
 	
 	
 	public IntegralDetailVO() {
@@ -143,6 +160,88 @@ public class IntegralDetailVO extends GdSuperVO{
 		this.customer_name = customer_name;
 	}
 	
+	
+	
+	public String getMarketing_people1() {
+		return marketing_people1;
+	}
+	public void setMarketing_people1(String marketing_people1) {
+		this.marketing_people1 = marketing_people1;
+	}
+	public String getMarketing_people2() {
+		return marketing_people2;
+	}
+	public void setMarketing_people2(String marketing_people2) {
+		this.marketing_people2 = marketing_people2;
+	}
+	public String getMarketing_people3() {
+		return marketing_people3;
+	}
+	public void setMarketing_people3(String marketing_people3) {
+		this.marketing_people3 = marketing_people3;
+	}
+	public double getMarketing_people_amt1() {
+		return marketing_people_amt1;
+	}
+	public void setMarketing_people_amt1(double marketing_people_amt1) {
+		this.marketing_people_amt1 = marketing_people_amt1;
+	}
+	public double getMarketing_people_amt2() {
+		return marketing_people_amt2;
+	}
+	public void setMarketing_people_amt2(double marketing_people_amt2) {
+		this.marketing_people_amt2 = marketing_people_amt2;
+	}
+	public double getMarketing_people_amt3() {
+		return marketing_people_amt3;
+	}
+	public void setMarketing_people_amt3(double marketing_people_amt3) {
+		this.marketing_people_amt3 = marketing_people_amt3;
+	}
+	public String getCapital_source1() {
+		return capital_source1;
+	}
+	public void setCapital_source1(String capital_source1) {
+		this.capital_source1 = capital_source1;
+	}
+	public String getCapital_source2() {
+		return capital_source2;
+	}
+	public void setCapital_source2(String capital_source2) {
+		this.capital_source2 = capital_source2;
+	}
+	public String getCapital_source3() {
+		return capital_source3;
+	}
+	public void setCapital_source3(String capital_source3) {
+		this.capital_source3 = capital_source3;
+	}
+	
+	public double getCapital_source_amt1() {
+		return capital_source_amt1;
+	}
+	public void setCapital_source_amt1(double capital_source_amt1) {
+		this.capital_source_amt1 = capital_source_amt1;
+	}
+	public double getCapital_source_amt2() {
+		return capital_source_amt2;
+	}
+	public void setCapital_source_amt2(double capital_source_amt2) {
+		this.capital_source_amt2 = capital_source_amt2;
+	}
+	public double getCapital_source_amt3() {
+		return capital_source_amt3;
+	}
+	public void setCapital_source_amt3(double capital_source_amt3) {
+		this.capital_source_amt3 = capital_source_amt3;
+	}
+	public String getDuration() {
+		return duration;
+	}
+	
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
 	@Override
 	public String getParentPKFieldName() {
 		return null;
@@ -155,7 +254,7 @@ public class IntegralDetailVO extends GdSuperVO{
 
 	@Override
 	public String getTableName() {
-		return "gd_integral_detail";
+		return "gd_integral_detail2";
 	}
 	@Override
 	public String toString() {
@@ -166,7 +265,63 @@ public class IntegralDetailVO extends GdSuperVO{
 				+ ", deposit_receipt_num=" + deposit_receipt_num
 				+ ", deposit_receipt_amt=" + deposit_receipt_amt
 				+ ", conversion_detail=" + conversion_detail + ", input_date="
-				+ input_date + ", option_org=" + option_org + ",  customer_name=" + customer_name + "]";
+				+ input_date + ", option_org=" + option_org + ", real_idcard="
+				+ real_idcard + ", customer_name=" + customer_name
+				+ ", marketing_people1=" + marketing_people1
+				+ ", Marketing_people2=" + marketing_people2
+				+ ", Marketing_people3=" + marketing_people3
+				+ ", Marketing_people_amt1=" + marketing_people_amt1
+				+ ", Marketing_people_amt2=" + marketing_people_amt2
+				+ ", Marketing_people_amt3=" + marketing_people_amt3
+				+ ", capital_source1=" + capital_source1 + ", capital_source2="
+				+ capital_source2 + ", capital_source3=" + capital_source3
+				+ ", getReal_idcard()=" + getReal_idcard()
+				+ ", getPk_integral_detail()=" + getPk_integral_detail()
+				+ ", getCustomer_idcard()=" + getCustomer_idcard()
+				+ ", getCustomer_integral()=" + getCustomer_integral()
+				+ ", getCustomer_account()=" + getCustomer_account()
+				+ ", getDeposit_receipt_num()=" + getDeposit_receipt_num()
+				+ ", getDeposit_receipt_amt()=" + getDeposit_receipt_amt()
+				+ ", getConversion_detail()=" + getConversion_detail()
+				+ ", getInput_date()=" + getInput_date() + ", getOption_org()="
+				+ getOption_org() + ", getCustomer_name()="
+				+ getCustomer_name() + ", getMarketing_people1()="
+				+ getMarketing_people1() + ", getMarketing_people2()="
+				+ getMarketing_people2() + ", getMarketing_people3()="
+				+ getMarketing_people3() + ", getMarketing_people_amt1()="
+				+ getMarketing_people_amt1() + ", getMarketing_people_amt2()="
+				+ getMarketing_people_amt2() + ", getMarketing_people_amt3()="
+				+ getMarketing_people_amt3() + ", getCapital_source1()="
+				+ getCapital_source1() + ", getCapital_source2()="
+				+ getCapital_source2() + ", getCapital_source3()="
+				+ getCapital_source3() + ", getParentPKFieldName()="
+				+ getParentPKFieldName() + ", getPKFieldName()="
+				+ getPKFieldName() + ", getTableName()=" + getTableName()
+				+ ", get_id()=" + get_id() + ", get_pid()=" + get_pid()
+				+ ", get_state()=" + get_state() + ", get_uid()=" + get_uid()
+				+ ", get_editing()=" + get_editing() + ", getExpanded()="
+				+ getExpanded() + ", getEntityName()=" + getEntityName()
+				+ ", getpKFieldName()=" + getpKFieldName() + ", get_level()="
+				+ get_level() + ", getChecked()=" + getChecked()
+				+ ", getFlag()=" + getFlag() + ", getCreatetime()="
+				+ getCreatetime() + ", getModifier()=" + getModifier()
+				+ ", getModifiedtime()=" + getModifiedtime()
+				+ ", getEmpname()=" + getEmpname() + ", getOrgname()="
+				+ getOrgname() + ", getDef1()=" + getDef1() + ", getDef2()="
+				+ getDef2() + ", getDef3()=" + getDef3() + ", getDef4()="
+				+ getDef4() + ", getDef5()=" + getDef5() + ", getDef6()="
+				+ getDef6() + ", getDef7()=" + getDef7() + ", getDef8()="
+				+ getDef8() + ", getDef9()=" + getDef9() + ", getDef10()="
+				+ getDef10() + ", getDr()=" + getDr() + ", getTs()=" + getTs()
+				+ ", getCreate_user()=" + getCreate_user()
+				+ ", getCreate_user_org()=" + getCreate_user_org()
+				+ ", getAttributeNames()="
+				+ Arrays.toString(getAttributeNames()) + ", getPrimaryKey()="
+				+ getPrimaryKey() + ", getStatus()=" + getStatus()
+				+ ", isDirty()=" + isDirty() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
+	
 	
 }

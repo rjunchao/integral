@@ -27,27 +27,22 @@
 	            </table>           
         	</div>
     	</div>
-    	 <div id=datagrid class="nui-datagrid" style="width:497px;height:234px;" allowResize="true" 
+    	 <div id=datagrid class="nui-datagrid" style="width:497px;height:233px;" allowResize="true" 
           idField="pk_integral_detail" multiSelect="true"  allowCellSelect="true" showPageSize="false" showPager="false" >
        
       		<div property="columns">
             	<div type="checkcolumn"></div>
-            	<!--  showNullItem="true" -->
             	<div  name="temp"  field="temp" headerAlign="center" allowSort="true" width="80px" >请选择
 	                <input property="editor" class="nui-combobox" valueField="id" textField="text"
 	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=2"
-	                	required="true"
 	                		dataField="vos" style="width:100%;" minWidth="200" onvaluechanged="computeIntegral" />
 	            </div>
-	            <div name="def5" field="def5" width="80px" >兑换数量
-	                <input property="editor" class="nui-textbox" vtype="int" style="width:100%;" required="true" onvaluechanged="computeIntegral" />
-	            </div> 
-	            <div name="conversion_detail" field="conversion_detail" width="80px" >备注
-	                <input property="editor" class="nui-textbox" style="width:100%;" />
+	            <div name="def5" field="def5" width="80px" dateFormat="yyyy-MM-dd">兑换数量
+	                <input property="editor" class="nui-textbox" vtype="int" style="width:100%;" onvaluechanged="computeIntegral" />
 	            </div> 
             	<div  name="def1"  field="def1" headerAlign="center" allowSort="true" width="80px" >兑换商品
 	            </div>
-            	<div  name="def2"  field="def2" headerAlign="center" allowSort="true" width="80px" >兑换商品单价
+            	<div  name="def2"  field="def2" headerAlign="center" allowSort="true" width="80px" >兑换商品积分
 	            </div>
 	            <div field="customer_integral" width="60px">积分
 	                <!-- <input property="editor" class="nui-textbox" style="width:100%;" vtype="float"  /> -->
@@ -79,31 +74,23 @@
 			if(e.selected){
 				def1 = e.selected.text;	
 				row.def2 = e.value;	
-				var vals = e.value.split("_");
-				def1 = vals[0];
-				row.def2 = vals[1];
 			}else{
 				def1= row.def1;
 			}
-			grid.commitEdit();
-			
 			var data = new Array();
+			//grid.commitEdit();
 			var def2 = row.def2;//积分
 			var def5 = row.def5;//兑换数量
-			data.def1 = def1;//中文名称
 			data.def2 = def2;
 			data.def5 = def5;
-			data.conversion_detail = row.conversion_detail;
+			data.def1 = def1;//中文名称
 			if(def2 > 0 &&  def5 > 0){
 				var integral = def2 * def5;
 				data.customer_integral = Math.round(parseFloat(integral));//取整积分
-			}else{
-				data.customer_integral=0;
 			}
 			grid.updateRow(row,data);
-		    //grid.beginEditRow(row); 
-		   	grid.selectAll();
-			editRow();
+		    grid.beginEditRow(row); 
+		   
 		}
       	
       	/**
@@ -112,11 +99,12 @@
       	*/
       	function saveData(){
       		var formGrid = new  nui.Form("#formGrid");
-		    formGrid.validate();
+		     formGrid.validate();
 			if(formGrid.isValid()==false  ){
-				nui.alert("请选择类型或输入数量");
+				nui.alert("请按规则填写完整，在保存数据");
 				return;
 			}
+      		
       		grid.commitEdit();
 			var changes = grid.getChanges();
 			debugger;
@@ -129,12 +117,11 @@
 				vo.customer_integral = changes[i].customer_integral;//积分
 				vo.def4 = 2;//类型
 				vo.customer_idcard = changes[i].customer_idcard;//客户主键
-				vo.conversion_detail = changes[i].conversion_detail;//备注
 				vos.push(vo);
 				vo= {};
 			}
-			nui.get("savedata").setEnabled(false);//防止反复提交
 			var json = nui.encode({vos:vos});
+			nui.get("savedata").setEnabled(false);//防止反复提交
 			nui.ajax({
 				url:"com.xbkj.gd.data_handle.cust.integralNew.exchangeIntegral.biz.ext",
 				cache:false,

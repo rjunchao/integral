@@ -7,10 +7,16 @@
   - Date: 2017-09-06 11:23:07
   - Description: 添加客户积分
 -->
-<head>
 <title>添加客户积分</title>
+	<style type="text/css">
+		.hiddenTr {
+			display:none;
+		}
+	</style>
+<head>
+
 <body>
-	<div id="form1" method="post" class="nui-fit" style="height:80%; width:100%;">
+	<div id="form1" method="post" class="nui-fit" style="height:90%; width:100%;">
 		<center>
 		<table >
 			<tr>
@@ -22,14 +28,21 @@
 					 <input id="customer_account"  name="customer_account" class="nui-textbox"
 					 	 required="true" style="width:150px;" />
 				</td>
-				<td style="text-align:right;">资金来源：</td>
+				<td style="text-align:right;">是否存续期：</td>
 				<td style="text-align:left;">
-					  <input property="editor" class="nui-combobox" valueField="id" textField="text" style="width:150px;"
-					  id="def6" name="def6"
-	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=4"
-	                		dataField="vos" style="width:100%;" minWidth="200" />
+					 
+					 	 <input property="editor" class="nui-combobox" data="durationData" valueField="id" textField="text"
+						  id="duration" name="duration" style="width:150px;" required="true" value="N"
+	                		style="width:100%;" minWidth="200" 
+	                		/>
 				</td>
-				
+			</tr>
+			<tr>  
+				<td style="text-align:right;">账号序号：</td>
+				<td style="text-align:left;">
+					 <input id="def7"  name="def7" class="nui-textbox"
+					 	 required="true" style="width:150px;" />
+				</td>
 			</tr>
 			<tr>  
 				<td style="text-align:right;">存单号：</td>
@@ -42,9 +55,7 @@
 					<input id="deposit_receipt_amt" name="deposit_receipt_amt" 
 					onvaluechanged="computeIntegral" 
 						class="nui-textbox" required="true" vtype="float" style="width:150px;" />
-						<!-- onvaluechanged="setCustomerIntegral" -->
 				</td>
-				
 			</tr>
 			<tr>
 				<td style="text-align:right;">积分类型：</td>
@@ -63,41 +74,125 @@
 					 	enabled="false"
 					 	required="true" style="width:150px;"/>
 				</td>
-				
 			</tr>
 			<tr>
-				<td style="text-align:right;">销售人：</td>
+				<td></td>
+				<td style="text-align:center;">
+					<input id="isShowCap23" class="nui-checkbox" text="显示资金来源2、3" onvaluechanged="isShowCap23"/> 
+				</td>
+				<td></td>
+			</tr>
+			<tr>  
+				<td style="text-align:right;">资金来源1：</td>
 				<td style="text-align:left;">
-					<input id="def7" name="def7" 
+					  <input property="editor" class="nui-combobox" valueField="id" textField="text" style="width:150px;"
+					  id="capital_source1" name="capital_source1" required="true"
+	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=4"
+	                		dataField="vos" style="width:100%;" minWidth="200" />
+				</td>
+				<td style="text-align:right;">资金来源金额1：</td>
+				<td style="text-align:left;">
+					<input id="capital_source_amt1" name="capital_source_amt1" required="true" 
+						class="nui-textbox" required="true" vtype="float" style="width:150px;" />
+				</td>
+			</tr>
+			
+			<tr id="hiddenCapTr2" class="hiddenTr">  
+				<td style="text-align:right;">资金来源2：</td>
+				<td style="text-align:left;">
+					  <input property="editor" class="nui-combobox" valueField="id" textField="text" style="width:150px;"
+					  id="capital_source2" name="capital_source2" showNullItem="true"
+	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=4"
+	                		dataField="vos" style="width:100%;" minWidth="200" />
+				</td>
+				<td style="text-align:right;">资金来源金额2：</td>
+				<td style="text-align:left;">
+					<input id="capital_source_amt2" name="capital_source_amt2" 
+						class="nui-textbox"  vtype="float" style="width:150px;" />
+					
+				</td>
+			</tr>
+			
+			<tr id="hiddenCapTr3" class="hiddenTr">  
+				<td style="text-align:right;">资金来源3：</td>
+				<td style="text-align:left;">
+					  <input property="editor" class="nui-combobox" valueField="id" textField="text" style="width:150px;"
+					  id="capital_source3" name="capital_source3" showNullItem="true"
+	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=4"
+	                		dataField="vos" style="width:100%;" minWidth="200" />
+				</td>
+				<td style="text-align:right;">资金来源金额3：</td>
+				<td style="text-align:left;">
+					<input id="capital_source_amt3" name="capital_source_amt3" 
+						class="nui-textbox"  vtype="float" style="width:150px;" />
+					
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="text-align:center;">
+					<input id="isShowPeople23" class="nui-checkbox" text="显示营销人2、3" onvaluechanged="isShowPeople23"/> 
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="text-align:right;">营销人1：</td>
+				<td style="text-align:left;">
+					<input id="marketing_people1" name="marketing_people1" required="true"vtype="int" 
 						class="nui-textbox" style="width:150px;"/>
 				</td>
-				<td style="text-align:right;">备注：</td>
+				<td style="text-align:right;">营销金额1：</td>
 				<td style="text-align:left;">
-					 <input id="def8" name="def8" class="nui-textarea" style="width:150px;"/>
+					<input id="marketing_people_amt1" name="marketing_people_amt1" 
+						class="nui-textbox" required="true" vtype="float" style="width:150px;" />
+				</td>
+			</tr>
+			
+			<tr id="hiddenPeopTr2" class="hiddenTr">  
+				<td style="text-align:right;">营销人2：</td>
+				<td style="text-align:left;">
+					<input id="marketing_people2" name="marketing_people2" vtype="int" 
+						class="nui-textbox" style="width:150px;"/>
+				</td>
+				<td style="text-align:right;">营销金额2：</td>
+				<td style="text-align:left;">
+					<input id="marketing_people_amt2" name="marketing_people_amt2" 
+						class="nui-textbox"  vtype="float" style="width:150px;" />
+					
+				</td>
+			</tr>
+			<tr id="hiddenPeopTr3" class="hiddenTr">  
+				<td style="text-align:right;">营销人3：</td>
+				<td style="text-align:left;">
+					<input id="marketing_people3" name="marketing_people3" vtype="int" 
+						class="nui-textbox" style="width:150px;"/>
+				</td>
+				<td style="text-align:right;">营销金额3：</td>
+				<td style="text-align:left;">
+					<input id="marketing_people_amt3" name="marketing_people_amt3" 
+						class="nui-textbox"  vtype="float" style="width:150px;" />
+					
+				</td>
+			</tr>
+			<tr >
+				<td style="text-align:right;">备注：</td>
+				<td style="text-align:left;" colspan="4">
+					 <input id="def8" name="def8" class="nui-textarea" style="width:380px;"/>
 				</td>
 			</tr>
 		</table>
 		</center>
 	</div>
-	 <div class="nui-toolbar" style="text-align:center;padding:0px;height:20%;" borderStyle="border:0;">
+	 <div class="nui-toolbar" style="text-align:center;padding:0px;height:10%;" borderStyle="border:0;">
         <a id="savedata" class="nui-button" style="width:60px;" iconCls="icon-save" onclick="SaveData()">保存</a>
         <span style="display:inline-block;width:25px;"></span>
         <a class="nui-button" style="width:60px;" iconCls="icon-cancel" onclick="onCancel()">取消</a>
     </div>
 </body>
 	 <script type="text/javascript">
+	 	var durationData=[{id:'Y', text:'Y'}, {id:'N', text:'N'}];
 		nui.parse();
 		var form = new nui.Form("#form1");
-		
-		function setCustomerIntegral(e){
-			var val = e.value;
-			if(val <= 0){
-				nui.alert("积分或者金额不能小于等于0！");
-			}else{
-				var ci = Number(val*0.1).toFixed(2);//取两位小数
-				nui.get("#customer_integral").setValue(ci);
-			}
-		}
 		
 		var def1 = "";
 		function computeIntegral(e){
@@ -108,8 +203,48 @@
 			var type = Number(nui.get("def2").getValue());
 			var amt = Number(nui.get("deposit_receipt_amt").getValue());
 			if(type > 0 && amt > 0){
-				var integral = Number(amt * type).toFixed(2);
+				var integral = Math.round(Number(amt * type));
 				nui.get("customer_integral").setValue(integral);
+				nui.get("marketing_people_amt1").setValue(amt);
+			}
+			if(amt > 0){
+				nui.get("marketing_people_amt1").setValue(amt);
+				nui.get("capital_source_amt1").setValue(amt);
+			}
+		}
+		
+		
+		/**
+		显示资金来源
+		*/
+		function isShowCap23(e){
+			debugger;
+			if(nui.get("isShowCap23").checked){
+				/* nui.get("hiddenPeopTr2").hidden();
+				nui.get("hiddenPeopTr3").hidden(); */
+				
+				$("#hiddenCapTr2").removeClass("hiddenTr");
+				$("#hiddenCapTr3").removeClass("hiddenTr");
+			}else{
+				$("#hiddenCapTr2").addClass("hiddenTr");
+				$("#hiddenCapTr3").addClass("hiddenTr");
+			}
+		}
+		
+		/**
+		控制显示营销人
+		*/
+		function isShowPeople23(e){
+			debugger;
+			if(nui.get("isShowPeople23").checked){
+				/* nui.get("hiddenPeopTr2").hidden();
+				nui.get("hiddenPeopTr3").hidden(); */
+				
+				$("#hiddenPeopTr2").removeClass("hiddenTr");
+				$("#hiddenPeopTr3").removeClass("hiddenTr");
+			}else{
+				$("#hiddenPeopTr2").addClass("hiddenTr");
+				$("#hiddenPeopTr3").addClass("hiddenTr");
 			}
 		}
 		
@@ -148,25 +283,163 @@
 			}
 		}
 		
+		/**
+			校验营销金额
+		*/
+		function validPeopAmt(){
+			//校验金额
+			var amt1 = Number(nui.get("marketing_people_amt1").getValue());
+			//总金额
+			var amt = Number(nui.get("deposit_receipt_amt").getValue());
+			if(nui.get("isShowPeople23").checked){
+				var amt2 = Number(nui.get("marketing_people_amt2").getValue());
+				var amt3 = Number(nui.get("marketing_people_amt3").getValue());
+				if(!(amt == (amt1 + amt2 + amt3))){
+					if(!(amt == Number(parseFloat(amt1+ amt2 + amt3).toFixed(2)))){
+						nui.alert("营销金额之和必须等于存单金额");
+						return false;
+					}
+				}
+				var name2 = nui.get("marketing_people2").getValue();
+				if(amt2 > 0){
+					if(name2 == null || name2 == "" || name2 == undefined){
+						nui.alert("已有营销金额，营销人必须输入");				
+						return false;
+					}else{
+						if(name2.length != 8){
+							//营销人长度
+							nui.alert("营销人长度只能为8位");					
+							return false;
+						}
+					}
+				}else{
+					if(name2 != null || name2 != "" || name2 != undefined){
+						nui.alert("已有营销人，营销金额必须输入");				
+						return false;
+					}
+				}
+				if(amt3 > 0){
+					var name3 = nui.get("marketing_people3").getValue();
+					if(name3 == null || name3 == "" || name3 == undefined){
+						nui.alert("已有营销金额，营销人必须输入");					
+						return false;
+					}else{
+						if(name3.length != 8){
+							//营销人长度
+							nui.alert("营销人长度只能为8位");					
+							return false;
+						}
+					}
+				}else{
+					if(name3 != null || name3 != "" || name3 != undefined){
+						nui.alert("已有营销人，营销金额必须输入");				
+						return false;
+					}
+				}
+			}else{
+				if(!(amt == (amt1))){
+					nui.alert("营销人金额之和必须等于存单金额");
+					return false;
+				}
+			}
+			return true;
+		}
+		/**
+			校验資金来源金额
+		*/
+		function validCapAmt(){
+			//校验金额
+			var amt1 = Number(nui.get("capital_source_amt1").getValue());
+			//总金额
+			var amt = Number(nui.get("deposit_receipt_amt").getValue());
+			if(nui.get("isShowCap23").checked){
+				var amt2 = Number(nui.get("capital_source_amt2").getValue());
+				var amt3 = Number(nui.get("capital_source_amt3").getValue());
+				if(!(amt == (amt1 + amt2 + amt3))){
+					if(!(amt == Number(parseFloat(amt1+ amt2 + amt3).toFixed(2)))){//防止四捨五入
+						nui.alert("资金来源金额之和必须等于存单金额");
+						return false;
+					}
+					
+				}
+				var name2 = nui.get("capital_source2").getValue();
+				if(amt2 > 0){
+					if(name2 == null || name2 == "" || name2 == undefined){
+						nui.alert("填了资金来源金额，资金来源必须选择");					
+						return false;
+					}
+				}else{
+					if(name2 != null || name2 != "" || name2 != undefined){
+						nui.alert("选了自己来源，资金来源金额必须输入");						
+						return false;
+					}
+				}
+				
+				var name3 = nui.get("capital_source3").getValue();
+				if(amt3 > 0){
+					if(name3 == null || name3 == "" || name3 == undefined){
+						nui.alert("填了资金来源金额，资金来源必须选择")				
+						return false;
+					}
+				}else{
+					if(name3 != null || name3 != "" || name3 != undefined){
+						nui.alert("选了自己来源，资金来源金额必须输入");				
+						return false;
+					}
+				}
+			}else{
+				if(!(amt == (amt1))){
+					nui.alert("资金来源金额之和必须等于存单金额");
+					return false;
+				}
+			}
+			return true;
+		}
+		
 		//保存损失事件类型记录
 		function SaveData(){
-			nui.get("savedata").setEnabled(false);//防止反复提交
+			
+			if(!validPeopAmt()){
+				return false;
+			}
+			
+			if(!validCapAmt()){
+				return false;
+			}
+			
 			//校验
 			form.validate();
 			if(form.isValid() == false){
 				nui.get("savedata").setEnabled(true);
 				return;
 			}
+			
+			var name = nui.get("marketing_people1").getValue();
+			if(name.length != 8){
+				//营销人长度
+				nui.alert("营销人长度只能为8位");					
+				return false;
+			}
+			var depositNum = nui.get("deposit_receipt_num").getValue();
+			if(!(depositNum.length == 3 || depositNum.length == 16)){
+				//存单号长度
+				nui.alert("存单号长度是3位或者16位");					
+				return false;
+			}
+			
+			
 			//得到数据
 			var o = form.getData(true, true);
 			if(o.customer_integral <= 0){
 				nui.alert("积分必须大于0");
-				nui.get("savedata").setEnabled(true);
 				return;
 			}
 			if(o.deposit_receipt_amt <= 0){
 				nui.alert("金额必须大于0");
-				nui.get("savedata").setEnabled(true);
+				return;
+			}
+			if(o.def7.length != 3){
+				nui.alert("账号序号必须为3位");
 				return;
 			}
 			o.customer_idcard=pk_customer_info;
@@ -174,6 +447,8 @@
 			o.def4 = 1;//类型，添加
 			/* nui.alert("pk " + o.customer_idcard); */
 			var json = nui.encode({flag:"0",vo:o});
+			debugger;
+			nui.get("savedata").setEnabled(false);//防止反复提交
 			nui.ajax({
 				url:"com.xbkj.gd.data_handle.cust.integralNew.addIntegral.biz.ext",
 				cache:false,

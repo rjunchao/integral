@@ -46,7 +46,7 @@
       <process:instance instanceName=""/>
     </process:pojo>
     <process:inputVariables>
-      <process:inputVariable id="0" name="vo" type="query" value="com.xbkj.gd.integral.vos.IntegralDetailVO" valueType="Java" pattern="reference">vo</process:inputVariable>
+      <process:inputVariable id="0" name="vo" type="query" value="com.xbkj.gd.integral.vos.VipIntegralDetailVO" valueType="Java" pattern="reference">vo</process:inputVariable>
     </process:inputVariables>
     <process:outputVariables>
       <process:outputVariable id="0" name="out0" type="query" value="com.pub.xbkj.common.MsgResponse" valueType="Java">msg</process:outputVariable>
@@ -121,7 +121,7 @@
   <process:info author="rjc" createTime="2018-09-07 21:01:03" date="2018-09-07Z" description="vip积分赠送" name="vipIntegral" version="7.0.0.0"/>
   <process:variables/>
   <process:inputs varArgs="false">
-    <process:input anyType="com.xbkj.gd.integral.vos.IntegralDetailVO" description="" isArray="false" name="vo"/>
+    <process:input anyType="com.xbkj.gd.integral.vos.VipIntegralDetailVO" description="" isArray="false" name="vo"/>
   </process:inputs>
   <process:outputs>
     <process:output anyType="com.pub.xbkj.common.MsgResponse" description="" isArray="false" name="msg"/>

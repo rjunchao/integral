@@ -60,6 +60,10 @@
 		              <input property="editor" class="nui-textbox" style="width:100%;" vtype="float" required="true"/>
 		            </div>
 		          
+		            <div field="def2" headerStyle="color:blue;" width="100px" headerAlign="center" allowSort="false">可赠次数
+		              <input property="editor" class="nui-textbox" style="width:100%;" vtype="float" required="true"/>
+		            </div>
+		          
 		    </div>
 		</div>
 	</div>

@@ -221,8 +221,8 @@ public class CustomerOptionBiz {
 		String pk = vo.getPk_customer_info();
 		if(StringUtils.isNotEmpty(pk)){
 			//根据主键进行删除或者更新
-			//UPDATE gd_customer_info t SET t.`dr` = 1 WHERE t.`pk_customer_info`='';
-			String sql = "DELETE FROM gd_customer_info  WHERE `pk_customer_info`=? ";
+			//UPDATE gd_customer_info2 t SET t.`dr` = 1 WHERE t.`pk_customer_info`='';
+			String sql = "DELETE FROM gd_customer_info2  WHERE `pk_customer_info`=? ";
 			SQLParameter parameter = new SQLParameter();
 			parameter.addParam(pk);
 			//谁录入的谁删除
@@ -250,26 +250,26 @@ public class CustomerOptionBiz {
 		VOPageQuery<CustomerVO> query = new VOPageQuery<CustomerVO>(CustomerVO.class);
 		//查询的总记录
 		String queryCountSql = "SELECT COUNT(*)" +
-							"	FROM GD_CUSTOMER_INFO T " +
+							"	FROM gd_customer_info2 T " +
 							"	LEFT JOIN ORG_ORGANIZATION O ON O.ORGID = T.`INPUT_ORG` " +
 							"	LEFT JOIN ORG_EMPLOYEE E ON E.`EMPCODE`= T.`CREATE_USER` " +
 							"	WHERE T.`DR` = 0 " + where;
 	    //查询
 		String querySql = "SELECT T.*, E.EMPNAME, O.`ORGNAME`" +
-							"	FROM GD_CUSTOMER_INFO T " +
+							"	FROM gd_customer_info2 T " +
 							"  LEFT JOIN ORG_ORGANIZATION O ON T.`INPUT_ORG`= O.`ORGID`" +
 							"	LEFT JOIN ORG_EMPLOYEE E ON E.`EMPCODE`= T.`CREATE_USER` " +
-							"	WHERE T.`DR` = 0 " + where;
+							"	WHERE T.`DR` = 0 " + where + " ORDER BY TS DESC";
 /*		String querySql = "SELECT T.`PK_CUSTOMER_INFO`, T.`CUSTOMER_NAME`,T.`CUSTOMER_IDCARD`, T.`CUSTOMER_PHONE`, " +
 				"	T.`RECOMMEND_PHONE`,T.`NOW_USABLE_INTEGRAL`,T.`INPUT_ORG` " +
 				"	, T.`TS`, T.`CREATE_USER`,  E.EMPNAME " +//O.`ORGNAME`,
-				"	FROM GD_CUSTOMER_INFO T " +
+				"	FROM gd_customer_info2 T " +
 				//"	LEFT JOIN ORG_ORGANIZATION O ON O.ORGID = T.`INPUT_ORG` " +
 				"	LEFT JOIN ORG_EMPLOYEE E ON E.`EMPCODE`= T.`CREATE_USER` " +
 				"	WHERE T.`DR` = 0 " + where + " ORDER BY T.`PK_CUSTOMER_INFO`, T.`CREATETIME`";
 */		
 		System.out.println("客户信息查询：query sql :" + querySql);
-	
+		
 		CustomerVO[] vos = query.query(querySql, queryCountSql, page);
 	//	List<CustomerVO> vos = new GdDataHandlerUtils<CustomerVO>(new CustomerVO()).query(querySql, queryCountSql, page);
 		if(vos != null && vos.length > 0){
@@ -287,7 +287,7 @@ public class CustomerOptionBiz {
 	}
 
 	public CustomerVO queryCustByPK(String pk){
-		String sql = "SELECT * FROM GD_CUSTOMER_INFO T WHERE T.PK_CUSTOMER_INFO='"+pk+"'";
+		String sql = "SELECT * FROM gd_customer_info2 T WHERE T.PK_CUSTOMER_INFO='"+pk+"'";
 		VOQuery<CustomerVO> query = new VOQuery<CustomerVO>(CustomerVO.class);
 		return query.query(sql)[0];
 				
@@ -349,7 +349,7 @@ public class CustomerOptionBiz {
 		 * 需要注意*号，如果有*就是没有修改，就不改身份证号
 		 * VIP标识
 		 */
-		String sql = "SELECT t.`customer_idcard` FROM gd_customer_info t " +
+		String sql = "SELECT t.`customer_idcard` FROM gd_customer_info2 t " +
 				"WHERE t.`dr` = 0 AND t.`pk_customer_info`='"+vo.getPk_customer_info()+"'";
 		String old_idcard = "";
 		try {
@@ -365,7 +365,7 @@ public class CustomerOptionBiz {
 			vo.setCustomer_idcard(old_idcard);
 		}
 		//修改 手机号、姓名、推荐人手机号、修改时间、修改人
-		sql = "UPDATE GD_CUSTOMER_INFO T " +
+		sql = "UPDATE gd_customer_info2 T " +
 				"	SET T.`CUSTOMER_PHONE` = ?, T.`CUSTOMER_NAME`=?, T.`RECOMMEND_PHONE`=?, " +
 				"	T.`CUSTOMER_IDCARD` = ?, " +
 				"	T.`MODIFIEDTIME`= ?, T.`MODIFIER` = ? , t.def1=?" +
@@ -394,7 +394,7 @@ public class CustomerOptionBiz {
 	@Bizlet
 	public int queryIdCard(String idcard){
 		
-		String sql = "SELECT COUNT(*) FROM gd_customer_info t WHERE t.`dr` = 0 and t.`customer_idcard` = '"+idcard+"'";
+		String sql = "SELECT COUNT(*) FROM gd_customer_info2 t WHERE t.`dr` = 0 and t.`customer_idcard` = '"+idcard+"'";
 		try {
 			return new DBUtils().getCountNumber(sql);
 		} catch (DAOException e) {
@@ -406,7 +406,7 @@ public class CustomerOptionBiz {
 		@Bizlet
 		public int queryIdCard(String idcard, String pk){
 			
-			String sql = "SELECT COUNT(*) FROM gd_customer_info t WHERE t.`dr` = 0 " +
+			String sql = "SELECT COUNT(*) FROM gd_customer_info2 t WHERE t.`dr` = 0 " +
 					"	and t.`customer_idcard` = '"+idcard+"' and t.`pk_customer_info` != '"+pk+"'";
 			try {
 				return new DBUtils().getCountNumber(sql);

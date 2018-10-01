@@ -65,12 +65,12 @@
 		            	<a class="nui-button" iconCls="icon-download" onclick="downIntegral()" plain="true">导出客户积分信息</a>
 		            	-->
 		            	
-		            	<input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
+		            	<%-- <input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
 						    flashUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/swfupload/swfupload.swf"
 						 	uploadUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/importHandller/importCustomer.jsp"
 							onuploadsuccess="onUploadSuccess"
 							onuploaderror="onUploadError" /> 
-				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入客户信息</a> 
+				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入客户信息</a>  --%>
 		            	
 		            </td>
 	            </tr>
@@ -273,7 +273,7 @@
 					return ;
 				}
 				
-				var json = nui.encode({vo:row});
+				<%-- var json = nui.encode({vo:row});
 					nui.ajax({
 						url:"com.xbkj.gd.data_handle.cust.integralNew.vipIntegralQuery.biz.ext",
 						cache:false,
@@ -313,6 +313,26 @@
 						error: function (jqXHR, textStatus, errorThrown) {
 		                    alert(jqXHR.responseText);
 		                }
+					}); --%>
+					
+					nui.open({
+						url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/vipIntegral.jsp",
+						title:"vip积分赠送",
+						width:300,
+						height:200,
+						onload:function(){
+							var iframe = this.getIFrameEl();
+			        		var data = { pk_customer_info: row.pk_customer_info};
+			        		iframe.contentWindow.SetData(data);
+						},
+						ondestroy:function(action){
+							//判断是否成功与否
+							if(action == "ok"){
+								//	search();
+								nui.alert("vip客户积分赠送成功");
+								search();
+							}
+						}
 					});
 			}else{
 				nui.alert("请选择需要添加积分的客户！");
@@ -328,7 +348,7 @@
 					url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/addCustIntegralNew.jsp",
 					title:"添加客户积分",
 					width:600,
-					height:240,
+					height:500,
 					onload:function(){
 						var iframe = this.getIFrameEl();
 		        		var data = { pk_customer_info: row.pk_customer_info};

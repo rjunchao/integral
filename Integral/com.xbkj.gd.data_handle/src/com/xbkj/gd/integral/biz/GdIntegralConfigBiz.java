@@ -34,7 +34,11 @@ public class GdIntegralConfigBiz {
 	private GdDataHandlerUtils<IntegralConfigVO> voUtils = new GdDataHandlerUtils<IntegralConfigVO>(new IntegralConfigVO());
 	
 	/**
-	 * 查询当前用户在这一年是否已经送了积分
+	 * 查询当前用户在这一年是否已经送了积分，并且按次数统计
+	 * CustomerVO [pk_customer_info=MA978497358968909824, 
+	 * customer_name=阮俊超, customer_idcard=532123199206183313, 
+	 * customer_phone=15087405756, recommend_phone=导入客户,
+	 *  now_usable_integral=8109835.0, input_org=1, orgname=null]
 	 * @param cust
 	 * @return
 	 */
@@ -59,25 +63,36 @@ public class GdIntegralConfigBiz {
 	 */
 	@Bizlet
 	public ComboboxVO[] queryConfig(int integral_type){
-		String sql = "SELECT integral_coefficient, integral_type_name FROM gd_integral_config WHERE dr = 0 AND integral_type=" + integral_type;
+		String sql = "SELECT integral_coefficient, integral_type_name " +
+				"FROM gd_integral_config WHERE dr = 0 AND integral_type=" + integral_type;
 		VOQuery<IntegralConfigVO> voQuery = new VOQuery<IntegralConfigVO>(IntegralConfigVO.class);
 		IntegralConfigVO[] vos = voQuery.query(sql);
 		if(vos != null && vos.length > 0){
 			int len = vos.length;
 			ComboboxVO[] comVo = new ComboboxVO[len];
 			ComboboxVO com = null;
-			
-			for(int i = 0; i < len; i++){
-				com = new ComboboxVO();
-				if(integral_type == 4){
-					com.setId(vos[i].getIntegral_type_name());
-				}else{
-					com.setId(vos[i].getIntegral_coefficient()+"");
+			if(integral_type == 2){
+				for(int i = 0; i < len; i++){
+					com = new ComboboxVO();
+					String data = vos[i].getIntegral_type_name() + "_" + vos[i].getIntegral_coefficient();
+					com.setId(data);
+					com.setText(vos[i].getIntegral_type_name());
+					comVo[i] = com;
 				}
-				com.setText(vos[i].getIntegral_type_name());
-				comVo[i] = com;
+				return comVo;
+			}else{
+				for(int i = 0; i < len; i++){
+					com = new ComboboxVO();
+					if(integral_type == 4){
+						com.setId(vos[i].getIntegral_type_name());
+					}else{
+						com.setId(vos[i].getIntegral_coefficient()+"");
+					}
+					com.setText(vos[i].getIntegral_type_name());
+					comVo[i] = com;
+				}
+				return comVo;
 			}
-			return comVo;
 		}
 		return null;
 	}
@@ -154,6 +169,13 @@ public class GdIntegralConfigBiz {
 		sql.append(" set ");
 		////1：添加积分，2：减少积分, 3:vip赠送，4：资金来源
 		sql.append("t.`integral_type_name`='"+integral_type_name+"'");//名称
+		
+		if("3".equals(integral_type)){
+			String def2 = vo.getDef2();
+			if(def2 != null && !"".equals(def2))
+			sql.append(", t.def2='"+def2+"'");
+		}
+		
 		double integral_coefficient = vo.getIntegral_coefficient();
 		/*if("1".equals(integral_type)){
 			//添加积分
@@ -173,6 +195,8 @@ public class GdIntegralConfigBiz {
 		sql.append(" WHERE T.integral_type='"+integral_type+"'");//类型
 		String pk = vo.getPk_gd_integral_config();
 		sql.append(" AND t.`pk_gd_integral_config`='"+pk+"'");//主键
+		
+		
 		try {
 			int count = new DBUtils().executeUpdateSQL(sql.toString());
 			if(count > 0){

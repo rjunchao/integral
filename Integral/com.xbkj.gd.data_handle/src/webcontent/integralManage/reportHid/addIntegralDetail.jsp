@@ -5,10 +5,10 @@
 <!-- 
   - Author(s): rjc
   - Date: 2018-09-08 20:32:23
-  - Description:积分兑换详情
+  - Description:添加积分详情
 -->
 <head>
-	<title>积分兑换详情</title>
+	<title>添加积分详情</title>
 	<script src="<%=request.getContextPath() %>/gd/data_handle/integralManage/swfupload/swfupload.js" type="text/javascript"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
 	            <tr>
 		            <td>
 		                	身份证号：<input id="customer_idcard" class="nui-textbox" name="customer_idcard" 
-		                		 required="false" emptyText="请选择..." style="width:150px;" />
+		                		 required="true" emptyText="请选择..." style="width:150px;" />
 		            </td>
 		            <td>
 		                	开始时间：<input id="start_date"class="nui-datepicker" name="start_date" emptyText="请选择..." allowInput="true"style="width:100px;" />
@@ -28,15 +28,16 @@
 		                		emptyText="请选择..." style="width:100px;" allowInput="true"/>
 		            </td>
 		            <td>
-		            	<a class="nui-button" iconCls="icon-search" onclick="search('2')" plain="true">查询</a>
+		            	<a class="nui-button" iconCls="icon-search" onclick="search('1')" plain="true">查询</a>
 		            	<span class="separator"></span>
+		            	<%-- 
 		            	<a class="nui-button" iconCls="icon-download" onclick="downIntegral()" plain="true">导出客户积分明细</a>
-		            	<%-- <input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
+		            	<input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
 						    flashUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/swfupload/swfupload.swf"
-						 	uploadUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/importHandller/importExchangeIntegralDetail.jsp"
+						 	uploadUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/importHandller/importAddIntegralDetail.jsp"
 							onuploadsuccess="onUploadSuccess"
 							onuploaderror="onUploadError" /> 
-				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入积分兑换明细</a> --%>
+				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入添加积分明细</a> --%>
 		            </td>
 	            </tr>
 	        </table>
@@ -48,8 +49,8 @@
 		     <input type="hidden" name="customer_idcard" id="customer_idcard_form" />
 		     <input type="hidden" name="start_date" id="start_date_form" />
 	    	 <input type="hidden" name="end_date" id="end_date_form" />
-	    	 <input type="hidden" name="hiddenFlag" value="N" />
-	    	  <input type="hidden" name="integral_type" value="2" />
+	    	<input type="hidden" name="hiddenFlag" value="Y" />
+	    	 <input type="hidden" name="integral_type" value="1" />
 		</form>
 		<iframe id="excelIFrame" name="excelIFrame" style="display:none;"></iframe>
 		
@@ -60,26 +61,34 @@
 		    	idField="pk_customer_info" dataField="vos" allowResize="false" multiSelect="false" 
 		    	allowCellSelect="false">
 		    <input class="nui-hidden" name="pk_customer_info"/>
-		    <div property="columns">
-		        <div type="checkcolumn"></div>
-		        <div field="def3" width="60px" headerAlign="center" allowSort="false">年份</div>
-		        <div field="def8" width="60px" headerAlign="center" allowSort="false">序号</div>
+		   <div property="columns">
+		         <div type="checkcolumn"></div>
 		        <div field="customer_name" width="60px" headerAlign="center" allowSort="false">客户名</div>
 		        <div field="customer_idcard" width="150px" headerAlign="center" allowSort="false">客户身份证号</div>
 		        <div field="customer_integral" width="60px" headerAlign="center" allowSort="false">积分</div>
-		       <!--  
-		       <div field="customer_account" width="60px" headerAlign="center" allowSort="false">账号</div>
-		        <div field="deposit_receipt_num" width="80px" headerAlign="center" allowSort="false">存单号号</div>  
+		        <div field="customer_account" width="120px" headerAlign="center" allowSort="false">账号</div>
+		        <div field="def7" width="120px" headerAlign="center" allowSort="false">账号序号</div>
+		        <div field="deposit_receipt_num" width="80px" headerAlign="center" allowSort="false">存单号</div> 
+		        <div field="duration" width="80px" headerAlign="center" allowSort="false">是否在存续期</div> 
 		        <div field="deposit_receipt_amt" width="90px" align="center" headerAlign="center" allowSort="false">存单金额</div> 
-		        <div field="conversion_detail" width="60px" headerAlign="center" allowSort="false">兑换明细</div>
-		        -->
-		        <div field="def2" width="120px" headerAlign="center" allowSort="false">兑换类型积分</div>
-		        <div field="def5" width="120px" headerAlign="center" allowSort="false">兑换数量</div>
-		        <div field="def1" width="120px" headerAlign="center" allowSort="false">兑换商品</div>
-		        <div field="ts" width=120px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
-		        <div field="empname" width=120px" headerAlign="center" allowSort="false">录入人</div>
-		        <div field="orgname" width=120px" headerAlign="center" allowSort="false">录入机构</div>
-		        <div field="conversion_detail" width=180px" headerAlign="center" allowSort="false">备注</div>
+		        <div field="marketing_people1" width="80px" headerAlign="center" allowSort="false">营销人1</div>
+		        <div field="marketing_people_amt1" width="80px" headerAlign="center" allowSort="false">营销人1金额</div>
+		        <div field="marketing_people2" width="80px" headerAlign="center" allowSort="false">营销人2</div>
+		        <div field="marketing_people_amt2" width="80px" headerAlign="center" allowSort="false">营销人2金额</div>
+		        <div field="marketing_people3" width="80px" headerAlign="center" allowSort="false">营销人3</div>
+		        <div field="marketing_people_amt3" width="80px" headerAlign="center" allowSort="false">营销人3金额</div>
+		        <div field="capital_source1" width="80px" headerAlign="center" allowSort="false">资金来源1</div>
+		        <div field="capital_source_amt1" width="80px" headerAlign="center" allowSort="false">资金来源金额1</div>
+		        <div field="capital_source2" width="80px" headerAlign="center" allowSort="false">资金来源2</div>
+		        <div field="capital_source_amt2" width="80px" headerAlign="center" allowSort="false">资金来源金额2</div>
+		        <div field="capital_source3" width="80px" headerAlign="center" allowSort="false">资金来源3</div>
+		        <div field="capital_source_amt3" width="80px" headerAlign="center" allowSort="false">资金来源金额3</div>
+		        <div field="def1" width="100px" headerAlign="center" allowSort="false">添加积分类型</div>
+		        <div field="def2" width="100px" headerAlign="center" allowSort="false">积分计算系数</div>
+		        <div field="ts" width="130px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
+		        <div field="empname" width="120px" headerAlign="center" allowSort="false">录入人</div>
+		        <div field="orgname" width="120px" headerAlign="center" allowSort="false">录入机构</div>
+		        <div field="def8" width="150px" headerAlign="center" allowSort="false">备注</div>
 		    </div>
 		</div>
 	</div>
@@ -87,7 +96,7 @@
 	
 	<script type="text/javascript">
 		nui.parse();
-		var integral_type = 2;
+		var integral_type = 1;
 		var grid = nui.get("grid");
 		var form = new nui.Form("#form1");
 		
@@ -117,7 +126,6 @@
         
         function onFileSelect(e){
         }
-		
 		
 		/**
 			导出客户积分明细
@@ -162,8 +170,13 @@
 		}
 		function search(integral_type){
 			//查询
+			//查询
+			if(form.validate() == false){
+				nui.alert("身份证号必须输入");
+				return;
+			}
 			var params = form.getData();
-			params.hiddenFlag = 'N';
+			params.hiddenFlag = 'Y';
 			params.integral_type = integral_type;
 			grid.load({params:params});
 		}

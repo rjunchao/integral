@@ -18,7 +18,7 @@
 	            <tr>
 		            <td>
 		                	身份证号：<input id="customer_idcard" class="nui-textbox" name="customer_idcard" 
-		                		 required="false" emptyText="请选择..." style="width:150px;" />
+		                		 required="true" emptyText="请选择..." style="width:150px;" />
 		            </td>
 		            <td>
 		                	开始时间：<input id="start_date"class="nui-datepicker" name="start_date" emptyText="请选择..." allowInput="true"style="width:100px;" />
@@ -30,8 +30,9 @@
 		            <td>
 		            	<a class="nui-button" iconCls="icon-search" onclick="search('2')" plain="true">查询</a>
 		            	<span class="separator"></span>
+		            	<%--
 		            	<a class="nui-button" iconCls="icon-download" onclick="downIntegral()" plain="true">导出客户积分明细</a>
-		            	<%-- <input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
+		            	 <input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
 						    flashUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/swfupload/swfupload.swf"
 						 	uploadUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/importHandller/importExchangeIntegralDetail.jsp"
 							onuploadsuccess="onUploadSuccess"
@@ -48,7 +49,7 @@
 		     <input type="hidden" name="customer_idcard" id="customer_idcard_form" />
 		     <input type="hidden" name="start_date" id="start_date_form" />
 	    	 <input type="hidden" name="end_date" id="end_date_form" />
-	    	 <input type="hidden" name="hiddenFlag" value="N" />
+	    	<input type="hidden" name="hiddenFlag" value="Y" />
 	    	  <input type="hidden" name="integral_type" value="2" />
 		</form>
 		<iframe id="excelIFrame" name="excelIFrame" style="display:none;"></iframe>
@@ -62,7 +63,7 @@
 		    <input class="nui-hidden" name="pk_customer_info"/>
 		    <div property="columns">
 		        <div type="checkcolumn"></div>
-		        <div field="def3" width="60px" headerAlign="center" allowSort="false">年份</div>
+		         <div field="def3" width="60px" headerAlign="center" allowSort="false">年份</div>
 		        <div field="def8" width="60px" headerAlign="center" allowSort="false">序号</div>
 		        <div field="customer_name" width="60px" headerAlign="center" allowSort="false">客户名</div>
 		        <div field="customer_idcard" width="150px" headerAlign="center" allowSort="false">客户身份证号</div>
@@ -162,8 +163,13 @@
 		}
 		function search(integral_type){
 			//查询
+			//查询
+			if(form.validate() == false){
+				nui.alert("身份证号必须输入");
+				return;
+			}
 			var params = form.getData();
-			params.hiddenFlag = 'N';
+			params.hiddenFlag = 'Y';
 			params.integral_type = integral_type;
 			grid.load({params:params});
 		}

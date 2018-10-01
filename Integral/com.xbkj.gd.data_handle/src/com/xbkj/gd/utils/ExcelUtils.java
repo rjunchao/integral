@@ -40,6 +40,14 @@ public class ExcelUtils {
 			cell.setCellValue(contents[i]);
 		}
 	}
+	public static void batchCreateCell(HSSFRow row, String[] contents, HSSFCellStyle style){
+		int len = contents.length;
+		for(int i = 0; i < len; i++){
+			HSSFCell cell = row.createCell(i);
+			cell.setCellValue(contents[i]);
+			cell.setCellStyle(style);
+		}
+	}
 	
 	/**
 	 * 合并单元格

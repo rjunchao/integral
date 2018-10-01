@@ -46,7 +46,7 @@
       <process:instance instanceName=""/>
     </process:pojo>
     <process:inputVariables>
-      <process:inputVariable id="0" name="vos" type="query" value="com.xbkj.gd.integral.vos.IntegralDetailVO[]" valueType="Java" pattern="reference">vos</process:inputVariable>
+      <process:inputVariable id="0" name="vos" type="query" value="com.xbkj.gd.integral.vos.SubIntegralDetailVO[]" valueType="Java" pattern="reference">vos</process:inputVariable>
     </process:inputVariables>
     <process:outputVariables>
       <process:outputVariable id="0" name="out0" type="query" value="com.pub.xbkj.common.MsgResponse" valueType="Java">msg</process:outputVariable>
@@ -121,7 +121,7 @@
   <process:info author="rjc" createTime="2018-09-08 12:22:51" date="2018-09-08Z" description="积分兑换" name="exchangeIntegral" version="7.0.0.0"/>
   <process:variables/>
   <process:inputs varArgs="false">
-    <process:input anyType="com.xbkj.gd.integral.vos.IntegralDetailVO" description="" isArray="true" name="vos"/>
+    <process:input anyType="com.xbkj.gd.integral.vos.SubIntegralDetailVO" description="" isArray="true" name="vos"/>
   </process:inputs>
   <process:outputs>
     <process:output anyType="com.pub.xbkj.common.MsgResponse" description="" isArray="false" name="msg"/>

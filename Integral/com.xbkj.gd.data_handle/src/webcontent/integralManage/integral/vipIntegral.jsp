@@ -10,8 +10,6 @@
 <head>
 <title>vip积分赠送</title>
 
-<head>
-<title>添加客户积分</title>
 <body>
 	<div id="form1" method="post" class="nui-fit" style="height:80%; width:100%;">
 		<center>
@@ -55,7 +53,7 @@
 			}
 		}
 		
-		//保存损失事件类型记录
+		//
 		function SaveData(){
 			nui.get("savedata").setEnabled(false);//防止反复提交
 			//需要判断积分减少后不能为负数。

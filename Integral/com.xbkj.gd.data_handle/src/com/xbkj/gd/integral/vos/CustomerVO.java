@@ -109,7 +109,7 @@ public class CustomerVO extends GdSuperVO{
 	@Override
 	public String getTableName() {
 		// TODO 自动生成的方法存根
-		return "gd_customer_info";
+		return "gd_customer_info2";
 	}
 	@Override
 	public String toString() {

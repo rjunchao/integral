@@ -26,8 +26,11 @@ import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.util.PrimaryKeyUtil;
 import com.xbkj.gd.integral.biz.service.IntegralOpertionService;
+import com.xbkj.gd.integral.vos.AddIntegralDetailVO;
 import com.xbkj.gd.integral.vos.CustomerVO;
 import com.xbkj.gd.integral.vos.IntegralDetailVO;
+import com.xbkj.gd.integral.vos.SubIntegralDetailVO;
+import com.xbkj.gd.integral.vos.VipIntegralDetailVO;
 import com.xbkj.gd.utils.DBUtils;
 import com.xbkj.gd.utils.DateUtils;
 import com.xbkj.gd.utils.ExcelUtils;
@@ -84,9 +87,9 @@ public class IntegralOptionBiz {
 	 * @return
 	 */
 	@Bizlet
-	public MsgResponse addIntegral(IntegralDetailVO vo){
+	public MsgResponse addIntegral(AddIntegralDetailVO vo){
 		MsgResponse vipIntegral = service.addIntegral(vo);
-		System.out.println("积分添加完成");
+		System.out.println("积分添加成功");
 		return vipIntegral;
 	}
 	
@@ -96,7 +99,7 @@ public class IntegralOptionBiz {
 	 * @return
 	 */
 	@Bizlet
-	public MsgResponse exchangeIntegral(IntegralDetailVO[] vos) throws RuntimeException{
+	public MsgResponse exchangeIntegral(SubIntegralDetailVO[] vos) throws RuntimeException{
 		MsgResponse vipIntegral = service.exchangeIntegral(vos);
 		return vipIntegral;
 	}
@@ -107,7 +110,7 @@ public class IntegralOptionBiz {
 	 * @return
 	 */
 	@Bizlet
-	public MsgResponse vipIntegral(IntegralDetailVO vo) throws RuntimeException{
+	public MsgResponse vipIntegral(VipIntegralDetailVO vo) throws RuntimeException{
 		MsgResponse vipIntegral = service.vipIntegral(vo);
 		return vipIntegral;
 	}
@@ -211,23 +214,35 @@ public class IntegralOptionBiz {
 	public IntegralDetailVO[] queryCustIntegralDetail(Map<String,String> params,PageCond page){
 		//判断是不是有参数
 		String where = whereSql(params);
+		
+		//类型
+		String type = params.get("integral_type");
+		String tableName = "";
+		if("1".equals(type)){
+			tableName = "gd_add_integral_detail";
+		}else if("2".equals(type)){
+			tableName = "gd_sub_integral_detail";
+		}else if("3".equals(type)){
+			tableName = "gd_vip_integral_detail";
+		}
+		
 		//查询数据实体
 		VOPageQuery<IntegralDetailVO> query = new VOPageQuery<IntegralDetailVO>(IntegralDetailVO.class);
 		//查询的总记录
-		String queryCountSql = " SELECT COUNT(1)" +
-								" FROM GD_INTEGRAL_DETAIL T" +
+		String queryCountSql = " SELECT COUNT(1) FROM " + tableName + " T" +
 								"	LEFT JOIN ORG_EMPLOYEE E ON E.`USERID`=T.`CREATE_USER`" +
 								" 	LEFT JOIN ORG_ORGANIZATION O ON O.`ORGID` = T.`CREATE_USER_ORG`" +
 								" WHERE 1=1" + where;
 	    //查询
 		String querySql =" SELECT C.`CUSTOMER_NAME`, t.*," +
-						"	E.`EMPNAME`, O.`ORGNAME` " +
-						" FROM GD_INTEGRAL_DETAIL T" +
+						"	E.`EMPNAME`, O.`ORGNAME` FROM " + tableName + " T" +
+						
 						"	LEFT JOIN ORG_EMPLOYEE E ON E.`USERID`=T.`CREATE_USER`" +
 						" 	LEFT JOIN ORG_ORGANIZATION O ON O.`ORGID` = T.`CREATE_USER_ORG`" +
-						" 	LEFT JOIN GD_CUSTOMER_INFO C ON T.`CUSTOMER_IDCARD` = C.`CUSTOMER_IDCARD` " +
+						" 	LEFT JOIN GD_CUSTOMER_INFO2 C ON T.`CUSTOMER_IDCARD` = C.`CUSTOMER_IDCARD` " +
 						" WHERE 1=1" + where +
 						" ORDER BY T.`CUSTOMER_IDCARD`, T.CREATETIME" ;
+		System.out.println("积分明细查询： " + querySql);
 		 IntegralDetailVO[] vos = query.query(querySql, queryCountSql, page);
 		 if(vos != null && vos.length > 0){
 			 if("Y".equals(params.get("hiddenFlag"))){
@@ -368,7 +383,7 @@ public class IntegralOptionBiz {
 	public MsgResponse vaildateMsg(IntegralDetailVO vo) {
 		//客户账号必须要唯一
 		String ca = vo.getCustomer_account();
-		String sql = "SELECT COUNT(*) FROM GD_INTEGRAL_DETAIL WHERE CUSTOMER_ACCOUNT='"+ca+"'";
+		String sql = "SELECT COUNT(*) FROM GD_INTEGRAL_DETAIL2 WHERE CUSTOMER_ACCOUNT='"+ca+"'";
 		DBUtils dbUtils = new DBUtils();
 		try {
 			if(!CUSTOMER_ACCOUNT.contains(ca)){
@@ -379,7 +394,7 @@ public class IntegralOptionBiz {
 			}
 			String deposit_receipt_num2 = vo.getDeposit_receipt_num();
 			if(!DEPOSIT_RECEIPT_NUM.contains(deposit_receipt_num2)){
-				sql = "SELECT COUNT(*) FROM GD_INTEGRAL_DETAIL WHERE" +
+				sql = "SELECT COUNT(*) FROM GD_INTEGRAL_DETAIL2 WHERE" +
 						" DEPOSIT_RECEIPT_NUM='"+deposit_receipt_num2+"'";
 				int count = dbUtils.getCountNumber(sql);
 				if(count >= 1){
@@ -408,7 +423,7 @@ public class IntegralOptionBiz {
 			return 0.0;
 		}
 		//根据主键查询
-		String sql = "SELECT T.`NOW_USABLE_INTEGRAL` FROM GD_CUSTOMER_INFO T WHERE T.`PK_CUSTOMER_INFO` = '"+idcard+"'";
+		String sql = "SELECT T.`NOW_USABLE_INTEGRAL` FROM GD_CUSTOMER_INFO2 T WHERE T.`PK_CUSTOMER_INFO` = '"+idcard+"'";
 		String count;
 		try {
 			count = new DBUtils().getOneValue(sql);

@@ -31,12 +31,12 @@
 		            	<a class="nui-button" iconCls="icon-search" onclick="search('2')" plain="true">查询</a>
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-download" onclick="downIntegral()" plain="true">导出客户积分明细</a>
-		            	<input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
+		            	<%-- <input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
 						    flashUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/swfupload/swfupload.swf"
 						 	uploadUrl="<%=request.getContextPath() %>/gd/data_handle/integralManage/importHandller/importExchangeIntegralDetail.jsp"
 							onuploadsuccess="onUploadSuccess"
 							onuploaderror="onUploadError" /> 
-				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入积分兑换明细</a>
+				 		<a class="nui-button" iconCls="icon-upload" plain="true" onclick="startUpload()">导入积分兑换明细</a> --%>
 		            </td>
 	            </tr>
 	        </table>
@@ -62,6 +62,8 @@
 		    <input class="nui-hidden" name="pk_customer_info"/>
 		    <div property="columns">
 		        <div type="checkcolumn"></div>
+		        <div field="def3" width="60px" headerAlign="center" allowSort="false">年份</div>
+		        <div field="def8" width="60px" headerAlign="center" allowSort="false">序号</div>
 		        <div field="customer_name" width="60px" headerAlign="center" allowSort="false">客户名</div>
 		        <div field="customer_idcard" width="150px" headerAlign="center" allowSort="false">客户身份证号</div>
 		        <div field="customer_integral" width="60px" headerAlign="center" allowSort="false">积分</div>
@@ -77,6 +79,7 @@
 		        <div field="ts" width=120px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
 		        <div field="empname" width=120px" headerAlign="center" allowSort="false">录入人</div>
 		        <div field="orgname" width=120px" headerAlign="center" allowSort="false">录入机构</div>
+		        <div field="conversion_detail" width=180px" headerAlign="center" allowSort="false">备注</div>
 		    </div>
 		</div>
 	</div>

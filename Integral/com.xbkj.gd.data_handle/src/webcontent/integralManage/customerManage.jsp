@@ -293,7 +293,7 @@
 					url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/addCustIntegralNew.jsp",
 					title:"添加客户积分",
 					width:600,
-					height:240,
+					height:500,
 					onload:function(){
 						var iframe = this.getIFrameEl();
 		        		var data = { pk_customer_info: row.pk_customer_info};
@@ -335,6 +335,7 @@
 							//	search();
 							nui.alert("客户兑换积分成功");
 							search();
+							grid.clearRows();
 						}
 					}
 				});

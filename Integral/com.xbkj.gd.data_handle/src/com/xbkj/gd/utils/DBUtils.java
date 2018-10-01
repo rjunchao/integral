@@ -44,7 +44,11 @@ public class DBUtils {
 	 */
 	public int getCountNumber(String sql) throws DAOException{
 		String count = getOneValue(sql);
-		return Integer.parseInt(count);
+		try {
+			return Integer.parseInt(count);
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 	/**
 	 * 统计条数
@@ -54,7 +58,11 @@ public class DBUtils {
 	 */
 	public int getCountNumber(String sql, SQLParameter param) throws DAOException{
 		String count = getOneValue(sql, param);
-		return Integer.parseInt(count);
+		try {
+			return Integer.parseInt(count);
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 	
 	/**

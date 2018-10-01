@@ -38,7 +38,7 @@
       <process:instance instanceName=""/>
     </process:pojo>
     <process:inputVariables>
-      <process:inputVariable id="0" name="vo" type="query" value="com.xbkj.gd.integral.vos.IntegralDetailVO" valueType="Java" pattern="reference">vo</process:inputVariable>
+      <process:inputVariable id="0" name="vo" type="query" value="com.xbkj.gd.integral.vos.VipIntegralDetailVO" valueType="Java" pattern="reference">vo</process:inputVariable>
     </process:inputVariables>
     <process:outputVariables>
       <process:outputVariable id="0" name="out0" type="query" value="com.pub.xbkj.common.MsgResponse" valueType="Java">msg</process:outputVariable>
@@ -100,7 +100,7 @@
   <process:info version="7.0.0.0"/>
   <process:variables/>
   <process:inputs varArgs="false">
-    <process:input anyType="com.xbkj.gd.integral.vos.IntegralDetailVO" isArray="false" name="vo"/>
+    <process:input anyType="com.xbkj.gd.integral.vos.VipIntegralDetailVO" isArray="false" name="vo"/>
   </process:inputs>
   <process:outputs>
     <process:output anyType="com.pub.xbkj.common.MsgResponse" description="" isArray="false" name="msg"/>

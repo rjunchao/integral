@@ -11,7 +11,11 @@
   </entry>
   <entry>
     <string>com.xbkj.gd.integral.biz.GdIntegralConfigBiz.queryVipIntegralByYear(com.xbkj.gd.integral.vos.CustomerVO)</string>
-    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;int com.xbkj.gd.integral.biz.GdIntegralConfigBiz.queryVipIntegralByYear(CustomerVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询当前用户在这一年是否已经送了积分&#x0D;
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;int com.xbkj.gd.integral.biz.GdIntegralConfigBiz.queryVipIntegralByYear(CustomerVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询当前用户在这一年是否已经送了积分，并且按次数统计&#x0D;
+ CustomerVO [pk_customer_info=MA978497358968909824, &#x0D;
+ customer_name=阮俊超, customer_idcard=532123199206183313, &#x0D;
+ customer_phone=15087405756, recommend_phone=导入客户,&#x0D;
+  now_usable_integral=8109835.0, input_org=1, orgname=null]&#x0D;
  &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;cust&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </entry>
   <entry>
