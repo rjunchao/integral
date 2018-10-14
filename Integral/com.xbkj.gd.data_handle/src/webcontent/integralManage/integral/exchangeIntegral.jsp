@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form id="formGrid">
-       <div style="width:497px;">
+       <div style="width:670px;">
         	<div class="mini-toolbar" style="border-bottom:0;padding:0px;">
 	            <table style="width:100%;">
 	                <tr>
@@ -27,13 +27,13 @@
 	            </table>           
         	</div>
     	</div>
-    	 <div id=datagrid class="nui-datagrid" style="width:497px;height:234px;" allowResize="true" 
+    	 <div id=datagrid class="nui-datagrid" style="width:670px;height:380px;" allowResize="true" 
           idField="pk_integral_detail" multiSelect="true"  allowCellSelect="true" showPageSize="false" showPager="false" >
        
       		<div property="columns">
             	<div type="checkcolumn"></div>
             	<!--  showNullItem="true" -->
-            	<div  name="temp"  field="temp" headerAlign="center" allowSort="true" width="80px" >请选择
+            	<div  name="temp"  field="temp" headerAlign="center" allowSort="true" width="150px" >请选择
 	                <input property="editor" class="nui-combobox" valueField="id" textField="text"
 	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=2"
 	                	required="true"
@@ -45,7 +45,7 @@
 	            <div name="conversion_detail" field="conversion_detail" width="80px" >备注
 	                <input property="editor" class="nui-textbox" style="width:100%;" />
 	            </div> 
-            	<div  name="def1"  field="def1" headerAlign="center" allowSort="true" width="80px" >兑换商品
+            	<div  name="def1"  field="def1" headerAlign="center" allowSort="true" width="150px" >兑换商品
 	            </div>
             	<div  name="def2"  field="def2" headerAlign="center" allowSort="true" width="80px" >兑换商品单价
 	            </div>
@@ -101,9 +101,9 @@
 				data.customer_integral=0;
 			}
 			grid.updateRow(row,data);
-		    //grid.beginEditRow(row); 
-		   	grid.selectAll();
-			editRow();
+		    grid.beginEditRow(row); 
+		 //  	grid.selectAll();
+		//	editRow();
 		}
       	
       	/**
@@ -123,16 +123,31 @@
 			var vos = new Array();
 			var vo = {};
 			for(var i = 0; i < changes.length; i++){
-				vo.def1 = changes[i].def1;//积分中文
-				vo.def2 = changes[i].def2;//积分单位
-				vo.def5 = changes[i].def5;//数量
-				vo.customer_integral = changes[i].customer_integral;//积分
-				vo.def4 = 2;//类型
-				vo.customer_idcard = changes[i].customer_idcard;//客户主键
-				vo.conversion_detail = changes[i].conversion_detail;//备注
-				vos.push(vo);
-				vo= {};
+				if(changes[i].def1 != undefined){
+					vo.def1 = changes[i].def1;//积分中文
+					if(changes[i].def2 != undefined){
+						vo.def2 = changes[i].def2;//积分单位
+						vo.def5 = changes[i].def5;//数量
+						if(Number(changes[i].customer_integral) > 0){
+							vo.customer_integral = changes[i].customer_integral;//积分
+							vo.def4 = 2;//类型
+							vo.customer_idcard = changes[i].customer_idcard;//客户主键
+							vo.conversion_detail = changes[i].conversion_detail;//备注
+							vos.push(vo);
+							vo= {};
+						}
+					}
+				}
+				
 			}
+			
+			if(vos.length != changes.length){
+				nui.alert("输入行中数据有错误");
+				grid.selectAll();
+				editRow();
+				return false;
+			}
+			
 			nui.get("savedata").setEnabled(false);//防止反复提交
 			var json = nui.encode({vos:vos});
 			nui.ajax({

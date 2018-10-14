@@ -67,6 +67,7 @@
 		        <div field="def2" width="120px" headerAlign="center" allowSort="false">vip赠送积分</div>
 		        <div field="def1" width="120px" headerAlign="center" allowSort="false">vip积分赠送类型</div>
 		        <div field="def3" width="120px" headerAlign="center" allowSort="false">vip积分赠送年</div>
+		        <div field="def8" width="160px" headerAlign="center" allowSort="false">备注</div>
 		        <div field="ts" width=120px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
 		        <div field="empname" width=120px" headerAlign="center" allowSort="false">录入人</div>
 		        <div field="orgname" width=120px" headerAlign="center" allowSort="false">录入机构</div>

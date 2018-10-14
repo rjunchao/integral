@@ -256,10 +256,10 @@ public class IntegralOpertionService {
 			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 23));
 			setCellWidth(sheet, 1);
 		}else if("2".equals(type)){
-			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 10));
+			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 11));
 			setCellWidth(sheet, 2);
 		}else{
-			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 8));
+			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 9));
 			setCellWidth(sheet, 3);
 		}
 		cell.setCellStyle(style);
@@ -329,11 +329,11 @@ public class IntegralOpertionService {
 					contents = new String[]{
 							def3, def8,
 							customer_name, idcard, integral+"", 
-							def2, def5, def1,
+							def2, def5, def1,vo.getConversion_detail(),
 							ts, empname, orgname};
 				}else if("3".equals(type)){
 					contents = new String[]{customer_name, idcard, integral+"", 
-							def2, def1, def3,
+							def2, def1, def3,vo.getDef8(),
 							ts, empname, orgname};
 				}
 				row = sheet.createRow((i+2));
@@ -363,7 +363,7 @@ public class IntegralOpertionService {
 				sheet.setColumnWidth(i, 53*100);
 			}
 		}if(2 == type){
-			for(int i = 2; i < 9; i++){
+			for(int i = 2; i < 11; i++){
 				sheet.setColumnWidth(i, 35*100);
 			}
 			sheet.setColumnWidth(1, 35*100);
@@ -371,7 +371,7 @@ public class IntegralOpertionService {
 			sheet.setColumnWidth(8, 55*100);
 			sheet.setColumnWidth(10, 75*100);
 		}else{
-			for(int i = 2; i < 7; i++){
+			for(int i = 2; i < 9; i++){
 				sheet.setColumnWidth(i, 35*100);
 			}
 			sheet.setColumnWidth(6, 55*100);
@@ -394,10 +394,10 @@ public class IntegralOpertionService {
 					"添加积分类型", "积分计算系数", "录入时间", "录入人", "录入机构", "备注"};
 		}else if("2".equals(type)){
 			return new String[]{"年份","序号","客户名称", "客户身份证号", "积分", "兑换类型积分", 
-				"兑换数量", "兑换商品", "录入时间", "录入人", "录入机构"};
+				"兑换数量", "兑换商品", "备注", "录入时间", "录入人", "录入机构"};
 		}else if("3".equals(type)){
 			return new String[]{"客户名称", "客户身份证号", "积分", "vip赠送积分", 
-					"vip积分赠送类型", "vip积分赠送年", "录入时间", "录入人", "录入机构"};
+					"vip积分赠送类型", "vip积分赠送年", "备注", "录入时间", "录入人", "录入机构"};
 		}
 		return null;
 	}
@@ -554,7 +554,7 @@ public class IntegralOpertionService {
 	 * @throws DAOException
 	 */
 	private String querySerialNumber(CustomerVO customerVO) throws DAOException {
-		String snSQL = "SELECT MAX(def8) FROM gd_sub_integral_detail WHERE def4=2 " +
+		String snSQL = "SELECT MAX(CONVERT(def8,DECIMAL)) FROM gd_sub_integral_detail WHERE def4=2 " +
 				"AND def3='"+DateUtils.getFormatDate(DateUtils.PATTERN_YEAR) + "' " + 
 				"AND customer_idcard='"+customerVO.getCustomer_idcard()+"' ";
 		int number = new DBUtils().getCountNumber(snSQL);

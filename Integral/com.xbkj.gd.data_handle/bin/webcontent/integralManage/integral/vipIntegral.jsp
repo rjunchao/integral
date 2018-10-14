@@ -19,9 +19,15 @@
 			<tr>           
 				<td style="text-align:right;">vip积分赠送类型：</td>
 				<td>
-					<input id="def2" name="def2" width="140px" class="nui-combobox" required="true" onvaluechanged="saveText"
+					<input id="def2" name="def2" width="140px" class="nui-combobox" required="true" 
 						allowInput="true" dataField="vos" valueField="id" textField="text" emptyText="请选择..."/>
 				</td>
+				<tr >
+				<td style="text-align:right;">备注：</td>
+				<td style="text-align:left;">
+					 <input id="def8" name="def8" class="nui-textarea" style="width:140px;"/>
+				</td>
+			</tr>
 			</tr>
 		</table>
 		</center>
@@ -55,15 +61,18 @@
 		
 		//
 		function SaveData(){
-			nui.get("savedata").setEnabled(false);//防止反复提交
+			debugger;
 			//需要判断积分减少后不能为负数。
 			var o = form.getData(true, true);
 			o.customer_idcard=pk_customer_info;
 			o.def4=3;
-			o.def1=nui.get("def2").getText();
+			var vals = o.def2.split("_");
+			o.def1 = vals[0];
+			o.def2 = vals[1];
 			//值在def2中
 			debugger;
 			var json = nui.encode({vo:o});
+			nui.get("savedata").setEnabled(false);//防止反复提交
 			nui.ajax({
 				url:"com.xbkj.gd.data_handle.cust.integralNew.vipIntegral.biz.ext",
 				cache:false,

@@ -378,8 +378,8 @@
 				nui.open({
 					url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/exchangeIntegral.jsp",
 					title:"兑换客户积分",
-					width:500,
-					height:300,
+					width:680,
+					height:440,
 					onload:function(){
 						var iframe = this.getIFrameEl();
 						iframe.contentWindow.SetData({pk_customer_info:row.pk_customer_info});

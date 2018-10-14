@@ -240,8 +240,7 @@ public class IntegralOptionBiz {
 						"	LEFT JOIN ORG_EMPLOYEE E ON E.`USERID`=T.`CREATE_USER`" +
 						" 	LEFT JOIN ORG_ORGANIZATION O ON O.`ORGID` = T.`CREATE_USER_ORG`" +
 						" 	LEFT JOIN GD_CUSTOMER_INFO2 C ON T.`CUSTOMER_IDCARD` = C.`CUSTOMER_IDCARD` " +
-						" WHERE 1=1" + where +
-						" ORDER BY T.`CUSTOMER_IDCARD`, T.CREATETIME" ;
+						" WHERE 1=1" + where ;
 		System.out.println("积分明细查询： " + querySql);
 		 IntegralDetailVO[] vos = query.query(querySql, queryCountSql, page);
 		 if(vos != null && vos.length > 0){

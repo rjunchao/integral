@@ -197,10 +197,19 @@
 		var def1 = "";
 		function computeIntegral(e){
 			debugger;
+			var def2 = 0;
 			if(e.selected){
-				def1 = e.selected.text;	
+				def1 = e.selected.text;
+				var vals = e.value.split("_");
+				def1 = vals[0];
+				def2 = vals[1];	
+			}else{
+				var temp = nui.get("def2").getValue();
+				var vals = temp.split("_");
+				def1 = vals[0];
+				def2 = vals[1];
 			}
-			var type = Number(nui.get("def2").getValue());
+			var type = def2;
 			var amt = Number(nui.get("deposit_receipt_amt").getValue());
 			if(type > 0 && amt > 0){
 				var integral = Math.round(Number(amt * type));
@@ -274,7 +283,7 @@
 						var integral = data.count;
 						/* $("#customerIntegral").val("当前总积分为：asas"); 
 						nui.get("customerIntegral").setValue("当前总积分为：" + data.count); */
-						document.getElementById("customerIntegral").innerHTML = "当前总积分为：" + integral;
+						document.getElementById("customerIntegral").innerHTML = "当前总积分为：" + parseFloat(integral).toFixed(2);
 					}
 				}); 
 				
@@ -313,13 +322,13 @@
 						}
 					}
 				}else{
-					if(name2 != null || name2 != "" || name2 != undefined){
+					if(name2.length > 0){
 						nui.alert("已有营销人，营销金额必须输入");				
 						return false;
 					}
 				}
+				var name3 = nui.get("marketing_people3").getValue();
 				if(amt3 > 0){
-					var name3 = nui.get("marketing_people3").getValue();
 					if(name3 == null || name3 == "" || name3 == undefined){
 						nui.alert("已有营销金额，营销人必须输入");					
 						return false;
@@ -331,7 +340,7 @@
 						}
 					}
 				}else{
-					if(name3 != null || name3 != "" || name3 != undefined){
+					if(name3.length > 0){
 						nui.alert("已有营销人，营销金额必须输入");				
 						return false;
 					}
@@ -369,8 +378,8 @@
 						return false;
 					}
 				}else{
-					if(name2 != null || name2 != "" || name2 != undefined){
-						nui.alert("选了自己来源，资金来源金额必须输入");						
+					if(name2.length > 0){
+						nui.alert("选了资金来源，资金来源金额必须输入");						
 						return false;
 					}
 				}
@@ -382,8 +391,8 @@
 						return false;
 					}
 				}else{
-					if(name3 != null || name3 != "" || name3 != undefined){
-						nui.alert("选了自己来源，资金来源金额必须输入");				
+					if(name3.length > 0){
+						nui.alert("选了资金来源，资金来源金额必须输入");				
 						return false;
 					}
 				}
@@ -421,15 +430,26 @@
 				return false;
 			}
 			var depositNum = nui.get("deposit_receipt_num").getValue();
-			if(!(depositNum.length == 3 || depositNum.length == 16)){
+			if(!(depositNum.length == 3 || depositNum.length == 11 || depositNum.length == 10)){
 				//存单号长度
-				nui.alert("存单号长度是3位或者16位");					
+				nui.alert("存单号长度是3位、10位、11位");					
 				return false;
 			}
 			
+			var depositAmt = Number(nui.get("deposit_receipt_amt").getValue());
+			if(!(depositAmt > 0 && depositAmt < 100000000)){
+				//金额
+				nui.alert("金额必须小于1亿");					
+				return false;
+			}
 			
 			//得到数据
 			var o = form.getData(true, true);
+			
+			var vals = o.def2.split("_");
+				o.def1 = vals[0];
+				o.def2 = vals[1];
+			
 			if(o.customer_integral <= 0){
 				nui.alert("积分必须大于0");
 				return;

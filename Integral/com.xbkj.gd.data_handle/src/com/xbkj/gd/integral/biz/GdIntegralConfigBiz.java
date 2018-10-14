@@ -71,28 +71,30 @@ public class GdIntegralConfigBiz {
 			int len = vos.length;
 			ComboboxVO[] comVo = new ComboboxVO[len];
 			ComboboxVO com = null;
-			if(integral_type == 2){
-				for(int i = 0; i < len; i++){
-					com = new ComboboxVO();
-					String data = vos[i].getIntegral_type_name() + "_" + vos[i].getIntegral_coefficient();
-					com.setId(data);
-					com.setText(vos[i].getIntegral_type_name());
-					comVo[i] = com;
-				}
-				return comVo;
-			}else{
+//			if(integral_type == 2){
+//				for(int i = 0; i < len; i++){
+//					com = new ComboboxVO();
+//					String data = vos[i].getIntegral_type_name() + "_" + vos[i].getIntegral_coefficient();
+//					com.setId(data);
+//					com.setText(vos[i].getIntegral_type_name());
+//					comVo[i] = com;
+//				}
+//				return comVo;
+//			}else{
 				for(int i = 0; i < len; i++){
 					com = new ComboboxVO();
 					if(integral_type == 4){
 						com.setId(vos[i].getIntegral_type_name());
 					}else{
-						com.setId(vos[i].getIntegral_coefficient()+"");
+						String data = vos[i].getIntegral_type_name() + "_" + vos[i].getIntegral_coefficient();
+						com.setId(data);
+						//com.setId(vos[i].getIntegral_coefficient()+"");
 					}
 					com.setText(vos[i].getIntegral_type_name());
 					comVo[i] = com;
 				}
 				return comVo;
-			}
+//			}
 		}
 		return null;
 	}
