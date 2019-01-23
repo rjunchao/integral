@@ -52,6 +52,8 @@
 		            	<a class="nui-button" iconCls="icon-undo" onclick="integralDetail()" plain="true">积分详细信息</a> 
 		            	-->
 		            	<a class="nui-button" iconCls="icon-redo" onclick="subIntegral()" plain="true">积分兑换</a>
+		            	<a class="nui-button" iconCls="icon-downgrade" onclick="leadIntegral()" plain="true">积分提前支取</a>
+		            	
 		            	<!-- 
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-download" onclick="downCustomerInfo()" plain="true">导出客户信息</a>
@@ -165,6 +167,35 @@
 					});
 			}else{
 				nui.alert("请选择需要添加积分的客户！");
+			}
+		}
+		/**
+			积分提前支取
+		*/
+		function leadIntegral(){
+			var row = grid.getSelected();
+			if(row){
+				nui.open({
+					url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/leadIntegral.jsp",
+					title:"提前支取扣除",
+					width:440,
+					height:260,
+					onload:function(){
+						var iframe = this.getIFrameEl();
+		        		var data = { pk_customer_info: row.pk_customer_info};
+		        		iframe.contentWindow.SetData(data);
+					},
+					ondestroy:function(action){
+						//判断是否成功与否
+						if(action == "ok"){
+							//	search();
+							nui.alert("提前支取扣除成功");
+							search();
+						}
+					}
+				});
+			}else{
+				nui.alert("请选择需要提前支取积分的客户！");
 			}
 		}
 		

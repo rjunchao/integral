@@ -17,16 +17,31 @@
 			<br/>
 			<br/>
 			<tr>           
-				<td style="text-align:right;">vip积分赠送类型：</td>
+				<td style="text-align:right;">兑换商品：</td>
 				<td>
-					<input id="def2" name="def2" width="140px" class="nui-combobox" required="true" 
-						allowInput="true" dataField="vos" valueField="id" textField="text" emptyText="请选择..."/>
+					<input id="def1" name="def1" width="140px" class="nui-textbox" required="true" 
+						value="提前支取" allowInput="false"/>
 				</td>
-			</tr >
-			<tr>
+				<td style="text-align:right;">支取积分：</td>
+				<td>
+					<input id="customer_integral" name="customer_integral" width="140px" class="nui-textbox" required="true" vtype="float"/>
+				</td>
+			</tr>
+			<tr>           
+				<td style="text-align:right;">账号：</td>
+				<td>
+					<input id="customer_account" name="customer_account" width="140px" class="nui-textbox" required="true" />
+				</td>
+				<td style="text-align:right;">账号序号：</td>
+				<td>
+					<input id="def7" name="def7" width="140px" class="nui-textbox" required="true" />
+				</td>
+				
+			</tr>
+			<tr >
 				<td style="text-align:right;">备注：</td>
-				<td style="text-align:left;">
-					 <input id="def8" name="def8" class="nui-textarea" style="width:140px;"/>
+				<td style="text-align:left;" colspan="3">
+					 <input id="remark" name="remark" class="nui-textarea" style="width:280px;"/>
 				</td>
 			</tr>
 		</table>
@@ -41,13 +56,6 @@
 	 <script type="text/javascript">
 		nui.parse();
 		var form = new nui.Form("#form1");
-		loadIntegralConfig();
-		//com.xbkj.gd.data_handle.cust.integralNew.vipIntegralQuery
-		function loadIntegralConfig(){
-      		var rc = nui.get("def2");
-      		var url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=3";
-      		rc.load(url);
-      	}
       	
       	var pk_customer_info = "";
 		function SetData(data){
@@ -64,17 +72,22 @@
 			debugger;
 			//需要判断积分减少后不能为负数。
 			var o = form.getData(true, true);
+			
+			if(o.def7.length != 3){
+				nui.alert("账号序号必须为3位");
+				return;
+			}
+			
 			o.customer_idcard=pk_customer_info;
-			o.def4=3;
-			var vals = o.def2.split("_");
-			o.def1 = vals[0];
-			o.def2 = vals[1];
+			o.def4=4;//类型
+			o.def5=1;//兑换数量
+			o.def2=o.customer_integral;//兑换类型积分
 			//值在def2中
 			debugger;
 			var json = nui.encode({vo:o});
 			nui.get("savedata").setEnabled(false);//防止反复提交
 			nui.ajax({
-				url:"com.xbkj.gd.data_handle.cust.integralNew.vipIntegral.biz.ext",
+				url:"com.xbkj.gd.data_handle.cust.integralNew.leadIntegral.biz.ext",
 				cache:false,
 				data:json,
 				type:"POST",
