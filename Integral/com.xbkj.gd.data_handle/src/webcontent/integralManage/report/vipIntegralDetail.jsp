@@ -58,12 +58,7 @@
 		        <div field="customer_name" width="60px" headerAlign="center" allowSort="false">客户名</div>
 		        <div field="customer_idcard" width="150px" headerAlign="center" allowSort="false">客户身份证号</div>
 		        <div field="customer_integral" width="60px" headerAlign="center" allowSort="false">积分</div>
-		       <!--  
-		       <div field="customer_account" width="60px" headerAlign="center" allowSort="false">账号</div>
-		        <div field="deposit_receipt_num" width="80px" headerAlign="center" allowSort="false">存单号号</div>  
-		        <div field="deposit_receipt_amt" width="90px" align="center" headerAlign="center" allowSort="false">存单金额</div> 
-		        <div field="conversion_detail" width="60px" headerAlign="center" allowSort="false">兑换明细</div>
-		        -->
+		      
 		        <div field="def2" width="120px" headerAlign="center" allowSort="false">vip赠送积分</div>
 		        <div field="def1" width="120px" headerAlign="center" allowSort="false">vip积分赠送类型</div>
 		        <div field="def3" width="120px" headerAlign="center" allowSort="false">vip积分赠送年</div>
