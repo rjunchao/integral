@@ -31,6 +31,14 @@ public class DBUtils {
 	 * @param sql
 	 * @throws DAOException
 	 */
+	public int executeBatchUpdateSQL(List<String> sqls) throws DAOException{
+		return dao.executeBatchSql(sqls);
+	}
+	/**
+	 * 执行更新
+	 * @param sql
+	 * @throws DAOException
+	 */
 	public int executeUpdateSQL(String sql, SQLParameter parameter) throws DAOException{
 		int count = dao.executeUpdate(sql, parameter);
 		return count;

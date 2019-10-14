@@ -451,7 +451,7 @@ public class SqlBuilder {
 	 // oracle 分页查询
 	 // String pageSql = "select * from (select s1.*,rownum row_num from (" +sql+") s1 ) s2 where s2.row_num between "+begin+" and "+end+" ";
 	 /*
-	  * 这里临时缓存MySQL的分页查询
+	  * 这里临时使用MySQL的分页查询
 	  */
 	  String pageSql = sql + " LIMIT " + begin + ", "  + end;
 	  return pageSql;

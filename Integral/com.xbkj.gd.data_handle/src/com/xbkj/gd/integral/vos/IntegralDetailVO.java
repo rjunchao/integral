@@ -49,6 +49,15 @@ public class IntegralDetailVO extends GdSuperVO{
 	private double capital_source_amt2;//资金来源2
 	private double capital_source_amt3;//资金来源3
 	private String duration;//存续期
+	private String remark;//备注
+
+	public String getRemark() {
+		return remark;
+	}
+	
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 	
 	
 	public IntegralDetailVO() {

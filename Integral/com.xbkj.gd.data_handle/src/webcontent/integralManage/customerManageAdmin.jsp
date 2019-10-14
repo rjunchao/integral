@@ -60,6 +60,9 @@
 		            	<a class="nui-button" iconCls="icon-downgrade" onclick="leadIntegral()" plain="true">积分提前支取</a>
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-download" onclick="downCustomerInfo()" plain="true">导出客户信息</a>
+		            	
+		            	<!-- <span class="separator"></span>
+		            	<a class="nui-button"  onclick="showSalary()" plain="true">查看工资</a> -->
 		            	<!-- 
 		            	<a class="nui-button" iconCls="icon-upload" onclick="upCustomerInfo()" plain="true">导入客户信息</a> 
 		            	<span class="separator"></span>
@@ -261,6 +264,28 @@
 		}else{
 			nui.alert("请选择要删除的客户");
 		}
+	}
+		function showSalary(){
+			window.open('http://127.0.0.1:8013/jfgl.v2/gd/data_handle/test/salarylogin.jsp', '_target');
+			/*  nui.ajax({
+				url:"com.xbkj.gd.data_handle.cust.test.salaryLogin.biz.ext",
+				cache:false,
+				async:true,
+				type:"POST",
+				contentType:"text/json",
+				success:function(text){
+					debugger;
+					window.open('http://127.0.0.1:8013/integral/index.html', '_target');
+					if(text != null){
+						if(text.msg.flag){
+							window.open("http://localhost:8013/integral/index.html", "_target");
+						}
+					} 
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText);
+                }
+			});  */
 	}
 		
 		/**

@@ -120,7 +120,7 @@ public class GdIntegralConfigBiz {
 							"	FROM gd_integral_config T " +
 							"	WHERE T.`DR` = 0 " + where;
 
-		System.out.println("query 积分配置 sql :" + querySql);
+//		System.out.println("query 积分配置 sql :" + querySql);
 		IntegralConfigVO[] vos = query.query(querySql, queryCountSql, page);
 		return vos;
 	}

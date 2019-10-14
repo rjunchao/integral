@@ -268,7 +268,7 @@ public class CustomerOptionBiz {
 				"	LEFT JOIN ORG_EMPLOYEE E ON E.`EMPCODE`= T.`CREATE_USER` " +
 				"	WHERE T.`DR` = 0 " + where + " ORDER BY T.`PK_CUSTOMER_INFO`, T.`CREATETIME`";
 */		
-		System.out.println("客户信息查询：query sql :" + querySql);
+//		System.out.println("客户信息查询：query sql :" + querySql);
 		
 		CustomerVO[] vos = query.query(querySql, queryCountSql, page);
 	//	List<CustomerVO> vos = new GdDataHandlerUtils<CustomerVO>(new CustomerVO()).query(querySql, queryCountSql, page);

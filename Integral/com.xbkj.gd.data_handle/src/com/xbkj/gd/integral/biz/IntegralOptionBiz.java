@@ -29,6 +29,7 @@ import com.xbkj.gd.integral.biz.service.IntegralOpertionService;
 import com.xbkj.gd.integral.vos.AddIntegralDetailVO;
 import com.xbkj.gd.integral.vos.CustomerVO;
 import com.xbkj.gd.integral.vos.IntegralDetailVO;
+import com.xbkj.gd.integral.vos.LeadDrawIntegralVO;
 import com.xbkj.gd.integral.vos.SubIntegralDetailVO;
 import com.xbkj.gd.integral.vos.VipIntegralDetailVO;
 import com.xbkj.gd.utils.DBUtils;
@@ -89,7 +90,7 @@ public class IntegralOptionBiz {
 	@Bizlet
 	public MsgResponse addIntegral(AddIntegralDetailVO vo){
 		MsgResponse vipIntegral = service.addIntegral(vo);
-		System.out.println("积分添加成功");
+//		System.out.println("积分添加成功");
 		return vipIntegral;
 	}
 	
@@ -113,6 +114,17 @@ public class IntegralOptionBiz {
 	public MsgResponse vipIntegral(VipIntegralDetailVO vo) throws RuntimeException{
 		MsgResponse vipIntegral = service.vipIntegral(vo);
 		return vipIntegral;
+	}
+	
+	/**
+	 * 积分提前支取
+	 * @param vo
+	 * @return
+	 */
+	@Bizlet
+	public MsgResponse leadIntegral(LeadDrawIntegralVO vo) throws RuntimeException{
+		MsgResponse leadIntegral = service.leadDrawIntegral(vo);
+		return leadIntegral;
 	}
 
 	/*--------------------------------------------------------------------------------*/
@@ -224,6 +236,8 @@ public class IntegralOptionBiz {
 			tableName = "gd_sub_integral_detail";
 		}else if("3".equals(type)){
 			tableName = "gd_vip_integral_detail";
+		}else if("4".equals(type)){
+			tableName = "gd_lead_integral_detail";
 		}
 		
 		//查询数据实体
@@ -241,7 +255,7 @@ public class IntegralOptionBiz {
 						" 	LEFT JOIN ORG_ORGANIZATION O ON O.`ORGID` = T.`CREATE_USER_ORG`" +
 						" 	LEFT JOIN GD_CUSTOMER_INFO2 C ON T.`CUSTOMER_IDCARD` = C.`CUSTOMER_IDCARD` " +
 						" WHERE 1=1" + where ;
-		System.out.println("积分明细查询： " + querySql);
+//		System.out.println("积分明细查询： " + querySql);
 		 IntegralDetailVO[] vos = query.query(querySql, queryCountSql, page);
 		 if(vos != null && vos.length > 0){
 			 if("Y".equals(params.get("hiddenFlag"))){

@@ -10,15 +10,12 @@ import java.util.List;
 
 import com.eos.foundation.PageCond;
 import com.pub.xbkj.common.MsgResponse;
-import com.pub.xbkj.pubapp.Constructor;
 import com.pub.xbkj.pubapp.SqlBuilder;
 import com.pub.xbkj.pubapp.exception.ExceptionUtils;
-import com.pub.xbkj.pubapp.query.VOQuery;
 import com.xbkj.basic.vo.pub.SuperVO;
 import com.xbkj.common.bs.dao.BaseDAO;
 import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.processor.BeanListProcessor;
-import com.xbkj.common.util.CollectionUtil;
 import com.xbkj.common.util.StringUtil;
 import com.xbkj.gd.base.GdSuperVO;
 

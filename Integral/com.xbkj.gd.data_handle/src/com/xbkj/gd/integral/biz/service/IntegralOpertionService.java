@@ -30,6 +30,7 @@ import com.xbkj.gd.integral.biz.IntegralOptionBiz;
 import com.xbkj.gd.integral.vos.AddIntegralDetailVO;
 import com.xbkj.gd.integral.vos.CustomerVO;
 import com.xbkj.gd.integral.vos.IntegralDetailVO;
+import com.xbkj.gd.integral.vos.LeadDrawIntegralVO;
 import com.xbkj.gd.integral.vos.SubIntegralDetailVO;
 import com.xbkj.gd.integral.vos.VipIntegralDetailVO;
 import com.xbkj.gd.utils.DBUtils;
@@ -49,6 +50,77 @@ import com.xbkj.gd.utils.UserUtils;
 public class IntegralOpertionService {
 	
 	private CustomerOptionBiz cust = new CustomerOptionBiz();
+	
+	
+	/*private MsgResponse validateAccount(LeadDrawIntegralVO vo){
+		String num = vo.getCustomer_account();
+		if(num != null && !"".equals(num.trim())){
+			if(!(num.length() == 16 || num.length() == 19)){
+				//对的
+				return new MsgResponse("账号填写错误，请重新填写", false);
+			}
+		}else{
+			return new MsgResponse("账号为空，请重新填写", false);
+		}
+		return null;
+	}*/
+	
+	/**
+	 * 提前支取积分
+	 * @return
+	 */
+	public MsgResponse leadDrawIntegral(LeadDrawIntegralVO vo){
+		//扣除客户积分，可以为 负分
+		//插入积分明细记录
+		MsgResponse msg = validateLeadIntegral(vo);
+		if(msg != null){
+			return msg;
+		}
+		
+		
+		if(vo == null){
+			return new MsgResponse("请填写支取项");
+		}
+		
+		
+		String pk = vo.getCustomer_idcard();
+		CustomerVO customerVO = cust.queryCustByPK(pk);
+		if(pk == null || "".equals(pk)){
+			throw new RuntimeException("客户主键为空, 请在客户页面刷新查询并修改积分"); 
+		}
+		//查询批次号
+		try {
+			String sn = querySerialNumber(customerVO);
+			//
+			vo.setCustomer_idcard(customerVO.getCustomer_idcard());//身份证
+			vo.setPk_integral_detail(PrimaryKeyUtil.getPrimaryKey());//主键
+			vo.setCreatetime(DateUtils.getFormatDate("yyyy-MM-dd HH:mm:ss"));//创建时间
+			vo.setCreate_user(UserUtils.getUser());
+			vo.setCreate_user_org(UserUtils.getUserOrg());
+			vo.setDef3(DateUtils.getFormatDate(DateUtils.PATTERN_YEAR));
+//			vo.setTs(DateUtils.getFormatDate("yyyy-MM-dd HH:mm:ss"));
+			vo.setDef8(sn);//序号
+			
+			//不用校验负分的
+			//更新客户积分
+			String sql = "UPDATE gd_customer_info2 SET now_usable_integral = CONVERT(now_usable_integral - ?, DECIMAL) WHERE pk_customer_info=?";
+			SQLParameter parameter = new SQLParameter();
+			parameter.addParam(vo.getCustomer_integral());
+			parameter.addParam(customerVO.getPk_customer_info());
+			new DBUtils().executeUpdateSQL(sql, parameter);
+			GdDataHandlerUtils<IntegralDetailVO> utils = new GdDataHandlerUtils<IntegralDetailVO>(new IntegralDetailVO());
+			msg = utils.save(vo);
+			if(msg.isFlag()){
+				msg.setMessage("积分兑换成功");
+			}else{
+				msg.setMessage("积分兑换失败");
+			}
+			return msg;
+		} catch (DAOException e) {
+			e.printStackTrace();
+			throw new RuntimeException("vip积分赠送失败" + e.getMessage());
+		}
+	}
 	
 	/**
 	 * 导入历史积分明细
@@ -236,6 +308,8 @@ public class IntegralOpertionService {
 			integralTitle= "积分兑换明细";
 		}else if("3".equals(type)){
 			integralTitle= "积分赠送明细";
+		}else if("4".equals(type)){
+			integralTitle= "积分提前明细";
 		}
 		HSSFWorkbook wb = new HSSFWorkbook();
 		HSSFSheet sheet = wb.createSheet(integralTitle );
@@ -258,8 +332,11 @@ public class IntegralOpertionService {
 		}else if("2".equals(type)){
 			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 11));
 			setCellWidth(sheet, 2);
-		}else{
+		}else if("3".equals(type)){
 			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 9));
+			setCellWidth(sheet, 3);
+		}else if("4".equals(type)){
+			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 11));
 			setCellWidth(sheet, 3);
 		}
 		cell.setCellStyle(style);
@@ -335,6 +412,12 @@ public class IntegralOpertionService {
 					contents = new String[]{customer_name, idcard, integral+"", 
 							def2, def1, def3,vo.getDef8(),
 							ts, empname, orgname};
+				}else if("4".equals(type)){
+					contents = new String[]{
+							def3, def8,
+							customer_name, idcard, integral+"", 
+							def2, def5, def1,vo.getConversion_detail(),
+							ts, empname, orgname};
 				}
 				row = sheet.createRow((i+2));
 				ExcelUtils.batchCreateCell(row, contents);
@@ -398,6 +481,9 @@ public class IntegralOpertionService {
 		}else if("3".equals(type)){
 			return new String[]{"客户名称", "客户身份证号", "积分", "vip赠送积分", 
 					"vip积分赠送类型", "vip积分赠送年", "备注", "录入时间", "录入人", "录入机构"};
+		}else if("4".equals(type)){
+			return new String[]{"年份","序号","客户名称", "客户身份证号", "积分", "兑换类型积分", 
+					"兑换数量", "兑换商品", "备注", "录入时间", "录入人", "录入机构"};
 		}
 		return null;
 	}
@@ -469,15 +555,63 @@ public class IntegralOpertionService {
 		}
 		//校验账号和存单号、存续期
 		String deposit_receipt_num = vo.getDeposit_receipt_num();
-		String sql = "SELECT COUNT(*) FROM gd_add_integral_detail WHERE " +
-				"customer_account='"+num+"' AND deposit_receipt_num='"+deposit_receipt_num+"'";
+		String def7 = vo.getDef7();//账户序号
+		
+		//根据账号和存单号进行查询存单号，根据存单号进行判断
+		String sql = "SELECT deposit_receipt_num FROM gd_add_integral_detail WHERE " +
+				"customer_account='"+num+"' AND def7='"+def7+"'";
+		
 		try {
-			int result = new DBUtils().getCountNumber(sql);
-			String duration = vo.getDuration();
-			if(result > 0){
-				if("N".equals(duration)){
-					return new MsgResponse("添加积分失败，账号和存单号都已经存在了，请重新输入", false);
+			List<Object[]> objs = new DBUtils().queryObjs(sql);
+			String duration = vo.getDuration();//是否存续期
+			if(objs != null && objs.size() > 0){
+				for(Object o:objs){
+					//存单号相同
+					if(deposit_receipt_num.equals(o.toString())){
+						if("N".equals(duration)){
+							return new MsgResponse("添加积分失败，账号、账户序号、存单号已经存在且不在存续期", false);
+						}
+					}else{
+						//存单号不相同
+						if("N".equals(duration)){
+							return new MsgResponse("添加积分失败，账号、账户序号已经存在且不在存续期", false);
+						}
+					}
+					
 				}
+			}
+		} catch (DAOException e) {
+			e.printStackTrace();
+			return new MsgResponse("添加积分失败，" + e.getMessage(), false);
+		}
+		return null;
+	}
+	/**
+	 * 添加积分校验
+	 * @param vo
+	 * @return
+	 */
+	private MsgResponse validateLeadIntegral(LeadDrawIntegralVO vo) {
+		String num = vo.getCustomer_account();
+		if(num != null && !"".equals(num.trim())){
+			if(!(num.length() == 16 || num.length() == 19)){
+				//对的
+				return new MsgResponse("账号填写错误，请重新填写", false);
+			}
+		}else{
+			return new MsgResponse("账号为空，请重新填写", false);
+		}
+		//校验账号和存单号、存续期
+		String def7 = vo.getDef7();//账户序号
+		
+		//根据账号和存单号进行查询存单号，根据存单号进行判断
+		String sql = "SELECT count(*) FROM gd_lead_integral_detail WHERE " +
+				"customer_account='"+num+"' AND def7='"+def7+"'";
+		
+		try {
+			int count = new DBUtils().getCountNumber(sql);
+			if(count > 0){
+				return new MsgResponse("对改账户和账户序号已经提前支取了", false);
 			}
 		} catch (DAOException e) {
 			e.printStackTrace();
@@ -679,6 +813,8 @@ public class IntegralOpertionService {
 			tableName = "gd_sub_integral_detail";
 		}else if("3".equals(type)){
 			tableName = "gd_vip_integral_detail";
+		}else if("4".equals(type)){
+			tableName = "gd_lead_integral_detail";
 		}
 		
 		//查询数据实体
