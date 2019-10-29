@@ -18,7 +18,11 @@
 	            <tr>
 		            <td>
 		                	身份证号：<input id="customer_idcard" class="nui-textbox" name="customer_idcard" 
-		                		 required="false" emptyText="请选择..." style="width:150px;" />
+		                		 required="false" emptyText="请输入..." style="width:150px;" />
+		            </td>
+		            <td>
+		                	录入人：<input id="create_user" class="nui-textbox" name="create_user" 
+		                		 required="false" emptyText="请输入..." style="width:150px;" />
 		            </td>
 		            <td>
 		                	开始时间：<input id="start_date"class="nui-datepicker" name="start_date" emptyText="请选择..." allowInput="true"style="width:100px;" />
@@ -57,16 +61,16 @@
 		<input id="pk_customer_info" name="pk_integral_detail" class="nui-hidden" />
 	    <div id="grid" class="nui-datagrid" style="width:100%;height:100%;" 
 		    url="com.xbkj.gd.data_handle.cust.integralManager.queryCustIntegal.biz.ext"  
-		    	idField="pk_customer_info" dataField="vos" allowResize="false" multiSelect="false" 
+		    	idField="pk_customer_info" dataField="vos" allowResize="false" multiSelect="true" 
 		    	allowCellSelect="false">
 		    <input class="nui-hidden" name="pk_customer_info"/>
 		    <div property="columns">
 		        <div type="checkcolumn"></div>
 		        <div field="def3" width="60px" headerAlign="center" allowSort="false">年份</div>
-		        <div field="def8" width="60px" headerAlign="center" allowSort="false">序号</div>
+		        <div field="def8" width="50px" headerAlign="center" allowSort="false">序号</div>
 		        <div field="customer_name" width="60px" headerAlign="center" allowSort="false">客户名</div>
 		        <div field="customer_idcard" width="150px" headerAlign="center" allowSort="false">客户身份证号</div>
-		        <div field="customer_integral" width="60px" headerAlign="center" allowSort="false">积分</div>
+		        <div field="customer_integral" width="50px" headerAlign="center" allowSort="false">积分</div>
 		       <!--  
 		       <div field="customer_account" width="60px" headerAlign="center" allowSort="false">账号</div>
 		        <div field="deposit_receipt_num" width="80px" headerAlign="center" allowSort="false">存单号号</div>  
@@ -74,12 +78,15 @@
 		        <div field="conversion_detail" width="60px" headerAlign="center" allowSort="false">兑换明细</div>
 		        -->
 		        <div field="def2" width="120px" headerAlign="center" allowSort="false">兑换类型积分</div>
-		        <div field="def5" width="120px" headerAlign="center" allowSort="false">兑换数量</div>
-		        <div field="def1" width="120px" headerAlign="center" allowSort="false">兑换商品</div>
-		        <div field="ts" width=120px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
-		        <div field="empname" width=120px" headerAlign="center" allowSort="false">录入人</div>
+		        <div field="def5" width="70px" headerAlign="center" allowSort="false">兑换数量</div>
+		        <div field="def1" width="140px" headerAlign="center" allowSort="false">兑换商品</div>
+		        <div field="ts" width="140px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
+		        <div field="empname" width=90px" headerAlign="center" allowSort="false">录入人</div>
 		        <div field="orgname" width=120px" headerAlign="center" allowSort="false">录入机构</div>
 		        <div field="conversion_detail" width=180px" headerAlign="center" allowSort="false">备注</div>
+		        
+		        <div field="sign" width=180px" headerAlign="center" renderer="onActionRenderer" allowSort="false">签名</div> 
+		        
 		    </div>
 		</div>
 	</div>
@@ -90,7 +97,14 @@
 		var integral_type = 2;
 		var grid = nui.get("grid");
 		var form = new nui.Form("#form1");
-		
+		function onActionRenderer(e) {
+            var grid = e.sender;
+            var record = e.record;
+            var sign = record.sign;
+            var rowIndex = e.rowIndex;
+			let s = '<img id="sign" style="width:200px;height:100px;border:1px red solid;" src="'+sign+'"></img>';
+            return s;
+        }
 		 /**
         	文件导入
         */

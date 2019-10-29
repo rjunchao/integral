@@ -6,10 +6,11 @@ import com.xbkj.common.bs.dao.BaseDAO;
 import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.jdbc.framework.processor.ArrayListProcessor;
+import com.xbkj.common.jdbc.framework.processor.ArrayProcessor;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-9-6
  *@version 1.0.0
  *@desc
@@ -40,6 +41,7 @@ public class DBUtils {
 	 * @throws DAOException
 	 */
 	public int executeUpdateSQL(String sql, SQLParameter parameter) throws DAOException{
+		
 		int count = dao.executeUpdate(sql, parameter);
 		return count;
 	}
@@ -109,6 +111,30 @@ public class DBUtils {
 	 */
 	public List<Object[]> queryObjs(String sql) throws DAOException{
 		return (List<Object[]>) dao.executeQuery(sql, new ArrayListProcessor());
+	}
+	
+	/**
+	 * 查询返回一个集合数组
+	 * @param sql
+	 * @return
+	 * @throws DAOException
+	 */
+	public String[] queryStrs(String sql) throws DAOException{
+		List<Object[]> objs = queryObjs(sql);
+//		Object[] objs = (Object[]) dao.executeQuery(sql, new );
+		if(objs != null && objs.size() > 0){
+			int len = objs.size();
+			String[] strs = new String[len];
+			for(int i = 0 ; i < len ; i++){
+				strs[i] = String.valueOf(objs.get(i)[0]);
+			}
+			return strs;
+		}
+		return null;
+	}
+	public String[] queryStrs(String sql, SQLParameter parameter) throws DAOException{
+		String[] results = (String[]) dao.executeQuery(sql, parameter, new ArrayProcessor());
+		return results;
 	}
 	/**
 	 * 查询返回一个集合数组

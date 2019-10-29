@@ -4,7 +4,7 @@ import com.xbkj.gd.base.GdSuperVO;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-9-6
  *@version 1.0.0
  *@desc

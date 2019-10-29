@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form id="formGrid">
-       <div style="width:670px;">
+       <div style="width:800px;">
         	<div class="mini-toolbar" style="border-bottom:0;padding:0px;">
 	            <table style="width:100%;">
 	                <tr>
@@ -27,27 +27,31 @@
 	            </table>           
         	</div>
     	</div>
-    	 <div id=datagrid class="nui-datagrid" style="width:670px;height:380px;" allowResize="true" 
+    	 <div id=datagrid class="nui-datagrid" style="width:800px;height:380px;" allowResize="true" 
           idField="pk_integral_detail" multiSelect="true"  allowCellSelect="true" showPageSize="false" showPager="false" >
        
       		<div property="columns">
             	<div type="checkcolumn"></div>
-            	<!--  showNullItem="true" -->
-            	<div  name="temp"  field="temp" headerAlign="center" allowSort="true" width="150px" >请选择
-	                <input property="editor" class="nui-combobox" valueField="id" textField="text"
+            	<!--  showNullItem="true" com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=2
 	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=2"
+	                	url="com.xbkj.gd.data_handle.prod.applyProduct.querySubProd.biz.ext"
+            	
+            	-->
+            	<div  name="temp"  field="temp" headerAlign="center" allowSort="true" width="180px" >请选择
+	                <input property="editor" class="nui-combobox" valueField="id" textField="text"
+	                	url="com.xbkj.gd.data_handle.prod.subBranch.giftSub.biz.ext"
 	                	required="true"
 	                		dataField="vos" style="width:100%;" minWidth="200" onvaluechanged="computeIntegral" />
 	            </div>
-	            <div name="def5" field="def5" width="80px" >兑换数量
+	            <div name="def5" field="def5" width="50px" >兑换数量
 	                <input property="editor" class="nui-textbox" vtype="int" style="width:100%;" required="true" onvaluechanged="computeIntegral" />
 	            </div> 
-	            <div name="conversion_detail" field="conversion_detail" width="80px" >备注
+	            <div name="conversion_detail" field="conversion_detail" width="60px" >备注
 	                <input property="editor" class="nui-textbox" style="width:100%;" />
 	            </div> 
-            	<div  name="def1"  field="def1" headerAlign="center" allowSort="true" width="150px" >兑换商品
+            	<div  name="def1"  field="def1" headerAlign="center" allowSort="true" width="160px" >兑换商品
 	            </div>
-            	<div  name="def2"  field="def2" headerAlign="center" allowSort="true" width="80px" >兑换商品单价
+            	<div  name="def2"  field="def2" headerAlign="center" allowSort="true" width="70px" >兑换商品单价
 	            </div>
 	            <div field="customer_integral" width="60px">积分
 	                <!-- <input property="editor" class="nui-textbox" style="width:100%;" vtype="float"  /> -->
@@ -77,11 +81,13 @@
 			var def1 = null;
 			var row = grid.getSelected();
 			if(e.selected){
+			
 				def1 = e.selected.text;	
 				row.def2 = e.value;	
+				//id_名称_积分
 				var vals = e.value.split("_");
-				def1 = vals[0];
-				row.def2 = vals[1];
+				def1 = vals[0]+"_" + vals[1];//商品编码+名称
+				row.def2 = vals[2];//积分单位
 			}else{
 				def1= row.def1;
 			}

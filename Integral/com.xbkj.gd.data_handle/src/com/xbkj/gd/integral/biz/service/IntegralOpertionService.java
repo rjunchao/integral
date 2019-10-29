@@ -27,6 +27,8 @@ import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.util.PrimaryKeyUtil;
 import com.xbkj.gd.integral.biz.CustomerOptionBiz;
 import com.xbkj.gd.integral.biz.IntegralOptionBiz;
+import com.xbkj.gd.integral.prod.dao.OrgApplyProductDao;
+import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
 import com.xbkj.gd.integral.vos.AddIntegralDetailVO;
 import com.xbkj.gd.integral.vos.CustomerVO;
 import com.xbkj.gd.integral.vos.IntegralDetailVO;
@@ -42,7 +44,7 @@ import com.xbkj.gd.utils.UserUtils;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2018-9-7
  *@version 1.0.0
  *@desc 积分新规则业务类
@@ -619,6 +621,8 @@ public class IntegralOpertionService {
 		}
 		return null;
 	}
+	
+	private OrgApplyProductDao prodDao = new OrgApplyProductDao();
 
 	/**
 	 * 积分兑换
@@ -638,10 +642,24 @@ public class IntegralOpertionService {
 		
 		double integralTotal = 0.0;//总积分，更新到客户表，明细插入明细表
 		double customer_integral = 0.0;
+		Map<String, Integer> prods = new HashMap<String, Integer>();
 		//查询批次号
 		try {
+			
+			String[] code_name = null;
+			OrgApplyProductVO prod = null;
+			String subNum = "0";
 			String sn = querySerialNumber(customerVO);
 			for(IntegralDetailVO vo : vos){
+				//1、校验库存
+				code_name = vo.getDef1().split("_");//id_名称
+				prod = prodDao.get(code_name[0]);
+				subNum = vo.getDef5();//兑换数量
+				if(Integer.parseInt(subNum) > prod.getApply_product_num()){
+					//兑换的超过了审批过的数量
+					return new MsgResponse(vo.getDef1() + "兑换数量超过了机构现有的数量,现有数量" + prod.getApply_product_num(), false);
+				}
+				prods.put(prod.getPk_org_apply_product(), (prod.getApply_product_num()-Integer.parseInt(subNum)));//商品编码, 兑换数量
 				customer_integral = vo.getCustomer_integral();
 				integralTotal = integralTotal + customer_integral;
 				//
@@ -657,8 +675,6 @@ public class IntegralOpertionService {
 			if(integralTotal > customerVO.getNow_usable_integral()){
 				return new MsgResponse("兑换积分超过了可用积分，修改兑换项或兑换数量", false);
 			}
-			
-			
 			//更新客户积分
 			String sql = "UPDATE gd_customer_info2 SET now_usable_integral = now_usable_integral + ? WHERE pk_customer_info=?";
 			SQLParameter parameter = new SQLParameter();
@@ -669,7 +685,10 @@ public class IntegralOpertionService {
 			new DBUtils().executeUpdateSQL(sql, parameter);
 			GdDataHandlerUtils<IntegralDetailVO> utils = new GdDataHandlerUtils<IntegralDetailVO>(new IntegralDetailVO());
 			MsgResponse msg = utils.saveArr(vos);
+			
 			if(msg.isFlag()){
+				//2、兑换成功后需要－库存
+				prodDao.updategiftNums(prods);
 				msg.setMessage("积分兑换成功");
 			}else{
 				msg.setMessage("积分兑换失败");

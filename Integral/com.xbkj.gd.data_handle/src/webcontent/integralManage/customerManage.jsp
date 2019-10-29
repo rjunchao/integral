@@ -354,7 +354,7 @@
 				nui.open({
 					url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/exchangeIntegral.jsp",
 					title:"兑换客户积分",
-					width:680,
+					width:810,
 					height:440,
 					onload:function(){
 						var iframe = this.getIFrameEl();

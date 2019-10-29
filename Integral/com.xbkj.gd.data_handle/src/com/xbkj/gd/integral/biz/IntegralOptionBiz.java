@@ -1,5 +1,6 @@
 package com.xbkj.gd.integral.biz;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -17,11 +18,14 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 
+import sun.misc.BASE64Encoder;
+
 import com.eos.foundation.PageCond;
 import com.eos.foundation.impl.PageCondImpl;
 import com.eos.system.annotation.Bizlet;
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.pagequery.VOPageQuery;
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.util.PrimaryKeyUtil;
@@ -40,7 +44,7 @@ import com.xbkj.gd.utils.UserUtils;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-9-5
  *@version 1.0.0
  *@desc:
@@ -214,7 +218,33 @@ public class IntegralOptionBiz {
 		}
 	}
 	
-	
+	public String getSign(){
+		// 1
+		BASE64Encoder be = new BASE64Encoder();
+		ByteOutputStream bos = new ByteOutputStream();
+		FileInputStream is = null;
+		try {
+//			File f = new File("f:\\Decode_Image_29280.txt");
+			is = new FileInputStream("f:\\Decode_Image_29280.PNG");
+			byte[] buf = new byte[1024];
+			while(is.read(buf) != -1){
+				bos.write(buf);
+			}
+			String encode = be.encode(bos.getBytes());
+			bos.close();
+			return "data:image/png;base64," + encode;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			if(is != null){
+				try {
+					is.close();
+				} catch (IOException e) {}
+			}
+		}
+		return null;
+		
+	}
 
 	/**
 	 * 分页查询 积分信息
@@ -234,6 +264,11 @@ public class IntegralOptionBiz {
 			tableName = "gd_add_integral_detail";
 		}else if("2".equals(type)){
 			tableName = "gd_sub_integral_detail";
+			
+			String create_user = params.get("create_user");
+			if(StringUtils.isNotEmpty(create_user)){
+				where = where + " AND T.create_user ='"+create_user+"'";
+			}
 		}else if("3".equals(type)){
 			tableName = "gd_vip_integral_detail";
 		}else if("4".equals(type)){
@@ -258,13 +293,23 @@ public class IntegralOptionBiz {
 //		System.out.println("积分明细查询： " + querySql);
 		 IntegralDetailVO[] vos = query.query(querySql, queryCountSql, page);
 		 if(vos != null && vos.length > 0){
+			 String sign = getSign();
+			 for(IntegralDetailVO vo : vos){
+				 if("Y".equals(params.get("hiddenFlag"))){
+					 vo.setCustomer_idcard(idcardToX(vo.getCustomer_idcard()));
+				 }
+				 vo.setSign(sign);
+			 }
+			 
+		 }
+		 /*if(vos != null && vos.length > 0){
 			 if("Y".equals(params.get("hiddenFlag"))){
 				 for(IntegralDetailVO vo : vos){
 					 vo.setCustomer_idcard(idcardToX(vo.getCustomer_idcard()));
 				 }
 			 }
 			 
-		 }
+		 }*/
 		 return vos;
 	}
 	//身份证号只显示出生的月日

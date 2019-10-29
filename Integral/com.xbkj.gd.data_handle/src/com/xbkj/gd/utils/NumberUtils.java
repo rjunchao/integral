@@ -13,7 +13,7 @@ import com.xbkj.common.bs.dao.BaseDAO;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-7-8
  *@version 1.0.0
  *@desc

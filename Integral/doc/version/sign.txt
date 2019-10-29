@@ -1,0 +1,5 @@
+ALTER TABLE gd_sub_integral_detail   
+  CHANGE def6 def6 VARCHAR(50) CHARSET utf8 COLLATE utf8_general_ci NULL  COMMENT '客户签名id',
+  CHANGE def7 def7 VARCHAR(50) CHARSET utf8 COLLATE utf8_general_ci NULL  COMMENT '预留',
+  CHANGE def9 def9 VARCHAR(50) CHARSET utf8 COLLATE utf8_general_ci NULL  COMMENT '预留',
+  CHANGE def10 def10 VARCHAR(50) CHARSET utf8 COLLATE utf8_general_ci NULL  COMMENT '预留';

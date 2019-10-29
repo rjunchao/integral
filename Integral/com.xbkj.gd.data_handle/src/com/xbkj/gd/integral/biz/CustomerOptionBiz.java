@@ -38,7 +38,7 @@ import com.xbkj.gd.utils.UserUtils;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-9-5
  *@version 1.0.0
  *@desc

@@ -7,7 +7,7 @@ import com.xbkj.gd.base.GdSuperVO;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-9-5
  *@version 1.0.0
  *@desc: 积分明细表
@@ -30,6 +30,8 @@ public class IntegralDetailVO extends GdSuperVO{
 	private String input_date;//录入时间
 	private String option_org;//操作机构
 	private String real_idcard;
+	
+	private String sign;
 	
 	
 	private String customer_name;
@@ -250,6 +252,14 @@ public class IntegralDetailVO extends GdSuperVO{
 	
 	public void setDuration(String duration) {
 		this.duration = duration;
+	}
+	
+	public String getSign() {
+		return sign;
+	}
+	
+	public void setSign(String sign) {
+		this.sign = sign;
 	}
 	@Override
 	public String getParentPKFieldName() {

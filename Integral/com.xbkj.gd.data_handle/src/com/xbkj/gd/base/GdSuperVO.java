@@ -4,7 +4,7 @@ import com.xbkj.basic.vo.pub.SuperVO;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-9-5
  *@version 1.0.0
  *@desc
@@ -52,6 +52,11 @@ public abstract class GdSuperVO extends SuperVO{
 		
 		private String empname;
 		private String orgname;
+		
+		private String create_user;//
+		private String create_user_org ;//
+		private String input_org ;//
+		private String remark ;//
 		
 		public String get_id() {
 			return _id;
@@ -233,4 +238,32 @@ public abstract class GdSuperVO extends SuperVO{
 		public void setDr(String dr) {
 			this.dr = dr;
 		}
+		public String getCreate_user() {
+			return create_user;
+		}
+		public void setCreate_user(String create_user) {
+			this.create_user = create_user;
+		}
+		public String getCreate_user_org() {
+			return create_user_org;
+		}
+		public void setCreate_user_org(String create_user_org) {
+			this.create_user_org = create_user_org;
+		}
+		public String getInput_org() {
+			return input_org;
+		}
+		public void setInput_org(String input_org) {
+			this.input_org = input_org;
+		}
+		
+		public String getRemark() {
+			return remark;
+		}
+		
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+		
+	
 }

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.xbkj.gd.utils;
 
 
@@ -15,6 +12,7 @@ import com.pub.xbkj.pubapp.exception.ExceptionUtils;
 import com.xbkj.basic.vo.pub.SuperVO;
 import com.xbkj.common.bs.dao.BaseDAO;
 import com.xbkj.common.bs.dao.DAOException;
+import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.jdbc.framework.processor.BeanListProcessor;
 import com.xbkj.common.util.StringUtil;
 import com.xbkj.gd.base.GdSuperVO;
@@ -43,6 +41,26 @@ public class GdDataHandlerUtils<T extends GdSuperVO> {
 		List<T> vos = null;
 		try {
 			vos = (List<T>) dao.executeQuery(sql, new BeanListProcessor(t.getClass()));
+		} catch (DAOException e) {
+			e.printStackTrace();
+		}
+		if(vos != null && vos.size() > 0){
+			return vos.get(0);
+		}else{
+			return null;
+		}
+	}
+	/**
+	 * 根据序号进行查询
+	 * 序号也是唯一
+	 * @param number
+	 * @return
+	 */
+	public T query(String sql, SQLParameter parameter){
+		BaseDAO dao = new BaseDAO();
+		List<T> vos = null;
+		try {
+			vos = (List<T>) dao.executeQuery(sql, parameter, new BeanListProcessor(t.getClass()));
 		} catch (DAOException e) {
 			e.printStackTrace();
 		}
@@ -90,7 +108,30 @@ public class GdDataHandlerUtils<T extends GdSuperVO> {
 			ExceptionUtils.wrappBusinessException("VOPageQuery ： 数据查询失败 ~ "+ querySql);		
 		}
 		return null;
- }
+	}
+	public List<T> queryList(String querySql) {
+		BaseDAO dao = new BaseDAO();
+		try{
+			List<T> obj = (List<T>) dao.executeQuery(querySql, new BeanListProcessor(t.getClass()));
+			return obj;
+		} catch (DAOException e) {
+			e.printStackTrace();
+			ExceptionUtils.wrappBusinessException("VOPageQuery ： 数据查询失败 ~ "+ querySql);		
+		}
+		return null;
+	}
+	
+	public List<T> queryList(String querySql, SQLParameter parameter) {
+		BaseDAO dao = new BaseDAO();
+		try{
+			List<T> obj = (List<T>) dao.executeQuery(querySql,parameter, new BeanListProcessor(t.getClass()));
+			return obj;
+		} catch (DAOException e) {
+			e.printStackTrace();
+			ExceptionUtils.wrappBusinessException("VOPageQuery ： 数据查询失败 ~ "+ querySql);		
+		}
+		return null;
+	}
 	
 	/**
 	 * 保存
@@ -123,7 +164,8 @@ public class GdDataHandlerUtils<T extends GdSuperVO> {
 		BaseDAO dao = new BaseDAO();
 		try {
 			//	dao.insertVO(vo);
-			dao.insertVOArrayWithPK(vos);
+			String[] pks = dao.insertVOArrayWithPK(vos);
+			System.out.println(pks);
 			return new MsgResponse("保存成功", true);
 		} catch (DAOException e) {
 			e.printStackTrace();

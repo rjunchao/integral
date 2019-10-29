@@ -1,7 +1,7 @@
 package com.xbkj.gd.integral.vos;
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2019-1-10
  *@version 1.0.0
  *@desc

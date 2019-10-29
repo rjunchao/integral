@@ -22,7 +22,7 @@ import com.xbkj.gd.utils.UserUtils;
 
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2018-9-4
  *@version 1.0.0
  *@desc 配置积分基础数据

@@ -1,0 +1,17 @@
+com.xbkj.common.bs.dao.BaseDAO.java
+com.xbkj.gd.utils.GdDataHandlerUtils<T>
+com.xbkj.gd.utils.UserUtils.java
+com.xbkj.gd.utils.DBUtils
+com.xbkj.gd.base.GdSuperVO
+com.xbkj.gd.integral.biz.service.IntegralOpertionService.java
+com.pub.xbkj.pubapp.pagequery.VOPageQuery.java
+gd/data_handle/integralManage/integral/exchangeIntegral.jsp
+coframe/framework/menu/menu_info.jsp
+coframe/framework/menu/menu_add.jsp
+gd/data_handle/integralManage/customerRef/orgsRef.jsp
+gd/data_handle/integralManage/report/exchangeIntegralDetail.jsp
+
+机构权限
+	兑换的时候查询商品
+	审批通过页面
+	
