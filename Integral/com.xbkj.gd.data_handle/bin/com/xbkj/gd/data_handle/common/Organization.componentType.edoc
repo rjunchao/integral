@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>Organization</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;Organization.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;Organization&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.common.Organization&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.common.Organization.orgRef(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;orgRef&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;orgRef&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.common.Organization.orgRef&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.data_handle.common.CommonTreeVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

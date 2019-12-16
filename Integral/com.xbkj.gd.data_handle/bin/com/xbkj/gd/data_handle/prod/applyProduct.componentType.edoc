@@ -1,0 +1,22 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.applyProduct.querySubProd(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;querySubProd&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;querySubProd&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.applyProduct.querySubProd&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.ComboboxVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;查询审批通过的数量，在兑换的时候使用&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>applyProduct</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;applyProduct.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;applyProduct&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.applyProduct&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.applyProduct.page(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;page&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;page&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.applyProduct.page&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.ApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.applyProduct.apply(com.xbkj.gd.integral.prod.vos.ApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;apply&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;apply&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.applyProduct.apply&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.ApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.applyProduct.queryAuditProd(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryAuditProd&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryAuditProd&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.applyProduct.queryAuditProd&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.ApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -23,13 +23,18 @@
  &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;idcard&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;dt&gt;抛出：&lt;/dt&gt;&lt;dd&gt;DAOException&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </entry>
   <entry>
+    <string>com.xbkj.gd.integral.biz.IntegralOptionBiz.leadIntegral(com.xbkj.gd.integral.vos.LeadDrawIntegralVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.biz.IntegralOptionBiz.leadIntegral(LeadDrawIntegralVO vo)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 积分提前支取&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
     <string>com.xbkj.gd.integral.biz.IntegralOptionBiz.exchangeIntegral(com.xbkj.gd.integral.vos.SubIntegralDetailVO[])</string>
     <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.biz.IntegralOptionBiz.exchangeIntegral(SubIntegralDetailVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 积分兑换&#x0D;
  &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </entry>
   <entry>
     <string>IntegralOptionBiz</string>
-    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.xbkj.gd.integral.biz.IntegralOptionBiz&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@email&lt;/dt&gt;&lt;dd&gt;rjc@ronhe.com.cn&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2017-9-5&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;积分操作：&#x0D;
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.xbkj.gd.integral.biz.IntegralOptionBiz&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@email&lt;/dt&gt;&lt;dd&gt;ruanjc@126.com&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2017-9-5&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;积分操作：&#x0D;
 		积分修改：	&#x0D;
 			积分增加：操作字段，积分、账号、存单号、存单金额&#x0D;
 			积分减少：积分减少操作字段，积分、兑换明细&#x0D;

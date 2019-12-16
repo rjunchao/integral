@@ -59,12 +59,28 @@ public class ProductDao {
 	}
 	
 	/**
+	 * 更新商品数量
+	 * @return
+	 * @throws DAOException 
+	 */
+	public int stopProduct(SQLParameter parameter) throws DAOException{
+		String sql = "UPDATE GD_PRODUCT SET dr='1' WHERE PK_PRODUCT=?";
+		try {
+			dbUtils.executeUpdateSQL(sql);
+			return dbUtils.executeUpdateSQL(sql, parameter);
+		} catch (DAOException e) {
+			log.error(e);
+			throw new DAOException(e);
+		}
+	}
+	
+	/**
 	 * 查询可以申请的产品，
 	 * @return
 	 */
 	public List<ProductVO> queryApplyProd(){
 		String querySql = "	SELECT P.PRODUCT_CODE, P.PRODUCT_NAME,P.PRODUCT_INTEGRAL FROM GD_PRODUCT P " +
-				"	WHERE P.DR = 0 AND P.PRODUCT_NUM > 0" ;
+				"	WHERE P.DR = 0 " ;
 		return utils.queryList(querySql);
 	}
 	/**
@@ -94,14 +110,14 @@ public class ProductDao {
 		
 		//查询的总记录
 		String queryCountSql = "	SELECT COUNT(*) FROM GD_PRODUCT P " +
-								"	WHERE P.DR = 0 " + where;
+								"	WHERE 1=1 " + where;
 	    //查询
 		String querySql = "	SELECT P.PK_PRODUCT, P.PRODUCT_CODE, P.PRODUCT_NAME,P.PRODUCT_INTEGRAL, P.PRODUCT_STATUS, " +
 				"P.START_TIME,P.PRODUCT_NUM, P.REMARK, P.MODIFIEDTIME, P.MODIFIER,P.CREATETIME, " +
 				"P.CREATE_USER, P.CREATE_USER_ORG,P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6, " +
-				"P.DEF7, P.DEF8, P.DEF9, P.DEF10,E.EMPNAME FROM GD_PRODUCT P " +
+				"P.DEF7, P.DEF8, P.DEF9, P.DEF10,E.EMPNAME, P.DR FROM GD_PRODUCT P " +
 							"	LEFT JOIN ORG_EMPLOYEE E ON P.CREATE_USER = E.EMPCODE" +
-							"	WHERE P.DR = 0 " + where;
+							"	WHERE 1=1" + where;
 		ProductVO[] vos = pageQuery.query(querySql, queryCountSql, page);
 		return vos;
 	}
@@ -111,20 +127,24 @@ public class ProductDao {
 		
 		if(!MapUtil.isEmpty(params)){
 			//身份证、名字 {customer_idcard=null, customer_name=阮}
-			String product_code = params.get("product_code");
+			/*String product_code = params.get("product_code");
 			if(StringUtils.isNotEmpty(product_code)){
 				sb.append(" AND P.PRODUCT_CODE LIKE '%"+product_code.trim()+"%'");
-			}
+			}*/
 			
 			String product_name = params.get("product_name");
 			if(StringUtils.isNotEmpty(product_name)){
 				sb.append(" AND P.PRODUCT_NAME LIKE '%"+product_name+"%'");
 			}
-			String product_num = params.get("product_num");
+			String dr = params.get("dr");
+			if(StringUtils.isNotEmpty(dr)){
+				sb.append(" AND P.dr = '"+dr+"'");
+			}
+			/*String product_num = params.get("product_num");
 			if(StringUtils.isNotEmpty(product_num)){
 				//查询库存大于0的记录
 				sb.append(" AND P.PRODUCT_NUM > 0 ");
-			}
+			}*/
 		}
 		return sb.toString();
 	}

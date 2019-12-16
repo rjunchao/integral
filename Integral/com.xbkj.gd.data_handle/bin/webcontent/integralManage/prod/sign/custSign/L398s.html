@@ -1,0 +1,381 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SH_client</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/l398s.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+      <div class="header">
+        <h1 class="text-muted">PenPower</h1>
+        <a class="btn btn-sm btn-success home" href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </div>
+
+      <div class="row-canvas">
+        <canvas id="ppCanvas" width="600" height="375"></canvas>
+        <div class="shutdown"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <!-- Table 1 -->
+          <table width="100%" class="functions">
+            <tbody>
+              <!-- Cols 1 -->
+              <tr>
+                <td width="16.65%">
+                  <button type="button" id="initBtn" class="btn btn-block btn-success btn-sm" onclick="initDevice()">Initialize Device</button>
+                </td>
+                <td width="16.65%">
+                  <button type="button" id="uninitBtn" class="btn btn-block btn-success btn-sm init" onclick="uninitDevice()" disabled>Uninitialize Device</button>
+                </td>
+                <td width="16.65%">
+                  Device Type:
+                </td>
+                <td width="16.65%">
+                  <input type="text" value="L398" readonly="readonly" class="form-control"></input>
+                </td>
+                <td width="16.65%">
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getAbout()" disabled>About</button>
+                </td>
+                <td width="16.65%">
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="clearInk()" disabled>Clear</button>
+                </td>
+              </tr>
+
+              <!-- Cols 2 -->
+              <tr>
+                <td>
+                  Pen Color:
+                </td>
+                <td>
+                  <select class="form-control" disabled>
+                    <option value="1">Black</option>
+                    <option value="2">Red</option>
+                    <option value="3">Blue</option>
+                    <option value="4">Green</option>
+                  </select>
+                </td>
+                <td>
+                  Pen Width:
+                </td>
+                <td>
+                  <select id="penWidth" class="form-control" onchange="pwChange()" disabled>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected="selected">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                  </select>
+                </td>
+                <td>
+                  Pen Style:
+                </td>
+                <td>
+                  <select id="penStyle" class="form-control init" onchange="psChange()" disabled>
+                    <option value="0">0 Pressure sensitivity</option>
+                    <option value="1">1 Fixed width</option>
+                  </select>
+                </td>
+              </tr>
+
+              <!-- Cols 3 -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="saveDrawing()" disabled>Save Drawing Image</button>
+                </td>
+                <td>
+                  <select id="sdType" class="form-control  init" disabled>
+                    <option value="1">BMP</option>
+                    <option value="2">JPG</option>
+                    <option value="3">PNG</option>
+                    <option value="4">GIF</option>
+                    <option value="5">TIFF</option>
+                    <option value="7">PDF</option>
+                    <option value="8">SVG</option>
+                  </select>
+                </td>
+                <td>
+                  <select id="sdDpi" class="form-control init" disabled>
+                    <option value="0">150 dpi</option>
+                    <option value="1">300 dpi</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getSize()" disabled>Get Size</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getPointer()" disabled>ShowPointInfo</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getValid()" disabled>Get Valid</button>
+                </td>
+              </tr>
+
+              <!-- Cols 4 -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm videoControl" onclick="saveVideo()" disabled>Save Drawing Video</button>
+                </td>
+                <td>
+                  <select id="svType" class="form-control videoControl" disabled>
+                    <option value="1">MP4</option>
+                    <option value="2">WMV</option>
+                  </select>
+                </td>
+                <td>
+                  <select id="svFps" class="form-control videoControl" disabled>
+                    <option value="1">5 FPS</option>
+                    <option value="2">10 FPS</option>
+                    <option value="3">15 FPS</option>
+                    <option value="4">20 FPS</option>
+                    <option value="5">25 FPS</option>
+                    <option value="6" selected="selected">30 FPS</option>
+                    <option value="7">60 FPS</option>
+                    <option value="8">90 FPS</option>
+                    <option value="9">120 FPS</option>
+                    <option value="10">150 FPS</option>
+                  </select>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-block btn-success btn-sm videoControl" onclick="playbackButtonClick()" disabled>Playback Drawing Video</button>
+                </td>
+                <td>
+                  <button id="VideoStatusBtn" type="button" class="btn btn-block btn-success btn-sm init" onclick="videoStatusClick()" disabled>Enable</button>
+                </td>
+                <td></td>
+              </tr>
+
+              <!-- Cols 5 -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm" disabled="disabled">Active Tablet</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm" disabled="disabled">Deactive Tablet</button>
+                </td>
+                <td></td>
+                <td>
+                  <input type="text" class="form-control init" placeholder="Width" id="scWidth" disabled></input>
+                </td>
+                <td>
+                  <input type="text" class="form-control init" placeholder="Height" id="scHeight" disabled></input>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="setClip()" disabled>Set Clip</button>
+                </td>
+              </tr>
+
+              <!-- Cols 6 -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getPadid()" disabled>Pad ID</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getPenid()" disabled>Pen ID</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getVerid()" disabled>Version ID</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="showDiilcd()" disabled>Display Version ID</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="hideDiilcd()" disabled>Hide Version ID</button>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <!-- Cols 7 -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="closeLcd()" disabled>Close LCD</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="openLcd()" disabled>Open LCD</button>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="getDevinf()" disabled>Get Device Info</button>
+                </td>
+                <td>
+                  <select class="form-control init" id="devInfo" disabled>
+                    <option value="1">Device Connection</option>
+                    <option value="2">Device X Range</option>
+                    <option value="3">Device Y Range</option>
+                    <option value="4">Device Pressure Range</option>
+                    <option value="5">Device Vendor</option>
+                    <option value="6">Device Name</option>
+                    <option value="7">SDK Version</option>
+                  </select>
+                </td>
+              </tr>
+
+              <!-- Cols 8 -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="saveData()" disabled>Upload Data Into Device</button>
+                </td>
+                <td>
+                  <select class="form-control init" id="svData" disabled>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="readData()" disabled>Download Device Data</button>
+                </td>
+                <td>
+                  <select class="form-control init" id="reData" disabled>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-success btn-sm init" onclick="clearData()" disabled>Clear Device Data</button>
+                </td>
+                <td>
+                  <select class="form-control init" id="clData" disabled>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Table 2 -->
+          <Table class="encoding" align="center">
+            <tr>
+              <td>
+                <select class="form-control init" id="encodeType" disabled>
+                  <option value="1">BMP</option>
+                  <option value="2">JPG</option>
+                  <option value="3">PNG</option>
+                  <option value="4">GIF</option>
+                  <option value="5">TIF</option>
+                  <option value="6">INK</option>
+                </select>
+              </td>
+              <td>
+                <button type="button" class="btn btn-block btn-success btn-sm init" onclick="encode()" disabled>Encode</button>
+              </td>
+            </tr>
+
+          </table>
+
+          <!-- Table 3 -->
+          <table class="decode" align="center">
+            <tr>
+              <td>
+                <textarea cols="120" rows="10" id="encode" class="form-control init" disabled></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input style="margin: 5px 0px;" class="btn btn-primary btn-lg init" type="button" value="Base64 Decode" onclick="decode()" disabled>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <textarea cols="120" rows="10" id="decode" class="form-control init" disabled></textarea>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">PointInfo</h4> </div>
+            <div class="modal-body" id="pointInfo">
+              <table>
+                <thead>
+                  <tr>
+                    <td class="head">X</td>
+                    <td class="head">Y</td>
+                    <td align="right" class="head">Pressure</td>
+                    <td align="right" class="head">bStrokeEnd</td>
+                    <td align="right" class="head">Time</td>
+                  </tr>
+                </thead>
+                <tbody id="pointContant">
+
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="playbackModal" tabindex="-1" role="dialog" aria-labelledby="playbackLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="playbackLabel">Playback Drawing Video</h4>
+            </div>
+            <div class="modal-body">
+                <video src="" id="playback-video" autoplay="false" controls style="width: 100%;">
+
+                </video>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Powered By PenPower</p>
+      </div>
+    </div>
+
+
+    <script src="scripts/vendor.js"></script>
+
+    <script src="scripts/plugins.js"></script>
+
+    <script src="scripts/l398s.js"></script>
+  </body>
+</html>

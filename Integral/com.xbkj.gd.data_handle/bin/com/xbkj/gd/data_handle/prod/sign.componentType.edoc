@@ -1,0 +1,18 @@
+<map>
+  <entry>
+    <string>sign</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;sign.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;sign&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.sign&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.sign.signQuery()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;signQuery&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;signQuery&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.sign.signQuery&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sign(String):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;签名查询&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.sign.querySign(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;querySign&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;querySign&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.sign.querySign&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.sign.saveSign(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;saveSign&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;saveSign&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.sign.saveSign&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

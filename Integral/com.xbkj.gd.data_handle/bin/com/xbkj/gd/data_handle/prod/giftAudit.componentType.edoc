@@ -1,0 +1,34 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.giftAudit.orgAudit(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;orgAudit&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;orgAudit&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit.orgAudit&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.giftAudit.subAudit(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;subAudit&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;subAudit&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit.subAudit&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.giftAudit.officeAudit(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;officeAudit&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;officeAudit&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit.officeAudit&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.giftAudit.giftRefuse(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[], java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;giftRefuse&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;giftRefuse&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit.giftRefuse&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.giftAudit.leaderAudit(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;leaderAudit&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;leaderAudit&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit.leaderAudit&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.giftAudit.allot(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO, com.xbkj.gd.integral.prod.vos.OrgApplyProductVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;allot&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;allot&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit.allot&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;sub(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;礼品调拨&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>giftAudit</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;giftAudit.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;giftAudit&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.giftAudit.auditDetail(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;auditDetail&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;auditDetail&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.giftAudit.auditDetail&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;applyId(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(java.util.List):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

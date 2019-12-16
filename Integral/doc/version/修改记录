@@ -14,4 +14,20 @@ gd/data_handle/integralManage/report/exchangeIntegralDetail.jsp
 机构权限
 	兑换的时候查询商品
 	审批通过页面
+
+com.xbkj.gd.integral.biz.service.IntegralOpertionService.java
+gd/data_handle/integralManage/prod/sign/custSign/e560.jsp
+gd/data_handle/integralManage/reportHid/exchangeIntegralDetail.jsp
+gd/data_handle/integralManage/report/exchangeIntegralDetail.jsp
+gd/data_handle/integralManage/integral/exchangeIntegral.jsp
+com.xbkj.gd.integral.prod.biz.SignBiz.java
+
+
+
+
+
+
+
+
+
 	

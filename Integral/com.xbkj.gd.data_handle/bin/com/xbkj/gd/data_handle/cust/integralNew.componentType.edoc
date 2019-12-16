@@ -16,6 +16,10 @@
     <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;vipIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew.vipIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.VipIntegralDetailVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;vip积分赠送&lt;/html&gt;</string>
   </entry>
   <entry>
+    <string>com.xbkj.gd.data_handle.cust.integralNew.leadIntegral(com.xbkj.gd.integral.vos.LeadDrawIntegralVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;leadIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;leadIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew.leadIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.LeadDrawIntegralVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;提前支取积分&lt;/html&gt;</string>
+  </entry>
+  <entry>
     <string>com.xbkj.gd.data_handle.cust.integralNew.addIntegral(com.xbkj.gd.integral.vos.AddIntegralDetailVO)</string>
     <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.integralNew.addIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.AddIntegralDetailVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;积分添加&lt;/html&gt;</string>
   </entry>

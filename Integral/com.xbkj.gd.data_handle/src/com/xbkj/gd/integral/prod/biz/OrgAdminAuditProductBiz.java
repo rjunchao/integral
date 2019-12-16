@@ -14,16 +14,13 @@ import com.eos.system.annotation.Bizlet;
 import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.xbkj.common.bs.dao.DAOException;
-import com.xbkj.common.jdbc.framework.SQLParameter;
-import com.xbkj.common.util.StringUtil;
 import com.xbkj.gd.integral.prod.common.IntegralConstant;
+import com.xbkj.gd.integral.prod.dao.AuditDetailDao;
 import com.xbkj.gd.integral.prod.dao.OrgApplyProductDao;
 import com.xbkj.gd.integral.prod.dao.OrgAuditProductDao;
-import com.xbkj.gd.integral.prod.dao.ProductDao;
 import com.xbkj.gd.integral.prod.vos.ApplyProductVO;
 import com.xbkj.gd.integral.prod.vos.AuditProductVO;
 import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
-import com.xbkj.gd.integral.prod.vos.ProductVO;
 
 /**
  *@author rjc
@@ -44,9 +41,9 @@ import com.xbkj.gd.integral.prod.vos.ProductVO;
 public class OrgAdminAuditProductBiz {
 	private static final Logger log = LoggerFactory.getLogger(OrgAdminAuditProductBiz.class);
 	private OrgAuditProductDao dao = new OrgAuditProductDao();
-	private ProductDao prodDao = new ProductDao();
+//	private ProductDao prodDao = new ProductDao();
 	private OrgApplyProductDao appDao = new OrgApplyProductDao();
-	
+	private AuditDetailDao adDao = new AuditDetailDao();
 	
 	/**
 	 * 从分理处调拨其他分理处的礼物
@@ -68,19 +65,25 @@ public class OrgAdminAuditProductBiz {
 			OrgApplyProductVO target = appDao.querySubBranchProd(subBran.getPk_org_apply_product());
 			if(target == null){return new MsgResponse("调拨失败，被调拨中心没有", false);}
 			
-			if(vo.getApply_product_num() > target.getApply_product_num()){
+			
+			if(vo.getApply_product_num() > 
+				(target.getApply_product_num() - target.getOrg_sub_num())){//总的-兑换的=多余的
 				return new MsgResponse("调拨分理处货存不足，失败", false);
 			}
 			//调拨
-			//总的 - 调拨的
-			subBran.setApply_product_num(target.getApply_product_num() - vo.getApply_product_num());
+//			subBran.setApply_product_num(target.getApply_product_num() - vo.getApply_product_num());
+			//
+//			subBran.setOrg_sub_num((target.getOrg_sub_num() + vo.getApply_product_num()));
+			subBran.setAllot_product_num((target.getAllot_product_num() + vo.getApply_product_num()));
 			subBran.setRemark("调拨减少");
+//			subBran.setApply_product_num((target.getApply_product_num() - vo.getApply_product_num()));
 			appDao.allotOrgApply(subBran);
 			
 			vo.setAudit_status(IntegralConstant.ALLOT_PASS);//调拨
-			vo.setRemark("通过调拨的形式");
+			vo.setRemark("通过调拨的形式通过");
 			appDao.auditOrgApply(vo);
 			msg.setMessage("调拨成功");
+			adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_PASS, "调拨成功");
 			return msg;
 		} catch (DAOException e) {
 			log.error(e);
@@ -100,10 +103,12 @@ public class OrgAdminAuditProductBiz {
 		}
 		try {
 			for(OrgApplyProductVO vo : vos){
-				ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
+				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
 				if(prod.getProduct_num() < vo.getApply_product_num()){
 					throw new RuntimeException(vo.getApply_product_code() + "数量不够，请重新申请");
-				}
+				}*/
+				adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_PASS, "支行向合行发起申请成功");
+				
 				vo.setRemark("支行向合行发起申请成功");
 				vo.setAudit_status(IntegralConstant.HEAD_ORG_AMDIN);
 				appDao.auditOrgApply(vo);
@@ -126,10 +131,12 @@ public class OrgAdminAuditProductBiz {
 		}
 		try {
 			for(OrgApplyProductVO vo : vos){
-				ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
+				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
 				if(prod.getProduct_num() < vo.getApply_product_num()){
 					throw new RuntimeException(vo.getApply_product_code() + "数量不够，请重新申请");
-				}
+				}*/
+				adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_PASS, "合行管理员审批成功");
+				
 				vo.setRemark("合行管理员审批成功");
 				vo.setAudit_status(IntegralConstant.HEAD_ORG_LEADER);
 				appDao.auditOrgApply(vo);
@@ -151,20 +158,57 @@ public class OrgAdminAuditProductBiz {
 			return new MsgResponse("数据为空", false);
 		}
 		try {
-			SQLParameter parameter = null;;
+//			SQLParameter parameter = null;;
 			for(OrgApplyProductVO vo : vos){
-				ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
+				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
 				if(prod.getProduct_num() < vo.getApply_product_num()){
 					throw new RuntimeException(vo.getApply_product_code() + "数量不够，请重新申请");
-				}
+				}*/
+				
+				adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_PASS, "总行领导审核通过");
+				
+				
 				vo.setRemark("总行领导审核通过");
-				vo.setAudit_status(IntegralConstant.AUDIT_PASS);
+				vo.setAudit_status(IntegralConstant.LEADER_AUDIT_PASS);
 				appDao.auditOrgApply(vo);
 				//更新产品的数量
-				parameter = new SQLParameter();
+				/*parameter = new SQLParameter();
 				parameter.addParam((prod.getProduct_num() - vo.getApply_product_num()));//总的-申请的
 				parameter.addParam(prod.getPk_product());
-				prodDao.updateProductNum(parameter);
+				prodDao.updateProductNum(parameter);*/
+				
+			}
+			return new MsgResponse("审批成功", true);
+		} catch (Exception e) {
+			log.error(e);
+			throw new RuntimeException(e);
+		}
+	}
+	/**
+	 * 办公室审批
+	 * @param vos
+	 * @return
+	 */
+	@Bizlet
+	public MsgResponse officeApproved(OrgApplyProductVO[] vos){
+		if(vos == null || vos.length <= 0){
+			return new MsgResponse("数据为空", false);
+		}
+		try {
+			for(OrgApplyProductVO vo : vos){
+				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
+				if(prod.getProduct_num() < vo.getApply_product_num()){
+					throw new RuntimeException(vo.getApply_product_code() + "数量不够，请重新申请");
+				}*/
+				adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_PASS, "办公室审核通过");
+				vo.setRemark("办公室审核通过");
+				vo.setAudit_status(IntegralConstant.OFFICE_AUDIT_PASS);
+				appDao.auditOrgApply(vo);
+				//更新产品的数量
+				/*parameter = new SQLParameter();
+				parameter.addParam((prod.getProduct_num() - vo.getApply_product_num()));//总的-申请的
+				parameter.addParam(prod.getPk_product());
+				prodDao.updateProductNum(parameter);*/
 				
 			}
 			return new MsgResponse("审批成功", true);
@@ -191,6 +235,7 @@ public class OrgAdminAuditProductBiz {
 			for(OrgApplyProductVO vo : vos){
 				vo.setAudit_status(IntegralConstant.AUDIT_ABORT);
 				vo.setRemark(remark);//备注
+				adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_ABORT, remark);
 				appDao.auditOrgApply(vo);
 			}
 			return new MsgResponse("拒绝成功", true);
@@ -201,9 +246,9 @@ public class OrgAdminAuditProductBiz {
 	}
 	
 	private MsgResponse validate(OrgApplyProductVO vo, OrgApplyProductVO subBran) {
-		if(StringUtil.isEmpty(vo.getApply_product_code())){
+		/*if(StringUtil.isEmpty(vo.getApply_product_code())){
 			return new MsgResponse("申请礼品代码为空", false);
-		}
+		}*/
 		if(vo.getApply_product_num() <= 0){
 			return new MsgResponse("申请礼品数量小于0", false);
 		}

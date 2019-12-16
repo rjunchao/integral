@@ -1,0 +1,21 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.AuditProductBiz.auditApplyProd(com.xbkj.gd.integral.prod.vos.ApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.AuditProductBiz.auditApplyProd(ApplyProductVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 审批申请的商品数&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;applyProds&lt;/b&gt; prod.getPk_apply_product() + &quot;_&quot; + prod.getPk_audit_product() + &quot;_&quot; + prod.getApply_product_code() + &quot;_&quot; + prod.getApply_product_name() + &quot;_&quot; + prod.getApply_product_num()&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;dt&gt;抛出：&lt;/dt&gt;&lt;dd&gt;Exception&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.AuditProductBiz.queryDetail(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;List&lt;ApplyProductVO&gt; com.xbkj.gd.integral.prod.biz.AuditProductBiz.queryDetail(Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询提交明细&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.AuditProductBiz.queryApplyProductPage(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;AuditProductVO[] com.xbkj.gd.integral.prod.biz.AuditProductBiz.queryApplyProductPage(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 分页查询&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>AuditProductBiz</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.xbkj.gd.integral.prod.biz.AuditProductBiz&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@email&lt;/dt&gt;&lt;dd&gt;ruanjc@126.com&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2019-10-17&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

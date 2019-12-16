@@ -12,7 +12,9 @@ import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.xbkj.common.util.PrimaryKeyUtil;
 import com.xbkj.gd.integral.prod.common.IntegralConstant;
+import com.xbkj.gd.integral.prod.dao.AuditDetailDao;
 import com.xbkj.gd.integral.prod.dao.OrgApplyProductDao;
+import com.xbkj.gd.integral.prod.vos.AuditDetailVO;
 import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
 import com.xbkj.gd.integral.vos.ComboboxVO;
 import com.xbkj.gd.utils.DateUtils;
@@ -33,7 +35,17 @@ public class OrgApplyProductBiz {
 	private static final Logger log = LoggerFactory.getLogger(OrgApplyProductBiz.class);
 	private OrgApplyProductDao dao = new OrgApplyProductDao();
 //	private OrgAuditProductDao auditDao = new OrgAuditProductDao();
+	private AuditDetailDao adDao = new AuditDetailDao();
 	
+	/**
+	 * 查询审批明细
+	 * @return
+	 */
+	@Bizlet
+	public List<AuditDetailVO> auditDetail(String applyId){
+		List<AuditDetailVO> vos = adDao.findAuditDetailByApplyId(applyId);
+		return vos;
+	}
 	/**
 	 * 查询当前机构下的分理处人员
 	 * @return
@@ -73,7 +85,7 @@ public class OrgApplyProductBiz {
 			for(int i = 0; i < len; i++ ){
 				com = new ComboboxVO();
 				vo = vos.get(i);
-				String data = vo.getApply_product_code() + "_" + "_" + vo.getApply_product_name() + "_" + vo.getApply_product_num();//
+				String data = vo.getApply_product_name() + "_" + vo.getApply_product_num();//
 				com.setId(vo.getPk_org_apply_product());
 				com.setText(data);//编码_名称_数量
 				coms[i] = com;
@@ -143,8 +155,9 @@ public class OrgApplyProductBiz {
 	 */
 	@Bizlet
 	public List<OrgApplyProductVO> queryApplyDetailCombobox(Map<String, String> params){
-		List<OrgApplyProductVO> vos = dao.queryOrgApply(params);
-		return vos;
+		/*List<OrgApplyProductVO> vos = dao.queryOrgApply(params);
+		return vos;*/
+		return null;
 	}
 	/**
 	 * 分页查询商品申请数据
@@ -181,10 +194,10 @@ public class OrgApplyProductBiz {
 				for(OrgApplyProductVO vo : vos){
 					name = vo.getApply_product_name();
 					temps = name.split("_");
-					//prod.getProduct_code() + "_" + prod.getProduct_name() + "_" + prod.getProduct_integral();
-					vo.setApply_product_code(temps[0]);//
-					vo.setApply_product_name(temps[1]);
-					vo.setApply_product_integral(temps[2]);
+					//prod.getProduct_name() + "_" + prod.getProduct_integral();
+//					vo.setApply_product_code(temps[0]);//
+					vo.setApply_product_name(temps[0]);
+					vo.setApply_product_integral(temps[1]);
 					vo.setPk_org_apply_product(PrimaryKeyUtil.getPrimaryKey());
 //					vo.setPk_org_audit_product(pk_audit_product);//审批主键
 					vo.setDr("0");

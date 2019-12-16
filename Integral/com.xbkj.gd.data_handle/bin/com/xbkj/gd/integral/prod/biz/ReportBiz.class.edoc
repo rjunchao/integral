@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.ReportBiz.countApplyProduct(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;ReportProductVO[] com.xbkj.gd.integral.prod.biz.ReportBiz.countApplyProduct(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>ReportBiz</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.xbkj.gd.integral.prod.biz.ReportBiz&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@email&lt;/dt&gt;&lt;dd&gt;ruanjc@126.com&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2019-11-9&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

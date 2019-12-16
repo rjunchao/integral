@@ -1,7 +1,7 @@
 package com.pub.xbkj.common;
 /**
  *@author rjc
- *@email rjc@ronhe.com.cn
+ *@email ruanjc@126.com
  *@date 2017-7-19
  *@version 1.0.0
  *@desc

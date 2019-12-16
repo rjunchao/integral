@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.report.productReport(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;productReport&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;productReport&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.report.productReport&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.ReportProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>report</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;report.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;report&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.report&lt;/html&gt;</string>
+  </entry>
+</map>

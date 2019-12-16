@@ -28,24 +28,12 @@
 		            </td>
 		            <td>
 		            	<a class="nui-button" iconCls="icon-search" onclick="search('3')" plain="true">查询</a>
-		            	<span class="separator"></span>
-		            	<!-- <a class="nui-button" iconCls="icon-download" onclick="downIntegral()" plain="true">导出客户积分明细</a> -->
 		            </td>
 	            </tr>
 	        </table>
 	    </div>
     </div>
-	<!-- 导出 -->
-		 <form id="excelForm"  action="<%=request.getContextPath() %>/gd/data_handle/integralManage/report/exportIntegralDetail.jsp" 
-		 	method="post" target="excelIFrame">
-		     <input type="hidden" name="customer_idcard" id="customer_idcard_form" />
-		     <input type="hidden" name="start_date" id="start_date_form" />
-	    	 <input type="hidden" name="end_date" id="end_date_form" />
-	    	 <input type="hidden" name="hiddenFlag" value="Y" />
-	    	 <input type="hidden" name="integral_type" value="3" />
-		</form>
-		<iframe id="excelIFrame" name="excelIFrame" style="display:none;"></iframe>
-		
+
     <div class="nui-fit" style="padding:0px 10px 10px 10px;">
 		<input id="pk_customer_info" name="pk_integral_detail" class="nui-hidden" />
 	    <div id="grid" class="nui-datagrid" style="width:100%;height:100%;" 
@@ -58,16 +46,11 @@
 		        <div field="customer_name" width="60px" headerAlign="center" allowSort="false">客户名</div>
 		        <div field="customer_idcard" width="150px" headerAlign="center" allowSort="false">客户身份证号</div>
 		        <div field="customer_integral" width="60px" headerAlign="center" allowSort="false">积分</div>
-		       <!--  
-		       <div field="customer_account" width="60px" headerAlign="center" allowSort="false">账号</div>
-		        <div field="deposit_receipt_num" width="80px" headerAlign="center" allowSort="false">存单号号</div>  
-		        <div field="deposit_receipt_amt" width="90px" align="center" headerAlign="center" allowSort="false">存单金额</div> 
-		        <div field="conversion_detail" width="60px" headerAlign="center" allowSort="false">兑换明细</div>
-		        -->
+		       
 		        <div field="def2" width="120px" headerAlign="center" allowSort="false">vip赠送积分</div>
 		        <div field="def1" width="120px" headerAlign="center" allowSort="false">vip积分赠送类型</div>
 		        <div field="def3" width="120px" headerAlign="center" allowSort="false">vip积分赠送年</div>
-		        <div field="def8" width="180px" headerAlign="center" allowSort="false">备注</div>
+		        <div field="def8" width="160px" headerAlign="center" allowSort="false">备注</div>
 		        <div field="ts" width=120px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">录入时间</div>
 		        <div field="empname" width=120px" headerAlign="center" allowSort="false">录入人</div>
 		        <div field="orgname" width=120px" headerAlign="center" allowSort="false">录入机构</div>
@@ -82,20 +65,6 @@
 		var grid = nui.get("grid");
 		var form = new nui.Form("#form1");
 		
-		/**
-			导出客户积分明细
-		*/
-		function downIntegral(){
-			var idcard = nui.get("customer_idcard").getValue();
-			var start_date = nui.get("start_date").getValue();
-			var end_date = nui.get("end_date").getValue();
-			
-			document.getElementById("customer_idcard_form").value=idcard;
-			document.getElementById("start_date_form").value=start_date;
-			document.getElementById("end_date_form").value=end_date;
-			
-			document.getElementById("excelForm").submit();
-		}
 		
 		function customerRef(){
 			var btnEdit = this;
@@ -124,7 +93,7 @@
 				});
 		}
 		function search(integral_type){
-			//查询
+			debugger;	
 			//查询
 			if(form.validate() == false){
 				nui.alert("身份证号必须输入");

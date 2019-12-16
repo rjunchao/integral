@@ -13,7 +13,6 @@ import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.processor.BeanListProcessor;
 import com.xbkj.common.util.ArrayUtil;
 import com.xbkj.common.util.CollectionUtil;
-import com.xbkj.gd.utils.GdDataHandlerUtils;
 
 /**
  *@author lijbe
@@ -138,9 +137,9 @@ public class VOPageQuery<E extends SuperVO> {
 		int begin = page.getBegin();
 		int end = begin + length;
 		//从下一条开始查询
-		if(begin >  0 ){
+		/*if(begin >  0 ){
 			begin += 1;
-		}
+		}*/
 		//构造分页查询SQL
 		querySql = SqlBuilder.constructPageSql(querySql, begin, end);
 		BaseDAO dao = new BaseDAO();

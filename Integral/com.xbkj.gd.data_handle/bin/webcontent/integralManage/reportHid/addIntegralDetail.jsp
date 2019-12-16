@@ -29,7 +29,6 @@
 		            </td>
 		            <td>
 		            	<a class="nui-button" iconCls="icon-search" onclick="search('1')" plain="true">查询</a>
-		            	<span class="separator"></span>
 		            	<%-- 
 		            	<a class="nui-button" iconCls="icon-download" onclick="downIntegral()" plain="true">导出客户积分明细</a>
 		            	<input id="fileupload1" class="nui-fileupload"  style="width:180px;height:24px;"
@@ -43,17 +42,6 @@
 	        </table>
 	    </div>
     </div>
-	<!-- 导出 -->
-		 <form id="excelForm"  action="<%=request.getContextPath() %>/gd/data_handle/integralManage/report/exportIntegralDetail.jsp" 
-		 	method="post" target="excelIFrame">
-		     <input type="hidden" name="customer_idcard" id="customer_idcard_form" />
-		     <input type="hidden" name="start_date" id="start_date_form" />
-	    	 <input type="hidden" name="end_date" id="end_date_form" />
-	    	<input type="hidden" name="hiddenFlag" value="Y" />
-	    	 <input type="hidden" name="integral_type" value="1" />
-		</form>
-		<iframe id="excelIFrame" name="excelIFrame" style="display:none;"></iframe>
-		
     <div class="nui-fit" style="padding:0px 10px 10px 10px;">
 		<input id="pk_customer_info" name="pk_integral_detail" class="nui-hidden" />
 	    <div id="grid" class="nui-datagrid" style="width:100%;height:100%;" 
@@ -126,21 +114,6 @@
         
         function onFileSelect(e){
         }
-		
-		/**
-			导出客户积分明细
-		*/
-		function downIntegral(){
-			var idcard = nui.get("customer_idcard").getValue();
-			var start_date = nui.get("start_date").getValue();
-			var end_date = nui.get("end_date").getValue();
-			
-			document.getElementById("customer_idcard_form").value=idcard;
-			document.getElementById("start_date_form").value=start_date;
-			document.getElementById("end_date_form").value=end_date;
-			
-			document.getElementById("excelForm").submit();
-		}
 		
 		function customerRef(){
 			var btnEdit = this;

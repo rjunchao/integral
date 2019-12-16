@@ -1,0 +1,29 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.ApplyProductBiz.queryApplyProductPage(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;ApplyProductVO[] com.xbkj.gd.integral.prod.biz.ApplyProductBiz.queryApplyProductPage(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 分页查询商品申请数据&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.ApplyProductBiz.querySubProd(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;ComboboxVO[] com.xbkj.gd.integral.prod.biz.ApplyProductBiz.querySubProd(Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 积分兑换的时候使用&#x0D;
+ 	查询审批通过的数量&#x0D;
+ 	下拉框&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>ApplyProductBiz</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.xbkj.gd.integral.prod.biz.ApplyProductBiz&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@email&lt;/dt&gt;&lt;dd&gt;ruanjc@126.com&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2019-10-17&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;商品申请&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.ApplyProductBiz.queryApplyDetailCombobox(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;List&lt;ApplyProductVO&gt; com.xbkj.gd.integral.prod.biz.ApplyProductBiz.queryApplyDetailCombobox(Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;查询未审核的记录&#x0D;
+ 审批的时候调用&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.ApplyProductBiz.apply(com.xbkj.gd.integral.prod.vos.ApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.ApplyProductBiz.apply(ApplyProductVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 提交申请&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;dt&gt;抛出：&lt;/dt&gt;&lt;dd&gt;Exception&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

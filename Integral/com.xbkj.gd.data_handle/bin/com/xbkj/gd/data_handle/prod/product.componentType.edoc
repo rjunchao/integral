@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.product.pageProduct(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;pageProduct&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;pageProduct&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.product.pageProduct&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.ProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;分页查询商品信息&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>product</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;product.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;product&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.product&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.product.update(com.xbkj.gd.integral.prod.vos.ProductVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;update&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;update&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.product.update&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.prod.vos.ProductVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.product.coms(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;coms&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;coms&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.product.coms&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.ComboboxVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.product.stops(com.xbkj.gd.integral.prod.vos.ProductVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;stops&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;stops&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.product.stops&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.ProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.product.adds(com.xbkj.gd.integral.prod.vos.ProductVO[])</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;adds&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;add&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.product.adds&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.ProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

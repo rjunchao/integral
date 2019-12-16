@@ -1,0 +1,14 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.combobox.getNowOrgUser()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;getNowOrgUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;getNowOrgUser&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.combobox.getNowOrgUser&lt;dl&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.ComboboxVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.combobox.queryProdByUser(String)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;queryProdByUser&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;queryProdByUser&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.combobox.queryProdByUser&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;user(String):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.ComboboxVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>combo</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;combobox.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;combo&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.combobox&lt;/html&gt;</string>
+  </entry>
+</map>

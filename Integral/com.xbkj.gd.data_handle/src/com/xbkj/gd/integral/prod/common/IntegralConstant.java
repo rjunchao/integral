@@ -7,6 +7,12 @@ package com.xbkj.gd.integral.prod.common;
  *@desc 常量定义
  */
 public class IntegralConstant {
+		                                 //data:image/jpg;base64,
+	public static final String IMG_PRFIX ="data:image/jpg;base64,";
+	
+	//审批结果
+	public static final String AUDIT_RESULT_PASS="1";//通过
+	public static final String AUDIT_RESULT_ABORT="2";//拒绝
 
 	//商品申请审批状态表
 	public static final String PROD_APPLY_AUDIT_STATUS_INIT="1";//审批中
@@ -17,7 +23,8 @@ public class IntegralConstant {
 	public static final String ORG_SUB_BRANCH_AMDIN="1";//支行管理员
 	public static final String HEAD_ORG_AMDIN="2";//合行管理员
 	public static final String HEAD_ORG_LEADER="3";//合行领导
-	public static final String AUDIT_PASS="4";//审核通过
+	public static final String LEADER_AUDIT_PASS="4";//审核通过
 	public static final String ALLOT_PASS="5";//调拨
 	public static final String AUDIT_ABORT="6";//拒绝
+	public static final String OFFICE_AUDIT_PASS="7";//办公室同意
 }

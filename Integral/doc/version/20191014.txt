@@ -1,107 +1,15 @@
-积分兑换明细
-	管理员页面：加录入人的查询条件
-礼品申请查询管理页
-	按机构层级查询，时间段
-
-
-商品出入库管理
-	1、更新菜单
-		1.1、商品管理
-			1.1.1  新建功能
-				功能名称：商品管理
-				功能编码：F_PROD_001
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/prod/productList.jsp
-			1.1.2 新建菜单
-				1)、商品管理,非叶子节点
-					名称：商品管理
-					编码：M_PROD
-					
-				2)、商品管理
-					名称：商品管理
-					编码：M_PROD_001	
-					功能资源：F_PROD_001（商品管理）
-				功能管理
-		1.2、可申请商品查询
-			1.2.1 新建功能
-				功能名称：可申请商品查询
-				功能编码：F_PROD_002
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/prod/productListApply.jsp
-			1.2.2 菜单管理
-				1)、商品管理
-					名称：可申请商品查询
-					编码：M_PROD_002	
-					功能资源：F_PROD_002（商品申请）	
-------------------------------------------------------------
-		1.3、可申请商品查询
-			1.3.1 新建功能
-				功能名称：申请商品审批查询
-				功能编码：F_PROD_003
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/prod/applyProdList.jsp
-			1.3.2 菜单管理
-				1)、商品管理
-					名称：申请商品审批查询
-					编码：M_PROD_003	
-					功能资源：F_PROD_003（商品申请）	
-		1.4、可申请商品查询
-			1.4.1 新建功能
-				功能名称：商品申请审批
-				功能编码：F_PROD_004
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/prod/auditProdList.jsp
-			1.4.2 菜单管理
-				1)、商品管理
-					名称：商品申请审批
-					编码：M_PROD_004	
-					功能资源：F_PROD_004（商品申请）	
-------------------------------------------------------------
-		1.5、可申请商品查询
-			1.5.1 新建功能
-				功能名称：业务申请礼品查询
-				功能编码：F_PROD_005
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/sb/sbApply.jsp
-			1.5.2 菜单管理
-				1)、商品管理
-					名称：业务申请礼品查询
-					编码：M_PROD_005	
-					功能资源：F_PROD_005（业务申请礼品查询）	
-		1.6、可申请礼品查询
-			1.6.1 新建功能
-				功能名称：支行礼品管理
-				功能编码：F_PROD_006
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/sb/sbAuditApply.jsp
-			1.6.2 菜单管理
-				1)、商品管理
-					名称：支行礼品管理
-					编码：M_PROD_006	
-					功能资源：F_PROD_006（支行礼品管理）
-		1.7、可申请商品查询
-			1.7.1 新建功能
-				功能名称：合行礼品管理
-				功能编码：F_PROD_007
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/sb/orgAuditApply.jsp
-			1.7.2 菜单管理
-				1)、商品管理
-					名称：合行礼品管理
-					编码：M_PROD_007	
-					功能资源：F_PROD_007（合行礼品管理）	
-		1.8、支行向合行申请礼品
-			1.8.1 新建功能
-				功能名称：合行领导审批
-				功能编码：F_PROD_008
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/sb/leaderAuditApply.jsp
-			1.8.2 菜单管理
-				1)、商品管理
-					名称：合行领导审批
-					编码：M_PROD_008	
-					功能资源：F_PROD_008（合行领导审批）
-		1.9、可申请商品查询
-			1.9.1 新建功能
-				功能名称：礼品申请查询
-				功能编码：F_PROD_009
-				功能调用入口（菜单url）：/gd/data_handle/integralManage/sb/sbApplyAdmin.jsp
-			1.9.2 菜单管理
-				1)、商品管理
-					名称：礼品申请查询-admin
-					编码：M_PROD_009	
-					功能资源：F_PROD_009（礼品申请查询-admin）	
-
-							
+功能名称			功能编码			功能url															菜单名称			显示名称				菜单编码
+礼品管理			F_PROD																			礼品管理			礼品管理				M_PROD
+礼品管理			F_PROD_001		/gd/data_handle/integralManage/prod/productList.jsp				礼品管理			礼品管理				M_PROD_001
+可申请礼品查询		F_PROD_002		/gd/data_handle/integralManage/prod/productListApply.jsp		可申请礼品查询		可申请礼品查询			M_PROD_002
+审批管理			F_PROD_AUDIT																	审批管理			审批管理				M_PROD_AUDIT
+支行审批			F_PROD_003		/gd/data_handle/integralManage/sb/sbAuditApply.jsp				支行审批			支行审批				M_PROD_003
+总行审批			F_PROD_004		/gd/data_handle/integralManage/sb/orgAuditApply.jsp				总行审批			总行审批				M_PROD_004
+总行领导审批		F_PROD_005		/gd/data_handle/integralManage/sb/leaderAuditApply.jsp			总行领导审批		总行领导审批			M_PROD_005
+办公室审批			F_PROD_006		/gd/data_handle/integralManage/sb/officeAuditApply.jsp			办公室审批			办公室审批				M_PROD_006
+礼品申请查询		F_PROD_007		/gd/data_handle/integralManage/sb/sbApply.jsp					礼品申请查询		礼品申请查询			M_PROD_007
+礼品申请查询-admin	F_PROD_008		/gd/data_handle/integralManage/sb/sbApplyAdmin.jsp				礼品申请查询-admin	礼品申请查询-admin		M_PROD_008
+报表查询			F_PROD_REPORT																	报表查询			报表查询				M_PROD_REPORT
+机构礼品汇总查询	F_PROD_009		/gd/data_handle/integralManage/sb/report/orgReport.jsp			机构礼品汇总查询	机构礼品汇总查询		M_PROD_009
+机构礼品明细查询	F_PROD_010		/gd/data_handle/integralManage/sb/report/orgReportDetail.jsp	机构礼品明细查询	机构礼品明细查询		M_PROD_010
+分理处汇总查询		F_PROD_011		/gd/data_handle/integralManage/sb/report/userReport.jsp			分理处汇总查询		分理处汇总查询			M_PROD_011

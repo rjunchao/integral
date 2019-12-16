@@ -6,6 +6,7 @@ package com.xbkj.gd.integral.prod.biz;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -30,6 +31,7 @@ import com.xbkj.common.util.PrimaryKeyUtil;
 import com.xbkj.gd.integral.prod.dao.ProductDao;
 import com.xbkj.gd.integral.prod.vos.ProductVO;
 import com.xbkj.gd.integral.vos.ComboboxVO;
+import com.xbkj.gd.utils.DBUtils;
 import com.xbkj.gd.utils.DateUtils;
 import com.xbkj.gd.utils.FileImportUtils;
 import com.xbkj.gd.utils.GdDataHandlerUtils;
@@ -68,7 +70,7 @@ public class ProdectBiz {
 				prod = vos.get(i);
 				com = new ComboboxVO();
 				//code_名称_积分
-				String data = prod.getProduct_code() + "_" + prod.getProduct_name() + "_" + prod.getProduct_integral();
+				String data = prod.getProduct_name() + "_" + prod.getProduct_integral();
 				com.setId(data);
 				com.setText(data);
 				coms[i] = com;
@@ -152,6 +154,8 @@ public class ProdectBiz {
 				if(msg != null){
 					count++;
 				}
+				vo.setDr("0");
+				vo.setPk_product(PrimaryKeyUtil.getPrimaryKey());
 				msg = voUtils.save(vo);
 				if(!msg.isFlag()){
 					result++;
@@ -166,8 +170,8 @@ public class ProdectBiz {
 			}
 			if(result > 0 && result < vos.length){
 				msg.setFlag(false);
-				log.info("部分保存失败，请检查编码是否重复！");
-				msg.setMessage("部分保存失败，请检查编码是否重复！");
+				log.info("部分保存失败，请检查名称是否重复！");
+				msg.setMessage("部分保存失败，请检查名称是否重复！");
 				return msg;
 			}
 			msg = new MsgResponse(true);
@@ -184,18 +188,18 @@ public class ProdectBiz {
 	}
 
 	private MsgResponse vaildateVO(ProductVO vo) {
-		if(StringUtils.isBlank(vo.getProduct_code())){
+		/*if(StringUtils.isBlank(vo.getProduct_code())){
 			return new MsgResponse("编号不能为空", false);
-		}
+		}*/
 		if(StringUtils.isBlank(vo.getProduct_name())){
 			return new MsgResponse("名称不能为空", false);
 		}
 		if(StringUtils.isBlank(vo.getProduct_integral())){
 			return new MsgResponse("积分单位不能为空", false);
 		}
-		if(vo.getProduct_num() <= 0){
+		/*if(vo.getProduct_num() <= 0){
 			return new MsgResponse("数量必须大于0", false);
-		}
+		}*/
 		return null;
 	}
 	
@@ -226,6 +230,35 @@ public class ProdectBiz {
 			log.error(e);
 			return new MsgResponse("修改失败, " + e.getMessage(), false);
 		}
+	}
+	/**
+	 * 修改商品信息
+	 * @param vo
+	 * @return
+	 */
+	@Bizlet
+	public MsgResponse stopProd(ProductVO[] vos){
+		MsgResponse msg = new MsgResponse(false);
+		if(vos == null || vos.length <= 0){
+			msg.setMessage("请选择");
+			return msg;
+		}
+		List<String> sqls = new ArrayList<String>();
+		for(ProductVO vo : vos){
+			sqls.add("UPDATE GD_PRODUCT SET dr='1' WHERE PK_PRODUCT='"+vo.getPk_product()+"'");
+		}
+		try {
+			int count = new DBUtils().executeBatchUpdateSQL(sqls);
+			log.info("stopProd " + count);
+			msg.setFlag(true);
+			msg.setMessage("停用成功");
+			return msg;
+		} catch (DAOException e) {
+			log.error(e);
+			msg.setMessage("停用失败" + e.getMessage());
+			return msg;
+		}
+		
 	}
 	/**
 	 * 解析商品导入excel

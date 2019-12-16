@@ -1,5 +1,4 @@
 <%@page import="com.primeton.cap.AppUserManager"%>
-<%@page import="com.xbkj.gd.utils.UserUtils"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@include file="/coframe/tools/skins/common.jsp" %>
@@ -57,8 +56,13 @@
 		            	<a class="nui-button" onclick="vipIntegral()" plain="true">VIP积分赠送</a>
 		            	
 		            	<a class="nui-button" iconCls="icon-redo" onclick="subIntegral()" plain="true">积分兑换</a>
+		            	
+		            	<a class="nui-button" iconCls="icon-downgrade" onclick="leadIntegral()" plain="true">积分提前支取</a>
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-download" onclick="downCustomerInfo()" plain="true">导出客户信息</a>
+		            	
+		            	<!-- <span class="separator"></span>
+		            	<a class="nui-button"  onclick="showSalary()" plain="true">查看工资</a> -->
 		            	<!-- 
 		            	<a class="nui-button" iconCls="icon-upload" onclick="upCustomerInfo()" plain="true">导入客户信息</a> 
 		            	<span class="separator"></span>
@@ -261,6 +265,58 @@
 			nui.alert("请选择要删除的客户");
 		}
 	}
+		function showSalary(){
+			window.open('http://127.0.0.1:8013/jfgl.v2/gd/data_handle/test/salarylogin.jsp', '_target');
+			/*  nui.ajax({
+				url:"com.xbkj.gd.data_handle.cust.test.salaryLogin.biz.ext",
+				cache:false,
+				async:true,
+				type:"POST",
+				contentType:"text/json",
+				success:function(text){
+					debugger;
+					window.open('http://127.0.0.1:8013/integral/index.html', '_target');
+					if(text != null){
+						if(text.msg.flag){
+							window.open("http://localhost:8013/integral/index.html", "_target");
+						}
+					} 
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText);
+                }
+			});  */
+	}
+		
+		/**
+			积分提前支取
+		*/
+		function leadIntegral(){
+			var row = grid.getSelected();
+			if(row){
+				nui.open({
+					url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/leadIntegral.jsp",
+					title:"提前支取扣除",
+					width:440,
+					height:260,
+					onload:function(){
+						var iframe = this.getIFrameEl();
+		        		var data = { pk_customer_info: row.pk_customer_info};
+		        		iframe.contentWindow.SetData(data);
+					},
+					ondestroy:function(action){
+						//判断是否成功与否
+						if(action == "ok"){
+							//	search();
+							nui.alert("提前支取扣除成功");
+							search();
+						}
+					}
+				});
+			}else{
+				nui.alert("请选择需要提前支取积分的客户！");
+			}
+		}
 		
 		/**
 			vip积分赠送

@@ -77,7 +77,7 @@ public class SignTest {
 	        BASE64Decoder decoder = new BASE64Decoder();
 	        try{
 	            //Base64解码
-	            byte[] b = decoder.decodeBuffer(imgStr);
+	        	byte[] b = decoder.decodeBuffer(imgStr);
 	            for(int i=0;i<b.length;++i){
 	                if(b[i]<0){//调整异常数据
 	                    b[i]+=256;

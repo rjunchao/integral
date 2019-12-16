@@ -3,11 +3,11 @@ package com.xbkj.common.util;
 public class IdWorker
 {
   private final long workerId;
-  private final long twepoch = 1303895660503L;
+//  private final long twepoch = 1303895660503L;
   private long sequence = 0L;
-  private final long workerIdBits = 10L;
+//  private final long workerIdBits = 10L;
   private final long maxWorkerId = 0xFFFFFFFF ^ -1L << 10;
-  private final long sequenceBits = 12L;
+//  private final long sequenceBits = 12L;
 
   private final long workerIdShift = 12L;
   private final long timestampLeftShift = 12L + 10L;

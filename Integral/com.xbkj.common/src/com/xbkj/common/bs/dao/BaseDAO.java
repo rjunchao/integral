@@ -16,6 +16,7 @@ import com.pub.xbkj.pubapp.query.DBTool;
 import com.xbkj.basic.vo.pub.SqlSupportVO;
 import com.xbkj.basic.vo.pub.SuperVO;
 import com.xbkj.basic.vo.pub.UpdateResultVO;
+import com.xbkj.basic.vo.pub.VOStatus;
 import com.xbkj.common.itf.uap.IUAPQueryBS;
 import com.xbkj.common.itf.uap.IVOPersistence;
 import com.xbkj.common.jdbc.framework.JdbcSession;
@@ -590,7 +591,6 @@ final public class BaseDAO implements IVOPersistence, IUAPQueryBS {
 			manager = createPersistenceManager(dataSource);
 			;
 			pk = manager.insertWithPK(vo);
-
 		} catch (DbException e) {
 			logger.error(e.getMessage(), e);
 			throw new DAOException(e.getMessage());
@@ -847,11 +847,11 @@ final public class BaseDAO implements IVOPersistence, IUAPQueryBS {
 		ArrayList<SuperVO> listDelete = new ArrayList<SuperVO>();
 		for (int i = 0; i < vos.length; i++) {
 			int status = vos[i].getStatus();
-			if (status == com.grc.basic.vo.pub.VOStatus.NEW)
+			if (status == VOStatus.NEW)
 				listInsert.add(vos[i]);
-			else if (status == com.grc.basic.vo.pub.VOStatus.UPDATED)
+			else if (status == VOStatus.UPDATED)
 				listUpdate.add(vos[i]);
-			else if (status == com.grc.basic.vo.pub.VOStatus.DELETED)
+			else if (status == VOStatus.DELETED)
 				listDelete.add(vos[i]);
 		}
 		UpdateResultVO rsVO = new UpdateResultVO();

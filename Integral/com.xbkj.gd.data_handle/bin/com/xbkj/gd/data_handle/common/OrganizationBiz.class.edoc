@@ -1,0 +1,11 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.common.OrganizationBiz.findOrgs(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;CommonTreeVO[] com.xbkj.gd.data_handle.common.OrganizationBiz.findOrgs(Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询当前用户的机构和所属机构&#x0D;
+ &lt;dl&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>OrganizationBiz</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.xbkj.gd.data_handle.common.OrganizationBiz&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@email&lt;/dt&gt;&lt;dd&gt;ruanjc@126.com&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2019-10-27&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1101,8 +1101,10 @@ public class JdbcPersistenceManager extends PersistenceManager {
 	 * @return
 	 */
 	private String[] getValidNames(final SuperVO vo, Map types) {
+		
 		String names[] = vo.getAttributeNames();
 		List nameList = new ArrayList();
+		
 		for (int i = 0; i < names.length; i++) {
 			if (types.get(names[i].toUpperCase()) != null
 					//&& !names[i].equalsIgnoreCase("ts") //  //修改于2017:07:25 rjc

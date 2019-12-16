@@ -13,7 +13,6 @@ import com.pub.xbkj.pubapp.pagequery.VOPageQuery;
 import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.util.MapUtil;
-import com.xbkj.common.util.StringUtil;
 import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
 import com.xbkj.gd.utils.DBUtils;
 import com.xbkj.gd.utils.DateUtils;
@@ -40,9 +39,9 @@ public class OrgApplyProductDao {
 	 */
 	public  List<OrgApplyProductVO> queryProdByUser(String user){
 		String sql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
-				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
+				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.ORG_SUB_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
 				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
-				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('4','5') AND P.APPLY_PRODUCT_NUM > 0 AND P.APPLY_USER = ? ";
+				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('7','5') AND ORG_SUB_NUM < P.APPLY_PRODUCT_NUM AND P.APPLY_USER = ? ";
 		SQLParameter parameter = new SQLParameter();
 		parameter.addParam(user);
 		List<OrgApplyProductVO> vos = voUtils.queryList(sql, parameter);
@@ -77,7 +76,7 @@ public class OrgApplyProductDao {
 		return dbUtils.executeUpdateSQL(sql, parameter);
 	}
 	/**
-	 * 调拨后减少数量
+	 * 调拨后减少可兑换数量
 	 * @param code
 	 * @param user
 	 * @return
@@ -87,19 +86,37 @@ public class OrgApplyProductDao {
 		/*
 		 * 更新，审批状态、审批人、审批时间、审批备注、数量
 		 */
-		String sql = "UPDATE GD_ORG_APPLY_PRODUCT SET " +
+		/*String sql = "UPDATE GD_ORG_APPLY_PRODUCT SET " +
 				"modifier=?, " +
 				"modifiedtime=?, " +
 				"REMARK=?, " +
-				"APPLY_PRODUCT_NUM=? " +
-				"WHERE PK_ORG_APPLY_PRODUCT=?";
+				"ORG_SUB_NUM= ? " +
+				" WHERE PK_ORG_APPLY_PRODUCT=? ";
 		SQLParameter parameter = new SQLParameter();
 		parameter.addParam(UserUtils.getUser());
 		parameter.addParam(DateUtils.getFormatDate(DateUtils.PATTERN_19));
 		parameter.addParam(vo.getRemark());
-		parameter.addParam(vo.getApply_product_num());
+		parameter.addParam(vo.getOrg_sub_num());
 		parameter.addParam(vo.getPk_org_apply_product());
-		return dbUtils.executeUpdateSQL(sql, parameter);
+		return dbUtils.executeUpdateSQL(sql, parameter);*/
+		
+		String sql = "UPDATE GD_ORG_APPLY_PRODUCT SET " +
+				"modifier='"+UserUtils.getUser()+"', " +
+				"modifiedtime='"+DateUtils.getFormatDate(DateUtils.PATTERN_19)+"', " +
+				"REMARK='"+vo.getRemark()+"', " +
+				"allot_product_num= '"+vo.getAllot_product_num()+"'" +//调换数
+//				"ORG_SUB_NUM= '"+vo.getOrg_sub_num()+"'" +
+//				", apply_product_num='" + vo.getApply_product_num() + "' " +
+				" WHERE PK_ORG_APPLY_PRODUCT='"+vo.getPk_org_apply_product()+"' ";
+		SQLParameter parameter = new SQLParameter();
+		parameter.addParam(UserUtils.getUser());
+		parameter.addParam(DateUtils.getFormatDate(DateUtils.PATTERN_19));
+		parameter.addParam(vo.getRemark());
+		parameter.addParam(vo.getOrg_sub_num());
+		parameter.addParam(vo.getPk_org_apply_product());
+		return dbUtils.executeUpdateSQL(sql);
+//		return dbUtils.executeUpdateSQL(sql, parameter);
+		
 	}
 	
 	/**
@@ -108,7 +125,7 @@ public class OrgApplyProductDao {
 	 * @throws DAOException 
 	 */
 	public int updategiftNum(SQLParameter parameter) throws DAOException{
-		String sql = "UPDATE GD_ORG_APPLY_PRODUCT SET APPLY_PRODUCT_NUM=? WHERE PK_ORG_APPLY_PRODUCT=?";
+		String sql = "UPDATE GD_ORG_APPLY_PRODUCT SET ORG_SUB_NUM = ORG_SUB_NUM + ? WHERE PK_ORG_APPLY_PRODUCT=?";
 		try {
 			return dbUtils.executeUpdateSQL(sql, parameter);
 		} catch (DAOException e) {
@@ -146,8 +163,8 @@ public class OrgApplyProductDao {
 	public OrgApplyProductVO querySubBranchProd(String pk) throws DAOException{
 		String sql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
 				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
-				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
-				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('4','5') AND P.APPLY_PRODUCT_NUM > 0 AND P.PK_ORG_APPLY_PRODUCT= ? ";
+				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.ORG_SUB_NUM, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
+				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('7','5') AND P.ORG_SUB_NUM < P.APPLY_PRODUCT_NUM AND P.PK_ORG_APPLY_PRODUCT= ? ";
 		SQLParameter parameter = new SQLParameter();
 		parameter.addParam(pk);
 		return voUtils.query(sql, parameter);
@@ -159,7 +176,7 @@ public class OrgApplyProductDao {
 	 * @return
 	 * @throws DAOException 
 	 */
-	public void subOrgProd(Map<String, String> params) throws DAOException{
+	/*public void subOrgProd(Map<String, String> params) throws DAOException{
 		if(params.isEmpty()){
 			throw new DAOException("数据为空");
 		}
@@ -168,21 +185,21 @@ public class OrgApplyProductDao {
 			sql = "UPDATE GD_ORG_APPLY_PRODUCT SET AUDIT_PRODUCT_NUM=AUDIT_PRODUCT_NUM - " + map.getValue() + " WHERE PK_ORG_APPLY_PRODUCT='"+map.getKey()+"'";
 			dbUtils.executeUpdateSQL(sql);
 		}
-	}
+	}*/
 	
 	/**
 	 * 根据编码查询数量
 	 * @param params
 	 * @return
 	 */
-	public  OrgApplyProductVO findOrgApplyProdByCode(String code){
+	/*public  OrgApplyProductVO findOrgApplyProdByCode(String code){
 		String querySql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
 				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
 				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
 				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.APPLY_PRODUCT_CODE='"+code+"'";
 		 OrgApplyProductVO vo = voUtils.query(querySql);
 		return vo;
-	}
+	}*/
 	/**
 	 * 根据编码查询数量
 	 * @param params
@@ -190,7 +207,7 @@ public class OrgApplyProductDao {
 	 */
 	public  OrgApplyProductVO get(String pk){
 		String querySql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
-				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
+				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.ORG_SUB_NUM,P.AUDIT_STATUS, " +
 				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
 				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.PK_ORG_APPLY_PRODUCT='"+pk+"'";
 		OrgApplyProductVO vo = voUtils.query(querySql);
@@ -220,7 +237,7 @@ public class OrgApplyProductDao {
 		String sql = "SELECT P.PK_ORG_APPLY_PRODUCT,P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, " +
 				"P.APPLY_PRODUCT_NAME, P.APPLY_PRODUCT_INTEGRAL, " +
 				"P.APPLY_PRODUCT_NUM " +
-				"FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN('4', '5') AND P.APPLY_USER='"+UserUtils.getUser()+"'";
+				"FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN('7', '5') AND P.ORG_SUB_NUM < P.APPLY_PRODUCT_NUM AND P.APPLY_USER='"+UserUtils.getUser()+"'";
 		/*List<String> orgs = UserUtils.findDeptAndChildrenDept();
 		if(orgs != null && orgs.size() > 0){
 			StringBuilder sb = new StringBuilder();
@@ -259,7 +276,7 @@ public class OrgApplyProductDao {
 	 */
 	public List<OrgApplyProductVO> queryOrgApply(Map<String, String> params){
 		
-		String where = listWhere(params);
+		/*String where = listWhere(params);
 		String sql = "SELECT P.PK_ORG_AUDIT_PRODUCT, P.PK_ORG_APPLY_PRODUCT, P.APPLY_PRODUCT_CODE, " +
 				"P.APPLY_PRODUCT_NAME, P.APPLY_PRODUCT_INTEGRAL, " +
 				"P.APPLY_PRODUCT_NUM, P.AUDIT_STATUS, P.REMARK " +
@@ -272,12 +289,14 @@ public class OrgApplyProductDao {
 				vo.setAudit_product_num(vo.getApply_product_num());//默认审批通过就是申请数量
 			}
 		}
-		return vos;
+		return vos;*/
+		
+		return null;
 	}
 	
 	
 	
-	private String listWhere(Map<String, String> params) {
+	/*private String listWhere(Map<String, String> params) {
 		StringBuilder sb = new StringBuilder();
 		String auditProduct = params.get("PK_ORG_AUDIT_PRODUCT");
 		if(StringUtil.isNotEmpty(auditProduct)){
@@ -301,7 +320,7 @@ public class OrgApplyProductDao {
 		}
 		
 		return sb.toString();
-	}
+	}*/
 	/**
 	 * 分页查询商品申请数据
 	 * @param params
@@ -318,9 +337,9 @@ public class OrgApplyProductDao {
 				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.DR = 0 " + where;
 	    //查询
 		String querySql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
-				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
-				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK,E.EMPNAME, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
-				" FROM GD_ORG_APPLY_PRODUCT P " +
+				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM,P.ORG_SUB_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
+				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK,E.EMPNAME, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6," +
+				" P.TS FROM GD_ORG_APPLY_PRODUCT P " +
 				"LEFT JOIN ORG_EMPLOYEE E ON P.APPLY_USER = E.EMPCODE WHERE P.DR = 0 " + where;
 		log.info("query sql =================" + querySql);
 		 OrgApplyProductVO[] vos = query.query(querySql, queryCountSql, page);

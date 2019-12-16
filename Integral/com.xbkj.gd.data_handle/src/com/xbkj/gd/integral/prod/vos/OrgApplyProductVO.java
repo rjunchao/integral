@@ -17,6 +17,8 @@ public class OrgApplyProductVO extends ApplyProductVO{
 	private String pk_org_apply_product;
 	private String pk_org_audit_product;
 	private String apply_user;
+	private int org_sub_num;//兑换数量
+	private int allot_product_num;//调换
 	private String refuse_type;//拒绝类型
 	public String getApply_user() {
 		return apply_user;
@@ -48,6 +50,21 @@ public class OrgApplyProductVO extends ApplyProductVO{
 	
 	public void setRefuse_type(String refuse_type) {
 		this.refuse_type = refuse_type;
+	}
+	
+	public int getOrg_sub_num() {
+		return org_sub_num;
+	}
+	public void setOrg_sub_num(int org_sub_num) {
+		this.org_sub_num = org_sub_num;
+	}
+	
+	public int getAllot_product_num() {
+		return allot_product_num;
+	}
+	
+	public void setAllot_product_num(int allot_product_num) {
+		this.allot_product_num = allot_product_num;
 	}
 	
 	@Override

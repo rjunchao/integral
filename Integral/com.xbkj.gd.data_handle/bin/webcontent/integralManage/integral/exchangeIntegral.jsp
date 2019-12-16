@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form id="formGrid">
-       <div style="width:670px;">
+       <div style="width:800px;">
         	<div class="mini-toolbar" style="border-bottom:0;padding:0px;">
 	            <table style="width:100%;">
 	                <tr>
@@ -21,33 +21,39 @@
                         	<a class="nui-button" iconCls="icon-edit" onclick="editRow()" plain="true">编辑</a>
 	                        <a class="nui-button" iconCls="icon-remove" plain="true" onclick="removeRow()">删除</a> 
 	                        <span class="separator"></span>
+	                        <a class="nui-button" iconCls="icon-edit" onclick="custSignFun()" plain="true">客户签名</a>
+	                        <span class="separator"></span>
                         	<a class="nui-button" iconCls="icon-save" onclick="saveData()" plain="true" id="savedata">保存</a>      
 	                    </td>
 	                </tr>
 	            </table>           
         	</div>
     	</div>
-    	 <div id=datagrid class="nui-datagrid" style="width:670px;height:380px;" allowResize="true" 
+    	 <div id=datagrid class="nui-datagrid" style="width:800px;height:380px;" allowResize="true" 
           idField="pk_integral_detail" multiSelect="true"  allowCellSelect="true" showPageSize="false" showPager="false" >
        
       		<div property="columns">
             	<div type="checkcolumn"></div>
-            	<!--  showNullItem="true" -->
-            	<div  name="temp"  field="temp" headerAlign="center" allowSort="true" width="150px" >请选择
-	                <input property="editor" class="nui-combobox" valueField="id" textField="text"
+            	<!--  showNullItem="true" com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=2
 	                	url="com.xbkj.gd.data_handle.cust.integralConfig.configQuery.biz.ext?integral_type=2"
+	                	url="com.xbkj.gd.data_handle.prod.applyProduct.querySubProd.biz.ext"
+            	
+            	-->
+            	<div  name="temp"  field="temp" headerAlign="center" allowSort="true" width="180px" >请选择
+	                <input property="editor" class="nui-combobox" valueField="id" textField="text"
+	                	url="com.xbkj.gd.data_handle.prod.subBranch.giftSub.biz.ext"
 	                	required="true"
 	                		dataField="vos" style="width:100%;" minWidth="200" onvaluechanged="computeIntegral" />
 	            </div>
-	            <div name="def5" field="def5" width="80px" >兑换数量
+	            <div name="def5" field="def5" width="50px" >兑换数量
 	                <input property="editor" class="nui-textbox" vtype="int" style="width:100%;" required="true" onvaluechanged="computeIntegral" />
 	            </div> 
-	            <div name="conversion_detail" field="conversion_detail" width="80px" >备注
+	            <div name="conversion_detail" field="conversion_detail" width="60px" >备注
 	                <input property="editor" class="nui-textbox" style="width:100%;" />
 	            </div> 
-            	<div  name="def1"  field="def1" headerAlign="center" allowSort="true" width="150px" >兑换商品
+            	<div  name="def1"  field="def1" headerAlign="center" allowSort="true" width="160px" >兑换商品
 	            </div>
-            	<div  name="def2"  field="def2" headerAlign="center" allowSort="true" width="80px" >兑换商品单价
+            	<div  name="def2"  field="def2" headerAlign="center" allowSort="true" width="70px" >兑换商品单价
 	            </div>
 	            <div field="customer_integral" width="60px">积分
 	                <!-- <input property="editor" class="nui-textbox" style="width:100%;" vtype="float"  /> -->
@@ -59,6 +65,30 @@
 	<script type="text/javascript">
 		nui.parse();
 		var grid = nui.get("datagrid");
+		var custSign = null;
+		function custSignFun(){
+		//客户签名
+			//编辑
+			nui.open({
+				url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/prod/sign/custSign/e560.jsp",
+				title:"客户签名",
+				width:900,
+				height:520,
+				onload:function(){
+					var iframe = this.getIFrameEl();
+					iframe.contentWindow.SetData();
+				}, 
+				ondestroy:function(action){
+					if(action != "ok"){
+						nui.alert("签名失败");
+						return ;
+					}
+					var iframe = this.getIFrameEl();
+			        var signData = iframe.contentWindow.GetData();
+			        custSign = nui.clone(signData);
+				}
+			});
+		}
 		
       	var pk_customer_info = "";
 		var countIntegral = 0;
@@ -75,15 +105,21 @@
 		function computeIntegral(e){
 			debugger;
 			var def1 = null;
+			let temp1 = null;
+			
 			var row = grid.getSelected();
 			if(e.selected){
+			
 				def1 = e.selected.text;	
 				row.def2 = e.value;	
+				//id_名称_积分
 				var vals = e.value.split("_");
-				def1 = vals[0];
-				row.def2 = vals[1];
+				temp1 = vals[0];
+				def1 = vals[1];//商品名称
+				row.def2 = vals[2];//积分单位
 			}else{
 				def1= row.def1;
+				temp1= row.temp1;
 			}
 			grid.commitEdit();
 			
@@ -93,6 +129,7 @@
 			data.def1 = def1;//中文名称
 			data.def2 = def2;
 			data.def5 = def5;
+			data.temp1 = temp1;//兑换礼品主键
 			data.conversion_detail = row.conversion_detail;
 			if(def2 > 0 &&  def5 > 0){
 				var integral = def2 * def5;
@@ -117,6 +154,10 @@
 				nui.alert("请选择类型或输入数量");
 				return;
 			}
+			if(custSign == null || custSign == "" || custSign == undefined  ){
+				nui.alert("请签名");
+				return;
+			}
       		grid.commitEdit();
 			var changes = grid.getChanges();
 			debugger;
@@ -131,8 +172,10 @@
 						if(Number(changes[i].customer_integral) > 0){
 							vo.customer_integral = changes[i].customer_integral;//积分
 							vo.def4 = 2;//类型
+							vo.temp1 = changes[i].temp1;//礼品id
 							vo.customer_idcard = changes[i].customer_idcard;//客户主键
 							vo.conversion_detail = changes[i].conversion_detail;//备注
+							vo.def6=custSign;//签名
 							vos.push(vo);
 							vo= {};
 						}

@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>test</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;test.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;test&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.test&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.test.salaryLogin()</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;salaryLogin&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;salaryLogin&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.test.salaryLogin&lt;/html&gt;</string>
+  </entry>
+</map>

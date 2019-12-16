@@ -12,12 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import sun.misc.BASE64Decoder;
 
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.query.VOQuery;
@@ -25,8 +32,10 @@ import com.sun.star.uno.RuntimeException;
 import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.util.PrimaryKeyUtil;
+import com.xbkj.common.util.StringUtil;
 import com.xbkj.gd.integral.biz.CustomerOptionBiz;
 import com.xbkj.gd.integral.biz.IntegralOptionBiz;
+import com.xbkj.gd.integral.prod.common.SignUtils;
 import com.xbkj.gd.integral.prod.dao.OrgApplyProductDao;
 import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
 import com.xbkj.gd.integral.vos.AddIntegralDetailVO;
@@ -294,6 +303,7 @@ public class IntegralOpertionService {
 	 * 导出积分明细
 	 * @param request
 	 * @param response
+	 * @throws IOException 
 	 */
 	public void exportIntegralDetail(HttpServletRequest request, HttpServletResponse response){
 		Map<String, String> parameter = new HashMap<String, String>();
@@ -313,15 +323,15 @@ public class IntegralOpertionService {
 		}else if("4".equals(type)){
 			integralTitle= "积分提前明细";
 		}
-		HSSFWorkbook wb = new HSSFWorkbook();
-		HSSFSheet sheet = wb.createSheet(integralTitle );
+		XSSFWorkbook wb = new XSSFWorkbook();
+		XSSFSheet sheet = wb.createSheet(integralTitle );
 		
-		HSSFRow row0 = sheet.createRow(0);
+		XSSFRow row0 = sheet.createRow(0);
 		row0.setHeightInPoints(18);
-		HSSFCell cell = row0.createCell(0);
+		XSSFCell cell = row0.createCell(0);
 		//第一行
-		HSSFCellStyle style = wb.createCellStyle();
-		HSSFFont font = wb.createFont();
+		XSSFCellStyle style = wb.createCellStyle();
+		XSSFFont font = wb.createFont();
 		font.setFontHeightInPoints((short)14);
 		style.setFont(font);
 		style.setAlignment(HSSFCellStyle.ALIGN_CENTER);
@@ -332,7 +342,7 @@ public class IntegralOpertionService {
 			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 23));
 			setCellWidth(sheet, 1);
 		}else if("2".equals(type)){
-			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 11));
+			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 12));
 			setCellWidth(sheet, 2);
 		}else if("3".equals(type)){
 			sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 9));
@@ -345,7 +355,7 @@ public class IntegralOpertionService {
 		String[] titles = getTitleArr(type);
 		
 		//创建表头
-		HSSFRow row = sheet.createRow(1);
+		XSSFRow row = sheet.createRow(1);
 		style = wb.createCellStyle();
 		style.setFillForegroundColor(HSSFColor.LIGHT_TURQUOISE.index);//前景色
 		style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
@@ -356,82 +366,108 @@ public class IntegralOpertionService {
 		ExcelUtils.batchCreateCell(row, titles, style);
 		//统计
 		IntegralDetailVO[] vos = queryAll(parameter);
-		if(vos.length >= 0){
-			String[] contents = null;
-			IntegralDetailVO vo = null;
-			
-			for(int i = 0, len = vos.length; i < len; i++){
-				vo = vos[i];
-				String customer_name = vo.getCustomer_name();
-				String idcard = vo.getCustomer_idcard();
-				double integral = vo.getCustomer_integral();
-				
-				String account = vo.getCustomer_account();//账号
-				double amt = vo.getDeposit_receipt_amt();//存单金额
-				String num = vo.getDeposit_receipt_num();//存单号
-				
-				String def2 = vo.getDef2();//计算系数（添加）、积分单位（赠送和兑换）
-				String def1 = vo.getDef1();//积分操作详情类型
-				String def3 = vo.getDef3();//积分赠送年份
-				String def5 = vo.getDef5();//积分兑换的数量
-//				String def6 = vo.getDef6();//资金来源
-//				String def7 = vo.getDef7();//销售人
-				String def8 = vo.getDef8();//添加积分备注，积分兑换序号
-				
-				
-				String empname = vo.getEmpname();
-				String orgname = vo.getOrgname();
-				String ts = vo.getTs();
-				if("1".equals(type)){
-					/*
-					 * "客户名称", "客户身份证号", "积分", "账号", "存单号","存单金额",
-					"营销人1", "营销人1金额", 
-					"营销人2", "营销人2金额", 
-					"营销人3", "营销人3金额", 
-					"资金来源1", "资金来源金额1"
-					"资金来源2", "资金来源金额2"
-					"资金来源3", "资金来源金额3"
-					"添加积分类型", "积分计算系数", "录入时间", "录入人", "录入机构", "备注"
-					 */
-					vo.getMarketing_people1();
-					contents = new String[]{customer_name, idcard, integral+"", account, num, amt + "",
-							
-							vo.getMarketing_people1(), vo.getMarketing_people_amt1() + "", 
-							vo.getMarketing_people2(), vo.getMarketing_people_amt2() + "", 
-							vo.getMarketing_people3(), vo.getMarketing_people_amt3() + "", 
-							vo.getCapital_source1(), vo.getCapital_source_amt1() + "",
-							vo.getCapital_source2(), vo.getCapital_source_amt2() + "",
-							vo.getCapital_source3(), vo.getCapital_source_amt3() + "",
-							
-							def1, def2, ts, empname, orgname, def8};
-				}else if("2".equals(type)){
-					contents = new String[]{
-							def3, def8,
-							customer_name, idcard, integral+"", 
-							def2, def5, def1,vo.getConversion_detail(),
-							ts, empname, orgname};
-				}else if("3".equals(type)){
-					contents = new String[]{customer_name, idcard, integral+"", 
-							def2, def1, def3,vo.getDef8(),
-							ts, empname, orgname};
-				}else if("4".equals(type)){
-					contents = new String[]{
-							def3, def8,
-							customer_name, idcard, integral+"", 
-							def2, def5, def1,vo.getConversion_detail(),
-							ts, empname, orgname};
-				}
-				row = sheet.createRow((i+2));
-				ExcelUtils.batchCreateCell(row, contents);
-			}
-		}
-		
-		integralTitle = integralTitle + DateUtils.getFormatDate("yyyyMMddHHmmss");
-		response.setContentType("application/x-download");
-		response.setCharacterEncoding("utf-8");
-		response.addHeader("Content-Disposition", "attachment;filename=" + 
-						UserUtils.toUtf8String(integralTitle) + ".xls");
 		try {
+			if(vos.length >= 0){
+				String[] contents = null;
+				IntegralDetailVO vo = null;
+				for(int i = 0, len = vos.length; i < len; i++){
+					vo = vos[i];
+					String customer_name = vo.getCustomer_name();
+					String idcard = vo.getCustomer_idcard();
+					double integral = vo.getCustomer_integral();
+					
+					String account = vo.getCustomer_account();//账号
+					double amt = vo.getDeposit_receipt_amt();//存单金额
+					String num = vo.getDeposit_receipt_num();//存单号
+					
+					String def2 = vo.getDef2();//计算系数（添加）、积分单位（赠送和兑换）
+					String def1 = vo.getDef1();//积分操作详情类型
+					String def3 = vo.getDef3();//积分赠送年份
+					String def5 = vo.getDef5();//积分兑换的数量
+	//				String def6 = vo.getDef6();//资金来源
+	//				String def7 = vo.getDef7();//销售人
+					String def8 = vo.getDef8();//添加积分备注，积分兑换序号
+					
+					
+					String empname = vo.getEmpname();
+					String orgname = vo.getOrgname();
+					String ts = vo.getTs();
+					if("1".equals(type)){
+						/*
+						 * "客户名称", "客户身份证号", "积分", "账号", "存单号","存单金额",
+						"营销人1", "营销人1金额", 
+						"营销人2", "营销人2金额", 
+						"营销人3", "营销人3金额", 
+						"资金来源1", "资金来源金额1"
+						"资金来源2", "资金来源金额2"
+						"资金来源3", "资金来源金额3"
+						"添加积分类型", "积分计算系数", "录入时间", "录入人", "录入机构", "备注"
+						 */
+						vo.getMarketing_people1();
+						contents = new String[]{customer_name, idcard, integral+"", account, num, amt + "",
+								
+								vo.getMarketing_people1(), vo.getMarketing_people_amt1() + "", 
+								vo.getMarketing_people2(), vo.getMarketing_people_amt2() + "", 
+								vo.getMarketing_people3(), vo.getMarketing_people_amt3() + "", 
+								vo.getCapital_source1(), vo.getCapital_source_amt1() + "",
+								vo.getCapital_source2(), vo.getCapital_source_amt2() + "",
+								vo.getCapital_source3(), vo.getCapital_source_amt3() + "",
+								
+								def1, def2, ts, empname, orgname, def8};
+					}else if("2".equals(type)){
+						contents = new String[]{
+								def3, def8,
+								customer_name, idcard, integral+"", 
+								def2, def5, def1,vo.getConversion_detail(),
+								ts, empname, orgname};
+					}else if("3".equals(type)){
+						contents = new String[]{customer_name, idcard, integral+"", 
+								def2, def1, def3,vo.getDef8(),
+								ts, empname, orgname};
+					}else if("4".equals(type)){
+						contents = new String[]{
+								def3, def8,
+								customer_name, idcard, integral+"", 
+								def2, def5, def1,vo.getConversion_detail(),
+								ts, empname, orgname};
+					}
+					row = sheet.createRow((i+2));
+					ExcelUtils.batchCreateCell(row, contents);
+					 if("2".equals(type)){
+							//添加签名导出
+						 String signPk = vo.getDef6();
+						 if(StringUtil.isNotEmpty(signPk)){
+							 String sign = SignUtils.getSign(signPk);
+							 if(StringUtil.isNotEmpty(sign)){
+	//							 byte[] decode = Base64.decode(sign);
+								 BASE64Decoder decoder = new BASE64Decoder();
+								 byte[] buf = decoder.decodeBuffer(sign);
+								 for(int b = 0; b < buf.length; ++b) {
+									 if (buf[b] < 0) {// 调整异常数据
+										buf[b] += 256;
+									 }
+								}
+								 //dx1, dy1, dx2, dy2, col1, row1, col2, row2
+								 int rc = contents.length;
+//								 int[] locations = new int[]{0, 0, 0, 0, rc , rc, rc, i + rc};
+								 row.setHeight((short)1500);
+								 sheet.setColumnWidth(rc, 50*200);
+								 //                         dx1, dy1, dx2, dy2, col1, row1, col2, row2
+								 //5,0,500,122,(short) 0, 5,(short)10,15 
+								 int[] locations = new int[]{10, 10, 50, 50, rc, (i + 2), rc + 1, (i + 3)};
+//								 int[] locations = new int[]{0, 0, 0, 0, rc, rc+i, rc, rc+1};
+								 ExcelUtils.createPic(wb, sheet, row, locations, buf);
+							 }
+						 }
+					}
+				}
+			}
+			
+			integralTitle = integralTitle + DateUtils.getFormatDate("yyyyMMddHHmmss");
+			response.setContentType("application/x-download");
+			response.setCharacterEncoding("utf-8");
+			response.addHeader("Content-Disposition", "attachment;filename=" + 
+						UserUtils.toUtf8String(integralTitle) + ".xlsx");
 			wb.write(response.getOutputStream());
 			response.getOutputStream().flush();
 			response.getOutputStream().close();
@@ -441,7 +477,7 @@ public class IntegralOpertionService {
 		
 	}
 	
-	private void setCellWidth(HSSFSheet sheet, int type) {
+	private void setCellWidth(XSSFSheet sheet, int type) {
 		sheet.setColumnWidth(1, 60*100);
 		if(1 == type){
 			for(int i = 1; i < 23; i++){
@@ -479,8 +515,10 @@ public class IntegralOpertionService {
 					"添加积分类型", "积分计算系数", "录入时间", "录入人", "录入机构", "备注"};
 		}else if("2".equals(type)){
 			return new String[]{"年份","序号","客户名称", "客户身份证号", "积分", "兑换类型积分", 
-				"兑换数量", "兑换商品", "备注", "录入时间", "录入人", "录入机构"};
-		}else if("3".equals(type)){
+				"兑换数量", "兑换商品", "备注", "录入时间", "录入人", "录入机构","客户签名"};
+/*			return new String[]{"年份","序号","客户名称", "客户身份证号", "积分", "兑换类型积分", 
+					"兑换数量", "兑换商品", "备注", "录入时间", "录入人", "录入机构"};
+*/		}else if("3".equals(type)){
 			return new String[]{"客户名称", "客户身份证号", "积分", "vip赠送积分", 
 					"vip积分赠送类型", "vip积分赠送年", "备注", "录入时间", "录入人", "录入机构"};
 		}else if("4".equals(type)){
@@ -646,20 +684,24 @@ public class IntegralOpertionService {
 		//查询批次号
 		try {
 			
-			String[] code_name = null;
 			OrgApplyProductVO prod = null;
 			String subNum = "0";
 			String sn = querySerialNumber(customerVO);
 			for(IntegralDetailVO vo : vos){
 				//1、校验库存
-				code_name = vo.getDef1().split("_");//id_名称
-				prod = prodDao.get(code_name[0]);
+				String giftId = vo.getTemp1();//申请的礼品主键
+				prod = prodDao.get(giftId);
 				subNum = vo.getDef5();//兑换数量
-				if(Integer.parseInt(subNum) > prod.getApply_product_num()){
+				
+				if(Integer.parseInt(subNum) > (prod.getApply_product_num() - prod.getOrg_sub_num())){//兑换的 > 库存（总的-兑换的）
 					//兑换的超过了审批过的数量
-					return new MsgResponse(vo.getDef1() + "兑换数量超过了机构现有的数量,现有数量" + prod.getApply_product_num(), false);
+					throw new RuntimeException(vo.getDef1() + "兑换数量超过了机构现有的数量,现有数量" + (prod.getApply_product_num() - prod.getOrg_sub_num()));
 				}
-				prods.put(prod.getPk_org_apply_product(), (prod.getApply_product_num()-Integer.parseInt(subNum)));//商品编码, 兑换数量
+				if(StringUtil.isEmpty(vo.getDef6())){//兑换的 > 库存（总的-兑换的）
+					//兑换的超过了审批过的数量
+					throw new RuntimeException("请签名");
+				}
+				prods.put(prod.getPk_org_apply_product(), Integer.parseInt(subNum));//商品编码, 兑换数量
 				customer_integral = vo.getCustomer_integral();
 				integralTotal = integralTotal + customer_integral;
 				//
@@ -696,7 +738,7 @@ public class IntegralOpertionService {
 			return msg;
 		} catch (DAOException e) {
 			e.printStackTrace();
-			throw new RuntimeException("vip积分赠送失败" + e.getMessage());
+			throw new RuntimeException("积分兑换失败, " + e.getMessage());
 		}
 	}
 

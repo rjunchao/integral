@@ -22,12 +22,12 @@
 					<input id="def2" name="def2" width="140px" class="nui-combobox" required="true" 
 						allowInput="true" dataField="vos" valueField="id" textField="text" emptyText="请选择..."/>
 				</td>
-				<tr >
+			</tr >
+			<tr>
 				<td style="text-align:right;">备注：</td>
 				<td style="text-align:left;">
 					 <input id="def8" name="def8" class="nui-textarea" style="width:140px;"/>
 				</td>
-			</tr>
 			</tr>
 		</table>
 		</center>

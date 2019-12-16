@@ -1,0 +1,42 @@
+<map>
+  <entry>
+    <string>BusinessDictUtil [Business dict operating tools]</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.eos.foundation.eoscommon.BusinessDictUtil&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.fillEntityWithDictValues(commonj.sdo.DataObject, java.lang.String[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;void com.eos.foundation.eoscommon.BusinessDictUtil.fillEntityWithDictValues(DataObject dataObject, String[] params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.fillPropertyWithDictValue(java.lang.Object, java.lang.String, java.lang.String, java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;void com.eos.foundation.eoscommon.BusinessDictUtil.fillPropertyWithDictValue(Object dataObjects, String dictTypeId, String dictIdPropertyName, String filledPropertyName)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.getDictInfoByTypeAndSort(java.lang.String, java.lang.String, boolean)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;DataObject[] com.eos.foundation.eoscommon.BusinessDictUtil.getDictInfoByTypeAndSort(String dictTypeId, String orderPropertyName, boolean asc)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.reLoad()</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;void com.eos.foundation.eoscommon.BusinessDictUtil.reLoad()&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.getCurrentDictInfoByType(java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;DataObject[] com.eos.foundation.eoscommon.BusinessDictUtil.getCurrentDictInfoByType(String dictTypeId)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.getDictInfoByType(java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;DataObject[] com.eos.foundation.eoscommon.BusinessDictUtil.getDictInfoByType(String dictTypeId)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.getDictName(java.lang.String, java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;String com.eos.foundation.eoscommon.BusinessDictUtil.getDictName(String dictTypeId, String dictId)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.fillEntitiesWithDictValues(commonj.sdo.DataObject[], java.lang.String[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;void com.eos.foundation.eoscommon.BusinessDictUtil.fillEntitiesWithDictValues(DataObject[] dataObjects, String[] params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.eos.foundation.eoscommon.BusinessDictUtil.getChildDictInfo(java.lang.String, java.lang.String)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;DataObject[] com.eos.foundation.eoscommon.BusinessDictUtil.getChildDictInfo(String childDictTypeId, String parentDictId)&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;em&gt;Note: This element neither has attached source nor attached Javadoc and hence no information could be found.&lt;/em&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>

@@ -1,0 +1,55 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.queryDetail(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;List&lt;OrgApplyProductVO&gt; com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.queryDetail(Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 查询提交明细&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>OrgAdminAuditProductBiz</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz&lt;/b&gt;&lt;br/&gt;&lt;p&gt;&lt;dl&gt;&lt;dt&gt;作者:&lt;/dt&gt;&lt;dd&gt;rjc&lt;/dd&gt;&lt;dt&gt;@email&lt;/dt&gt;&lt;dd&gt;ruanjc@126.com&lt;/dd&gt;&lt;dt&gt;@date&lt;/dt&gt;&lt;dd&gt;2019-10-23&lt;/dd&gt;&lt;dt&gt;@version&lt;/dt&gt;&lt;dd&gt;1.0.0&lt;/dd&gt;&lt;dt&gt;@desc&lt;/dt&gt;&lt;dd&gt;礼品分配 &#x0D;
+		从其他分理处调拨&#x0D;
+	礼品申请&#x0D;
+		从总行申请&#x0D;
+	分页查询&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.giftRefuse(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[], java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.giftRefuse(OrgApplyProductVO[] vos, Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 礼品拒绝&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.officeApproved(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.officeApproved(OrgApplyProductVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 办公室审批&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.leaderApproved(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.leaderApproved(OrgApplyProductVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 总行领导审核通过&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.sbApproved(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.sbApproved(OrgApplyProductVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 支行审批通过&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.subBranchesAllot(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO, com.xbkj.gd.integral.prod.vos.OrgApplyProductVO)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.subBranchesAllot(OrgApplyProductVO vo, OrgApplyProductVO subBran)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 从分理处调拨其他分理处的礼物&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo&lt;/b&gt; 需要礼物的分理处&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;subBran&lt;/b&gt; 提供礼物的分理处&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.auditApplyProd(com.xbkj.gd.integral.prod.vos.ApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.auditApplyProd(ApplyProductVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 审批申请的商品数&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;applyProds&lt;/b&gt; prod.getPk_apply_product() + &quot;_&quot; + prod.getPk_audit_product() + &quot;_&quot; + prod.getApply_product_code() + &quot;_&quot; + prod.getApply_product_name() + &quot;_&quot; + prod.getApply_product_num()&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;dt&gt;抛出：&lt;/dt&gt;&lt;dd&gt;Exception&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.queryApplyProductPage(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;AuditProductVO[] com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.queryApplyProductPage(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 分页查询&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.orgApproved(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.orgApproved(OrgApplyProductVO[] vos)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 合行管理员审批通过&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+</map>
