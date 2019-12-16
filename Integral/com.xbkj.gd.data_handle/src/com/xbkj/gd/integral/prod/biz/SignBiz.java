@@ -2,8 +2,6 @@
  * 
  */
 package com.xbkj.gd.integral.prod.biz;
-
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
