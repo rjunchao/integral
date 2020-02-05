@@ -109,7 +109,7 @@ function initDevice() {
             $('#initBtn').attr('disabled', 'disabled');
 //            document.getElementById('VideoStatusBtn').innerHTML = 'Enable';
         } else {
-            alert('No device!');
+            alert('初始化失败');
         }
     }).fail(function (jqXHR, textStatus, errorThrown) {
         alert('Connection fail(' + jqXHR.status + ')!');
