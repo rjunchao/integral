@@ -1,0 +1,3 @@
+gd/data_handle/integralManage/prod/sign/custSign/L398.jsp
+gd/data_handle/integralManage/prod/sign/custSign/scripts/l398s.js
+gd/data_handle/integralManage/integral/exchangeIntegral.jsp

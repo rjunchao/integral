@@ -1,0 +1,13 @@
+gd/data_handle/integralManage/customerManageAdmin.jsp
+gd/data_handle/integralManage/customerManage.jsp
+gd/data_handle/integralManage/integral/activitiesPresented.jsp
+gd/data_handle/integralManage/report/exportApIntegralDetail.jsp
+gd/data_handle/integralManage/report/apIntegralDetail.jsp
+gd/data_handle/integralManage/reportHid/apIntegralDetail.jsp
+com.xbkj.gd.integral.vos.ActivitiesPresentedVO.java
+com.xbkj.gd.integral.biz.ActivitiesPresentedBiz.java
+com.xbkj.gd.data_handle.cust.ap.componentType
+
+菜单
+gd/data_handle/integralManage/report/apIntegralDetail.jsp
+gd/data_handle/integralManage/reportHid/apIntegralDetail.jsp

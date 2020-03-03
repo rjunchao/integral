@@ -46,6 +46,8 @@
 		            	<a class="nui-button" iconCls="icon-search" onclick="search()" plain="true">查询</a>
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-undo" onclick="addIntegral()" plain="true">添加积分</a>
+		            	<a class="nui-button" onclick="activitiesPresented()" plain="true">活动积分赠送</a>
+		            	
 		            	<a class="nui-button" onclick="vipIntegral()" plain="true">VIP积分赠送</a>
 		            	<!-- 
 		            	<a class="nui-button" iconCls="icon-undo" onclick="queryIntegral()" plain="true">查看积分</a>
@@ -113,6 +115,37 @@
 		function queryIntegral(){
 			
 		}
+		
+		/**
+			活动赠送积分
+		*/
+		function activitiesPresented(){
+			var row = grid.getSelected();
+			if(row){
+					nui.open({
+						url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/activitiesPresented.jsp",
+						title:"活动积分赠送",
+						width:300,
+						height:200,
+						onload:function(){
+							var iframe = this.getIFrameEl();
+			        		var data = { pk_customer_info: row.pk_customer_info};
+			        		iframe.contentWindow.SetData(data);
+						},
+						ondestroy:function(action){
+							//判断是否成功与否
+							if(action == "ok"){
+								//	search();
+								nui.alert("客户积分赠送成功");
+								search();
+							}
+						}
+					});
+			}else{
+				nui.alert("请选择活动积分赠送的客户！");
+			}
+		}
+		
 		/**
 			vip积分赠送
 		*/
@@ -354,7 +387,7 @@
 				nui.open({
 					url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/exchangeIntegral.jsp",
 					title:"兑换客户积分",
-					width:810,
+					width:680,
 					height:440,
 					onload:function(){
 						var iframe = this.getIFrameEl();
