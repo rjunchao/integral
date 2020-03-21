@@ -196,11 +196,11 @@ public class ReportDao {
 	//按时间范围
 		String end_date = params.get("end_date");
 		if(StringUtils.isNotEmpty(end_date)){
-			sb.append(" AND P.TS <= '"+end_date+"'");
+			sb.append(" AND P.MODIFIEDTIME <= '"+end_date+"'");
 		}
 		String start_date = params.get("start_date");
 		if(StringUtils.isNotEmpty(start_date)){
-			sb.append(" AND P.ts >= '"+start_date+"'");
+			sb.append(" AND P.MODIFIEDTIME >= '"+start_date+"'");
 		}
 		//按礼品统计
 		String apply_product_name = params.get("product_name");
@@ -210,7 +210,7 @@ public class ReportDao {
 		//当前用户
 		String now_user = params.get("now_user");
 		if(StringUtils.isNotEmpty(now_user)){
-			sb.append(" AND P.apply_user = '"+UserUtils.getUser()+"'");//当前用户
+			sb.append(" AND P.APPLY_USER = '"+UserUtils.getUser()+"'");//当前用户
 		}
 		//按制定机构
 		String apply_org = params.get("apply_org");

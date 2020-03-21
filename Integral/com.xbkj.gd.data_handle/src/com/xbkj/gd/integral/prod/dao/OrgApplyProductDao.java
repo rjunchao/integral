@@ -63,7 +63,9 @@ public class OrgApplyProductDao {
 				"AUDIT_STATUS=?, " +
 				"AUDIT_USER=?, " +
 				"AUDIT_DATE=?, " +
-				"REMARK=? " +
+				"REMARK=?, " +
+				"MODIFIER=?, " +
+				"MODIFIEDTIME=? " +
 //				"APPLY_PRODUCT_NUM= ? " + //不需要更新
 				"WHERE PK_ORG_APPLY_PRODUCT=?";
 		SQLParameter parameter = new SQLParameter();
@@ -71,6 +73,8 @@ public class OrgApplyProductDao {
 		parameter.addParam(UserUtils.getUser());
 		parameter.addParam(DateUtils.getFormatDate(DateUtils.PATTERN_19));
 		parameter.addParam(vo.getRemark());
+		parameter.addParam(vo.getModifier());
+		parameter.addParam(vo.getModifiedtime());
 //		parameter.addParam(vo.getApply_product_num());
 		parameter.addParam(vo.getPk_org_apply_product());
 		return dbUtils.executeUpdateSQL(sql, parameter);

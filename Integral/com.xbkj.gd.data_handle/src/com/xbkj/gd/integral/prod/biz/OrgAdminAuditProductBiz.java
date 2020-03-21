@@ -21,6 +21,8 @@ import com.xbkj.gd.integral.prod.dao.OrgAuditProductDao;
 import com.xbkj.gd.integral.prod.vos.ApplyProductVO;
 import com.xbkj.gd.integral.prod.vos.AuditProductVO;
 import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
+import com.xbkj.gd.utils.DateUtils;
+import com.xbkj.gd.utils.UserUtils;
 
 /**
  *@author rjc
@@ -81,6 +83,8 @@ public class OrgAdminAuditProductBiz {
 			
 			vo.setAudit_status(IntegralConstant.ALLOT_PASS);//调拨
 			vo.setRemark("通过调拨的形式通过");
+			vo.setModifier(UserUtils.getUser());
+			vo.setModifiedtime(DateUtils.getFormatDate(DateUtils.PATTERN_19));
 			appDao.auditOrgApply(vo);
 			msg.setMessage("调拨成功");
 			adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_PASS, "调拨成功");
@@ -102,6 +106,8 @@ public class OrgAdminAuditProductBiz {
 			return new MsgResponse("数据为空", false);
 		}
 		try {
+			String user = UserUtils.getUser();
+			String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
 			for(OrgApplyProductVO vo : vos){
 				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
 				if(prod.getProduct_num() < vo.getApply_product_num()){
@@ -111,6 +117,8 @@ public class OrgAdminAuditProductBiz {
 				
 				vo.setRemark("支行向合行发起申请成功");
 				vo.setAudit_status(IntegralConstant.HEAD_ORG_AMDIN);
+				vo.setModifier(user);
+				vo.setModifiedtime(formatDate);
 				appDao.auditOrgApply(vo);
 			}
 			return new MsgResponse("支行向合行发起申请成功", true);
@@ -130,6 +138,8 @@ public class OrgAdminAuditProductBiz {
 			return new MsgResponse("数据为空", false);
 		}
 		try {
+			String user = UserUtils.getUser();
+			String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
 			for(OrgApplyProductVO vo : vos){
 				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
 				if(prod.getProduct_num() < vo.getApply_product_num()){
@@ -139,6 +149,8 @@ public class OrgAdminAuditProductBiz {
 				
 				vo.setRemark("合行管理员审批成功");
 				vo.setAudit_status(IntegralConstant.HEAD_ORG_LEADER);
+				vo.setModifier(user);
+				vo.setModifiedtime(formatDate);
 				appDao.auditOrgApply(vo);
 			}
 			return new MsgResponse("审批成功", true);
@@ -158,6 +170,8 @@ public class OrgAdminAuditProductBiz {
 			return new MsgResponse("数据为空", false);
 		}
 		try {
+			String user = UserUtils.getUser();
+			String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
 //			SQLParameter parameter = null;;
 			for(OrgApplyProductVO vo : vos){
 				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
@@ -170,6 +184,8 @@ public class OrgAdminAuditProductBiz {
 				
 				vo.setRemark("总行领导审核通过");
 				vo.setAudit_status(IntegralConstant.LEADER_AUDIT_PASS);
+				vo.setModifier(user);
+				vo.setModifiedtime(formatDate);
 				appDao.auditOrgApply(vo);
 				//更新产品的数量
 				/*parameter = new SQLParameter();
@@ -195,6 +211,8 @@ public class OrgAdminAuditProductBiz {
 			return new MsgResponse("数据为空", false);
 		}
 		try {
+			String user = UserUtils.getUser();
+			String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
 			for(OrgApplyProductVO vo : vos){
 				/*ProductVO prod = prodDao.queryProductByCode(vo.getApply_product_code());
 				if(prod.getProduct_num() < vo.getApply_product_num()){
@@ -203,6 +221,8 @@ public class OrgAdminAuditProductBiz {
 				adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_PASS, "办公室审核通过");
 				vo.setRemark("办公室审核通过");
 				vo.setAudit_status(IntegralConstant.OFFICE_AUDIT_PASS);
+				vo.setModifier(user);
+				vo.setModifiedtime(formatDate);
 				appDao.auditOrgApply(vo);
 				//更新产品的数量
 				/*parameter = new SQLParameter();
@@ -232,10 +252,14 @@ public class OrgAdminAuditProductBiz {
 		}
 		try {
 			String remark = params.get("refuse_remark");
+			String user = UserUtils.getUser();
+			String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
 			for(OrgApplyProductVO vo : vos){
 				vo.setAudit_status(IntegralConstant.AUDIT_ABORT);
 				vo.setRemark(remark);//备注
 				adDao.save(vo.getPk_org_apply_product(), IntegralConstant.AUDIT_RESULT_ABORT, remark);
+				vo.setModifier(user);
+				vo.setModifiedtime(formatDate);
 				appDao.auditOrgApply(vo);
 			}
 			return new MsgResponse("拒绝成功", true);

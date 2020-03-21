@@ -106,11 +106,15 @@ public class OrgApplyProductBiz {
 				log.error("审核失败");
 				return msg;
 			}
+			String user = UserUtils.getUser();
+			String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
 			for(OrgApplyProductVO vo : vos){
 				vo.setAudit_status(IntegralConstant.HEAD_ORG_AMDIN);//合行管理
 				if(!IntegralConstant.PROD_APPLY_AUDIT_STATUS_SUCCESS.equals(vo.getAudit_status())){//不同意
 					vo.setAudit_status(IntegralConstant.AUDIT_ABORT);//拒绝
 				}
+				vo.setModifier(user);
+				vo.setModifiedtime(formatDate);
 				dao.auditOrgApply(vo);
 			}
 			return msg;
@@ -191,6 +195,9 @@ public class OrgApplyProductBiz {
 				//申请明细表
 				String name = null;
 				String[] temps = null;
+				String user = UserUtils.getUser();
+				String userOrg = UserUtils.getUserOrg();
+				String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
 				for(OrgApplyProductVO vo : vos){
 					name = vo.getApply_product_name();
 					temps = name.split("_");
@@ -201,10 +208,12 @@ public class OrgApplyProductBiz {
 					vo.setPk_org_apply_product(PrimaryKeyUtil.getPrimaryKey());
 //					vo.setPk_org_audit_product(pk_audit_product);//审批主键
 					vo.setDr("0");
-					vo.setTs(DateUtils.getFormatDate(DateUtils.PATTERN_19));
-					vo.setApply_org(UserUtils.getUserOrg());
-					vo.setApply_user(UserUtils.getUser());
+					vo.setTs(formatDate);
+					vo.setApply_org(userOrg);
+					vo.setApply_user(user);
 					vo.setAudit_status(IntegralConstant.ORG_SUB_BRANCH_AMDIN);//
+					vo.setModifier(user);
+					vo.setModifiedtime(formatDate);
 				}
 				//保存明细信息
 				dao.saveArr(vos);

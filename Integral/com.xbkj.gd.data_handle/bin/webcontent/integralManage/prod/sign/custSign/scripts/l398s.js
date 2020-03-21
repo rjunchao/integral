@@ -108,7 +108,7 @@ function initDevice() {
             getStatus();
             $('.init').removeAttr('disabled');
             $('#initBtn').attr('disabled', 'disabled');
-            document.getElementById('VideoStatusBtn').innerHTML = 'Enable';
+//            document.getElementById('VideoStatusBtn').innerHTML = 'Enable';
         } else {
             alert('No device!');
         }
@@ -196,7 +196,9 @@ function getStatus() {
                 }).done(function (result) {
                     //console.log('poll-confirmStatusUrl ' +result);
                     if (result == '1') {
-                        alert('Notify From Device : Confirmed.');
+//                        alert('Notify From Device : Confirmed.');
+                        console.log("确认了");
+                        nui.alert("签名已确认");
                     } else if (result == '0') {
                         alert('Notify From Device : Cancel !');
                         clearInk();
@@ -664,7 +666,7 @@ function getDevinf() {
 // Encode
 function encode() {
 
-    var encodeType = $('#encodeType').val();
+    var encodeType = 2;
     var encodeArea = $('#encode');
 
     $.ajax({
@@ -672,7 +674,8 @@ function encode() {
         type: 'GET',
         cache: false
     }).done(function (data) {
-        encodeArea.html(data);
+//        encodeArea.html(data);
+    	saveSign(data);
     });
 };
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="pageAp.bizx" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0">
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="pageOtherIntegral" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0">
   <nodes xsi:type="process:tEnd" id="end1" name="结束1" collapsed="false" nodeType="common" type="end">
     <targetConnections>link2</targetConnections>
     <nodeLabel>end1label</nodeLabel>
     <process:returns>
       <process:return id="0" language="Int" name="total" type="query" valueType="Primitive">total</process:return>
-      <process:return id="1" language="com.xbkj.gd.integral.vos.ActivitiesPresentedVO[]" name="vos" type="query" valueType="Java">vos</process:return>
+      <process:return id="1" language="com.xbkj.gd.integral.vos.OtherIntegralVO[]" name="vos" type="query" valueType="Java">vos</process:return>
     </process:returns>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="end1label" name="label" nodeType="label">
@@ -47,7 +47,7 @@
     <targetConnections>link3</targetConnections>
     <nodeLabel>invokePojo0label</nodeLabel>
     <process:pojo methodType="instance" synchronization="true" transactionType="join">
-      <process:partner type="literal">com.xbkj.gd.integral.biz.ActivitiesPresentedBiz.queryCustApIntegralDetail</process:partner>
+      <process:partner type="literal">com.xbkj.gd.integral.biz.OtherIntegralBiz.queryCustOtherIntegralDetail</process:partner>
       <process:instance instanceName=""/>
     </process:pojo>
     <process:inputVariables>
@@ -55,7 +55,7 @@
       <process:inputVariable id="1" name="page" type="query" value="com.eos.foundation.PageCond" valueType="Java" pattern="reference">page</process:inputVariable>
     </process:inputVariables>
     <process:outputVariables>
-      <process:outputVariable id="0" name="out0" type="query" value="com.xbkj.gd.integral.vos.ActivitiesPresentedVO[]" valueType="Java">vos</process:outputVariable>
+      <process:outputVariable id="0" name="out0" type="query" value="com.xbkj.gd.integral.vos.OtherIntegralVO[]" valueType="Java">vos</process:outputVariable>
     </process:outputVariables>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="invokePojo0label" name="label" nodeType="label">
@@ -88,7 +88,7 @@
   </process:inputs>
   <process:outputs>
     <process:output description="" isArray="false" name="total" primitiveType="Int"/>
-    <process:output anyType="com.xbkj.gd.integral.vos.ActivitiesPresentedVO" description="" isArray="true" name="vos"/>
+    <process:output anyType="com.xbkj.gd.integral.vos.OtherIntegralVO" description="" isArray="true" name="vos"/>
   </process:outputs>
   <process:extAttribute1>public</process:extAttribute1>
   <process:transactionType>true</process:transactionType>

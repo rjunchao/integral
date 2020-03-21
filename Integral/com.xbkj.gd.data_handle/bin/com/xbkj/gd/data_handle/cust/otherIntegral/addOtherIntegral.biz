@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="addAp.bizx" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0">
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="addOtherIntegral" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0">
   <nodes xsi:type="process:tTransactionBegin" id="transactionbegin0" name="事务开始" collapsed="false" type="transactionbegin">
     <sourceConnections xsi:type="process:tLink" id="link0" name="link0" isDefault="true" type="transition">
       <sourceNode>transactionbegin0</sourceNode>
@@ -36,11 +36,11 @@
     <targetConnections>link0</targetConnections>
     <nodeLabel>invokePojo0label</nodeLabel>
     <process:pojo methodType="instance" synchronization="true" transactionType="join">
-      <process:partner type="literal">com.xbkj.gd.integral.biz.ActivitiesPresentedBiz.custActivitiesPresented</process:partner>
+      <process:partner type="literal">com.xbkj.gd.integral.biz.OtherIntegralBiz.addOtherIntegral</process:partner>
       <process:instance instanceName=""/>
     </process:pojo>
     <process:inputVariables>
-      <process:inputVariable id="0" name="vo" type="query" value="com.xbkj.gd.integral.vos.ActivitiesPresentedVO" valueType="Java" pattern="reference">vo</process:inputVariable>
+      <process:inputVariable id="0" name="vo" type="query" value="com.xbkj.gd.integral.vos.OtherIntegralVO" valueType="Java" pattern="reference">vo</process:inputVariable>
     </process:inputVariables>
     <process:outputVariables>
       <process:outputVariable id="0" name="out0" type="query" value="com.pub.xbkj.common.MsgResponse" valueType="Java">msg</process:outputVariable>
@@ -100,7 +100,7 @@
   <process:info version="7.0.0.0"/>
   <process:variables/>
   <process:inputs varArgs="false">
-    <process:input anyType="com.xbkj.gd.integral.vos.ActivitiesPresentedVO" isArray="false" name="vo"/>
+    <process:input anyType="com.xbkj.gd.integral.vos.OtherIntegralVO" isArray="false" name="vo"/>
   </process:inputs>
   <process:outputs>
     <process:output anyType="com.pub.xbkj.common.MsgResponse" description="" isArray="false" name="msg"/>

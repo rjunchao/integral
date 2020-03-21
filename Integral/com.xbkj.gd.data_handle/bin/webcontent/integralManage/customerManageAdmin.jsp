@@ -50,6 +50,9 @@
 		            	<a class="nui-button" iconCls="icon-search" onclick="search()" plain="true">查询</a>
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-undo" onclick="addIntegral()" plain="true">添加积分</a>
+		            	<a class="nui-button" onclick="activitiesPresented()" plain="true">活动积分赠送</a>
+		            	<a class="nui-button" onclick="lineToDown()" plain="true">线上积分转线下</a>
+		            	
 		            	<!-- 
 		            	<a class="nui-button" iconCls="icon-undo" onclick="integralDetail()" plain="true">积分详细信息</a> 
 		            	-->
@@ -60,9 +63,6 @@
 		            	<a class="nui-button" iconCls="icon-downgrade" onclick="leadIntegral()" plain="true">积分提前支取</a>
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-download" onclick="downCustomerInfo()" plain="true">导出客户信息</a>
-		            	
-		            	<!-- <span class="separator"></span>
-		            	<a class="nui-button"  onclick="showSalary()" plain="true">查看工资</a> -->
 		            	<!-- 
 		            	<a class="nui-button" iconCls="icon-upload" onclick="upCustomerInfo()" plain="true">导入客户信息</a> 
 		            	<span class="separator"></span>
@@ -265,29 +265,35 @@
 			nui.alert("请选择要删除的客户");
 		}
 	}
-		function showSalary(){
-			window.open('http://127.0.0.1:8013/jfgl.v2/gd/data_handle/test/salarylogin.jsp', '_target');
-			/*  nui.ajax({
-				url:"com.xbkj.gd.data_handle.cust.test.salaryLogin.biz.ext",
-				cache:false,
-				async:true,
-				type:"POST",
-				contentType:"text/json",
-				success:function(text){
-					debugger;
-					window.open('http://127.0.0.1:8013/integral/index.html', '_target');
-					if(text != null){
-						if(text.msg.flag){
-							window.open("http://localhost:8013/integral/index.html", "_target");
+		/**
+			线上转线下积分
+		*/
+		function lineToDown(){
+			var row = grid.getSelected();
+			if(row){
+					nui.open({
+						url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/lineToDownIntegral.jsp",
+						title:"线上转线下积分赠送",
+						width:300,
+						height:200,
+						onload:function(){
+							var iframe = this.getIFrameEl();
+			        		var data = { pk_customer_info: row.pk_customer_info};
+			        		iframe.contentWindow.SetData(data);
+						},
+						ondestroy:function(action){
+							//判断是否成功与否
+							if(action == "ok"){
+								//	search();
+								nui.alert("积分操作成功");
+								search();
+							}
 						}
-					} 
-				},
-				error: function (jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                }
-			});  */
-	}
-		
+					});
+			}else{
+				nui.alert("请选择客户！");
+			}
+		}
 		/**
 			积分提前支取
 		*/
@@ -392,6 +398,35 @@
 					});
 			}else{
 				nui.alert("请选择需要添加积分的客户！");
+			}
+		}
+		/**
+			活动赠送积分
+		*/
+		function activitiesPresented(){
+			var row = grid.getSelected();
+			if(row){
+					nui.open({
+						url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/activitiesPresented.jsp",
+						title:"活动积分赠送",
+						width:300,
+						height:200,
+						onload:function(){
+							var iframe = this.getIFrameEl();
+			        		var data = { pk_customer_info: row.pk_customer_info};
+			        		iframe.contentWindow.SetData(data);
+						},
+						ondestroy:function(action){
+							//判断是否成功与否
+							if(action == "ok"){
+								//	search();
+								nui.alert("客户积分赠送成功");
+								search();
+							}
+						}
+					});
+			}else{
+				nui.alert("请选择活动积分赠送的客户！");
 			}
 		}
 		/**

@@ -51,6 +51,8 @@
 		            	<span class="separator"></span>
 		            	<a class="nui-button" iconCls="icon-undo" onclick="addIntegral()" plain="true">添加积分</a>
 		            	<a class="nui-button" onclick="activitiesPresented()" plain="true">活动积分赠送</a>
+		            	<a class="nui-button" onclick="lineToDown()" plain="true">线上积分转线下</a>
+		            	
 		            	<!-- 
 		            	<a class="nui-button" iconCls="icon-undo" onclick="integralDetail()" plain="true">积分详细信息</a> 
 		            	-->
@@ -263,7 +265,35 @@
 			nui.alert("请选择要删除的客户");
 		}
 	}
-		
+		/**
+			线上转线下积分
+		*/
+		function lineToDown(){
+			var row = grid.getSelected();
+			if(row){
+					nui.open({
+						url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/integral/lineToDownIntegral.jsp",
+						title:"线上转线下积分赠送",
+						width:300,
+						height:200,
+						onload:function(){
+							var iframe = this.getIFrameEl();
+			        		var data = { pk_customer_info: row.pk_customer_info};
+			        		iframe.contentWindow.SetData(data);
+						},
+						ondestroy:function(action){
+							//判断是否成功与否
+							if(action == "ok"){
+								//	search();
+								nui.alert("积分操作成功");
+								search();
+							}
+						}
+					});
+			}else{
+				nui.alert("请选择客户！");
+			}
+		}
 		/**
 			积分提前支取
 		*/

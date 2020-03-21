@@ -70,7 +70,8 @@
 		//客户签名
 			//编辑
 			nui.open({
-				url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/prod/sign/custSign/e560.jsp",
+				url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/prod/sign/custSign/L398.jsp",
+<!--				url:"<%=request.getContextPath() %>/gd/data_handle/integralManage/prod/sign/custSign/e560.jsp",-->
 				title:"客户签名",
 				width:900,
 				height:520,

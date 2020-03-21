@@ -7,7 +7,6 @@ gd/data_handle/integralManage/reportHid/apIntegralDetail.jsp
 com.xbkj.gd.integral.vos.ActivitiesPresentedVO.java
 com.xbkj.gd.integral.biz.ActivitiesPresentedBiz.java
 com.xbkj.gd.data_handle.cust.ap.componentType
-
 菜单
 gd/data_handle/integralManage/report/apIntegralDetail.jsp
 gd/data_handle/integralManage/reportHid/apIntegralDetail.jsp

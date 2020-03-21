@@ -1,0 +1,14 @@
+<map>
+  <entry>
+    <string>otherIntegral</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;otherIntegral.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;otherIntegral&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.otherIntegral&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.otherIntegral.pageOtherIntegral(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;pageOtherIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;pageAp&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.otherIntegral.pageOtherIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.vos.OtherIntegralVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.cust.otherIntegral.addOtherIntegral(com.xbkj.gd.integral.vos.OtherIntegralVO)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;addOtherIntegral&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;addAp&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.cust.otherIntegral.addOtherIntegral&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vo(com.xbkj.gd.integral.vos.OtherIntegralVO):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+</map>
