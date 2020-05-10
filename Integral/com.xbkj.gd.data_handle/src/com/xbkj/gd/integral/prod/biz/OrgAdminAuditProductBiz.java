@@ -47,6 +47,9 @@ public class OrgAdminAuditProductBiz {
 	private OrgApplyProductDao appDao = new OrgApplyProductDao();
 	private AuditDetailDao adDao = new AuditDetailDao();
 	
+	
+	
+	
 	/**
 	 * 从分理处调拨其他分理处的礼物
 	 * @param vo 需要礼物的分理处

@@ -92,8 +92,7 @@ public class OrgAuditProductDao {
 //				"LEFT JOIN ORG_EMPLOYEE E ON P.AUDIT_USER = E.EMPCODE " +
 				"LEFT JOIN ORG_ORGANIZATION O ON P.APPLY_ORG = O.ORGID " +
 				" WHERE P.DR = 0 " + where;
-		OrgAuditProductVO[] vos = query.query(querySql, queryCountSql, page);
-		return vos;
+		return query.query(querySql, queryCountSql, page);
 	}
 	private String whereSql(Map<String, String> params) {
 		StringBuilder sb = new StringBuilder();

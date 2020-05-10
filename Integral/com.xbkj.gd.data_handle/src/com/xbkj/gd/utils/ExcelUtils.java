@@ -4,6 +4,14 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -22,6 +30,86 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *@desc
  */
 public class ExcelUtils {
+	
+	public static void setCellWidth(Sheet sheet, int len, int size) {
+		for(int i = 0; i < len; i++){
+			sheet.setColumnWidth(i, size*100);
+		}
+	}
+	
+	/**
+	 *  构建一个word文档，包括头信息
+	 * @param type xls || xlsx
+	 * @param title 标题
+	 * @param heads 表头数组
+	 * @return
+	 */
+	public static Workbook buildWorkBook(
+			String type,
+			String title,
+			String[] heads) {
+		Workbook wb = null;
+		if("xlsx".equals(type)) {
+			wb = new XSSFWorkbook();
+		}else {
+			wb = new HSSFWorkbook();
+		}
+		Sheet sheet = wb.createSheet();
+		Row row = sheet.createRow(0);
+		row.setHeightInPoints(28);
+		Cell cell = row.createCell(0);
+		cell.setCellValue(title);
+		
+		CellStyle rowcell = wb.createCellStyle();
+		Font font = wb.createFont();
+		font.setFontHeightInPoints((short)14);
+		rowcell.setFont(font);
+		rowcell.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+		cell.setCellStyle(rowcell);
+		
+		sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, heads.length-1));
+		Row row1 = sheet.createRow(1);
+		row1.setHeightInPoints(18);
+		CellStyle style = titleStyle(wb);
+		
+		//表头文字
+		batchCreateCell(row1, heads, style);
+		return wb;
+	}
+	
+	private static CellStyle titleStyle(Workbook wb) {
+		Font font;
+		CellStyle style = wb.createCellStyle();
+		style = wb.createCellStyle();
+		style.setFillForegroundColor(HSSFColor.LIGHT_TURQUOISE.index);//前景色
+		style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+		font = wb.createFont();
+		font.setFontHeightInPoints((short)12);//字体
+		style.setFont(font);
+		return style;
+	}
+	
+	/**
+	 * 
+	 * @param row
+	 * @param contents 内容数组
+	 * @param style 样式
+	 */
+	public static void batchCreateCell(Row row, String[] contents, CellStyle style){
+		int len = contents.length;
+		for(int i = 0; i < len; i++){
+			Cell cell = row.createCell(i);
+			cell.setCellValue(contents[i]);
+			cell.setCellStyle(style);
+		}
+	}
+	public static void batchCreateCell(Row row, String[] contents){
+		int len = contents.length;
+		for(int i = 0; i < len; i++){
+			Cell cell = row.createCell(i);
+			cell.setCellValue(contents[i]);
+		}
+	}
 
 	/**
 	 * 创建一个单元格，

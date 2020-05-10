@@ -38,6 +38,7 @@
 	            <tr>
 		            <td style="width:100%;">
 		            	<a class="nui-button" iconCls="icon-search" onclick="search()" plain="true">查询</a>
+		            	<a class="nui-button" iconCls="icon-download" onclick="downReport()" plain="true">导出</a>
 		            </td>
 	            </tr>
 	        </table>
@@ -51,16 +52,26 @@
 		    <input class="nui-hidden" name="pk_apply_product"/>
 		    <div property="columns">
 		        <div type="checkcolumn"></div>
-		        <div field="apply_user" width="150px" headerAlign="center" allowSort="false">分理处名称</div>
+		        <div field="orgname" width="100px" headerAlign="center" >机构</div> 
+		        <div field="apply_user" width="150px" headerAlign="center" allowSort="false">分理处</div>
 		        <div field="apply_product_name" width="150px" headerAlign="center" allowSort="false">礼品</div>
-		        <div field="apply_product_num" width="120px" headerAlign="center" allowSort="false">申请总数</div> 
+		        <div field="apply_product_num" width="120px" headerAlign="center" allowSort="false">申请礼品总数</div> 
 		        <div field="org_sub_num" width="90px" headerAlign="center" >兑换总数</div> 
 		        <div field="allot_product_num" width="90px" headerAlign="center" >调换总数</div> 
 		        <div field="residue_class" width="90px" headerAlign="center" >剩余总数</div>
-		        <div field="orgname" width="100px" headerAlign="center" >所属机构</div> 
+		        
 		    </div>
 		</div>
 	</div>
+	<form id="excelForm" action="<%=request.getContextPath() %>/gd/data_handle/integralManage/sb/report/prodReportExp.jsp" 
+	 	method="post" target="excelIFrame">
+	     <input type="hidden" name="counttype" value="1" />
+	     <input type="hidden" name="now_user" value="xxx" />
+	     <input type="hidden" name="start_date" id="start_date_form" />
+    	 <input type="hidden" name="end_date" id="end_date_form" />
+    	 <input type="hidden" name="product_name" id="product_name_form" />
+	</form>
+	<iframe id="excelIFrame" name="excelIFrame" style="display:none;"></iframe>
 	<script type="text/javascript">
 		nui.parse();
 		var grid = nui.get("grid");
@@ -70,6 +81,17 @@
 			let params = form.getData();
 			params.counttype = 1;
 			grid.load({params:params});
+		}
+		
+		function downReport(){
+			let product_name = nui.get("product_name").getValue();
+			let start_date = nui.get("start_date").getValue();
+			let end_date = nui.get("end_date").getValue();
+			
+			document.getElementById("product_name_form").value=product_name;
+			document.getElementById("start_date_form").value=start_date;
+			document.getElementById("end_date_form").value=end_date;
+			document.getElementById("excelForm").submit();
 		}
 			
 	</script>

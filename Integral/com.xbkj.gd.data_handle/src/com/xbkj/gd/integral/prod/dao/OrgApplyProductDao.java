@@ -10,6 +10,7 @@ import com.eos.foundation.PageCond;
 import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.pagequery.VOPageQuery;
+import com.pub.xbkj.pubapp.query.VOQuery;
 import com.xbkj.common.bs.dao.DAOException;
 import com.xbkj.common.jdbc.framework.SQLParameter;
 import com.xbkj.common.util.MapUtil;
@@ -32,6 +33,46 @@ public class OrgApplyProductDao {
 	private DBUtils dbUtils = new DBUtils();
 	private GdDataHandlerUtils<OrgApplyProductVO> voUtils = new GdDataHandlerUtils<OrgApplyProductVO>(new OrgApplyProductVO());
 	
+	/**
+	 * 礼品采购
+	 * @param user
+	 * @return
+	 * @throws DAOException 
+	 */
+	
+	public  int prodProcurement(OrgApplyProductVO[] vos, String remark) throws DAOException{
+		if(vos == null || vos.length <= 0){
+			return -1;
+		}
+		String user = UserUtils.getUser();
+		String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
+		String ids = convertIds(vos);
+		String sql = "UPDATE GD_ORG_APPLY_PRODUCT " +
+				"SET " +
+				"	DEF1 = '2', " +
+				"	MODIFIER='" + user + "', " +
+				"	MODIFIEDTIME='" + formatDate + "', " +
+				"	REMARK='"+remark+"' " +
+				"WHERE " +
+				"	DEF1='1' AND " +
+				"	AUDIT_STATUS='7' AND " +
+				"	PK_ORG_APPLY_PRODUCT IN  " + ids ;
+		return dbUtils.executeUpdateSQL(sql);
+	}
+	
+	private String convertIds(OrgApplyProductVO[] vos) {
+		StringBuilder sb = new StringBuilder("(");
+		for(OrgApplyProductVO vo : vos){
+			sb.append("'");
+			sb.append(vo.getPk_org_apply_product());
+			sb.append("'");
+			sb.append(",");
+		}
+		sb.deleteCharAt(sb.length()-1);
+		sb.append(")");
+		return sb.toString();
+	}
+
 	/**
 	 * 查询当前用户下审批通过的数量
 	 * @param user
@@ -321,11 +362,11 @@ public class OrgApplyProductDao {
 	 * @param page
 	 * @return
 	 */
-	public  OrgApplyProductVO[] queryOrgApplyProductPage(Map<String,String> params,PageCond page){
+	public  OrgApplyProductVO[] queryOrgApplyProductPage(Map<String,String> params,PageCond page, boolean isPage){
 		//判断是不是有参数
  		String where = whereSql(params);
 		//查询数据实体
-		VOPageQuery< OrgApplyProductVO> query = new VOPageQuery< OrgApplyProductVO>( OrgApplyProductVO.class);
+		VOPageQuery<OrgApplyProductVO> query = new VOPageQuery< OrgApplyProductVO>( OrgApplyProductVO.class);
 		//查询的总记录
 		String queryCountSql = "SELECT  COUNT(*)" +
 				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.DR = 0 " + where;
@@ -333,8 +374,11 @@ public class OrgApplyProductDao {
 		String querySql = "SELECT P.*, E.EMPNAME FROM GD_ORG_APPLY_PRODUCT P " +
 				"LEFT JOIN ORG_EMPLOYEE E ON P.APPLY_USER = E.EMPCODE WHERE P.DR = 0 " + where;
 		log.info("query sql =================" + querySql);
-		 OrgApplyProductVO[] vos = query.query(querySql, queryCountSql, page);
-		return vos;
+		if(isPage){
+			return query.query(querySql, queryCountSql, page);
+		}
+		VOQuery<OrgApplyProductVO> voQuery = new VOQuery<>(OrgApplyProductVO.class);
+		return voQuery.query(querySql);
 	}
 	private String whereSql(Map<String, String> params) {
 		StringBuilder sb = new StringBuilder();
@@ -376,6 +420,13 @@ public class OrgApplyProductDao {
 			String start_date = params.get("start_date");
 			if(StringUtils.isNotEmpty(start_date)){
 				sb.append(" AND DATE_FORMAT(P.MODIFIEDTIME, '%Y-%m-%d')  >= '"+start_date.substring(0, 10)+"'");
+			}
+			//采购状态
+			String def1 = params.get("def1");
+			if(StringUtils.isNotEmpty(def1)){
+				if(Integer.valueOf(def1) > 0){
+					sb.append(" AND def1  = '"+def1+"'");
+				}
 			}
 		}
 		//查询

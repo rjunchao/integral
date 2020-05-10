@@ -1,9 +1,17 @@
 package com.xbkj.gd.integral.prod.biz;
 
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.gocom.components.coframe.tools.LoggerFactory;
 
 import com.eos.foundation.PageCond;
@@ -18,6 +26,7 @@ import com.xbkj.gd.integral.prod.vos.AuditDetailVO;
 import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
 import com.xbkj.gd.integral.vos.ComboboxVO;
 import com.xbkj.gd.utils.DateUtils;
+import com.xbkj.gd.utils.ExcelUtils;
 import com.xbkj.gd.utils.UserUtils;
 
 /**
@@ -36,6 +45,89 @@ public class OrgApplyProductBiz {
 	private OrgApplyProductDao dao = new OrgApplyProductDao();
 //	private OrgAuditProductDao auditDao = new OrgAuditProductDao();
 	private AuditDetailDao adDao = new AuditDetailDao();
+	
+
+	/**
+	 * 礼品采购导出
+	 * @param request
+	 * @param response
+	 */
+	@Bizlet("")
+	public void export(HttpServletRequest request, HttpServletResponse response){
+		Map<String, String> parameter = new HashMap<String, String>();
+		parameter.put("def1", request.getParameter("def1"));
+		parameter.put("audit_status", "7");
+		parameter.put("apply_product_name", request.getParameter("apply_product_name"));
+		String[] heads = {"分理处", "礼品", "数量","积分", "状态", "备注"};
+		Workbook wb = ExcelUtils.buildWorkBook("xlsx", "积分报表信息", heads);
+		Sheet sheet = wb.getSheetAt(0);
+		ExcelUtils.setCellWidth(sheet, 3, 50);
+		OrgApplyProductVO[] vos = dao.queryOrgApplyProductPage(parameter, null, false);
+		if(vos != null && vos.length > 0) {
+			String[] contents = null;
+			int size = vos.length;
+			OrgApplyProductVO vo = null;
+			Row row = null;
+			for(int i = 0; i < size; i++) {
+				vo = vos[i];
+				row = sheet.createRow(i+2);
+				contents = new String[] {
+						vo.getEmpname(),
+						vo.getApply_product_name(),
+						String.valueOf(vo.getApply_product_num()),
+						vo.getApply_product_integral(),
+						convertStatus(vo.getDef1()),
+						vo.getRemark()
+				};
+				ExcelUtils.batchCreateCell(row, contents);
+			}
+		}
+		try {
+			response.setContentType("application/x-download");
+			response.setCharacterEncoding("utf-8");
+			response.addHeader("Content-Disposition", "attachment;filename=" + 
+					UserUtils.toUtf8String("积分报表信息" + DateUtils.getFormatDate("yyyyMMddHHmmss")) + ".xlsx");
+			wb.write(response.getOutputStream());
+			response.getOutputStream().flush();
+			response.getOutputStream().close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private String convertStatus(String def1) {
+		if("1".equals(def1)){
+			return "未采购";
+		}
+		if("2".equals(def1)){
+			return "已采购";
+		}
+		return "未知状态";
+	}
+
+	/**
+	 * 礼品采购
+	 * @param vos
+	 * @return
+	 */
+	@Bizlet
+	public MsgResponse prodProcurement(OrgApplyProductVO[] vos, Map<String, String> params){
+		if(vos == null || vos.length <= 0){
+			return new MsgResponse("数据为空", false);
+		}
+		try {
+			String remark = params.get("remark");
+			int count = dao.prodProcurement(vos, remark);
+			if(count>0){
+				return new MsgResponse("成功", true);
+			}
+		} catch (Exception e) {
+			log.error(e);
+			throw new RuntimeException(e);
+		}
+		return new MsgResponse("采购失败", false);
+	}
+	
 	
 	/**
 	 * 查询审批明细
@@ -173,7 +265,7 @@ public class OrgApplyProductBiz {
 	 */
 	@Bizlet
 	public OrgApplyProductVO[] queryApplyProductPage(Map<String,String> params,PageCond page){
-		return dao.queryOrgApplyProductPage(params, page);
+		return dao.queryOrgApplyProductPage(params, page, true);
 	}
 	
 	

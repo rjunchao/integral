@@ -32,7 +32,7 @@
 	        <table style="width:100%;">
 	            <tr>
 		            <td style="width:100%;">
-		            		<a class="nui-button" iconCls="icon-upload" onclick="orgAudit()" plain="true">同意</a>
+		            	<a class="nui-button" iconCls="icon-upload" onclick="orgAudit()" plain="true">同意</a>
 		            	<a class="nui-button" iconCls="icon-cancel" onclick="orgAbort()" plain="true">拒绝</a>
 		            	<a class="nui-button" iconCls="icon-search" onclick="search()" plain="true">查询</a>
 		            </td>

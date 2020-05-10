@@ -317,6 +317,7 @@ public class IntegralOpertionService {
 		parameter.put("end_date", request.getParameter("end_date"));
 		parameter.put("hiddenFlag", request.getParameter("hiddenFlag"));
 		parameter.put("integral_type", request.getParameter("integral_type"));
+		String expSign = request.getParameter("is_exp_sign");
 		String integralTitle = "";
 		String type = request.getParameter("integral_type").toString();
 		if("1".equals(type)){
@@ -438,7 +439,7 @@ public class IntegralOpertionService {
 					}
 					row = sheet.createRow((i+2));
 					ExcelUtils.batchCreateCell(row, contents);
-					 if("2".equals(type)){
+					 if("2".equals(type) && "Y".equals(expSign)){
 							//添加签名导出
 						 String signPk = vo.getDef6();
 						 if(StringUtil.isNotEmpty(signPk)){

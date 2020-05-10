@@ -31,6 +31,9 @@
 		                	结束时间：<input id="end_date" class="nui-datepicker" name="end_date" 
 		                		emptyText="请选择..." style="width:100px;" allowInput="true"/>
 		            </td>
+		            <td>
+		                	导出签名：<input id="is_exp_sign" name="is_exp_sign" class="nui-combobox" data = "ynData" style="width:150px;" value="N" />
+		            </td>
 		           
 	            </tr>
 	        </table>
@@ -61,7 +64,8 @@
 		     <input type="hidden" name="start_date" id="start_date_form" />
 	    	 <input type="hidden" name="end_date" id="end_date_form" />
 	    	 <input type="hidden" name="hiddenFlag" value="N" />
-	    	  <input type="hidden" name="integral_type" value="2" />
+	    	 <input type="hidden" name="integral_type" value="2" />
+	    	 <input type="hidden" name="is_exp_sign" id="is_exp_sign_form" />
 		</form>
 		<iframe id="excelIFrame" name="excelIFrame" style="display:none;"></iframe>
 		
@@ -101,6 +105,7 @@
 	
 	
 	<script type="text/javascript">
+		var ynData = [{id:"Y", text:"Y"}, {id:"N", text:"N"}];
 		nui.parse();
 		var integral_type = 2;
 		var grid = nui.get("grid");
@@ -215,11 +220,12 @@
 			var idcard = nui.get("customer_idcard").getValue();
 			var start_date = nui.get("start_date").getValue();
 			var end_date = nui.get("end_date").getValue();
+			var is_exp_sign = nui.get("is_exp_sign").getValue();
 			
+			document.getElementById("is_exp_sign_form").value=is_exp_sign;
 			document.getElementById("customer_idcard_form").value=idcard;
 			document.getElementById("start_date_form").value=start_date;
 			document.getElementById("end_date_form").value=end_date;
-			
 			document.getElementById("excelForm").submit();
 		}
 		

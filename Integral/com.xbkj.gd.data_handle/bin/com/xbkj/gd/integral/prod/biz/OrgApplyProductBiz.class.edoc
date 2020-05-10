@@ -33,9 +33,19 @@
  &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;dt&gt;抛出：&lt;/dt&gt;&lt;dd&gt;Exception&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </entry>
   <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.export(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;void com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.export(HttpServletRequest request, HttpServletResponse response)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 礼品采购导出&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;request&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;response&lt;/b&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
     <string>com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.queryApplyProductPage(java.util.Map&lt;java.lang.String,java.lang.String&gt;, com.eos.foundation.PageCond)</string>
     <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;OrgApplyProductVO[] com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.queryApplyProductPage(Map&lt;String,String&gt; params, PageCond page)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 分页查询商品申请数据&#x0D;
  &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.prodProcurement(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[], java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>
+    <string>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;MsgResponse com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.prodProcurement(OrgApplyProductVO[] vos, Map&lt;String,String&gt; params)&lt;/b&gt;&lt;br/&gt;&lt;p&gt; 礼品采购&#x0D;
+ &lt;dl&gt;&lt;dt&gt;参数：&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;返回：&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </entry>
   <entry>
     <string>com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.queryApplyDetailCombobox(java.util.Map&lt;java.lang.String,java.lang.String&gt;)</string>

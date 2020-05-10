@@ -9,6 +9,7 @@ import org.gocom.components.coframe.tools.LoggerFactory;
 import com.eos.foundation.PageCond;
 import com.eos.system.logging.Logger;
 import com.pub.xbkj.pubapp.pagequery.VOPageQuery;
+import com.pub.xbkj.pubapp.query.VOQuery;
 import com.xbkj.gd.integral.prod.vos.ReportProductVO;
 import com.xbkj.gd.utils.UserUtils;
 
@@ -26,20 +27,13 @@ public class ReportDao {
 	
 	
 	
-	public ReportProductVO[] countApplyProduct(Map<String, String> params, PageCond page){
-		
+	public ReportProductVO[] countApplyProduct(Map<String, String> params, PageCond page, boolean isPage){
 		/*
 		 * counttype
 		 * 	1：按分理处统计
 		 * 	2：按机构分理处统计
 		 * 	3：按机构统计
 		 */
-		
-		/*String now_user = params.get("now_user");
-		if(!StringUtils.isNotEmpty(now_user)){
-			//按机构
-			return countOrgApplyProduct(params, page);
-		}*/
 		
 		//判断是不是有参数
  		String where = whereSql(params);
@@ -83,10 +77,6 @@ public class ReportDao {
 			countSB.append(" , P.APPLY_ORG");
 		}*/
 		countSB.append(" ) T");
-		
-		
-		
-	
 	    //查询
 		querySB.append("SELECT");
 		querySB.append(" (T.APPLY_PRODUCT_NUM - ALLOT_PRODUCT_NUM) AS APPLY_PRODUCT_NUM, ");//总数
@@ -139,8 +129,11 @@ public class ReportDao {
 		}*/
 		querySB.append(" ) T");
 		log.info("report sql ===========" + querySB.toString());
-		ReportProductVO[] vos = pageQuery.query(querySB.toString(), countSB.toString(), page);
-		return vos;
+		if(isPage){
+			return pageQuery.query(querySB.toString(), countSB.toString(), page);
+		}
+		VOQuery<ReportProductVO> voQuery = new VOQuery<>(ReportProductVO.class);
+		return voQuery.query(querySB.toString());
 	}
 	public ReportProductVO[] countOrgApplyProduct(Map<String, String> params, PageCond page){
 		//判断是不是有参数
