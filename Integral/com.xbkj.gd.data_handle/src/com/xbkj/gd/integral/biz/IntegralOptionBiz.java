@@ -346,6 +346,8 @@ public class IntegralOptionBiz {
 		
 		String end_date = params.get("end_date");
 		if(StringUtils.isNotEmpty(end_date)){
+			//AND T.ts < '2020-03-31 23:59:59' 
+			end_date = end_date.substring(0,10) + " 23:59:59";
 			sb.append(" AND T.ts < '"+end_date+"'");
 		}
 		return sb.toString();

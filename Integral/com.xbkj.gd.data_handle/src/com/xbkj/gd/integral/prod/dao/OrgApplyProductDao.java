@@ -38,10 +38,8 @@ public class OrgApplyProductDao {
 	 * @return
 	 */
 	public  List<OrgApplyProductVO> queryProdByUser(String user){
-		String sql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
-				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.ORG_SUB_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
-				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
-				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('7','5') AND ORG_SUB_NUM < P.APPLY_PRODUCT_NUM AND P.APPLY_USER = ? ";
+		String sql = "SELECT P.*" +
+				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('7','5') AND (P.APPLY_PRODUCT_NUM - P.ALLOT_PRODUCT_NUM - P.ORG_SUB_NUM) > 0 AND P.APPLY_USER = ? ";
 		SQLParameter parameter = new SQLParameter();
 		parameter.addParam(user);
 		List<OrgApplyProductVO> vos = voUtils.queryList(sql, parameter);
@@ -165,10 +163,8 @@ public class OrgApplyProductDao {
 	 * @throws DAOException
 	 */
 	public OrgApplyProductVO querySubBranchProd(String pk) throws DAOException{
-		String sql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
-				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
-				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.ORG_SUB_NUM, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
-				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('7','5') AND P.ORG_SUB_NUM < P.APPLY_PRODUCT_NUM AND P.PK_ORG_APPLY_PRODUCT= ? ";
+		String sql = "SELECT P.*" +
+				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN ('7','5') AND (P.APPLY_PRODUCT_NUM - P.ALLOT_PRODUCT_NUM - P.ORG_SUB_NUM) > 0  AND P.PK_ORG_APPLY_PRODUCT= ? ";
 		SQLParameter parameter = new SQLParameter();
 		parameter.addParam(pk);
 		return voUtils.query(sql, parameter);
@@ -210,9 +206,7 @@ public class OrgApplyProductDao {
 	 * @return
 	 */
 	public  OrgApplyProductVO get(String pk){
-		String querySql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
-				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM, P.AUDIT_PRODUCT_NUM, P.ORG_SUB_NUM,P.AUDIT_STATUS, " +
-				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6" +
+		String querySql = "SELECT P.*" +
 				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.PK_ORG_APPLY_PRODUCT='"+pk+"'";
 		OrgApplyProductVO vo = voUtils.query(querySql);
 		return vo;
@@ -236,12 +230,10 @@ public class OrgApplyProductDao {
 	 * @param params
 	 * @return
 	 */
-	public List< OrgApplyProductVO> queryOrgApplyDetail(Map<String, String> params){
+	public List<OrgApplyProductVO> queryOrgApplyDetail(Map<String, String> params){
 //		String auditProduct = params.get("PK_ORG_AUDIT_PRODUCT");
-		String sql = "SELECT P.PK_ORG_APPLY_PRODUCT,P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, " +
-				"P.APPLY_PRODUCT_NAME, P.APPLY_PRODUCT_INTEGRAL, " +
-				"P.APPLY_PRODUCT_NUM " +
-				"FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN('7', '5') AND P.ORG_SUB_NUM < P.APPLY_PRODUCT_NUM AND P.APPLY_USER='"+UserUtils.getUser()+"'";
+		String sql = "SELECT P.* " +
+				"FROM GD_ORG_APPLY_PRODUCT P WHERE P.AUDIT_STATUS IN('7', '5') AND (P.APPLY_PRODUCT_NUM - P.ALLOT_PRODUCT_NUM - P.ORG_SUB_NUM) > 0 AND P.APPLY_USER='"  + UserUtils.getUser()+"'";
 		/*List<String> orgs = UserUtils.findDeptAndChildrenDept();
 		if(orgs != null && orgs.size() > 0){
 			StringBuilder sb = new StringBuilder();
@@ -263,9 +255,7 @@ public class OrgApplyProductDao {
 	 */
 	public List< OrgApplyProductVO> queryOrgApplyByPkAudit(Map<String, String> params){
 		String auditProduct = params.get("PK_ORG_AUDIT_PRODUCT");
-		String sql = "SELECT P.PK_ORG_APPLY_PRODUCT,P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, " +
-				"P.APPLY_PRODUCT_NAME, P.APPLY_PRODUCT_INTEGRAL, " +
-				"P.APPLY_PRODUCT_NUM,P.AUDIT_STATUS,P.REMARK " +
+		String sql = "SELECT P.* " +
 				"FROM GD_ORG_APPLY_PRODUCT P WHERE  P.PK_ORG_AUDIT_PRODUCT= ?";
 		SQLParameter parameter = new SQLParameter();
 		parameter.addParam(auditProduct);
@@ -340,10 +330,7 @@ public class OrgApplyProductDao {
 		String queryCountSql = "SELECT  COUNT(*)" +
 				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.DR = 0 " + where;
 	    //查询
-		String querySql = "SELECT P.PK_ORG_APPLY_PRODUCT, P.PK_ORG_AUDIT_PRODUCT, P.APPLY_PRODUCT_CODE, P.APPLY_PRODUCT_NAME, " +
-				"P.APPLY_PRODUCT_INTEGRAL, P.APPLY_PRODUCT_NUM,P.ORG_SUB_NUM, P.AUDIT_PRODUCT_NUM, P.AUDIT_STATUS, " +
-				"P.AUDIT_USER, P.AUDIT_DATE, P.REMARK,E.EMPNAME, P.DEF1, P.DEF2, P.DEF3, P.DEF4, P.DEF5, P.DEF6," +
-				" P.TS FROM GD_ORG_APPLY_PRODUCT P " +
+		String querySql = "SELECT P.*, E.EMPNAME FROM GD_ORG_APPLY_PRODUCT P " +
 				"LEFT JOIN ORG_EMPLOYEE E ON P.APPLY_USER = E.EMPCODE WHERE P.DR = 0 " + where;
 		log.info("query sql =================" + querySql);
 		 OrgApplyProductVO[] vos = query.query(querySql, queryCountSql, page);
@@ -384,11 +371,11 @@ public class OrgApplyProductDao {
 			}
 			String end_date = params.get("end_date");
 			if(StringUtils.isNotEmpty(end_date)){
-				sb.append(" AND P.ts <= '"+end_date+"'");
+				sb.append(" AND DATE_FORMAT(P.MODIFIEDTIME, '%Y-%m-%d')  <= '"+end_date.substring(0, 10)+"'");
 			}
 			String start_date = params.get("start_date");
 			if(StringUtils.isNotEmpty(start_date)){
-				sb.append(" AND P.ts >= '"+start_date+"'");
+				sb.append(" AND DATE_FORMAT(P.MODIFIEDTIME, '%Y-%m-%d')  >= '"+start_date.substring(0, 10)+"'");
 			}
 		}
 		//查询

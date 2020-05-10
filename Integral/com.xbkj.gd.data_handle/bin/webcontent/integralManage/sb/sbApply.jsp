@@ -55,14 +55,15 @@
 		        <div field="apply_product_name" width="120px" headerAlign="center" allowSort="false">礼品名称</div> 
 		        <div field="apply_product_num" width="90px" headerAlign="center" >申请数量</div> 
 		        <div field="org_sub_num" width="90px" headerAlign="center" >已兑换数量</div> 
+		        <div field="allot_product_num" width="90px" headerAlign="center" >调拨数量</div> 
 		        <div field="apply_product_integral" width="90px" headerAlign="center" >礼品积分</div> 
 		        <!-- <div field="audit_product_num" width="90px" headerAlign="center" >审批通过数量</div>  -->
 		        <div field="ts" width="130px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">申请时间</div>
 		        <div field="audit_status" type="comboboxcolumn" renderer="statusRenderer" width=120px" headerAlign="center" allowSort="false" >状态</div>
-		        <div field="empname" width="100px" headerAlign="center" allowSort="false">申请人</div>
-		        <div field="audit_user" width=100px" headerAlign="center" allowSort="false">审批人</div>
-		        <div field="audit_date" width=130px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">审批时间</div>
-		       	<div field="remark" width=120px" headerAlign="center" allowSort="false">备注</div> 
+		        <div field="empname" width="120px" headerAlign="center" allowSort="false">申请人</div>
+		        <div field="modifier" width="120px" headerAlign="center" allowSort="false">审批人</div>
+		        <div field="modifiedtime" width="140px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">审批时间</div>
+		       	<div field="remark" width="120px" headerAlign="center" allowSort="false">备注</div> 
 		    </div>
 		</div>
 	</div>

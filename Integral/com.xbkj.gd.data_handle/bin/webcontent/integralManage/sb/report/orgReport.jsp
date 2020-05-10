@@ -58,7 +58,7 @@
 		        <div field="apply_product_name" width="150px" headerAlign="center" allowSort="false">申请礼品</div>
 		        <div field="apply_product_num" width="120px" headerAlign="center" allowSort="false">礼品总数</div> 
 		        <div field="org_sub_num" width="90px" headerAlign="center" >兑换总数</div> 
-		        <div field="allot_product_num" width="90px" headerAlign="center" >调换总数</div> 
+		        <!-- <div field="allot_product_num" width="90px" headerAlign="center" >调换总数</div>  -->
 		        <div field="residue_class" width="90px" headerAlign="center" >剩余总数</div> 
 		    </div>
 		</div>

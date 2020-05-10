@@ -2,6 +2,7 @@ package com.xbkj.gd.integral.biz.service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,9 +24,11 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.gocom.components.coframe.tools.LoggerFactory;
 
 import sun.misc.BASE64Decoder;
 
+import com.eos.system.logging.Logger;
 import com.pub.xbkj.common.MsgResponse;
 import com.pub.xbkj.pubapp.query.VOQuery;
 import com.sun.star.uno.RuntimeException;
@@ -61,6 +64,8 @@ import com.xbkj.gd.utils.UserUtils;
 public class IntegralOpertionService {
 	
 	private CustomerOptionBiz cust = new CustomerOptionBiz();
+	
+	private static Logger log = LoggerFactory.getLogger(IntegralOpertionService.class);
 	
 	
 	/*private MsgResponse validateAccount(LeadDrawIntegralVO vo){
@@ -128,7 +133,7 @@ public class IntegralOpertionService {
 			}
 			return msg;
 		} catch (DAOException e) {
-			e.printStackTrace();
+			log.error("", e);
 			throw new RuntimeException("vip积分赠送失败" + e.getMessage());
 		}
 	}
@@ -157,13 +162,13 @@ public class IntegralOpertionService {
 				return msg;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("", e);
 		}finally{
 			if(is != null){
 				try {
 					is.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					log.error("", e);
 				}
 			}
 		}
@@ -236,7 +241,7 @@ public class IntegralOpertionService {
 				return "导入数据化为空";
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error("", e);
 		}
 		return null;
 	}
@@ -294,7 +299,7 @@ public class IntegralOpertionService {
 				return "导入数据化为空";
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error("", e);
 		}
 		return null;
 	}
@@ -472,7 +477,7 @@ public class IntegralOpertionService {
 			response.getOutputStream().flush();
 			response.getOutputStream().close();
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error("", e);
 		}
 		
 	}
@@ -571,8 +576,7 @@ public class IntegralOpertionService {
 			}
 			return msg;
 		} catch (DAOException e) {
-			e.printStackTrace();
-			System.out.println("积分添加失败" + e.getMessage());
+			log.error("积分添加失败" + e.getMessage());
 			throw new RuntimeException("积分添加失败" + e.getMessage());
 		}
 //		return new MsgResponse();
@@ -621,7 +625,7 @@ public class IntegralOpertionService {
 				}
 			}
 		} catch (DAOException e) {
-			e.printStackTrace();
+			log.error("添加积分失败", e);
 			return new MsgResponse("添加积分失败，" + e.getMessage(), false);
 		}
 		return null;
@@ -654,7 +658,7 @@ public class IntegralOpertionService {
 				return new MsgResponse("对改账户和账户序号已经提前支取了", false);
 			}
 		} catch (DAOException e) {
-			e.printStackTrace();
+			log.error("添加积分失败", e);
 			return new MsgResponse("添加积分失败，" + e.getMessage(), false);
 		}
 		return null;
@@ -678,9 +682,10 @@ public class IntegralOpertionService {
 			throw new RuntimeException("客户主键为空, 请在客户页面刷新查询并修改积分"); 
 		}
 		
-		double integralTotal = 0.0;//总积分，更新到客户表，明细插入明细表
-		double customer_integral = 0.0;
+		BigDecimal integralTotal = new BigDecimal("0.0");//总积分，更新到客户表，明细插入明细表
+		BigDecimal customer_integral = null;
 		Map<String, Integer> prods = new HashMap<String, Integer>();
+		
 		//查询批次号
 		try {
 			
@@ -693,17 +698,16 @@ public class IntegralOpertionService {
 				prod = prodDao.get(giftId);
 				subNum = vo.getDef5();//兑换数量
 				
-				if(Integer.parseInt(subNum) > (prod.getApply_product_num() - prod.getOrg_sub_num())){//兑换的 > 库存（总的-兑换的）
+				if(Integer.parseInt(subNum) > (prod.getApply_product_num() - prod.getOrg_sub_num() - prod.getAllot_product_num())){//兑换的 >= 库存（总的-兑换的）
 					//兑换的超过了审批过的数量
-					throw new RuntimeException(vo.getDef1() + "兑换数量超过了机构现有的数量,现有数量" + (prod.getApply_product_num() - prod.getOrg_sub_num()));
+					return new MsgResponse(vo.getDef1() + "兑换数量超过了机构现有的数量,现有数量" + (prod.getApply_product_num() - prod.getOrg_sub_num() -  prod.getAllot_product_num()), false);
 				}
-				if(StringUtil.isEmpty(vo.getDef6())){//兑换的 > 库存（总的-兑换的）
-					//兑换的超过了审批过的数量
-					throw new RuntimeException("请签名");
+				if(StringUtil.isEmpty(vo.getDef6())){//
+					return new MsgResponse("请签名", false);
 				}
 				prods.put(prod.getPk_org_apply_product(), Integer.parseInt(subNum));//商品编码, 兑换数量
-				customer_integral = vo.getCustomer_integral();
-				integralTotal = integralTotal + customer_integral;
+				customer_integral = new BigDecimal(vo.getDef2()).multiply(new BigDecimal(vo.getDef5())) ;
+				integralTotal = integralTotal.add(customer_integral);
 				//
 				vo.setCustomer_idcard(customerVO.getCustomer_idcard());//身份证
 				vo.setPk_integral_detail(PrimaryKeyUtil.getPrimaryKey());//主键
@@ -714,20 +718,19 @@ public class IntegralOpertionService {
 				vo.setTs(DateUtils.getFormatDate("yyyy-MM-dd HH:mm:ss"));
 				vo.setDef8(sn);//序号
 			}
-			if(integralTotal > customerVO.getNow_usable_integral()){
+			if(integralTotal.doubleValue() > customerVO.getNow_usable_integral()){
 				return new MsgResponse("兑换积分超过了可用积分，修改兑换项或兑换数量", false);
 			}
 			//更新客户积分
 			String sql = "UPDATE gd_customer_info2 SET now_usable_integral = now_usable_integral + ? WHERE pk_customer_info=?";
 			SQLParameter parameter = new SQLParameter();
-			integralTotal = integralTotal *-1;
+			integralTotal = integralTotal.multiply(new BigDecimal("-1"));
 			parameter.addParam(integralTotal);
 			parameter.addParam(customerVO.getPk_customer_info());
 		
 			new DBUtils().executeUpdateSQL(sql, parameter);
 			GdDataHandlerUtils<IntegralDetailVO> utils = new GdDataHandlerUtils<IntegralDetailVO>(new IntegralDetailVO());
 			MsgResponse msg = utils.saveArr(vos);
-			
 			if(msg.isFlag()){
 				//2、兑换成功后需要－库存
 				prodDao.updategiftNums(prods);
@@ -737,7 +740,7 @@ public class IntegralOpertionService {
 			}
 			return msg;
 		} catch (DAOException e) {
-			e.printStackTrace();
+			log.error("积分兑换失败", e);
 			throw new RuntimeException("积分兑换失败, " + e.getMessage());
 		}
 	}
@@ -764,8 +767,6 @@ public class IntegralOpertionService {
 	 * @throws RuntimeException
 	 */
 	public MsgResponse vipIntegral(VipIntegralDetailVO vo) throws RuntimeException{
-		
-		
 		
 		String pk = vo.getCustomer_idcard();
 		if(pk == null || "".equals(pk)){
@@ -802,7 +803,7 @@ public class IntegralOpertionService {
 			}
 			return msg;
 		} catch (DAOException e) {
-			e.printStackTrace();
+			log.error("vip赠送积分失败", e);
 			throw new RuntimeException("vip积分赠送失败, " + e.getMessage());
 		}
 	}
@@ -838,7 +839,7 @@ public class IntegralOpertionService {
 			}
 			
 		} catch (DAOException e) {
-			e.printStackTrace();
+			log.error("vip赠送积分失败", e);
 			return new MsgResponse("vip赠送积分失败" + e.getMessage(), false);
 		}
 	}
@@ -855,7 +856,7 @@ public class IntegralOpertionService {
 		try {
 			return new DBUtils().getCountNumber(queryCountSql);
 		} catch (DAOException e) {
-			e.printStackTrace();
+			log.error("", e);
 		}
 		return 0;
 	}

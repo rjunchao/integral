@@ -1,0 +1,3 @@
+com.xbkj.gd.integral.prod.dao.OrgApplyProductDao.java
+com.xbkj.gd.integral.prod.dao.ReportDao.java
+gd/data_handle/integralManage/sb/report/orgReport.jsp

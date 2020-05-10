@@ -1,0 +1,3 @@
+com.xbkj.gd.integral.prod.dao.OrgApplyProductDao.java
+gd/data_handle/integralManage/sb/sbApply.jsp
+gd/data_handle/integralManage/sb/sbApplyAdmin.jsp

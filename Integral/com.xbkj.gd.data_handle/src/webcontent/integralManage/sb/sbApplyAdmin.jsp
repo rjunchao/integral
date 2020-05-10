@@ -71,8 +71,8 @@
 		        <!-- <div field="audit_product_num" width="90px" headerAlign="center" >审批通过数量</div>  -->
 		        <div field="audit_status" type="comboboxcolumn" renderer="statusRenderer" width=120px" headerAlign="center" allowSort="false" >状态</div>
 		        <div field="empname" width="120px" headerAlign="center" allowSort="false">申请人</div>
-		        <div field="audit_user" width="120px" headerAlign="center" allowSort="false">审批人</div>
-		        <div field="audit_date" width="140px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">审批时间</div>
+		        <div field="modifier" width="120px" headerAlign="center" allowSort="false">审批人</div>
+		        <div field="modifiedtime" width="140px" headerAlign="center" allowSort="false" dateFormat="yyyy-MM-dd hh:mm:ss">审批时间</div>
 		       	<div field="remark" width="120px" headerAlign="center" allowSort="false">备注</div> 
 		    </div>
 		</div>

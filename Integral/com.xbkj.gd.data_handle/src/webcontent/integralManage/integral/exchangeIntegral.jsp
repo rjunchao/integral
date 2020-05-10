@@ -155,10 +155,10 @@
 				nui.alert("请选择类型或输入数量");
 				return;
 			}
-			if(custSign == null || custSign == "" || custSign == undefined  ){
+			/* if(custSign == null || custSign == "" || custSign == undefined  ){
 				nui.alert("请签名");
 				return;
-			}
+			} */
       		grid.commitEdit();
 			var changes = grid.getChanges();
 			debugger;
@@ -193,27 +193,31 @@
 			}
 			
 			nui.get("savedata").setEnabled(false);//防止反复提交
-			var json = nui.encode({vos:vos});
-			nui.ajax({
-				url:"com.xbkj.gd.data_handle.cust.integralNew.exchangeIntegral.biz.ext",
-				cache:false,
-				data:json,
-				type:"POST",
-				contentType:"text/json",
-				success: function(text){
-					var msg = nui.decode(text);
-					nui.alert(msg.msg.message);
-					if(msg.msg.flag){//添加成功关闭，添加不成功，不关闭窗口
-						CloseWindow("ok");
-					}
-					nui.get("savedata").setEnabled(true)
-					grid.selectAll();
-					editRow();
-				},
-				error: function (jqXHR, textStatus, errorThrown) {
-                    nui.alert(jqXHR.responseText);
-                    CloseWindow();
-                }
+			nui.confirm("确定兑换积分？","确认", function(action){
+				if(action == "ok"){
+					var json = nui.encode({vos:vos});
+					nui.ajax({
+						url:"com.xbkj.gd.data_handle.cust.integralNew.exchangeIntegral.biz.ext",
+						cache:false,
+						data:json,
+						type:"POST",
+						contentType:"text/json",
+						success: function(text){
+							var msg = nui.decode(text);
+							nui.alert(msg.msg.message);
+							if(msg.msg.flag){//添加成功关闭，添加不成功，不关闭窗口
+								CloseWindow("ok");
+							}
+							nui.get("savedata").setEnabled(true)
+							grid.selectAll();
+							editRow();
+						},
+						error: function (jqXHR, textStatus, errorThrown) {
+		                    nui.alert(jqXHR.responseText);
+		                    CloseWindow();
+		                }
+					});
+				}
 			});
 			nui.get("savedata").setEnabled(true)
 			

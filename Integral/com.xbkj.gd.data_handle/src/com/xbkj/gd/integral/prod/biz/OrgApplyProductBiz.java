@@ -85,7 +85,9 @@ public class OrgApplyProductBiz {
 			for(int i = 0; i < len; i++ ){
 				com = new ComboboxVO();
 				vo = vos.get(i);
-				String data = vo.getApply_product_name() + "_" + vo.getApply_product_num();//
+				String data = vo.getApply_product_name() + "_" + 
+				//可以调度的=总的 - 调度的 - 兑换了的
+				(vo.getApply_product_num() - vo.getAllot_product_num() - vo.getOrg_sub_num());
 				com.setId(vo.getPk_org_apply_product());
 				com.setText(data);//编码_名称_数量
 				coms[i] = com;

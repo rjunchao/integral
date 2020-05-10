@@ -1,0 +1,8 @@
+com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz.java
+com.xbkj.gd.integral.prod.dao.OrgApplyProductDao.java
+com.xbkj.gd.integral.prod.biz.OrgAdminAuditProductBiz.java
+com.xbkj.gd.integral.biz.service.IntegralOpertionService.java
+gd/data_handle/integralManage/sb/sbApply.jsp
+
+20200330
+com.xbkj.gd.integral.prod.dao.OrgApplyProductDao.java

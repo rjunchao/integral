@@ -56,7 +56,7 @@ public class OrgAdminAuditProductBiz {
 	@Bizlet
 	public MsgResponse subBranchesAllot(OrgApplyProductVO vo, OrgApplyProductVO subBran){
 		MsgResponse msg = new MsgResponse(true);
-		log.info("从" + subBran + "调拨" + vo);
+		log.info("从" + subBran + "调拨到" + vo);
 		//校验
 		MsgResponse temp = validate(vo, subBran);
 		if(temp != null){
@@ -69,7 +69,7 @@ public class OrgAdminAuditProductBiz {
 			
 			
 			if(vo.getApply_product_num() > 
-				(target.getApply_product_num() - target.getOrg_sub_num())){//总的-兑换的=多余的
+				(target.getApply_product_num() - target.getOrg_sub_num() - target.getAllot_product_num())){//总的-兑换的-调拨了的=多余的
 				return new MsgResponse("调拨分理处货存不足，失败", false);
 			}
 			//调拨
@@ -79,7 +79,7 @@ public class OrgAdminAuditProductBiz {
 			subBran.setAllot_product_num((target.getAllot_product_num() + vo.getApply_product_num()));
 			subBran.setRemark("调拨减少");
 //			subBran.setApply_product_num((target.getApply_product_num() - vo.getApply_product_num()));
-			appDao.allotOrgApply(subBran);
+			appDao.allotOrgApply(subBran);//
 			
 			vo.setAudit_status(IntegralConstant.ALLOT_PASS);//调拨
 			vo.setRemark("通过调拨的形式通过");

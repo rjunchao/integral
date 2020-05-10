@@ -86,10 +86,14 @@ public class ReportDao {
 		
 		
 		
-		
+	
 	    //查询
 		querySB.append("SELECT");
-		querySB.append(" T.APPLY_PRODUCT_NUM,");//总数
+		querySB.append(" (T.APPLY_PRODUCT_NUM - ALLOT_PRODUCT_NUM) AS APPLY_PRODUCT_NUM, ");//总数
+		/*if("3".equals(type)){
+		}else{
+			querySB.append(" T.APPLY_PRODUCT_NUM,");//总数
+		}*/
 		querySB.append(" T.ORG_SUB_NUM,");//兑换数
 		querySB.append(" T.ALLOT_PRODUCT_NUM,");//兑换数
 		
