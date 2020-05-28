@@ -1,0 +1,42 @@
+积分兑换、vip赠送、活动积分赠送菜单
+新建功能
+	明细积分统计
+		积分兑换	F_ID_01
+		/gd/data_handle/integralManage/idReport/subReport.jsp
+		VIP积分赠送	F_ID_02
+		/gd/data_handle/integralManage/idReport/vipReport.jsp
+		活动积分赠送	F_ID_03
+		/gd/data_handle/integralManage/idReport/apReport.jsp
+		
+	新建菜单
+		明细积分统计 M_ID
+		积分兑换	F_ID_01
+		VIP积分赠送	F_ID_02
+		活动积分赠送	F_ID_03
+
+礼品采购状态查询菜单
+	放在礼品审批功能下
+	新建功能
+		礼品采购查询 	F_PROD_014
+		/gd/data_handle/integralManage/sb/procurement.jsp
+	新建菜单
+		礼品采购查询   礼品采购查询 M_PROD_014
+	
+分理处礼品调拨
+	新建功能
+		分理处礼品调拨 	F_PROD_015
+		/gd/data_handle/integralManage/sb/prodAp.jsp
+	新建菜单
+		分理处礼品调拨 	M_PROD_15
+
+礼品提取明细
+	新建功能
+		礼品提取明细	F_D_07
+		/gd/data_handle/integralManage/report/orgProdAllotDetail.jsp	
+	新建菜单
+		礼品提取明细	N_M_03_07
+	新建功能
+		礼品提取明细	CS_02_07
+		/gd/data_handle/integralManage/reportHid/orgProdAllotDetail.jsp
+	新建菜单
+		礼品提取明细	m_04_07

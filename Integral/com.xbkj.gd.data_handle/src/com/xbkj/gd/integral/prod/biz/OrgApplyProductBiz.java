@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -22,8 +23,10 @@ import com.xbkj.common.util.PrimaryKeyUtil;
 import com.xbkj.gd.integral.prod.common.IntegralConstant;
 import com.xbkj.gd.integral.prod.dao.AuditDetailDao;
 import com.xbkj.gd.integral.prod.dao.OrgApplyProductDao;
+import com.xbkj.gd.integral.prod.dao.OrgProdAllotDao;
 import com.xbkj.gd.integral.prod.vos.AuditDetailVO;
 import com.xbkj.gd.integral.prod.vos.OrgApplyProductVO;
+import com.xbkj.gd.integral.prod.vos.OrgProdAllotVO;
 import com.xbkj.gd.integral.vos.ComboboxVO;
 import com.xbkj.gd.utils.DateUtils;
 import com.xbkj.gd.utils.ExcelUtils;
@@ -48,6 +51,9 @@ public class OrgApplyProductBiz {
 	
 
 	/**
+	 * 
+	 * 	
+	 * 
 	 * 礼品采购导出
 	 * @param request
 	 * @param response
@@ -57,6 +63,8 @@ public class OrgApplyProductBiz {
 		Map<String, String> parameter = new HashMap<String, String>();
 		parameter.put("def1", request.getParameter("def1"));
 		parameter.put("audit_status", "7");
+		parameter.put("start_date", request.getParameter("start_date"));
+		parameter.put("end_date", request.getParameter("end_date"));
 		parameter.put("apply_product_name", request.getParameter("apply_product_name"));
 		String[] heads = {"分理处", "礼品", "数量","积分", "状态", "备注"};
 		Workbook wb = ExcelUtils.buildWorkBook("xlsx", "积分报表信息", heads);
@@ -102,6 +110,9 @@ public class OrgApplyProductBiz {
 		if("2".equals(def1)){
 			return "已采购";
 		}
+		if("3".equals(def1)){
+			return "调拨通过";
+		}
 		return "未知状态";
 	}
 
@@ -111,13 +122,16 @@ public class OrgApplyProductBiz {
 	 * @return
 	 */
 	@Bizlet
-	public MsgResponse prodProcurement(OrgApplyProductVO[] vos, Map<String, String> params){
-		if(vos == null || vos.length <= 0){
+	public MsgResponse prodProcurement(Map<String, String> params){
+		String ids = params.get("ids"); 
+		if(StringUtils.isEmpty(ids)){
 			return new MsgResponse("数据为空", false);
 		}
 		try {
-			String remark = params.get("remark");
-			int count = dao.prodProcurement(vos, remark);
+			
+			String remark = params.get("remark").toString();
+			String opt_type = params.get("opt_type").toString();
+			int count = dao.prodProcurement(ids, remark, opt_type);
 			if(count>0){
 				return new MsgResponse("成功", true);
 			}
@@ -268,7 +282,84 @@ public class OrgApplyProductBiz {
 		return dao.queryOrgApplyProductPage(params, page, true);
 	}
 	
+	/**
+	 * 查询可以审批通过并且有富余的礼品
+	 * @param params
+	 * @param page
+	 * @return
+	 */
+	@Bizlet
+	public OrgApplyProductVO[] queryAuditPassProdPage(Map<String,String> params,PageCond page){
+		return dao.queryAuditPassProdPage(params, page, true);
+	}
 	
+	
+	
+	/**
+	 * 提取支行的礼品，并插入礼品明细
+	 * @param params
+	 * @return
+	 */
+	@Bizlet
+	public MsgResponse updateProdNumber(Map<String,String> params){
+		
+		try {
+			MsgResponse msg = vaildate(params);
+			if(msg != null){
+				return msg;
+			}
+			OrgApplyProductVO oap = dao.get(params.get("pk_org_apply_product"));
+			
+			//(p.apply_product_num - p.allot_product_num - p.org_sub_num) > 0
+			int now_num = (oap.getApply_product_num() - oap.getAllot_product_num() - oap.getOrg_sub_num());
+			String num = params.get("org_sub_num");
+			if(now_num <= 0){
+				return new MsgResponse("库存不足", false);
+			}
+			if(now_num < Integer.parseInt(num)){
+				return new MsgResponse("库存不足", false);
+			}
+			int count = dao.allotAuditProd(params);
+			if(count > 0){
+				//插入明细
+				OrgProdAllotDao opaDao = new OrgProdAllotDao();
+				OrgProdAllotVO opa =new OrgProdAllotVO(
+						oap.getPk_org_apply_product(), 
+						oap.getApply_product_name(), 
+						params.get("allot_org"),
+						Integer.parseInt(num),
+						params.get("remark")
+					);
+				opa.setDef1(oap.getApply_user());
+				opaDao.save(opa);
+				return new MsgResponse("操作成功", true);
+			}
+			return new MsgResponse("操作失败", false);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	
+
+	private MsgResponse vaildate(Map<String, String> params) {
+		if(StringUtils.isEmpty(params.get("pk_org_apply_product"))){
+			return new MsgResponse("请选择", false);
+		} 
+		if(StringUtils.isEmpty(params.get("allot_prod"))){
+			return new MsgResponse("请选择", false);
+		} 
+		if(StringUtils.isEmpty(params.get("allot_org"))){
+			return new MsgResponse("请选择", false);
+		} 
+		if(StringUtils.isEmpty(params.get("org_sub_num"))){
+			return new MsgResponse("请输入数量", false);
+		} 
+		if(StringUtils.isEmpty(params.get("remark"))){
+			return new MsgResponse("请输入备注", false);
+		}
+		return null;
+	}
 
 	/**
 	 * 提交申请

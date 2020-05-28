@@ -1,0 +1,10 @@
+<map>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.procurement.prodProcStatus(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;prodProcStatus&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;giftRefuse&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.procurement.prodProcStatus&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>procurement</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;procurement.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;procurement&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.procurement&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;礼品采购&lt;/html&gt;</string>
+  </entry>
+</map>

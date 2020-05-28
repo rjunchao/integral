@@ -1,21 +1,21 @@
-<%@page import="com.xbkj.gd.integral.prod.biz.ReportBiz"%>
+<%@page import="com.xbkj.gd.integral.prod.biz.OrgApplyProductBiz"%>
 <%@page pageEncoding="UTF-8"%>
 <%@include file="/common/common.jsp"%>
 <%@include file="/common/skins/skin0/component.jsp" %>
 <html>
 <!-- 
   - Author(s): rjc
-  - Date: 2020-05-10 16:07:18
+  - Date: 2020-05-10 17:05:22
   - Description:
 -->
 <head>
-<title>礼品统计导出</title>
+<title>导出采购清单</title>
 </head>
 <body>
 	<%
 		out.clear();
 		out = pageContext.pushBody();
-		new ReportBiz().export(request, response);
+		new OrgApplyProductBiz().export(request, response);
 		response.flushBuffer();
 	 %>
 </body>

@@ -8,10 +8,6 @@
     <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;sbPageQuery&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;sbPageQuery&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.subBranch.sbPageQuery&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;total(Int):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
   </entry>
   <entry>
-    <string>com.xbkj.gd.data_handle.prod.subBranch.giftRefuse(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[], java.util.Map)</string>
-    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;giftRefuse&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;giftRefuse&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.subBranch.giftRefuse&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
-  </entry>
-  <entry>
     <string>subBranch</string>
     <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;subBranch.componentType&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;subBranch&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.subBranch&lt;/html&gt;</string>
   </entry>
@@ -22,5 +18,13 @@
   <entry>
     <string>com.xbkj.gd.data_handle.prod.subBranch.sbApply(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[])</string>
     <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;sbApply&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;sbApply&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.subBranch.sbApply&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.subBranch.prodPa(java.util.Map, com.eos.foundation.PageCond)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;prodPa&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;prodPa&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.subBranch.prodPa&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;page(com.eos.foundation.PageCond):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;vos(com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;审批通过的礼品并且有多余的礼品&lt;/html&gt;</string>
+  </entry>
+  <entry>
+    <string>com.xbkj.gd.data_handle.prod.subBranch.allotAp(java.util.Map)</string>
+    <string>&lt;html&gt;&lt;b&gt;Name:&lt;/b&gt;allotAp&lt;br&gt;&lt;b&gt;Display Name:&lt;/b&gt;allotAp&lt;br&gt;&lt;b&gt;Namespace:&lt;/b&gt;com.xbkj.gd.data_handle.prod.subBranch.allotAp&lt;dl&gt;&lt;dt&gt;Parameters:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;params(java.util.Map):&lt;/b&gt;&lt;/dd&gt;&lt;dt&gt;Return:&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;msg(com.pub.xbkj.common.MsgResponse):&lt;/b&gt;&lt;/dd&gt;&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt;提取审批通过的礼品&lt;/html&gt;</string>
   </entry>
 </map>

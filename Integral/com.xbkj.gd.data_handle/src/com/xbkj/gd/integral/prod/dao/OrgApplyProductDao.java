@@ -40,33 +40,33 @@ public class OrgApplyProductDao {
 	 * @throws DAOException 
 	 */
 	
-	public  int prodProcurement(OrgApplyProductVO[] vos, String remark) throws DAOException{
-		if(vos == null || vos.length <= 0){
-			return -1;
-		}
+	public  int prodProcurement(String ids, String remark, String type) throws DAOException{
 		String user = UserUtils.getUser();
 		String formatDate = DateUtils.getFormatDate(DateUtils.PATTERN_19);
-		String ids = convertIds(vos);
+		ids = convertIds(ids);
 		String sql = "UPDATE GD_ORG_APPLY_PRODUCT " +
 				"SET " +
-				"	DEF1 = '2', " +
+				"	DEF1 = '"+type+"', " +
 				"	MODIFIER='" + user + "', " +
 				"	MODIFIEDTIME='" + formatDate + "', " +
 				"	REMARK='"+remark+"' " +
 				"WHERE " +
-				"	DEF1='1' AND " +
+//				"	DEF1='1' AND " +
 				"	AUDIT_STATUS='7' AND " +
 				"	PK_ORG_APPLY_PRODUCT IN  " + ids ;
 		return dbUtils.executeUpdateSQL(sql);
 	}
 	
-	private String convertIds(OrgApplyProductVO[] vos) {
+	private String convertIds(String ids) {
+		String[] idArray = ids.split(",");
 		StringBuilder sb = new StringBuilder("(");
-		for(OrgApplyProductVO vo : vos){
-			sb.append("'");
-			sb.append(vo.getPk_org_apply_product());
-			sb.append("'");
-			sb.append(",");
+		for(String id : idArray){
+			if(StringUtils.isNotBlank(id)){
+				sb.append("'");
+				sb.append(id);
+				sb.append("'");
+				sb.append(",");
+			}
 		}
 		sb.deleteCharAt(sb.length()-1);
 		sb.append(")");
@@ -357,6 +357,59 @@ public class OrgApplyProductDao {
 		return sb.toString();
 	}*/
 	/**
+	 * 分页查询审批通过并且有存款的礼品
+	 * @param params
+	 * @param page
+	 * @return
+	 */
+	public  OrgApplyProductVO[] queryAuditPassProdPage(Map<String,String> params,PageCond page, boolean isPage){
+		//判断是不是有参数
+ 		String where = whereSql(params);
+		//查询数据实体
+		VOPageQuery<OrgApplyProductVO> query = new VOPageQuery< OrgApplyProductVO>( OrgApplyProductVO.class);
+		//查询的总记录
+		
+
+		String queryCountSql = "SELECT  COUNT(*)" +
+				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.DR = 0 AND " +
+				"P.AUDIT_STATUS IN('7', '5') AND (P.APPLY_PRODUCT_NUM - P.ALLOT_PRODUCT_NUM - P.ORG_SUB_NUM) > 0 " + where;
+	    //查询
+		StringBuilder querySql = new StringBuilder("SELECT "); 
+		querySql.append("	P.PK_ORG_APPLY_PRODUCT, ");
+		querySql.append("	P.APPLY_PRODUCT_CODE, ");
+		querySql.append("	P.APPLY_PRODUCT_INTEGRAL, ");
+		querySql.append("	P.APPLY_PRODUCT_NAME, ");
+		querySql.append("(");
+		querySql.append("	P.APPLY_PRODUCT_NUM - P.ALLOT_PRODUCT_NUM - P.ORG_SUB_NUM ");
+		querySql.append(") 	AS APPLY_PRODUCT_NUM, ");
+		querySql.append("	P.ORG_SUB_NUM, ");
+		querySql.append("	P.AUDIT_PRODUCT_NUM, ");
+		querySql.append("	P.AUDIT_STATUS, ");
+		querySql.append("	P.AUDIT_USER, ");
+		querySql.append("	P.REMARK, ");
+		querySql.append("	P.AUDIT_DATE, ");
+		querySql.append("	P.APPLY_ORG, ");
+		querySql.append("	P.APPLY_USER, P.MODIFIEDTIME, ");
+		querySql.append("	E.EMPNAME ");
+		querySql.append("FROM ");
+		querySql.append("	GD_ORG_APPLY_PRODUCT P"); 
+		querySql.append("	LEFT JOIN ORG_EMPLOYEE E ");
+		querySql.append("		ON P.APPLY_USER = E.EMPCODE ");
+		querySql.append("WHERE P.DR = 0 ");
+		querySql.append("	AND P.AUDIT_STATUS IN ('7', '5') ");
+		querySql.append("	AND ( ");
+		querySql.append("		P.APPLY_PRODUCT_NUM - P.ALLOT_PRODUCT_NUM - P.ORG_SUB_NUM ");
+		querySql.append("	) > 0 ");
+		querySql.append(where);
+		String sql = querySql.toString();
+		log.info("query sql =================" + sql);
+		if(isPage){
+			return query.query(sql, queryCountSql, page);
+		}
+		VOQuery<OrgApplyProductVO> voQuery = new VOQuery<>(OrgApplyProductVO.class);
+		return voQuery.query(sql);
+	}
+	/**
 	 * 分页查询商品申请数据
 	 * @param params
 	 * @param page
@@ -364,13 +417,13 @@ public class OrgApplyProductDao {
 	 */
 	public  OrgApplyProductVO[] queryOrgApplyProductPage(Map<String,String> params,PageCond page, boolean isPage){
 		//判断是不是有参数
- 		String where = whereSql(params);
+		String where = whereSql(params);
 		//查询数据实体
 		VOPageQuery<OrgApplyProductVO> query = new VOPageQuery< OrgApplyProductVO>( OrgApplyProductVO.class);
 		//查询的总记录
 		String queryCountSql = "SELECT  COUNT(*)" +
 				" FROM GD_ORG_APPLY_PRODUCT P WHERE P.DR = 0 " + where;
-	    //查询
+		//查询
 		String querySql = "SELECT P.*, E.EMPNAME FROM GD_ORG_APPLY_PRODUCT P " +
 				"LEFT JOIN ORG_EMPLOYEE E ON P.APPLY_USER = E.EMPCODE WHERE P.DR = 0 " + where;
 		log.info("query sql =================" + querySql);
@@ -463,6 +516,27 @@ public class OrgApplyProductDao {
 		} catch (DAOException e) {
 			log.error(e);
 			throw new DAOException(e);
+		}
+	}
+
+	public int allotAuditProd(Map<String, String> params) {
+		String sql = "UPDATE GD_ORG_APPLY_PRODUCT SET " +
+				"MODIFIER= ? ," +
+				"MODIFIEDTIME= ?," +
+				"REMARK= ? , " +
+				"ORG_SUB_NUM = ORG_SUB_NUM + ? " +//调换数
+				" WHERE PK_ORG_APPLY_PRODUCT=? ";
+		SQLParameter parameter = new SQLParameter();
+		parameter.addParam(UserUtils.getUser());
+		parameter.addParam(DateUtils.getFormatDate(DateUtils.PATTERN_19));
+		parameter.addParam(params.get("remark"));
+		parameter.addParam(params.get("org_sub_num"));
+		parameter.addParam(params.get("pk_org_apply_product"));
+		try {
+			return dbUtils.executeUpdateSQL(sql, parameter);
+		} catch (DAOException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 }
