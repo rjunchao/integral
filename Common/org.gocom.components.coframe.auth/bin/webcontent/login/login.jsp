@@ -8,7 +8,7 @@
   - Description:
 -->
 <head>
-<title>线下积分管理系统-用户登录</title>
+<title>线下积分管理系统2.0-用户登录</title>
 <%
    String contextPath=request.getContextPath();
  %>
@@ -52,7 +52,7 @@
 	<div id="warpper" class="wrap">
 		<div class="main">
 			<div id="form1" class="login-box">
-				<h3 style="text-align:left;">线下积分管理系统</h3>
+				<h3 style="text-align:left;">线下积分管理系统2.0</h3>
 				<p class="login-item">
 				  <em>用户名：</em>
 				  <input class="nui-textbox" id="userId" name="userId" style="width:237px;height:26px;"
@@ -64,9 +64,13 @@
 		                onenter="keyboardLogin" style="width:237px;height:26px;" onvalidation="onCheckPassword"/>
 				</p>
 				<p id="error" class="login-error" style="display:inline-block;height:20px;color:red;"></p>
+				<div>
+					<center><a href="https:www.baidu.com" target="_blank">最新操作演示</a> </center>
+				</div>
 				<p class="login-btn center">
 					<input class="log" type="button" onclick="login();" value="登 录" />
 				</p>
+				
 			</div>
 		</div>
 		<div class="foot">
@@ -136,6 +140,8 @@
      function keyboardLogin(e){
        login();
      }
+     
+     
    </script>
  </body>
 </html>

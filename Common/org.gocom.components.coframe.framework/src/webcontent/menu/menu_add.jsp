@@ -42,8 +42,8 @@
                 </td>
             	<th class="nui-form-label"><label for="appmenu.isleaf$text">是否为叶子菜单：</label></th>
                 <td> 
-                	<input id="appmenu.isleaf" class="nui-dictcombobox nui-form-input" name="appmenu.isleaf" value="0" 
-                   		 valueField="dictID" textField="dictName" dictTypeId="COF_YESORNO"/> 
+                	<input id="appmenu.isleaf" class="nui-dictcombobox nui-form-input" name="appmenu.isleaf" value="1" 
+                   		 valueField="id" textField="text"  data="yesOrNo"/> 
                 </td>
             </tr>
         </table>
@@ -55,6 +55,7 @@
     </div>
 </div>
     <script type="text/javascript">
+        var yesOrNo = [{id:1,text:"是"},{id:0,text:"否"}];
         nui.parse();
         var form = new nui.Form("form1");
         
@@ -124,6 +125,7 @@
         
         function SetData(data) {
             //跨页面传递的数据对象，克隆后才可以安全使用
+            debugger;
             data = nui.clone(data);
             if(data.parentmenuid == "root" || data.parentmenuid == "null"){
             	var isleaf = nui.get("appmenu.isleaf");

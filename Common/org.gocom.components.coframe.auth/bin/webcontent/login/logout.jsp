@@ -17,11 +17,11 @@
 <body>
   <%
      session.invalidate();
-     String _url=request.getParameter("_url");
+     /* String _url=request.getParameter("_url");
      
      if(_url==null){
-     	_url=request.getContextPath()+"/coframe/auth/login/login.jsp";
-     }
+     } */
+     String	_url=request.getContextPath()+"/coframe/auth/login/login.jsp";
      response.sendRedirect(_url);
    %>
 </body>

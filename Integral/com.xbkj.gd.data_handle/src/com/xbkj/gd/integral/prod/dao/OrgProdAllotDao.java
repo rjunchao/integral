@@ -48,6 +48,7 @@ public class OrgProdAllotDao {
 	    //查询
 		String querySql = "SELECT P.PK_ORG_PROD_ALLOT, P.ALLOT_PROD, P.ALLOT_ORG, " +
 				"P.ALLOT_NUM, P.REMARK, P.TS FROM GD_ORG_PROD_ALLOT P WHERE PK_ORG_PROD_ALLOT IS NOT NULL " + where;
+		System.out.println("querySql==" + querySql);
 		if(isPage){
 			return query.query(querySql, queryCountSql, page);
 		}

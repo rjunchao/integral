@@ -47,8 +47,9 @@
                 </td>
             	<th class="nui-form-label"><label for="appmenu.isleaf$text">是否为叶子菜单：</label></th>
                 <td> 
-                	<input id="appmenu.isleaf" class="nui-dictcombobox nui-form-input" name="appmenu.isleaf" value="0" 
-                   		 valueField="dictID" textField="dictName" dictTypeId="COF_YESORNO"/> 
+                <!--  valueField="dictID" textField="dictName" -->
+                	<input id="appmenu.isleaf" class="nui-combobox nui-form-input" name="appmenu.isleaf" value="0" 
+                   		valueField="id" textField="text"  data="yesOrNo"/> 
                 </td>
             </tr>
             <tr>
@@ -60,6 +61,7 @@
     </div>
 </div>
 <script type="text/javascript">
+        var yesOrNo = [{id:1,text:"是"},{id:0,text:"否"}];
         nui.parse();
         var form = new nui.Form("form1");
         var menuid = "<%= request.getParameter("id") %>";
@@ -76,6 +78,7 @@
                     var o = nui.decode(text);
                     form.setData(o);
                     if(document.getElementById("appmenu.subcount").value!=0){
+                    	debugger;
                     	var isleaf = nui.get("appmenu.isleaf");
         				isleaf.enabled = false;
                     }

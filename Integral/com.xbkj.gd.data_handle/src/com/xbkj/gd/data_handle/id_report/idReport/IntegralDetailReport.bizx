@@ -21,6 +21,7 @@
     <nodeLabel>end1label</nodeLabel>
     <process:returns>
       <process:return id="0" language="com.xbkj.gd.integral.report.vos.IntegralDetailReportVO[]" name="vos" type="query" valueType="Java">vos</process:return>
+      <process:return id="1" language="Int" name="total" type="query" valueType="Primitive">total</process:return>
     </process:returns>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="end1label" name="label" nodeType="label">
@@ -54,7 +55,7 @@
     <figSize height="17" width="49"/>
     <node>invokePojo0</node>
   </nodes>
-  <nodes xsi:type="process:tAssign" id="assign0" name="赋值" displayName="赋值" collapsed="false" type="assign">
+  <nodes xsi:type="process:tAssign" description="" id="assign0" name="赋值" displayName="赋值" collapsed="false" type="assign">
     <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="link1" isDefault="true" type="transition">
       <sourceNode>assign0</sourceNode>
       <targetNode>invokePojo0</targetNode>
@@ -63,13 +64,17 @@
     <location x="208" y="60"/>
     <size height="28" width="28"/>
     <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="literal" pattern="reference">true</process:from>
+      <process:to type="query">page/isCount</process:to>
+    </process:copy>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
     <location x="210" y="96"/>
     <figSize height="17" width="25"/>
     <node>assign0</node>
   </nodes>
-  <nodes xsi:type="process:tAssign" id="assign1" name="赋值1" displayName="赋值" collapsed="false" type="assign">
+  <nodes xsi:type="process:tAssign" description="" id="assign1" name="赋值1" displayName="赋值" collapsed="false" type="assign">
     <sourceConnections xsi:type="process:tLink" id="link2" name="link2" displayName="link3" isDefault="true" type="transition">
       <sourceNode>assign1</sourceNode>
       <targetNode>end1</targetNode>
@@ -78,6 +83,10 @@
     <location x="498" y="60"/>
     <size height="28" width="28"/>
     <nodeLabel>assign1label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">page/count</process:from>
+      <process:to type="query">total</process:to>
+    </process:copy>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
     <location x="496" y="96"/>
@@ -94,6 +103,7 @@
   </process:inputs>
   <process:outputs>
     <process:output anyType="com.xbkj.gd.integral.report.vos.IntegralDetailReportVO" description="" isArray="true" name="vos"/>
+    <process:output description="" isArray="false" name="total" primitiveType="Int"/>
   </process:outputs>
   <process:extAttribute1>public</process:extAttribute1>
   <process:transactionType>true</process:transactionType>

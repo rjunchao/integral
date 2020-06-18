@@ -11,7 +11,7 @@
 <head>
 <%@include file="/coframe/tools/skins/common.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>线下积分管理系统</title>
+<title>线下积分管理系统2.0</title>
 <style type="text/css">
 .dtHighLight{
 	background:#F0F8FF !important;
@@ -58,7 +58,7 @@
 			<div class="head-in clearfix" style="overflow:hidden">
 				<div class="fl clearfix">
 					<div class="logo"></div>
-					<h2 style="margin-top:15px;font-size:200%">线下积分管理系统</h2>
+					<h2 style="margin-top:15px;font-size:200%">线下积分管理系统2.0</h2>
 				</div>
 				<div class="options fr">
 					<div class="time font-5"> 

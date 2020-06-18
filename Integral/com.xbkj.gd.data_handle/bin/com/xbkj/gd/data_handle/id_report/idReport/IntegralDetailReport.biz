@@ -16,6 +16,7 @@
     <nodeLabel>end1label</nodeLabel>
     <process:returns>
       <process:return id="0" language="com.xbkj.gd.integral.report.vos.IntegralDetailReportVO[]" name="vos" type="query" valueType="Java">vos</process:return>
+      <process:return id="1" language="Int" name="total" type="query" valueType="Primitive">total</process:return>
     </process:returns>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="end1label" name="label" nodeType="label">
@@ -52,6 +53,10 @@
     </sourceConnections>
     <targetConnections>link3</targetConnections>
     <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="literal" pattern="reference">true</process:from>
+      <process:to type="query">page/isCount</process:to>
+    </process:copy>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
     <figSize height="17" width="25"/>
@@ -64,6 +69,10 @@
     </sourceConnections>
     <targetConnections>link0</targetConnections>
     <nodeLabel>assign1label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">page/count</process:from>
+      <process:to type="query">total</process:to>
+    </process:copy>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
     <figSize height="17" width="32"/>
@@ -79,6 +88,7 @@
   </process:inputs>
   <process:outputs>
     <process:output anyType="com.xbkj.gd.integral.report.vos.IntegralDetailReportVO" description="" isArray="true" name="vos"/>
+    <process:output description="" isArray="false" name="total" primitiveType="Int"/>
   </process:outputs>
   <process:extAttribute1>public</process:extAttribute1>
   <process:transactionType>true</process:transactionType>

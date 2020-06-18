@@ -16,6 +16,7 @@
     <nodeLabel>end0label</nodeLabel>
     <process:returns>
       <process:return id="0" language="com.xbkj.gd.integral.prod.vos.OrgApplyProductVO[]" name="vos" type="query" valueType="Java">vos</process:return>
+      <process:return id="1" language="Int" name="total" type="query" valueType="Primitive">total</process:return>
     </process:returns>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
@@ -102,6 +103,7 @@
   </process:inputs>
   <process:outputs>
     <process:output anyType="com.xbkj.gd.integral.prod.vos.OrgApplyProductVO" description="" isArray="true" name="vos"/>
+    <process:output description="" isArray="false" name="total" primitiveType="Int"/>
   </process:outputs>
   <process:extAttribute1>public</process:extAttribute1>
   <process:transactionType>true</process:transactionType>

@@ -97,7 +97,7 @@ public class VOPageQuery<E extends SuperVO> {
 			page.setTotalPage(count/length);
 			
 			int begin = page.getBegin();
-			int end = begin + length;
+			int end = length;
 			//从下一条开始查询
 			if(begin >  0 ){
 				begin += 1;
@@ -135,7 +135,7 @@ public class VOPageQuery<E extends SuperVO> {
 		page.setTotalPage(count/length);
 		
 		int begin = page.getBegin();
-		int end = begin + length;
+		int end = length;
 		//从下一条开始查询
 		/*if(begin >  0 ){
 			begin += 1;
